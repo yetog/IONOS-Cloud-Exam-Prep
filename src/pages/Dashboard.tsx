@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Flame, Trophy, Target, Clock, Zap, TrendingUp, Sparkles } from 'lucide-react';
+import { Flame, Trophy, Target, Clock, Zap, TrendingUp, Sparkles, Lightbulb, Calendar, Calculator } from 'lucide-react';
 import { useProgress } from '@/hooks/useProgress';
 import { useQuestions } from '@/hooks/useQuestions';
 import { Card, CardContent } from '@/components/ui/card';
@@ -148,6 +148,55 @@ export default function Dashboard() {
               Choose Your Mode
             </h2>
             <ModeSelector />
+          </motion.div>
+
+          {/* Quick Access Cards */}
+          <motion.div variants={item}>
+            <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+              <Zap className="w-5 h-5 text-primary" />
+              Quick Access
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <Link to="/tips">
+                <Card className="glass hover-lift cursor-pointer group">
+                  <CardContent className="p-4 flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-warning/20">
+                      <Lightbulb className="w-5 h-5 text-warning" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-foreground group-hover:text-primary transition-colors">10 Quick Tips</p>
+                      <p className="text-xs text-muted-foreground">Scoring strategies</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link to="/test-day">
+                <Card className="glass hover-lift cursor-pointer group">
+                  <CardContent className="p-4 flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-primary/20">
+                      <Calendar className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-foreground group-hover:text-primary transition-colors">Test Day Prep</p>
+                      <p className="text-xs text-muted-foreground">Logistics & checklists</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link to="/reference">
+                <Card className="glass hover-lift cursor-pointer group">
+                  <CardContent className="p-4 flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-primary/20">
+                      <Calculator className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-foreground group-hover:text-primary transition-colors">Math Reference</p>
+                      <p className="text-xs text-muted-foreground">Formulas & rules</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            </div>
           </motion.div>
 
           {/* Section Cards */}
