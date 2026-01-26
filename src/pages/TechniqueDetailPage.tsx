@@ -8,7 +8,19 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { TECHNIQUES, PASSAGE_TYPES, RC_QUESTION_TYPES } from '@/types/technique';
 import { GMATSection, QuestionType, SECTION_INFO } from '@/types/gmat';
 import { DSFlowChart } from '@/components/DSFlowChart';
-
+import { SubTypeBreakdown } from '@/components/SubTypeBreakdown';
+import { WorkedExample } from '@/components/WorkedExample';
+import { 
+  PS_SUB_TYPES, 
+  DS_SUB_TYPES, 
+  CR_SUB_TYPES, 
+  SC_SUB_TYPES, 
+  RC_SUB_TYPES,
+  IR_GRAPHICS_SUB_TYPES,
+  IR_TABLE_SUB_TYPES,
+  IR_TWO_PART_SUB_TYPES,
+  IR_MSR_SUB_TYPES
+} from '@/types/questionSubTypes';
 export default function TechniqueDetailPage() {
   const { section, type } = useParams<{ section: GMATSection; type: QuestionType }>();
   const navigate = useNavigate();
@@ -67,6 +79,35 @@ export default function TechniqueDetailPage() {
           transition={{ delay: 0.1 }}
           className="space-y-6"
         >
+          {/* Sub-Type Breakdown - Show before strategies for each question type */}
+          {type === 'problem-solving' && (
+            <SubTypeBreakdown title="Problem Solving Sub-Types" subTypes={PS_SUB_TYPES} />
+          )}
+          {type === 'data-sufficiency' && (
+            <SubTypeBreakdown title="Data Sufficiency Sub-Types" subTypes={DS_SUB_TYPES} />
+          )}
+          {type === 'critical-reasoning' && (
+            <SubTypeBreakdown title="Critical Reasoning Question Types" subTypes={CR_SUB_TYPES} />
+          )}
+          {type === 'sentence-correction' && (
+            <SubTypeBreakdown title="Sentence Correction Error Types" subTypes={SC_SUB_TYPES} />
+          )}
+          {type === 'reading-comprehension' && (
+            <SubTypeBreakdown title="Reading Comprehension Question Types" subTypes={RC_SUB_TYPES} />
+          )}
+          {type === 'graphics-interpretation' && (
+            <SubTypeBreakdown title="Graphics Interpretation Types" subTypes={IR_GRAPHICS_SUB_TYPES} />
+          )}
+          {type === 'table-analysis' && (
+            <SubTypeBreakdown title="Table Analysis Types" subTypes={IR_TABLE_SUB_TYPES} />
+          )}
+          {type === 'two-part-analysis' && (
+            <SubTypeBreakdown title="Two-Part Analysis Types" subTypes={IR_TWO_PART_SUB_TYPES} />
+          )}
+          {type === 'multi-source-reasoning' && (
+            <SubTypeBreakdown title="Multi-Source Reasoning Types" subTypes={IR_MSR_SUB_TYPES} />
+          )}
+
           {/* Key Strategies */}
           <Card className="glass">
             <CardHeader>
@@ -134,6 +175,9 @@ export default function TechniqueDetailPage() {
               <p className="text-muted-foreground">{technique.timeManagement}</p>
             </CardContent>
           </Card>
+
+          {/* Worked Example - Full step-by-step walkthrough */}
+          <WorkedExample questionType={type as QuestionType} />
 
           {/* Example Approach */}
           <Card className="glass">
