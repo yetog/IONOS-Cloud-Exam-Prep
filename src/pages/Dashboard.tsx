@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Flame, Trophy, Target, Clock, Zap, TrendingUp } from 'lucide-react';
+import { Flame, Trophy, Target, Clock, Zap, TrendingUp, Sparkles } from 'lucide-react';
 import { useProgress } from '@/hooks/useProgress';
 import { useQuestions } from '@/hooks/useQuestions';
 import { Card, CardContent } from '@/components/ui/card';
@@ -8,6 +8,7 @@ import { SECTION_INFO, GMATSection } from '@/types/gmat';
 import { SectionCard } from '@/components/SectionCard';
 import { StatsCard } from '@/components/StatsCard';
 import { AchievementBadge } from '@/components/AchievementBadge';
+import { ModeSelector } from '@/components/ModeSelector';
 import { ACHIEVEMENTS } from '@/types/gmat';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -140,17 +141,13 @@ export default function Dashboard() {
             </Card>
           </motion.div>
 
-          {/* Quick Practice Button */}
+          {/* 3-Mode Selector */}
           <motion.div variants={item}>
-            <Link to="/practice">
-              <Button 
-                size="lg" 
-                className="w-full md:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg py-6 px-8 glow-primary"
-              >
-                <Zap className="w-5 h-5 mr-2" />
-                Start Quick Practice
-              </Button>
-            </Link>
+            <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+              <Sparkles className="w-5 h-5 text-primary" />
+              Choose Your Mode
+            </h2>
+            <ModeSelector />
           </motion.div>
 
           {/* Section Cards */}
