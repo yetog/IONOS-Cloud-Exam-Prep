@@ -491,3 +491,68 @@ export const TECHNIQUES: Record<QuestionType, Technique> = {
     exampleApproach: 'Read the statement. Identify what to verify. Sort by relevant column. Find confirming or contradicting data. Answer yes/no.'
   }
 };
+
+// Passage Types for Reading Comprehension
+export interface PassageType {
+  name: string;
+  description: string;
+  approach: string;
+}
+
+export const PASSAGE_TYPES: PassageType[] = [
+  {
+    name: 'Natural Science',
+    description: 'Topics from biology, chemistry, physics, or earth sciences. Usually objective and informative in tone.',
+    approach: 'Focus on understanding the main phenomenon or study being described. Note cause-and-effect relationships and experimental results.',
+  },
+  {
+    name: 'Social Science',
+    description: 'Topics from psychology, sociology, economics, or history. May include persuasive arguments or multiple viewpoints.',
+    approach: 'Identify the author\'s position if present. Note any debates or contrasting theories discussed.',
+  },
+  {
+    name: 'Business',
+    description: 'Topics about markets, management, or organizational behavior. Often includes case studies or trends.',
+    approach: 'The topic may seem familiar, but DON\'T use outside knowledge. Answer based solely on passage content.',
+  },
+  {
+    name: 'Humanities',
+    description: 'Topics from art, literature, philosophy, or cultural criticism. May analyze works or ideas.',
+    approach: 'Pay close attention to the author\'s tone and evaluation. Note any shifts in perspective.',
+  },
+];
+
+// Question Categories for Reading Comprehension
+export interface RCQuestionType {
+  name: string;
+  description: string;
+  strategy: string;
+}
+
+export const RC_QUESTION_TYPES: RCQuestionType[] = [
+  {
+    name: 'Main Idea / Primary Purpose',
+    description: 'Asks what the passage is mainly about or why the author wrote it.',
+    strategy: 'Look at the first and last paragraphs. The answer should cover the whole passage, not just one part.',
+  },
+  {
+    name: 'Detail / Specific Information',
+    description: 'Asks about specific facts or claims stated in the passage.',
+    strategy: 'Return to the relevant paragraph. The correct answer will paraphrase—not copy—the passage text.',
+  },
+  {
+    name: 'Inference',
+    description: 'Asks what can be concluded or inferred from the passage.',
+    strategy: 'Find direct textual evidence, then extend it slightly. The inference should be strongly supported, not a leap.',
+  },
+  {
+    name: 'Logic / Structure',
+    description: 'Asks about how the passage is organized or why certain information is included.',
+    strategy: 'Think about paragraph purposes. Why did the author include that example or transition?',
+  },
+  {
+    name: 'Author\'s Tone / Attitude',
+    description: 'Asks how the author feels about the subject.',
+    strategy: 'Look at word choices throughout. Is the tone neutral, critical, enthusiastic, skeptical? Avoid extreme answers.',
+  },
+];

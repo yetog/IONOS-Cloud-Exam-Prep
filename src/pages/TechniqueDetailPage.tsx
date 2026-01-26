@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion';
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Clock, Target, AlertTriangle, Lightbulb, Play } from 'lucide-react';
+import { ArrowLeft, Clock, Target, AlertTriangle, Lightbulb, Play, BookOpen } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { TECHNIQUES } from '@/types/technique';
+import { TECHNIQUES, PASSAGE_TYPES, RC_QUESTION_TYPES } from '@/types/technique';
 import { GMATSection, QuestionType, SECTION_INFO } from '@/types/gmat';
+import { DSFlowChart } from '@/components/DSFlowChart';
 
 export default function TechniqueDetailPage() {
   const { section, type } = useParams<{ section: GMATSection; type: QuestionType }>();
@@ -147,8 +148,60 @@ export default function TechniqueDetailPage() {
             </CardContent>
           </Card>
 
+          {/* DS Flowchart - only for data-sufficiency */}
+          {type === 'data-sufficiency' && (
+            <DSFlowChart />
+          )}
+
+          {/* RC Passage Types and Question Categories - only for reading-comprehension */}
+          {type === 'reading-comprehension' && (
+            <>
+              <Card className="glass">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <BookOpen className="w-5 h-5 text-primary" />
+                    Passage Types
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  {PASSAGE_TYPES.map((pt, idx) => (
+                    <div key={idx} className="p-4 rounded-lg bg-muted/30">
+                      <h4 className="font-semibold text-foreground mb-2">{pt.name}</h4>
+                      <p className="text-sm text-muted-foreground mb-2">{pt.description}</p>
+                      <div className="flex items-start gap-2 text-sm">
+                        <Lightbulb className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                        <span className="text-primary">{pt.approach}</span>
+                      </div>
+                    </div>
+                  ))}
+                </CardContent>
+              </Card>
+
+              <Card className="glass">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Target className="w-5 h-5 text-primary" />
+                    Question Categories
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  {RC_QUESTION_TYPES.map((qt, idx) => (
+                    <div key={idx} className="p-4 rounded-lg bg-muted/30">
+                      <h4 className="font-semibold text-foreground mb-2">{qt.name}</h4>
+                      <p className="text-sm text-muted-foreground mb-2">{qt.description}</p>
+                      <div className="flex items-start gap-2 text-sm">
+                        <Lightbulb className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                        <span className="text-primary">{qt.strategy}</span>
+                      </div>
+                    </div>
+                  ))}
+                </CardContent>
+              </Card>
+            </>
+          )}
+
           {/* Practice Button */}
-          <Button 
+          <Button
             size="lg" 
             className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold glow-primary"
             onClick={() => navigate(`/practice/${section}?type=${type}`)}
