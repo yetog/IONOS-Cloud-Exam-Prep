@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Flame, Trophy, Target, Clock, Zap, TrendingUp, Sparkles, Lightbulb, Calendar, Calculator, Info } from 'lucide-react';
+import { Flame, Trophy, Target, Clock, Zap, TrendingUp, Sparkles, Lightbulb, Calendar, Calculator, Info, User } from 'lucide-react';
 import { useProgress } from '@/hooks/useProgress';
 import { useQuestions } from '@/hooks/useQuestions';
 import { Card, CardContent } from '@/components/ui/card';
@@ -156,7 +156,7 @@ export default function Dashboard() {
               <Zap className="w-5 h-5 text-primary" />
               Quick Access
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               <Link to="/tips">
                 <Card className="glass hover-lift cursor-pointer group">
                   <CardContent className="p-4 flex items-center gap-3">
@@ -205,6 +205,19 @@ export default function Dashboard() {
                     <div>
                       <p className="font-medium text-foreground group-hover:text-primary transition-colors">About This App</p>
                       <p className="text-xs text-muted-foreground">Mission & philosophy</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link to="/profile">
+                <Card className="glass hover-lift cursor-pointer group border-primary/30">
+                  <CardContent className="p-4 flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-primary/20">
+                      <User className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-foreground group-hover:text-primary transition-colors">My Profile</p>
+                      <p className="text-xs text-muted-foreground">Goals & insights</p>
                     </div>
                   </CardContent>
                 </Card>

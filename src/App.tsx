@@ -14,6 +14,7 @@ import QuickTipsPage from "./pages/QuickTipsPage";
 import TestDayPrepPage from "./pages/TestDayPrepPage";
 import ReferenceCardsPage from "./pages/ReferenceCardsPage";
 import AboutPage from "./pages/AboutPage";
+import ProfilePage from "./pages/ProfilePage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/test-day" element={<TestDayPrepPage />} />
           <Route path="/reference" element={<ReferenceCardsPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
