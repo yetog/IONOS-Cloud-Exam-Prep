@@ -1,0 +1,100 @@
+import { useCallback, useMemo } from 'react';
+import { useLocalStorage } from './useLocalStorage';
+import { Question, GMATSection, QuestionType } from '@/types/gmat';
+import { SAMPLE_QUESTIONS } from '@/data/sampleQuestions';
+
+export function useQuestions() {
+  const [customQuestions, setCustomQuestions] = useLocalStorage<Question[]>('gmat-custom-questions', []);
+
+  // Combine sample and custom questions
+  const allQuestions = useMemo(() => {
+    return [...SAMPLE_QUESTIONS, ...customQuestions];
+  }, [customQuestions]);
+
+  // Get questions by section
+  const getQuestionsBySection = useCallback((section: GMATSection): Question[] => {
+    return allQuestions.filter(q => q.section === section);
+  }, [allQuestions]);
+
+  // Get questions by type
+  const getQuestionsByType = useCallback((type: QuestionType): Question[] => {
+    return allQuestions.filter(q => q.type === type);
+  }, [allQuestions]);
+
+  // Get filtered questions
+  const getFilteredQuestions = useCallback((
+    section?: GMATSection,
+    types?: QuestionType[],
+    difficulty?: 'easy' | 'medium' | 'hard'
+  ): Question[] => {
+    return allQuestions.filter(q => {
+      if (section && q.section !== section) return false;
+      if (types && types.length > 0 && !types.includes(q.type)) return false;
+      if (difficulty && q.difficulty !== difficulty) return false;
+      return true;
+    });
+  }, [allQuestions]);
+
+  // Get random question
+  const getRandomQuestion = useCallback((
+    section?: GMATSection,
+    types?: QuestionType[],
+    excludeIds?: string[]
+  ): Question | null => {
+    let filtered = allQuestions;
+    
+    if (section) {
+      filtered = filtered.filter(q => q.section === section);
+    }
+    if (types && types.length > 0) {
+      filtered = filtered.filter(q => types.includes(q.type));
+    }
+    if (excludeIds && excludeIds.length > 0) {
+      filtered = filtered.filter(q => !excludeIds.includes(q.id));
+    }
+
+    if (filtered.length === 0) return null;
+
+    const randomIndex = Math.floor(Math.random() * filtered.length);
+    return filtered[randomIndex];
+  }, [allQuestions]);
+
+  // Add custom question
+  const addQuestion = useCallback((question: Omit<Question, 'id'>) => {
+    const newQuestion: Question = {
+      ...question,
+      id: `custom-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+    };
+    setCustomQuestions(prev => [...prev, newQuestion]);
+    return newQuestion;
+  }, [setCustomQuestions]);
+
+  // Remove custom question
+  const removeQuestion = useCallback((id: string) => {
+    setCustomQuestions(prev => prev.filter(q => q.id !== id));
+  }, [setCustomQuestions]);
+
+  // Get question by ID
+  const getQuestionById = useCallback((id: string): Question | undefined => {
+    return allQuestions.find(q => q.id === id);
+  }, [allQuestions]);
+
+  // Get question count by section
+  const getQuestionCount = useCallback((section?: GMATSection): number => {
+    if (!section) return allQuestions.length;
+    return allQuestions.filter(q => q.section === section).length;
+  }, [allQuestions]);
+
+  return {
+    questions: allQuestions,
+    customQuestions,
+    getQuestionsBySection,
+    getQuestionsByType,
+    getFilteredQuestions,
+    getRandomQuestion,
+    addQuestion,
+    removeQuestion,
+    getQuestionById,
+    getQuestionCount,
+  };
+}
