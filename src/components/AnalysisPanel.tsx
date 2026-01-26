@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowLeft, ChevronRight, Clock, Target, AlertTriangle, BookOpen } from 'lucide-react';
+import { ArrowLeft, ChevronRight, Clock, Target, AlertTriangle, BookOpen, Plus, StickyNote } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Question } from '@/types/gmat';
@@ -10,6 +10,8 @@ interface AnalysisPanelProps {
   timeSpent: number;
   onBack: () => void;
   onNext: () => void;
+  onAddSimilar?: () => void;
+  onSaveNote?: () => void;
 }
 
 export function AnalysisPanel({
@@ -18,6 +20,8 @@ export function AnalysisPanel({
   timeSpent,
   onBack,
   onNext,
+  onAddSimilar,
+  onSaveNote,
 }: AnalysisPanelProps) {
   const isCorrect = selectedAnswer === question.correctAnswer;
   const wasUnderTime = timeSpent <= question.targetTime;
@@ -216,6 +220,29 @@ export function AnalysisPanel({
           </CardContent>
         </Card>
       </motion.div>
+
+      {/* Quick Actions */}
+      {(onAddSimilar || onSaveNote) && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.55 }}
+          className="flex gap-3"
+        >
+          {onSaveNote && (
+            <Button variant="outline" onClick={onSaveNote} className="flex-1">
+              <StickyNote className="w-4 h-4 mr-2" />
+              Save Note
+            </Button>
+          )}
+          {onAddSimilar && (
+            <Button variant="outline" onClick={onAddSimilar} className="flex-1">
+              <Plus className="w-4 h-4 mr-2" />
+              Add Similar Question
+            </Button>
+          )}
+        </motion.div>
+      )}
 
       {/* Action Buttons */}
       <div className="flex gap-3 pt-4">

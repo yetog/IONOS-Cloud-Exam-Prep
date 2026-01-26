@@ -10,10 +10,12 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { useQuestions } from '@/hooks/useQuestions';
 import { useProgress } from '@/hooks/useProgress';
+import { useNotes } from '@/hooks/useNotes';
 import { GMATSection, SECTION_INFO, Question } from '@/types/gmat';
 import { QuestionCard } from '@/components/QuestionCard';
 import { AnalysisPanel } from '@/components/AnalysisPanel';
 import { cn } from '@/lib/utils';
+import { useToast } from '@/hooks/use-toast';
 
 type PracticeState = 'ready' | 'answering' | 'result' | 'analysis';
 
@@ -26,6 +28,8 @@ export default function PracticeMode() {
 
   const { getRandomQuestion, getQuestionCount } = useQuestions();
   const { progress, recordAttempt } = useProgress();
+  const { addNote } = useNotes();
+  const { toast } = useToast();
 
   const [state, setState] = useState<PracticeState>('ready');
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
@@ -118,6 +122,30 @@ export default function PracticeMode() {
 
   const handleShowAnalysis = () => {
     setState('analysis');
+  };
+
+  const handleAddSimilar = () => {
+    if (!currentQuestion) return;
+    navigate(`/manage/questions?section=${currentQuestion.section}&type=${currentQuestion.type}`);
+  };
+
+  const handleSaveNote = () => {
+    if (!currentQuestion) return;
+    const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
+    
+    addNote({
+      title: `${isCorrect ? '✓' : '✗'} ${currentQuestion.type.split('-').join(' ')} - ${currentQuestion.question.slice(0, 50)}...`,
+      content: `**Question:** ${currentQuestion.question}\n\n**My answer:** ${selectedAnswer !== null ? String.fromCharCode(65 + selectedAnswer) : 'N/A'}\n**Correct answer:** ${String.fromCharCode(65 + currentQuestion.correctAnswer)}\n\n**Time:** ${formatTime(timeSpent)} / ${formatTime(currentQuestion.targetTime)}\n\n**Key insight:** `,
+      section: currentQuestion.section,
+      questionType: currentQuestion.type,
+      type: isCorrect ? 'insight' : 'mistake',
+      tags: currentQuestion.tags || [],
+    });
+    
+    toast({
+      title: 'Note Saved',
+      description: 'A note for this question has been added to your Notes & Insights.',
+    });
   };
 
   const formatTime = (seconds: number) => {
@@ -456,6 +484,8 @@ export default function PracticeMode() {
                 timeSpent={timeSpent}
                 onBack={() => setState('result')}
                 onNext={handleNextQuestion}
+                onAddSimilar={handleAddSimilar}
+                onSaveNote={handleSaveNote}
               />
             </motion.div>
           )}

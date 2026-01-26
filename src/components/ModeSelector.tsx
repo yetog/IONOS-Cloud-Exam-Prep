@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Zap, BookOpen, FileText } from 'lucide-react';
+import { Zap, BookOpen, FileText, Database } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 
@@ -32,11 +32,20 @@ const modes = [
     gradient: 'from-secondary to-secondary/50',
     iconColor: 'text-secondary-foreground',
   },
+  {
+    id: 'manage',
+    title: 'Question Bank',
+    description: 'Add, import, and manage your custom questions',
+    icon: Database,
+    href: '/manage/questions',
+    gradient: 'from-accent to-accent/50',
+    iconColor: 'text-accent-foreground',
+  },
 ];
 
 export function ModeSelector() {
   return (
-    <div className="grid md:grid-cols-3 gap-4">
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
       {modes.map((mode, idx) => (
         <motion.div
           key={mode.id}
