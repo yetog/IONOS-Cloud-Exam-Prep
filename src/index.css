@@ -220,4 +220,67 @@
       transform: translateY(0);
     }
   }
+
+  /* RPG Skill Level Colors */
+  .skill-novice {
+    @apply text-gray-400;
+  }
+
+  .skill-apprentice {
+    @apply text-emerald-400;
+  }
+
+  .skill-journeyman {
+    @apply text-blue-400;
+  }
+
+  .skill-expert {
+    @apply text-purple-400;
+  }
+
+  .skill-master {
+    @apply text-amber-400;
+    text-shadow: 0 0 10px hsl(45 93% 47% / 0.5);
+  }
+
+  /* Gold shimmer effect for mastered skills */
+  .shimmer-gold {
+    background: linear-gradient(
+      90deg,
+      hsl(45 93% 47% / 0.1) 0%,
+      hsl(45 93% 60% / 0.3) 50%,
+      hsl(45 93% 47% / 0.1) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  /* RPG frame border animation */
+  .rpg-border {
+    position: relative;
+  }
+
+  .rpg-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(
+      45deg,
+      hsl(var(--primary)) 0%,
+      transparent 50%,
+      hsl(var(--primary)) 100%
+    );
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0.5;
+  }
 }

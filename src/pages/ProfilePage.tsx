@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Trophy, Zap, Calendar, Pencil, Check, X } from 'lucide-react';
+import { ArrowLeft, Pencil, Check, X, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -8,9 +8,10 @@ import { Input } from '@/components/ui/input';
 import { Progress } from '@/components/ui/progress';
 import { useProfile } from '@/hooks/useProfile';
 import { useProgress } from '@/hooks/useProgress';
-import { AvatarUpload } from '@/components/AvatarUpload';
+import { ProfileCard } from '@/components/ProfileCard';
 import { GoalsCard } from '@/components/GoalsCard';
 import { InsightsCard } from '@/components/InsightsCard';
+import { DailyMission } from '@/components/DailyMission';
 
 export default function ProfilePage() {
   const { 
@@ -26,27 +27,7 @@ export default function ProfilePage() {
     readinessScore,
   } = useProfile();
   
-  const { progress, xpProgress } = useProgress();
-  
-  const [isEditingName, setIsEditingName] = useState(false);
-  const [nameValue, setNameValue] = useState(profile.displayName);
-
-  const handleSaveName = () => {
-    if (nameValue.trim()) {
-      updateDisplayName(nameValue.trim());
-    }
-    setIsEditingName(false);
-  };
-
-  const handleCancelName = () => {
-    setNameValue(profile.displayName);
-    setIsEditingName(false);
-  };
-
-  const formatMemberSince = () => {
-    const date = new Date(profile.createdAt);
-    return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-  };
+  const { progress } = useProgress();
 
   return (
     <div className="min-h-screen bg-background bg-grid">
@@ -72,86 +53,11 @@ export default function ProfilePage() {
           animate={{ opacity: 1, y: 0 }}
           className="space-y-6"
         >
-          {/* Profile Header */}
-          <Card className="glass">
-            <CardContent className="p-6">
-              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
-                {/* Avatar */}
-                <AvatarUpload
-                  avatarUrl={profile.avatarUrl}
-                  displayName={profile.displayName}
-                  onAvatarChange={updateAvatar}
-                  size="lg"
-                />
+          {/* RPG-Style Profile Card */}
+          <ProfileCard />
 
-                {/* Info */}
-                <div className="flex-1 text-center sm:text-left">
-                  {/* Display Name */}
-                  <div className="flex items-center justify-center sm:justify-start gap-2 mb-2">
-                    {isEditingName ? (
-                      <div className="flex items-center gap-2">
-                        <Input
-                          value={nameValue}
-                          onChange={(e) => setNameValue(e.target.value)}
-                          className="h-8 w-48"
-                          autoFocus
-                          onKeyDown={(e) => {
-                            if (e.key === 'Enter') handleSaveName();
-                            if (e.key === 'Escape') handleCancelName();
-                          }}
-                        />
-                        <Button variant="ghost" size="sm" onClick={handleCancelName}>
-                          <X className="h-4 w-4" />
-                        </Button>
-                        <Button variant="ghost" size="sm" onClick={handleSaveName}>
-                          <Check className="h-4 w-4 text-primary" />
-                        </Button>
-                      </div>
-                    ) : (
-                      <>
-                        <h1 className="text-2xl font-bold text-foreground">{profile.displayName}</h1>
-                        <Button 
-                          variant="ghost" 
-                          size="sm" 
-                          onClick={() => setIsEditingName(true)}
-                          className="h-6 w-6 p-0"
-                        >
-                          <Pencil className="h-3 w-3" />
-                        </Button>
-                      </>
-                    )}
-                  </div>
-
-                  {/* Level & XP */}
-                  <div className="flex items-center justify-center sm:justify-start gap-4 text-sm mb-2">
-                    <span className="flex items-center gap-1 text-primary">
-                      <Trophy className="h-4 w-4" />
-                      Level {progress.level}
-                    </span>
-                    <span className="flex items-center gap-1 text-gold">
-                      <Zap className="h-4 w-4" />
-                      {progress.totalXP.toLocaleString()} XP
-                    </span>
-                  </div>
-
-                  {/* XP Progress */}
-                  <div className="w-full max-w-xs mx-auto sm:mx-0 mb-2">
-                    <Progress value={xpProgress.percentage} className="h-2" />
-                    <p className="text-xs text-muted-foreground mt-1">
-                      {xpProgress.current} / {xpProgress.required} XP to next level
-                    </p>
-                  </div>
-
-                  {/* Member Since */}
-                  <p className="text-sm text-muted-foreground flex items-center justify-center sm:justify-start gap-1">
-                    <Calendar className="h-4 w-4" />
-                    Member since {formatMemberSince()}
-                    {memberSinceDays > 0 && ` (${memberSinceDays} days)`}
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          {/* Today's Mission */}
+          <DailyMission />
 
           {/* Goals Card */}
           <GoalsCard
