@@ -1,97 +1,109 @@
 
-# Profile Section Implementation Plan
+# Skill Mastery & Enhanced Profile Plan
 
 ## Overview
-Add a new Profile page (`/profile`) accessible from the dashboard's Quick Access section. This page will include a profile picture upload, personal goals, test insights, and preparation timeline—making the app feel more personalized and goal-oriented.
+Transform the Profile page into a video game-style "party member panel" with a skill tree system based on GMAT competencies from the Princeton Review book. Add daily personal goals/notes and make the experience feel like leveling up a character in an RPG.
 
 ---
 
-## New Features
+## Part 1: Skill Mastery System
 
-### 1. Profile Page (`/profile`)
+### The Core Skills (Based on Princeton Review TOC)
 
-**Sections to include:**
+Inspired by the book structure, skills are organized into **Skill Categories** with individual **Skills** that can be leveled up through practice and mastery:
 
-**Header Area:**
-- Profile picture (uploadable, stored as base64 in localStorage)
-- Display name (editable)
-- "Member since" date
-- Current level and total XP display
+| Category | Skills | How to Level Up |
+|----------|--------|-----------------|
+| **Strategic Foundations** | Adaptive Test Strategy, POE Mastery, Time Management | Complete orientation questions, use elimination effectively |
+| **Quantitative Combat** | Number Theory, Arithmetic Mastery, Algebra, Geometry, Probability, Data Sufficiency Logic | Practice questions by sub-type with 70%+ accuracy |
+| **Verbal Warfare** | Sentence Structure, Reading Tactics, Argument Analysis, Critical Logic | Practice verbal questions with accuracy thresholds |
+| **Data Integration** | Multi-Source Synthesis, Visual Interpretation, Two-Part Reasoning, Table Analysis | Practice IR questions |
+| **Mental Fortitude** | Focus Endurance, Speed Under Pressure, Pattern Recognition | Streak bonuses, timed performance, consistency |
 
-**My Goals Section:**
-- Target GMAT score (205-805 range)
-- Target test date (date picker)
-- Daily practice goal (questions per day)
-- Weekly time commitment goal
-- Progress toward each goal shown visually
+### Skill Levels & XP
+Each skill has 5 mastery levels:
+- **Novice** (0-24 XP) - Just starting
+- **Apprentice** (25-74 XP) - Learning the basics
+- **Journeyman** (75-174 XP) - Competent
+- **Expert** (175-349 XP) - Highly skilled
+- **Master** (350+ XP) - Complete mastery
 
-**Test Insights Section:**
-- Strongest section (auto-calculated from stats)
-- Weakest section (auto-calculated)
-- Recommended focus area
-- Average time per question vs target
-- Recent accuracy trend (up/down/stable)
-
-**Study Timeline:**
-- Days until test date
-- Estimated readiness score
-- Milestones achieved
+### How Skills Earn XP
+- Correctly answering a question in that sub-type: +5-15 XP (based on difficulty)
+- Speed bonus: +5 XP if under target time
+- No hint bonus: +5 XP
+- Streak bonus: +2 XP per consecutive correct in same skill
 
 ---
 
-### 2. Profile Data Structure
+## Part 2: Video Game Profile Card ("Party Member Panel")
 
-New TypeScript interface for profile data:
+### Design Concept
+A rectangular card styled like an RPG character panel with:
 
-```typescript
-interface UserProfile {
-  displayName: string;
-  avatarUrl: string | null; // base64 data URL or null
-  createdAt: string; // ISO date
-  goals: {
-    targetScore: number | null; // 205-805
-    testDate: string | null; // ISO date
-    dailyQuestionGoal: number;
-    weeklyTimeGoal: number; // minutes
-  };
-}
+```text
+┌──────────────────────────────────────────────────────────────┐
+│  ╔════════════════════════════════════════════════════════╗  │
+│  ║  [AVATAR]   PLAYER NAME                    LVL 12      ║  │
+│  ║  ┌──────┐   ═══════════════════                        ║  │
+│  ║  │      │   Class: GMAT Strategist                     ║  │
+│  ║  │ IMG  │   XP: 2,450 / 3,800 [████████░░] 64%         ║  │
+│  ║  │      │   Streak: 7 days                             ║  │
+│  ║  └──────┘   Test Date: 45 days away                    ║  │
+│  ╠════════════════════════════════════════════════════════╣  │
+│  ║  STATS                                                 ║  │
+│  ║  ┌─────────────────────────────────────────────────┐   ║  │
+│  ║  │ STR: Quant      ████████░░  78%                 │   ║  │
+│  ║  │ INT: Verbal     ██████░░░░  62%                 │   ║  │
+│  ║  │ WIS: IR         ███████░░░  71%                 │   ║  │
+│  ║  │ DEX: Speed      ████████░░  85s avg             │   ║  │
+│  ║  │ CON: Streak     ██████████  7 days              │   ║  │
+│  ║  └─────────────────────────────────────────────────┘   ║  │
+│  ╠════════════════════════════════════════════════════════╣  │
+│  ║  TOP SKILLS                     [View All Skills →]    ║  │
+│  ║  ⚔ Data Sufficiency   Expert   ████████░░              ║  │
+│  ║  ⚔ Critical Reasoning Expert   ███████░░░              ║  │
+│  ║  ⚔ Algebra            Master   ██████████              ║  │
+│  ╚════════════════════════════════════════════════════════╝  │
+└──────────────────────────────────────────────────────────────┘
 ```
 
-Stored in localStorage as `gmat-profile`.
+### Key Visual Elements
+- Bordered frame with glow effects
+- Avatar prominently displayed
+- "Class" designation based on strongest area (e.g., "Quant Warrior", "Verbal Virtuoso", "IR Specialist", "GMAT Strategist")
+- Stats displayed like RPG attributes (STR/INT/WIS/DEX/CON)
+- Skill bars with mastery levels
+- Accent colors and subtle animations
 
 ---
 
-### 3. Profile Picture Upload
+## Part 3: Daily Notes & Personal Goals
 
-**Implementation approach:**
-- Use HTML file input with accept="image/*"
-- Convert uploaded image to base64 for localStorage storage
-- Crop/resize to reasonable dimensions (200x200 max)
-- Display with fallback avatar (initials or default icon)
+### New Section: "Today's Mission"
+A collapsible section on the Profile page for:
 
-**UI:**
-- Circular avatar with camera/edit overlay on hover
-- Click to trigger file picker
-- Preview before saving
+**Daily Goals (Quick-set):**
+- Questions to complete today: [ 15 ]
+- Focus area: [ Verbal - CR ]
+- Personal reminder: [ Free-text input ]
 
----
+**Quick Notes:**
+- A simple text area for jotting daily thoughts
+- Auto-saves to localStorage
+- Shows last 3 days of notes in a collapsible history
 
-### 4. Dashboard Quick Access Card
-
-Add to the existing Quick Access grid:
-- Icon: User (from lucide-react)
-- Title: "My Profile"
-- Subtitle: "Goals & insights"
-- Links to `/profile`
-
----
-
-### 5. New Hook: useProfile
-
-Create `src/hooks/useProfile.ts`:
-- Manages profile state in localStorage
-- Provides functions: updateProfile, updateGoals, updateAvatar
-- Computes insights from progress data
+### Data Structure
+```typescript
+interface DailyNote {
+  date: string; // YYYY-MM-DD
+  focusArea?: string;
+  personalReminder: string;
+  quickNotes: string;
+  createdAt: string;
+  updatedAt: string;
+}
+```
 
 ---
 
@@ -99,98 +111,136 @@ Create `src/hooks/useProfile.ts`:
 
 | File | Action |
 |------|--------|
-| `src/types/profile.ts` | Create - Profile interfaces |
-| `src/hooks/useProfile.ts` | Create - Profile state management |
-| `src/pages/ProfilePage.tsx` | Create - Main profile page |
-| `src/components/AvatarUpload.tsx` | Create - Profile picture component |
-| `src/components/GoalsCard.tsx` | Create - Goals display/edit card |
-| `src/components/InsightsCard.tsx` | Create - Auto-calculated insights |
-| `src/pages/Dashboard.tsx` | Modify - Add Profile quick access card |
-| `src/App.tsx` | Modify - Add `/profile` route |
-
----
-
-## UI Layout (ASCII Wireframe)
-
-```text
-+------------------------------------------+
-| <- Back to Dashboard                     |
-|                                          |
-| +------+  [Display Name]        [Edit]   |
-| | AVATAR|  Level 5 | 2,450 XP            |
-| +------+  Member since Jan 2025          |
-+------------------------------------------+
-|                                          |
-| MY GOALS                          [Edit] |
-| +--------------------------------------+ |
-| | Target Score: 720                    | |
-| | [============================>] 720  | |
-| +--------------------------------------+ |
-| | Test Date: March 15, 2025            | |
-| | [===========>          ] 45 days left| |
-| +--------------------------------------+ |
-| | Daily Goal: 15 questions             | |
-| | Weekly Goal: 5 hours                 | |
-| +--------------------------------------+ |
-|                                          |
-| TEST INSIGHTS                            |
-| +--------------------------------------+ |
-| | Strongest: Quantitative (78%)        | |
-| | Weakest: Verbal (62%)                | |
-| | Focus: Sentence Correction           | |
-| | Avg Time: 85s (target: 90s)          | |
-| +--------------------------------------+ |
-|                                          |
-| STUDY TIMELINE                           |
-| +--------------------------------------+ |
-| | 45 days until test                   | |
-| | Estimated readiness: 72%             | |
-| | [=====================>        ]     | |
-| +--------------------------------------+ |
-+------------------------------------------+
-```
+| `src/types/skills.ts` | **Create** - Skill definitions, categories, levels |
+| `src/hooks/useSkills.ts` | **Create** - Skill progress management, XP calculation |
+| `src/components/ProfileCard.tsx` | **Create** - Video game style party member panel |
+| `src/components/SkillBar.tsx` | **Create** - Individual skill progress bar |
+| `src/components/SkillsPanel.tsx` | **Create** - Full skills view with all categories |
+| `src/components/DailyMission.tsx` | **Create** - Today's goals and quick notes |
+| `src/pages/ProfilePage.tsx` | **Modify** - Replace current layout with enhanced components |
+| `src/pages/SkillsPage.tsx` | **Create** - Dedicated page for full skill tree view |
+| `src/types/profile.ts` | **Modify** - Add dailyNotes array and skill tracking |
+| `src/hooks/useProgress.ts` | **Modify** - Integrate skill XP on question completion |
+| `src/App.tsx` | **Modify** - Add `/skills` route |
+| `src/index.css` | **Modify** - Add RPG-style visual effects |
 
 ---
 
 ## Technical Details
 
-### Avatar Upload Component
-- Uses FileReader API to read image as base64
-- Validates file type (image/jpeg, image/png, image/webp)
-- Resizes using canvas if larger than 200x200
-- Stores result in localStorage via useProfile hook
+### Skill Type Definitions
+```typescript
+type SkillLevel = 'novice' | 'apprentice' | 'journeyman' | 'expert' | 'master';
 
-### Insights Calculation
-- Pulls data from existing useProgress hook
-- Strongest section = highest accuracy with minimum 5 questions
-- Weakest section = lowest accuracy with minimum 5 questions
-- Recommended focus = weakest sub-type within weakest section
+interface Skill {
+  id: string;
+  name: string;
+  category: SkillCategory;
+  description: string;
+  icon: string; // Lucide icon name
+  linkedQuestionTypes?: QuestionType[];
+  linkedSubTypes?: string[]; // From questionSubTypes.ts
+}
 
-### Goals Progress
-- Score progress: estimated from accuracy trends
-- Days remaining: calculated from testDate - today
-- Daily goal: tracked against today's question count
-- Weekly goal: sum of time spent in last 7 days
+interface SkillProgress {
+  skillId: string;
+  xp: number;
+  level: SkillLevel;
+  questionsAttempted: number;
+  correctAnswers: number;
+  lastPracticed?: string;
+}
+```
+
+### Class Designation Logic
+Based on performance distribution:
+- **Quant Warrior**: Quantitative accuracy > Verbal by 10%+
+- **Verbal Virtuoso**: Verbal accuracy > Quantitative by 10%+
+- **IR Specialist**: IR accuracy highest with 20+ questions
+- **Speed Demon**: Average time under 75% of target
+- **GMAT Strategist**: Balanced performance (default)
+
+### RPG Stat Mapping
+| RPG Stat | GMAT Metric |
+|----------|-------------|
+| STR (Strength) | Quantitative accuracy |
+| INT (Intelligence) | Verbal accuracy |
+| WIS (Wisdom) | Integrated Reasoning accuracy |
+| DEX (Dexterity) | Average time performance |
+| CON (Constitution) | Current streak |
+
+---
+
+## Visual Design Details
+
+### Color Scheme for Skill Levels
+- **Novice**: Gray (#6B7280)
+- **Apprentice**: Green (#10B981)
+- **Journeyman**: Blue (#3B82F6)
+- **Expert**: Purple (#8B5CF6)
+- **Master**: Gold (#F59E0B) with glow effect
+
+### Profile Card Styling
+- Dark background with subtle gradient
+- Neon-style border (green primary)
+- Pixel-perfect spacing
+- Subtle hover animations
+- "Achievement unlocked" style notifications
 
 ---
 
 ## Implementation Order
 
-1. Create profile types (`src/types/profile.ts`)
-2. Create useProfile hook with localStorage persistence
-3. Build AvatarUpload component with image handling
-4. Build GoalsCard component with editing capability
-5. Build InsightsCard component with auto-calculations
-6. Create ProfilePage assembling all components
-7. Add route in App.tsx
-8. Add Quick Access card on Dashboard
+1. **Types & Data** - Create skill types and data structures
+2. **useSkills Hook** - Build skill tracking logic with localStorage
+3. **SkillBar Component** - Visual skill progress bar
+4. **ProfileCard Component** - Main video game style card
+5. **DailyMission Component** - Today's goals and notes
+6. **Integrate with useProgress** - Link skill XP to question attempts
+7. **Update ProfilePage** - Assemble new components
+8. **SkillsPage** - Full skill tree view
+9. **Visual Polish** - Add animations and effects
+
+---
+
+## Skills List (Complete)
+
+### Strategic Foundations
+1. **Adaptive Strategy** - Understanding how the CAT works and optimal pacing
+2. **POE Mastery** - Process of elimination techniques
+3. **Time Management** - Staying on pace and knowing when to guess
+
+### Quantitative Combat
+4. **Number Theory** - Primes, factors, divisibility, remainders
+5. **Arithmetic Mastery** - Percentages, ratios, rates, averages
+6. **Algebraic Equations** - Solving equations, systems, quadratics
+7. **Geometric Reasoning** - Shapes, angles, coordinate geometry
+8. **Probability & Counting** - Combinations, permutations, probability
+9. **Data Sufficiency Logic** - The unique GMAT question format
+
+### Verbal Warfare
+10. **Sentence Structure** - Grammar rules, SC techniques
+11. **Reading Tactics** - Passage mapping, main idea, inference
+12. **Argument Analysis** - CR premise/conclusion identification
+13. **Critical Logic** - Strengthen, weaken, assumption questions
+
+### Data Integration
+14. **Multi-Source Synthesis** - Combining info from multiple tabs
+15. **Visual Interpretation** - Charts, graphs, data visualization
+16. **Two-Part Reasoning** - Solving linked questions
+17. **Table Analysis** - Sorting and analyzing data tables
+
+### Mental Fortitude
+18. **Focus Endurance** - Maintaining concentration (tracked via session length)
+19. **Speed Under Pressure** - Performing quickly without sacrificing accuracy
+20. **Pattern Recognition** - Identifying question types and traps quickly
 
 ---
 
 ## Dependencies
 
-No new dependencies required. Uses:
-- Existing UI components (Card, Button, Input, Progress)
-- Existing hooks pattern (useLocalStorage)
-- FileReader API (browser native)
-- Canvas API for image resizing (browser native)
+No new npm dependencies required. Uses:
+- Existing UI components (Card, Progress, etc.)
+- Framer Motion for animations (already installed)
+- Lucide icons (already installed)
+- localStorage for persistence (existing pattern)
