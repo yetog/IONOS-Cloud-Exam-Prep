@@ -9,6 +9,7 @@ import AchievementsPage from "./pages/AchievementsPage";
 import LearnPage from "./pages/LearnPage";
 import TechniqueDetailPage from "./pages/TechniqueDetailPage";
 import NotesPage from "./pages/NotesPage";
+import QuestionBankPage from "./pages/QuestionBankPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/learn" element={<LearnPage />} />
           <Route path="/learn/:section/:type" element={<TechniqueDetailPage />} />
           <Route path="/notes" element={<NotesPage />} />
+          <Route path="/manage/questions" element={<QuestionBankPage />} />
           <Route path="/achievements" element={<AchievementsPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
