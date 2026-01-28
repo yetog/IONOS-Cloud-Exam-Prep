@@ -16,6 +16,7 @@ import { Button } from '@/components/ui/button';
 import { useSessionHistory } from '@/hooks/useSessionHistory';
 import { useProgress } from '@/hooks/useProgress';
 import { useSkills } from '@/hooks/useSkills';
+import { useGameSounds } from '@/hooks/useGameSounds';
 import { SECTION_INFO, GMATSection } from '@/types/gmat';
 import { cn } from '@/lib/utils';
 
@@ -32,6 +33,7 @@ export function HeroNavCard() {
   } = useSessionHistory();
   const { progress, getSectionAccuracy } = useProgress();
   const { topSkills } = useSkills();
+  const { playClick } = useGameSounds();
 
   // Determine available states
   const availableStates = useMemo(() => {
@@ -63,8 +65,14 @@ export function HeroNavCard() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentState = availableStates[currentIndex % availableStates.length];
 
-  const goNext = () => setCurrentIndex(prev => (prev + 1) % availableStates.length);
-  const goPrev = () => setCurrentIndex(prev => (prev - 1 + availableStates.length) % availableStates.length);
+  const goNext = () => {
+    playClick();
+    setCurrentIndex(prev => (prev + 1) % availableStates.length);
+  };
+  const goPrev = () => {
+    playClick();
+    setCurrentIndex(prev => (prev - 1 + availableStates.length) % availableStates.length);
+  };
 
   // Find recommended section (lowest accuracy with min 3 questions, or least practiced)
   const recommendedSection = useMemo(() => {
