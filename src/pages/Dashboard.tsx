@@ -9,6 +9,7 @@ import { SectionCard } from '@/components/SectionCard';
 import { StatsCard } from '@/components/StatsCard';
 import { AchievementBadge } from '@/components/AchievementBadge';
 import { ModeSelector } from '@/components/ModeSelector';
+import { HeroNavCard } from '@/components/HeroNavCard';
 import { ACHIEVEMENTS } from '@/types/gmat';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -64,6 +65,10 @@ export default function Dashboard() {
           animate="show"
           className="space-y-8"
         >
+          {/* Hero Navigation Card - Smart Onboarding */}
+          <motion.div variants={item}>
+            <HeroNavCard />
+          </motion.div>
           {/* Top Stats Row */}
           <motion.div variants={item} className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {/* Level & XP */}
