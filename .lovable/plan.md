@@ -1,246 +1,318 @@
 
-# Skill Mastery & Enhanced Profile Plan
+# FF7R-Inspired Profile & Dashboard Overhaul
 
-## Overview
-Transform the Profile page into a video game-style "party member panel" with a skill tree system based on GMAT competencies from the Princeton Review book. Add daily personal goals/notes and make the experience feel like leveling up a character in an RPG.
-
----
-
-## Part 1: Skill Mastery System
-
-### The Core Skills (Based on Princeton Review TOC)
-
-Inspired by the book structure, skills are organized into **Skill Categories** with individual **Skills** that can be leveled up through practice and mastery:
-
-| Category | Skills | How to Level Up |
-|----------|--------|-----------------|
-| **Strategic Foundations** | Adaptive Test Strategy, POE Mastery, Time Management | Complete orientation questions, use elimination effectively |
-| **Quantitative Combat** | Number Theory, Arithmetic Mastery, Algebra, Geometry, Probability, Data Sufficiency Logic | Practice questions by sub-type with 70%+ accuracy |
-| **Verbal Warfare** | Sentence Structure, Reading Tactics, Argument Analysis, Critical Logic | Practice verbal questions with accuracy thresholds |
-| **Data Integration** | Multi-Source Synthesis, Visual Interpretation, Two-Part Reasoning, Table Analysis | Practice IR questions |
-| **Mental Fortitude** | Focus Endurance, Speed Under Pressure, Pattern Recognition | Streak bonuses, timed performance, consistency |
-
-### Skill Levels & XP
-Each skill has 5 mastery levels:
-- **Novice** (0-24 XP) - Just starting
-- **Apprentice** (25-74 XP) - Learning the basics
-- **Journeyman** (75-174 XP) - Competent
-- **Expert** (175-349 XP) - Highly skilled
-- **Master** (350+ XP) - Complete mastery
-
-### How Skills Earn XP
-- Correctly answering a question in that sub-type: +5-15 XP (based on difficulty)
-- Speed bonus: +5 XP if under target time
-- No hint bonus: +5 XP
-- Streak bonus: +2 XP per consecutive correct in same skill
+## Vision
+Transform the Profile page into a **full-screen FF7R-style character status panel** and enhance the Dashboard with **smart navigation cards** for onboarding and session continuity.
 
 ---
 
-## Part 2: Video Game Profile Card ("Party Member Panel")
+## Part 1: FF7R Character Panel Design
 
-### Design Concept
-A rectangular card styled like an RPG character panel with:
+### Layout Analysis (From Reference Image)
+
+The FF7R UI has these key zones:
 
 ```text
-┌──────────────────────────────────────────────────────────────┐
-│  ╔════════════════════════════════════════════════════════╗  │
-│  ║  [AVATAR]   PLAYER NAME                    LVL 12      ║  │
-│  ║  ┌──────┐   ═══════════════════                        ║  │
-│  ║  │      │   Class: GMAT Strategist                     ║  │
-│  ║  │ IMG  │   XP: 2,450 / 3,800 [████████░░] 64%         ║  │
-│  ║  │      │   Streak: 7 days                             ║  │
-│  ║  └──────┘   Test Date: 45 days away                    ║  │
-│  ╠════════════════════════════════════════════════════════╣  │
-│  ║  STATS                                                 ║  │
-│  ║  ┌─────────────────────────────────────────────────┐   ║  │
-│  ║  │ STR: Quant      ████████░░  78%                 │   ║  │
-│  ║  │ INT: Verbal     ██████░░░░  62%                 │   ║  │
-│  ║  │ WIS: IR         ███████░░░  71%                 │   ║  │
-│  ║  │ DEX: Speed      ████████░░  85s avg             │   ║  │
-│  ║  │ CON: Streak     ██████████  7 days              │   ║  │
-│  ║  └─────────────────────────────────────────────────┘   ║  │
-│  ╠════════════════════════════════════════════════════════╣  │
-│  ║  TOP SKILLS                     [View All Skills →]    ║  │
-│  ║  ⚔ Data Sufficiency   Expert   ████████░░              ║  │
-│  ║  ⚔ Critical Reasoning Expert   ███████░░░              ║  │
-│  ║  ⚔ Algebra            Master   ██████████              ║  │
-│  ╚════════════════════════════════════════════════════════╝  │
-└──────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  PARTY                                                                      │
+│  ┌────────┐        EQUIPMENT SLOTS              ┌────────────────────────┐  │
+│  │ Cloud  │  ┌─────────────────────────────┐    │                        │  │
+│  │ Tifa   │  │  Iron Blade      ⬡⬡⬡⬡       │    │    CHARACTER           │  │
+│  │ Barret │  │  A greatsword cast from...  │    │    PORTRAIT            │  │
+│  └────────┘  ├─────────────────────────────┤    │                        │  │
+│              │  Iron Bangle     ⬡⬡⬡⬡       │    │    Level: 13           │  │
+│              │  An armband crafted from... │    │    EXP: 1139/1199      │  │
+│              ├─────────────────────────────┤    │    HP: 1310/1720       │  │
+│              │  Power Wristguards          │    │    MP: 18/79           │  │
+│              │  Wristguards capable of...  │    │                        │  │
+│              └─────────────────────────────┘    └────────────────────────┘  │
+│  ┌───────────────────────────────────────────────────────────────────────┐  │
+│  │  ATTRIBUTES                           AFFINITIES / RESISTANCES        │  │
+│  │  ▸ Attack       99                   Lesser Resistances    ■■■■       │  │
+│  │  ▸ Magic Attack 89                   Greater Resistances   ■■■        │  │
+│  │  ▸ Defense      46                   Immunities            ■■■        │  │
+│  │  ▸ Magic Def    38                   Absorbed Elements     ■          │  │
+│  │  ▸ Strength     35                                                    │  │
+│  │  ▸ Magic        29                                                    │  │
+│  │  ▸ Vitality     25                                                    │  │
+│  └───────────────────────────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### Key Visual Elements
-- Bordered frame with glow effects
-- Avatar prominently displayed
-- "Class" designation based on strongest area (e.g., "Quant Warrior", "Verbal Virtuoso", "IR Specialist", "GMAT Strategist")
-- Stats displayed like RPG attributes (STR/INT/WIS/DEX/CON)
-- Skill bars with mastery levels
-- Accent colors and subtle animations
+### GMAT Translation
+
+| FF7R Element | GMAT Equivalent |
+|--------------|-----------------|
+| Party List | Study Modes (Practice, Learn, Notes) |
+| Equipment Slots | "Active Focus" areas (e.g., current section, current technique) |
+| Materia Slots (⬡) | Skill mastery indicators |
+| Character Portrait | User avatar (large, prominent) |
+| Level / EXP / HP / MP | Level / XP bar / Questions answered / Accuracy |
+| Attributes | STR/INT/WIS/DEX/CON stats |
+| Affinities | Strong/Weak sections, Skill breakdown |
 
 ---
 
-## Part 3: Daily Notes & Personal Goals
+## Part 2: New Profile Page Structure
 
-### New Section: "Today's Mission"
-A collapsible section on the Profile page for:
+### Full-Page Layout
 
-**Daily Goals (Quick-set):**
-- Questions to complete today: [ 15 ]
-- Focus area: [ Verbal - CR ]
-- Personal reminder: [ Free-text input ]
+```text
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  ← Back to Dashboard                                           [Settings]  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌────────────────┐  ┌─────────────────────────────────────────────────┐   │
+│  │  PARTY MODES   │  │  EQUIPPED FOCUS                                 │   │
+│  │  ─────────────  │  │  ┌──────────────────────────────────────────┐   │   │
+│  │  ▸ Practice    │  │  │  ⚔ Data Sufficiency       ⬢⬢⬢⬡⬡          │   │   │
+│  │    Timed Drills│  │  │  Your current focus area                  │   │   │
+│  │                │  │  ├──────────────────────────────────────────┤   │   │
+│  │  ▸ Learn       │  │  │  📖 Critical Reasoning    ⬢⬢⬡⬡⬡          │   │   │
+│  │    Techniques  │  │  │  Next recommended skill                  │   │   │
+│  │                │  │  └──────────────────────────────────────────┘   │   │
+│  │  ▸ Notes       │  │                                                 │   │
+│  │    Insights    │  │  TODAY'S MISSION                               │   │
+│  │                │  │  ┌──────────────────────────────────────────┐   │   │
+│  │                │  │  │  Focus: [ Verbal - CR           ]       │   │   │
+│  │  ─────────────  │  │  │  Reminder: [ Review wrong answers ]     │   │   │
+│  │  [View Skills] │  │  │  Notes: ____________________________    │   │   │
+│  └────────────────┘  │  └──────────────────────────────────────────┘   │   │
+│                      └─────────────────────────────────────────────────┘   │
+│                                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │  ATTRIBUTES                               CHARACTER PANEL           │   │
+│  │  ─────────────────────────────────        ─────────────────────     │   │
+│  │  ▸ STR  Quant      ████████░░  78%        ┌──────────────────┐     │   │
+│  │  ▸ INT  Verbal     ██████░░░░  62%        │                  │     │   │
+│  │  ▸ WIS  IR         ███████░░░  71%        │   [AVATAR]       │     │   │
+│  │  ▸ DEX  Speed      ████████░░  85%        │                  │     │   │
+│  │  ▸ CON  Streak     ██████████  7d         │   GMAT Student   │     │   │
+│  │                                            │   Lv. 12         │     │   │
+│  │  RESISTANCES (Weaknesses)                 │   ━━━━━━━━━░░░   │     │   │
+│  │  ─────────────────────────────────        │   2,450 / 3,800  │     │   │
+│  │  ✗ Geometry             52%               │                  │     │   │
+│  │  ✗ Sentence Correction  48%               │   🔥 7 day streak│     │   │
+│  │                                            │   📅 45 days     │     │   │
+│  │  AFFINITIES (Strengths)                   └──────────────────┘     │   │
+│  │  ─────────────────────────────────                                  │   │
+│  │  ✓ Number Theory        92%                                         │   │
+│  │  ✓ Critical Reasoning   88%                                         │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │  TIMELINE                                    MILESTONES              │   │
+│  │  ─────────────────────────────────          ──────────────────       │   │
+│  │  Days to Test: 45                           ✓ First Blood            │   │
+│  │  Readiness:    ████████░░  72%              ✓ 10 Questions           │   │
+│  │  Questions:    156                          ○ 50 Questions           │   │
+│  │  Accuracy:     74%                          ○ 100 Questions          │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
 
-**Quick Notes:**
-- A simple text area for jotting daily thoughts
-- Auto-saves to localStorage
-- Shows last 3 days of notes in a collapsible history
+---
 
-### Data Structure
+## Part 3: Dashboard Onboarding & Navigation
+
+### Your Girlfriend's Feedback (Implemented)
+
+**Problem**: "I don't know where to start" / "Hopping between every single one"
+
+**Solution**: Add a **Hero Navigation Card** at the top with 3 swipeable states:
+
+```text
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  ⟨  ●  ○  ○  ⟩                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │  👋 WELCOME TO GMAT MASTERY                                          │   │
+│  │  ─────────────────────────────────────────────────────────────────   │   │
+│  │  New here? Start with the basics.                                    │   │
+│  │                                                                       │   │
+│  │  1. Set your goals in Profile                                        │   │
+│  │  2. Learn a technique in the Learn section                           │   │
+│  │  3. Practice questions to earn XP                                    │   │
+│  │                                                                       │   │
+│  │  [ Start Learning ]                              [ Skip for now → ]  │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+**State 2: Continue Session** (appears after first practice)
+
+```text
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  ⟨  ○  ●  ○  ⟩                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │  ↩ PICK UP WHERE YOU LEFT OFF                                        │   │
+│  │  ─────────────────────────────────────────────────────────────────   │   │
+│  │  Last session: Data Sufficiency (3 hours ago)                        │   │
+│  │  Progress: 8/15 questions • 75% accuracy                             │   │
+│  │                                                                       │   │
+│  │  [ Continue Session ]                             [ Start Fresh → ]  │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+**State 3: Try Something New** (smart recommendation)
+
+```text
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  ⟨  ○  ○  ●  ⟩                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │  🎲 TRY SOMETHING NEW                                                │   │
+│  │  ─────────────────────────────────────────────────────────────────   │   │
+│  │  Based on your progress, we recommend:                               │   │
+│  │                                                                       │   │
+│  │  📊 Sentence Correction                                              │   │
+│  │  You haven't practiced this in 4 days. Your accuracy is 52%.         │   │
+│  │                                                                       │   │
+│  │  [ Practice Now ]                                   [ Show Another ] │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Part 4: Visual Design Specifications
+
+### FF7R-Inspired Styling (Keeping Matrix Green Theme)
+
+**Key Visual Elements:**
+
+| Element | Style |
+|---------|-------|
+| Borders | Double-line `border-2` with subtle glow |
+| Section Headers | Uppercase, tracked, with left border accent |
+| Progress Bars | Segmented style (not smooth gradient) |
+| Materia Slots | Diamond shapes (⬢ filled, ⬡ empty) |
+| Panel Separators | Horizontal lines with corner notches |
+| Typography | Monospace for stats, clean sans for text |
+
+**New CSS Classes:**
+
+```css
+/* FF7R Panel Frame */
+.ff7-panel {
+  @apply relative border-2 border-primary/60 bg-card/95 backdrop-blur-lg;
+  box-shadow: 
+    inset 0 0 20px hsl(var(--primary) / 0.1),
+    0 0 30px hsl(var(--primary) / 0.2);
+}
+
+/* Corner Brackets */
+.ff7-corners::before,
+.ff7-corners::after { /* Corner decorations */ }
+
+/* Segmented Progress Bar */
+.progress-segmented {
+  background: repeating-linear-gradient(
+    90deg,
+    hsl(var(--primary)) 0px,
+    hsl(var(--primary)) 8px,
+    transparent 8px,
+    transparent 10px
+  );
+}
+
+/* Materia Slot */
+.materia-slot {
+  @apply w-3 h-3 rotate-45 border border-primary/50;
+}
+.materia-slot.filled {
+  @apply bg-primary shadow-[0_0_8px_hsl(var(--primary))];
+}
+
+/* Section Header */
+.ff7-header {
+  @apply uppercase tracking-widest text-sm font-bold text-primary;
+  border-left: 3px solid hsl(var(--primary));
+  padding-left: 12px;
+}
+```
+
+---
+
+## Part 5: Technical Implementation
+
+### Files to Create
+
+| File | Purpose |
+|------|---------|
+| `src/components/FF7ProfilePanel.tsx` | Main character panel component |
+| `src/components/EquipmentSlot.tsx` | Current focus area with materia |
+| `src/components/AttributeBar.tsx` | RPG stat display (STR/INT etc) |
+| `src/components/HeroNavCard.tsx` | Dashboard onboarding carousel |
+| `src/components/MateriaIndicator.tsx` | Skill level diamond display |
+| `src/hooks/useSessionHistory.ts` | Track last session for "continue" |
+
+### Files to Modify
+
+| File | Changes |
+|------|---------|
+| `src/pages/ProfilePage.tsx` | Replace with FF7 panel layout |
+| `src/pages/Dashboard.tsx` | Add HeroNavCard above mode selector |
+| `src/index.css` | Add FF7R-inspired utility classes |
+| `src/hooks/useProfile.ts` | Add current focus tracking |
+| `src/types/profile.ts` | Add session history types |
+
+### New Types
+
 ```typescript
-interface DailyNote {
-  date: string; // YYYY-MM-DD
-  focusArea?: string;
-  personalReminder: string;
-  quickNotes: string;
-  createdAt: string;
-  updatedAt: string;
+interface SessionHistory {
+  lastSection: GMATSection | null;
+  lastType: QuestionType | null;
+  lastPracticeTime: string | null;
+  questionsInSession: number;
+  sessionAccuracy: number;
+}
+
+interface EquippedFocus {
+  primary: { skillId: string; progress: number } | null;
+  secondary: { skillId: string; progress: number } | null;
 }
 ```
 
 ---
 
-## File Changes Summary
+## Part 6: Implementation Order
 
-| File | Action |
-|------|--------|
-| `src/types/skills.ts` | **Create** - Skill definitions, categories, levels |
-| `src/hooks/useSkills.ts` | **Create** - Skill progress management, XP calculation |
-| `src/components/ProfileCard.tsx` | **Create** - Video game style party member panel |
-| `src/components/SkillBar.tsx` | **Create** - Individual skill progress bar |
-| `src/components/SkillsPanel.tsx` | **Create** - Full skills view with all categories |
-| `src/components/DailyMission.tsx` | **Create** - Today's goals and quick notes |
-| `src/pages/ProfilePage.tsx` | **Modify** - Replace current layout with enhanced components |
-| `src/pages/SkillsPage.tsx` | **Create** - Dedicated page for full skill tree view |
-| `src/types/profile.ts` | **Modify** - Add dailyNotes array and skill tracking |
-| `src/hooks/useProgress.ts` | **Modify** - Integrate skill XP on question completion |
-| `src/App.tsx` | **Modify** - Add `/skills` route |
-| `src/index.css` | **Modify** - Add RPG-style visual effects |
+| Phase | Task | Complexity |
+|-------|------|------------|
+| 1 | Add FF7R CSS utilities to index.css | Low |
+| 2 | Create `MateriaIndicator` component | Low |
+| 3 | Create `AttributeBar` component | Low |
+| 4 | Create `EquipmentSlot` component | Medium |
+| 5 | Create `FF7ProfilePanel` (main layout) | High |
+| 6 | Add `useSessionHistory` hook | Medium |
+| 7 | Create `HeroNavCard` with carousel | Medium |
+| 8 | Update Dashboard with HeroNavCard | Low |
+| 9 | Replace ProfilePage layout | Medium |
+| 10 | Polish animations and transitions | Medium |
 
 ---
 
-## Technical Details
+## Part 7: Mobile Responsiveness
 
-### Skill Type Definitions
-```typescript
-type SkillLevel = 'novice' | 'apprentice' | 'journeyman' | 'expert' | 'master';
+The FF7R layout will adapt:
 
-interface Skill {
-  id: string;
-  name: string;
-  category: SkillCategory;
-  description: string;
-  icon: string; // Lucide icon name
-  linkedQuestionTypes?: QuestionType[];
-  linkedSubTypes?: string[]; // From questionSubTypes.ts
-}
+**Desktop (lg+)**: Full 3-column layout as shown
+**Tablet (md)**: 2-column with stacked sections
+**Mobile (sm)**: Single column, vertical scroll with collapsible sections
 
-interface SkillProgress {
-  skillId: string;
-  xp: number;
-  level: SkillLevel;
-  questionsAttempted: number;
-  correctAnswers: number;
-  lastPracticed?: string;
-}
-```
-
-### Class Designation Logic
-Based on performance distribution:
-- **Quant Warrior**: Quantitative accuracy > Verbal by 10%+
-- **Verbal Virtuoso**: Verbal accuracy > Quantitative by 10%+
-- **IR Specialist**: IR accuracy highest with 20+ questions
-- **Speed Demon**: Average time under 75% of target
-- **GMAT Strategist**: Balanced performance (default)
-
-### RPG Stat Mapping
-| RPG Stat | GMAT Metric |
-|----------|-------------|
-| STR (Strength) | Quantitative accuracy |
-| INT (Intelligence) | Verbal accuracy |
-| WIS (Wisdom) | Integrated Reasoning accuracy |
-| DEX (Dexterity) | Average time performance |
-| CON (Constitution) | Current streak |
+Key breakpoint behavior:
+- Avatar moves from right column to top-center on mobile
+- Attributes grid becomes 2-column on mobile
+- Party modes sidebar becomes horizontal tabs on mobile
 
 ---
 
-## Visual Design Details
+## Summary
 
-### Color Scheme for Skill Levels
-- **Novice**: Gray (#6B7280)
-- **Apprentice**: Green (#10B981)
-- **Journeyman**: Blue (#3B82F6)
-- **Expert**: Purple (#8B5CF6)
-- **Master**: Gold (#F59E0B) with glow effect
+This redesign creates a cohesive RPG experience:
 
-### Profile Card Styling
-- Dark background with subtle gradient
-- Neon-style border (green primary)
-- Pixel-perfect spacing
-- Subtle hover animations
-- "Achievement unlocked" style notifications
-
----
-
-## Implementation Order
-
-1. **Types & Data** - Create skill types and data structures
-2. **useSkills Hook** - Build skill tracking logic with localStorage
-3. **SkillBar Component** - Visual skill progress bar
-4. **ProfileCard Component** - Main video game style card
-5. **DailyMission Component** - Today's goals and notes
-6. **Integrate with useProgress** - Link skill XP to question attempts
-7. **Update ProfilePage** - Assemble new components
-8. **SkillsPage** - Full skill tree view
-9. **Visual Polish** - Add animations and effects
-
----
-
-## Skills List (Complete)
-
-### Strategic Foundations
-1. **Adaptive Strategy** - Understanding how the CAT works and optimal pacing
-2. **POE Mastery** - Process of elimination techniques
-3. **Time Management** - Staying on pace and knowing when to guess
-
-### Quantitative Combat
-4. **Number Theory** - Primes, factors, divisibility, remainders
-5. **Arithmetic Mastery** - Percentages, ratios, rates, averages
-6. **Algebraic Equations** - Solving equations, systems, quadratics
-7. **Geometric Reasoning** - Shapes, angles, coordinate geometry
-8. **Probability & Counting** - Combinations, permutations, probability
-9. **Data Sufficiency Logic** - The unique GMAT question format
-
-### Verbal Warfare
-10. **Sentence Structure** - Grammar rules, SC techniques
-11. **Reading Tactics** - Passage mapping, main idea, inference
-12. **Argument Analysis** - CR premise/conclusion identification
-13. **Critical Logic** - Strengthen, weaken, assumption questions
-
-### Data Integration
-14. **Multi-Source Synthesis** - Combining info from multiple tabs
-15. **Visual Interpretation** - Charts, graphs, data visualization
-16. **Two-Part Reasoning** - Solving linked questions
-17. **Table Analysis** - Sorting and analyzing data tables
-
-### Mental Fortitude
-18. **Focus Endurance** - Maintaining concentration (tracked via session length)
-19. **Speed Under Pressure** - Performing quickly without sacrificing accuracy
-20. **Pattern Recognition** - Identifying question types and traps quickly
-
----
-
-## Dependencies
-
-No new npm dependencies required. Uses:
-- Existing UI components (Card, Progress, etc.)
-- Framer Motion for animations (already installed)
-- Lucide icons (already installed)
-- localStorage for persistence (existing pattern)
+1. **Profile becomes a character status screen** - immersive, detailed, game-like
+2. **Dashboard gains smart navigation** - solves the "where do I start" problem
+3. **Visual language stays Matrix-green** - but with FF7R structural inspiration
+4. **Session continuity** - pick up where you left off encourages daily practice
+5. **Recommendations** - "try something new" keeps learning diverse
