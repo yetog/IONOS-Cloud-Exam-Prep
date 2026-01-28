@@ -1,3 +1,5 @@
+import { GMATSection, QuestionType } from './gmat';
+
 export interface UserGoals {
   targetScore: number | null; // 205-805
   testDate: string | null; // ISO date
@@ -20,6 +22,21 @@ export interface TestInsights {
   accuracyTrend: 'up' | 'down' | 'stable';
 }
 
+// Session history for "continue where you left off"
+export interface SessionHistory {
+  lastSection: GMATSection | null;
+  lastType: QuestionType | null;
+  lastPracticeTime: string | null; // ISO date
+  questionsInSession: number;
+  sessionAccuracy: number;
+}
+
+// Equipped focus for active learning goals
+export interface EquippedFocus {
+  primary: { skillId: string; name: string; progress: number } | null;
+  secondary: { skillId: string; name: string; progress: number } | null;
+}
+
 export const DEFAULT_PROFILE: UserProfile = {
   displayName: 'GMAT Student',
   avatarUrl: null,
@@ -30,4 +47,12 @@ export const DEFAULT_PROFILE: UserProfile = {
     dailyQuestionGoal: 10,
     weeklyTimeGoal: 300, // 5 hours in minutes
   },
+};
+
+export const DEFAULT_SESSION_HISTORY: SessionHistory = {
+  lastSection: null,
+  lastType: null,
+  lastPracticeTime: null,
+  questionsInSession: 0,
+  sessionAccuracy: 0,
 };
