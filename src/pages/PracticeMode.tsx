@@ -11,6 +11,7 @@ import { Progress } from '@/components/ui/progress';
 import { useQuestions } from '@/hooks/useQuestions';
 import { useProgress } from '@/hooks/useProgress';
 import { useNotes } from '@/hooks/useNotes';
+import { useGameSounds } from '@/hooks/useGameSounds';
 import { GMATSection, SECTION_INFO, Question } from '@/types/gmat';
 import { QuestionCard } from '@/components/QuestionCard';
 import { AnalysisPanel } from '@/components/AnalysisPanel';
@@ -30,6 +31,7 @@ export default function PracticeMode() {
   const { progress, recordAttempt } = useProgress();
   const { addNote } = useNotes();
   const { toast } = useToast();
+  const { playCorrect, playIncorrect, playXpGain, playClick } = useGameSounds();
 
   const [state, setState] = useState<PracticeState>('ready');
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
@@ -87,6 +89,13 @@ export default function PracticeMode() {
     setTimerActive(false);
     const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
 
+    // Play sound feedback
+    if (isCorrect) {
+      playCorrect();
+    } else {
+      playIncorrect();
+    }
+
     // Record attempt
     const xpEarned = recordAttempt(
       {
@@ -101,6 +110,11 @@ export default function PracticeMode() {
       currentQuestion.type,
       currentQuestion.targetTime
     );
+
+    // Play XP gain sound after a short delay
+    setTimeout(() => {
+      playXpGain();
+    }, 300);
 
     setLastXPEarned(xpEarned);
     setAnsweredIds(prev => [...prev, currentQuestion.id]);

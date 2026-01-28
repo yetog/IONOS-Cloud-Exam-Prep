@@ -13,14 +13,18 @@ import {
   Settings,
   Zap,
   CheckCircle,
-  Circle
+  Circle,
+  Volume2,
+  VolumeX
 } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Progress } from '@/components/ui/progress';
 import { Button } from '@/components/ui/button';
+import { Slider } from '@/components/ui/slider';
 import { useProfile } from '@/hooks/useProfile';
 import { useProgress } from '@/hooks/useProgress';
 import { useSkills } from '@/hooks/useSkills';
+import { useGameSounds } from '@/hooks/useGameSounds';
 import { AttributeBar } from './AttributeBar';
 import { EquipmentSlot } from './EquipmentSlot';
 import { MateriaIndicator } from './MateriaIndicator';
@@ -75,6 +79,13 @@ export function FF7ProfilePanel() {
   } = useProfile();
   const { progress, xpProgress } = useProgress();
   const { topSkills, getSkillProgress } = useSkills();
+  const { 
+    soundEnabled, 
+    soundVolume, 
+    toggleSound, 
+    setVolume, 
+    playClick 
+  } = useGameSounds();
 
   // Calculate section accuracies
   const quantStats = progress.sectionStats['quantitative'];
@@ -123,10 +134,39 @@ export function FF7ProfilePanel() {
               Back to Dashboard
             </Button>
           </Link>
-          <Button variant="ghost" size="sm" className="gap-2">
-            <Settings className="h-4 w-4" />
-            Settings
-          </Button>
+          <div className="flex items-center gap-2">
+            {/* Sound Settings */}
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-card/50 border border-border/50">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8"
+                onClick={() => {
+                  toggleSound();
+                  playClick();
+                }}
+              >
+                {soundEnabled ? (
+                  <Volume2 className="h-4 w-4 text-primary" />
+                ) : (
+                  <VolumeX className="h-4 w-4 text-muted-foreground" />
+                )}
+              </Button>
+              {soundEnabled && (
+                <Slider
+                  value={[soundVolume * 100]}
+                  onValueChange={(v) => setVolume(v[0] / 100)}
+                  max={100}
+                  step={5}
+                  className="w-20"
+                />
+              )}
+            </div>
+            <Button variant="ghost" size="sm" className="gap-2">
+              <Settings className="h-4 w-4" />
+              Settings
+            </Button>
+          </div>
         </motion.div>
 
         {/* Main FF7R Grid Layout */}
