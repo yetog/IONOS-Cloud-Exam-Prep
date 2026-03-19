@@ -1,6 +1,18 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { icons, ChevronDown, ChevronRight, Award } from 'lucide-react';
+import {
+  ChevronDown, ChevronRight, Award,
+  Target, Calculator, BookOpen, BarChart3, Brain,
+  Compass, XCircle, Timer, Hash, Percent, Variable,
+  Triangle, Dice5, GitBranch, Type, FileText, MessageSquare, Lightbulb,
+} from 'lucide-react';
+
+// Static map of icon name -> component (avoids importing the entire lucide icons bundle)
+const ICON_MAP: Record<string, React.ElementType> = {
+  Target, Calculator, BookOpen, BarChart3, Brain,
+  Compass, XCircle, Timer, Hash, Percent, Variable,
+  Triangle, Dice5, GitBranch, Type, FileText, MessageSquare, Lightbulb,
+};
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { useSkills } from '@/hooks/useSkills';
@@ -13,8 +25,8 @@ export function SkillsPanel() {
   const { skillsByCategory, getSkillProgress, totalSkillXP, masteredSkillsCount } = useSkills();
   const [expandedCategories, setExpandedCategories] = useState<Record<SkillCategory, boolean>>({
     'strategic-foundations': true,
-    'quantitative-combat': true,
-    'verbal-warfare': true,
+    'Unit 1: Cloud Basics-combat': true,
+    'Unit 2: Core Services-warfare': true,
     'data-integration': true,
     'mental-fortitude': true,
   });
@@ -73,7 +85,7 @@ export function SkillsPanel() {
         const categoryProgress = getCategoryProgress(categoryId);
         const skills = skillsByCategory[categoryId];
         const isExpanded = expandedCategories[categoryId];
-        const IconComponent = icons[categoryInfo.icon as keyof typeof icons];
+        const IconComponent = ICON_MAP[categoryInfo.icon];
 
         return (
           <Card key={categoryId} className="glass overflow-hidden">
@@ -132,3 +144,4 @@ export function SkillsPanel() {
     </div>
   );
 }
+

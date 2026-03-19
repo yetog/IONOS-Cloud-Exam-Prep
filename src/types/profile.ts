@@ -1,4 +1,4 @@
-import { GMATSection, QuestionType } from './gmat';
+import { IONOSSection, QuestionType } from './gmat';
 
 export interface UserGoals {
   targetScore: number | null; // 205-805
@@ -24,7 +24,7 @@ export interface TestInsights {
 
 // Session history for "continue where you left off"
 export interface SessionHistory {
-  lastSection: GMATSection | null;
+  lastSection: IONOSSection | null;
   lastType: QuestionType | null;
   lastPracticeTime: string | null; // ISO date
   questionsInSession: number;
@@ -56,3 +56,4 @@ export const DEFAULT_SESSION_HISTORY: SessionHistory = {
   questionsInSession: 0,
   sessionAccuracy: 0,
 };
+

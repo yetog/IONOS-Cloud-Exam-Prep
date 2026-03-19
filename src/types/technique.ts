@@ -1,9 +1,9 @@
-import { GMATSection, QuestionType } from './gmat';
+import { IONOSSection, QuestionType } from './gmat';
 
 // Technique/Strategy content for the Learn section
 export interface Technique {
   id: string;
-  section: GMATSection;
+  section: IONOSSection;
   questionType: QuestionType;
   title: string;
   description: string;
@@ -27,10 +27,10 @@ export interface TrapInfo {
 
 // Technique data organized by question type
 export const TECHNIQUES: Record<QuestionType, Technique> = {
-  // Quantitative
+  // Unit 1: Cloud Basics
   'problem-solving': {
     id: 'ps',
-    section: 'quantitative',
+    section: 'unit1',
     questionType: 'problem-solving',
     title: 'Problem Solving',
     description: 'Standard multiple-choice math questions testing arithmetic, algebra, geometry, and word problems.',
@@ -88,7 +88,7 @@ export const TECHNIQUES: Record<QuestionType, Technique> = {
   },
   'data-sufficiency': {
     id: 'ds',
-    section: 'quantitative',
+    section: 'unit1',
     questionType: 'data-sufficiency',
     title: 'Data Sufficiency',
     description: 'Determine whether given statements provide enough information to answer a question - unique to the GMAT.',
@@ -142,10 +142,10 @@ export const TECHNIQUES: Record<QuestionType, Technique> = {
     timeManagement: 'Target 2 minutes. The AD/BCE split saves time by eliminating answer choices systematically.',
     exampleApproach: 'Read the question stem and understand exactly what\'s being asked. Use the AD/BCE elimination. Test values when unsure. Remember you\'re testing sufficiency, not solving.'
   },
-  // Verbal
+  // Unit 2: Core Services
   'reading-comprehension': {
     id: 'rc',
-    section: 'verbal',
+    section: 'unit2',
     questionType: 'reading-comprehension',
     title: 'Reading Comprehension',
     description: 'Analyze passages and answer questions about main idea, details, inferences, and author\'s purpose.',
@@ -203,7 +203,7 @@ export const TECHNIQUES: Record<QuestionType, Technique> = {
   },
   'critical-reasoning': {
     id: 'cr',
-    section: 'verbal',
+    section: 'unit2',
     questionType: 'critical-reasoning',
     title: 'Critical Reasoning',
     description: 'Analyze arguments by identifying conclusions, premises, assumptions, and logical relationships.',
@@ -261,7 +261,7 @@ export const TECHNIQUES: Record<QuestionType, Technique> = {
   },
   'sentence-correction': {
     id: 'sc',
-    section: 'verbal',
+    section: 'unit2',
     questionType: 'sentence-correction',
     title: 'Sentence Correction',
     description: 'Choose the most grammatically correct and clear version of a sentence.',
@@ -314,13 +314,13 @@ export const TECHNIQUES: Record<QuestionType, Technique> = {
         howToAvoid: 'Check who/what the modifier describes'
       }
     ],
-    timeManagement: '1-1.5 minutes per question. These should be among your fastest verbal questions.',
+    timeManagement: '1-1.5 minutes per question. These should be among your fastest Unit 2: Core Services questions.',
     exampleApproach: 'Read the original. Identify what\'s being tested by comparing choices. Eliminate based on grammar rules. Verify the remaining answer is clear and logical.'
   },
-  // Integrated Reasoning
+  // Unit 3: Management
   'multi-source-reasoning': {
     id: 'msr',
-    section: 'integrated-reasoning',
+    section: 'unit3',
     questionType: 'multi-source-reasoning',
     title: 'Multi-Source Reasoning',
     description: 'Analyze information from multiple tabs (emails, reports, articles) to answer questions.',
@@ -363,7 +363,7 @@ export const TECHNIQUES: Record<QuestionType, Technique> = {
   },
   'graphics-interpretation': {
     id: 'gi',
-    section: 'integrated-reasoning',
+    section: 'unit3',
     questionType: 'graphics-interpretation',
     title: 'Graphics Interpretation',
     description: 'Analyze graphs, charts, and visual data displays to complete statements.',
@@ -406,7 +406,7 @@ export const TECHNIQUES: Record<QuestionType, Technique> = {
   },
   'two-part-analysis': {
     id: 'tpa',
-    section: 'integrated-reasoning',
+    section: 'unit3',
     questionType: 'two-part-analysis',
     title: 'Two-Part Analysis',
     description: 'Select two answers that together satisfy the requirements of the problem.',
@@ -444,12 +444,12 @@ export const TECHNIQUES: Record<QuestionType, Technique> = {
         howToAvoid: 'Re-read to understand the relationship'
       }
     ],
-    timeManagement: '2-3 minutes. These can be quant or verbal in nature.',
+    timeManagement: '2-3 minutes. These can be quant or Unit 2: Core Services in nature.',
     exampleApproach: 'Understand what each column asks. Find the relationship between parts. Solve systematically. Verify both answers work together.'
   },
   'table-analysis': {
     id: 'ta',
-    section: 'integrated-reasoning',
+    section: 'unit3',
     questionType: 'table-analysis',
     title: 'Table Analysis',
     description: 'Sort and analyze data tables to determine if statements are true or false.',
@@ -556,3 +556,4 @@ export const RC_QUESTION_TYPES: RCQuestionType[] = [
     strategy: 'Look at word choices throughout. Is the tone neutral, critical, enthusiastic, skeptical? Avoid extreme answers.',
   },
 ];
+

@@ -5,8 +5,8 @@ export type SkillLevel = 'novice' | 'apprentice' | 'journeyman' | 'expert' | 'ma
 
 export type SkillCategory = 
   | 'strategic-foundations'
-  | 'quantitative-combat'
-  | 'verbal-warfare'
+  | 'Unit 1: Cloud Basics-combat'
+  | 'Unit 2: Core Services-warfare'
   | 'data-integration'
   | 'mental-fortitude';
 
@@ -58,13 +58,13 @@ export const SKILL_CATEGORIES: Record<SkillCategory, { name: string; icon: strin
     icon: 'Target',
     description: 'Core test-taking strategies and time management',
   },
-  'quantitative-combat': {
-    name: 'Quantitative Combat',
+  'Unit 1: Cloud Basics-combat': {
+    name: 'Unit 1: Cloud Basics Combat',
     icon: 'Calculator',
     description: 'Mathematical problem-solving and data analysis',
   },
-  'verbal-warfare': {
-    name: 'Verbal Warfare',
+  'Unit 2: Core Services-warfare': {
+    name: 'Unit 2: Core Services Warfare',
     icon: 'BookOpen',
     description: 'Reading, reasoning, and grammar mastery',
   },
@@ -105,11 +105,11 @@ export const SKILLS: Skill[] = [
     icon: 'Timer',
   },
 
-  // Quantitative Combat
+  // Unit 1: Cloud Basics Combat
   {
     id: 'number-theory',
     name: 'Number Theory',
-    category: 'quantitative-combat',
+    category: 'Unit 1: Cloud Basics-combat',
     description: 'Primes, factors, divisibility, remainders',
     icon: 'Hash',
     linkedSubTypes: ['ps-number-properties', 'ds-number-properties'],
@@ -117,7 +117,7 @@ export const SKILLS: Skill[] = [
   {
     id: 'arithmetic-mastery',
     name: 'Arithmetic Mastery',
-    category: 'quantitative-combat',
+    category: 'Unit 1: Cloud Basics-combat',
     description: 'Percentages, ratios, rates, averages',
     icon: 'Percent',
     linkedSubTypes: ['ps-percentage-ratio', 'ps-rate-work'],
@@ -125,7 +125,7 @@ export const SKILLS: Skill[] = [
   {
     id: 'algebraic-equations',
     name: 'Algebraic Equations',
-    category: 'quantitative-combat',
+    category: 'Unit 1: Cloud Basics-combat',
     description: 'Solving equations, systems, quadratics',
     icon: 'Variable',
     linkedSubTypes: ['ps-algebra', 'ds-algebra'],
@@ -133,7 +133,7 @@ export const SKILLS: Skill[] = [
   {
     id: 'geometric-reasoning',
     name: 'Geometric Reasoning',
-    category: 'quantitative-combat',
+    category: 'Unit 1: Cloud Basics-combat',
     description: 'Shapes, angles, coordinate geometry',
     icon: 'Triangle',
     linkedSubTypes: ['ps-geometry', 'ds-geometry'],
@@ -141,7 +141,7 @@ export const SKILLS: Skill[] = [
   {
     id: 'probability-counting',
     name: 'Probability & Counting',
-    category: 'quantitative-combat',
+    category: 'Unit 1: Cloud Basics-combat',
     description: 'Combinations, permutations, probability',
     icon: 'Dice5',
     linkedSubTypes: ['ps-probability-counting'],
@@ -149,18 +149,18 @@ export const SKILLS: Skill[] = [
   {
     id: 'data-sufficiency-logic',
     name: 'Data Sufficiency Logic',
-    category: 'quantitative-combat',
+    category: 'Unit 1: Cloud Basics-combat',
     description: 'The unique GMAT question format',
     icon: 'GitBranch',
     linkedQuestionTypes: ['data-sufficiency'],
     linkedSubTypes: ['ds-value', 'ds-yes-no'],
   },
 
-  // Verbal Warfare
+  // Unit 2: Core Services Warfare
   {
     id: 'sentence-structure',
     name: 'Sentence Structure',
-    category: 'verbal-warfare',
+    category: 'Unit 2: Core Services-warfare',
     description: 'Grammar rules, SC techniques',
     icon: 'Type',
     linkedQuestionTypes: ['sentence-correction'],
@@ -169,7 +169,7 @@ export const SKILLS: Skill[] = [
   {
     id: 'reading-tactics',
     name: 'Reading Tactics',
-    category: 'verbal-warfare',
+    category: 'Unit 2: Core Services-warfare',
     description: 'Passage mapping, main idea, inference',
     icon: 'FileText',
     linkedQuestionTypes: ['reading-comprehension'],
@@ -178,7 +178,7 @@ export const SKILLS: Skill[] = [
   {
     id: 'argument-analysis',
     name: 'Argument Analysis',
-    category: 'verbal-warfare',
+    category: 'Unit 2: Core Services-warfare',
     description: 'CR premise/conclusion identification',
     icon: 'MessageSquare',
     linkedQuestionTypes: ['critical-reasoning'],
@@ -187,7 +187,7 @@ export const SKILLS: Skill[] = [
   {
     id: 'critical-logic',
     name: 'Critical Logic',
-    category: 'verbal-warfare',
+    category: 'Unit 2: Core Services-warfare',
     description: 'Strengthen, weaken, assumption questions',
     icon: 'Lightbulb',
     linkedQuestionTypes: ['critical-reasoning'],
@@ -314,3 +314,4 @@ export function calculateSkillXP(
   
   return xp;
 }
+

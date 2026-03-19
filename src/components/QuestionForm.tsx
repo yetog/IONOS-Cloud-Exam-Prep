@@ -13,7 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Question, GMATSection, QuestionType, SECTION_INFO } from '@/types/gmat';
+import { Question, IONOSSection, QuestionType, SECTION_INFO } from '@/types/gmat';
 
 interface QuestionFormProps {
   initialData?: Partial<Question>;
@@ -28,7 +28,7 @@ const DIFFICULTY_TIMES: Record<string, number> = {
 };
 
 export function QuestionForm({ initialData, onSave, onCancel }: QuestionFormProps) {
-  const [section, setSection] = useState<GMATSection>(initialData?.section || 'quantitative');
+  const [section, setSection] = useState<IONOSSection>(initialData?.section || 'unit1');
   const [type, setType] = useState<QuestionType>(initialData?.type || 'problem-solving');
   const [difficulty, setDifficulty] = useState<'easy' | 'medium' | 'hard'>(initialData?.difficulty || 'medium');
   const [question, setQuestion] = useState(initialData?.question || '');
@@ -103,14 +103,14 @@ export function QuestionForm({ initialData, onSave, onCancel }: QuestionFormProp
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="space-y-2">
                 <Label>Section</Label>
-                <Select value={section} onValueChange={(v) => setSection(v as GMATSection)}>
+                <Select value={section} onValueChange={(v) => setSection(v as IONOSSection)}>
                   <SelectTrigger>
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="quantitative">Quantitative</SelectItem>
-                    <SelectItem value="verbal">Verbal</SelectItem>
-                    <SelectItem value="integrated-reasoning">Integrated Reasoning</SelectItem>
+                    <SelectItem value="Unit 1: Cloud Basics">Unit 1: Cloud Basics</SelectItem>
+                    <SelectItem value="Unit 2: Core Services">Unit 2: Core Services</SelectItem>
+                    <SelectItem value="integrated-reasoning">Unit 3: Management</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -274,3 +274,4 @@ export function QuestionForm({ initialData, onSave, onCancel }: QuestionFormProp
     </motion.div>
   );
 }
+

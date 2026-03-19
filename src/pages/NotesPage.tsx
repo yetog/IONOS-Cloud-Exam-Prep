@@ -13,7 +13,7 @@ import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { useNotes } from '@/hooks/useNotes';
-import { SECTION_INFO, GMATSection, QuestionType } from '@/types/gmat';
+import { SECTION_INFO, IONOSSection, QuestionType } from '@/types/gmat';
 import { UserNote } from '@/types/notes';
 import { cn } from '@/lib/utils';
 
@@ -39,7 +39,7 @@ const noteTypeConfig = {
 export default function NotesPage() {
   const { notes, addNote, updateNote, deleteNote, getFilteredNotes, getAllTags } = useNotes();
   const [searchQuery, setSearchQuery] = useState('');
-  const [sectionFilter, setSectionFilter] = useState<GMATSection | 'all'>('all');
+  const [sectionFilter, setSectionFilter] = useState<IONOSSection | 'all'>('all');
   const [typeFilter, setTypeFilter] = useState<UserNote['type'] | 'all'>('all');
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
   const [editingNote, setEditingNote] = useState<UserNote | null>(null);
@@ -123,7 +123,7 @@ export default function NotesPage() {
             />
           </div>
           <div className="flex gap-2">
-            <Select value={sectionFilter} onValueChange={(v) => setSectionFilter(v as GMATSection | 'all')}>
+            <Select value={sectionFilter} onValueChange={(v) => setSectionFilter(v as IONOSSection | 'all')}>
               <SelectTrigger className="w-40 bg-secondary border-border">
                 <SelectValue placeholder="Section" />
               </SelectTrigger>
@@ -278,7 +278,7 @@ function NoteForm({ initialData, onSubmit, onCancel }: NoteFormProps) {
   const [title, setTitle] = useState(initialData?.title || '');
   const [content, setContent] = useState(initialData?.content || '');
   const [type, setType] = useState<UserNote['type']>(initialData?.type || 'insight');
-  const [section, setSection] = useState<GMATSection | ''>(initialData?.section || '');
+  const [section, setSection] = useState<IONOSSection | ''>(initialData?.section || '');
   const [tagsInput, setTagsInput] = useState(initialData?.tags.join(', ') || '');
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -331,7 +331,7 @@ function NoteForm({ initialData, onSubmit, onCancel }: NoteFormProps) {
         </div>
         <div>
           <label className="text-sm font-medium text-foreground mb-1 block">Section (optional)</label>
-          <Select value={section} onValueChange={(v) => setSection(v as GMATSection | '')}>
+          <Select value={section} onValueChange={(v) => setSection(v as IONOSSection | '')}>
             <SelectTrigger className="bg-secondary border-border">
               <SelectValue placeholder="Select section" />
             </SelectTrigger>
@@ -364,3 +364,4 @@ function NoteForm({ initialData, onSubmit, onCancel }: NoteFormProps) {
     </form>
   );
 }
+

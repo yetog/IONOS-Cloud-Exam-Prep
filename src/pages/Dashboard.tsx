@@ -4,7 +4,7 @@ import { useProgress } from '@/hooks/useProgress';
 import { useQuestions } from '@/hooks/useQuestions';
 import { Card, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
-import { SECTION_INFO, GMATSection } from '@/types/gmat';
+import { SECTION_INFO, IONOSSection } from '@/types/gmat';
 import { SectionCard } from '@/components/SectionCard';
 import { StatsCard } from '@/components/StatsCard';
 import { AchievementBadge } from '@/components/AchievementBadge';
@@ -33,7 +33,7 @@ export default function Dashboard() {
   const { progress, achievements, xpProgress, getSectionAccuracy } = useProgress();
   const { getQuestionCount } = useQuestions();
 
-  const sections: GMATSection[] = ['quantitative', 'verbal', 'integrated-reasoning'];
+  const sections: IONOSSection[] = ['unit1', 'unit2', 'unit3'];
 
   const recentAchievements = ACHIEVEMENTS.filter(a => 
     achievements.unlocked.includes(a.id)
@@ -52,10 +52,10 @@ export default function Dashboard() {
           className="mb-8"
         >
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
-            GMAT <span className="text-primary text-glow">Mastery</span>
+            IONOS <span className="text-primary text-glow">Exam Prep</span>
           </h1>
           <p className="text-muted-foreground text-lg">
-            Train like a champion. Think like a strategist.
+            Execute your rapid 3-Day Foundational Cram Strategy.
           </p>
         </motion.div>
 
@@ -155,74 +155,87 @@ export default function Dashboard() {
             <ModeSelector />
           </motion.div>
 
-          {/* Quick Access Cards */}
+          {/* Quick Access Cards - Study Library */}
           <motion.div variants={item}>
             <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-              <Zap className="w-5 h-5 text-primary" />
-              Quick Access
+              <Sparkles className="w-5 h-5 text-primary" />
+              The Study Library
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              <Link to="/tips">
-                <Card className="glass hover-lift cursor-pointer group">
+              <Link to="/study/cram-strategy">
+                <Card className="glass hover-lift cursor-pointer group border-primary/30">
                   <CardContent className="p-4 flex items-center gap-3">
                     <div className="p-2 rounded-lg bg-warning/20">
-                      <Lightbulb className="w-5 h-5 text-warning" />
+                      <Calendar className="w-5 h-5 text-warning" />
                     </div>
                     <div>
-                      <p className="font-medium text-foreground group-hover:text-primary transition-colors">10 Quick Tips</p>
-                      <p className="text-xs text-muted-foreground">Scoring strategies</p>
+                      <p className="font-medium text-foreground group-hover:text-primary transition-colors">3-Day Plan</p>
+                      <p className="text-xs text-muted-foreground">The Cram Strategy</p>
                     </div>
                   </CardContent>
                 </Card>
               </Link>
-              <Link to="/test-day">
-                <Card className="glass hover-lift cursor-pointer group">
-                  <CardContent className="p-4 flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-primary/20">
-                      <Calendar className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-foreground group-hover:text-primary transition-colors">Test Day Prep</p>
-                      <p className="text-xs text-muted-foreground">Logistics & checklists</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-              <Link to="/reference">
-                <Card className="glass hover-lift cursor-pointer group">
-                  <CardContent className="p-4 flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-primary/20">
-                      <Calculator className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-foreground group-hover:text-primary transition-colors">Math Reference</p>
-                      <p className="text-xs text-muted-foreground">Formulas & rules</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-              <Link to="/about">
+              <Link to="/study/guides">
                 <Card className="glass hover-lift cursor-pointer group">
                   <CardContent className="p-4 flex items-center gap-3">
                     <div className="p-2 rounded-lg bg-primary/20">
                       <Info className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <p className="font-medium text-foreground group-hover:text-primary transition-colors">About This App</p>
-                      <p className="text-xs text-muted-foreground">Mission & philosophy</p>
+                      <p className="font-medium text-foreground group-hover:text-primary transition-colors">Study Guides</p>
+                      <p className="text-xs text-muted-foreground">Read Units 1, 2, & 3</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link to="/study/flashcards">
+                <Card className="glass hover-lift cursor-pointer group border-primary/30">
+                  <CardContent className="p-4 flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-primary/20">
+                      <Zap className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-foreground group-hover:text-primary transition-colors">Hard Facts</p>
+                      <p className="text-xs text-muted-foreground">Flashcard Review</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link to="/study/tactics">
+                <Card className="glass hover-lift cursor-pointer group border-destructive/20">
+                  <CardContent className="p-4 flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-destructive/10">
+                      <Target className="w-5 h-5 text-destructive" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-foreground group-hover:text-destructive transition-colors">The Tactics</p>
+                      <p className="text-xs text-muted-foreground">Tricks & Case Studies</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link to="/study/fun-facts">
+                <Card className="glass hover-lift cursor-pointer group">
+                  <CardContent className="p-4 flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-primary/20">
+                      <Lightbulb className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-foreground group-hover:text-primary transition-colors">High IQ Facts</p>
+                      <p className="text-xs text-muted-foreground">Connect the Concepts</p>
                     </div>
                   </CardContent>
                 </Card>
               </Link>
               <Link to="/profile">
-                <Card className="glass hover-lift cursor-pointer group border-primary/30">
+                <Card className="glass hover-lift cursor-pointer group">
                   <CardContent className="p-4 flex items-center gap-3">
                     <div className="p-2 rounded-lg bg-primary/20">
                       <User className="w-5 h-5 text-primary" />
                     </div>
                     <div>
                       <p className="font-medium text-foreground group-hover:text-primary transition-colors">My Profile</p>
-                      <p className="text-xs text-muted-foreground">Goals & insights</p>
+                      <p className="text-xs text-muted-foreground">Check Achievements</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -328,3 +341,4 @@ export default function Dashboard() {
     </div>
   );
 }
+

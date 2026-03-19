@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { TECHNIQUES, PASSAGE_TYPES, RC_QUESTION_TYPES } from '@/types/technique';
-import { GMATSection, QuestionType, SECTION_INFO } from '@/types/gmat';
+import { IONOSSection, QuestionType, SECTION_INFO } from '@/types/gmat';
 import { DSFlowChart } from '@/components/DSFlowChart';
 import { SubTypeBreakdown } from '@/components/SubTypeBreakdown';
 import { WorkedExample } from '@/components/WorkedExample';
@@ -22,11 +22,11 @@ import {
   IR_MSR_SUB_TYPES
 } from '@/types/questionSubTypes';
 export default function TechniqueDetailPage() {
-  const { section, type } = useParams<{ section: GMATSection; type: QuestionType }>();
+  const { section, type } = useParams<{ section: IONOSSection; type: QuestionType }>();
   const navigate = useNavigate();
 
   const technique = type ? TECHNIQUES[type as QuestionType] : null;
-  const sectionInfo = section ? SECTION_INFO[section as GMATSection] : null;
+  const sectionInfo = section ? SECTION_INFO[section as IONOSSection] : null;
 
   if (!technique || !sectionInfo) {
     return (
@@ -258,3 +258,4 @@ export default function TechniqueDetailPage() {
     </div>
   );
 }
+

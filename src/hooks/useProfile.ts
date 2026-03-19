@@ -2,7 +2,7 @@ import { useCallback, useMemo } from 'react';
 import { useLocalStorage } from './useLocalStorage';
 import { useProgress } from './useProgress';
 import { UserProfile, UserGoals, TestInsights, DEFAULT_PROFILE } from '@/types/profile';
-import { GMATSection, SECTION_INFO } from '@/types/gmat';
+import { IONOSSection, SECTION_INFO } from '@/types/gmat';
 
 export function useProfile() {
   const [profile, setProfile] = useLocalStorage<UserProfile>('gmat-profile', DEFAULT_PROFILE);
@@ -60,7 +60,7 @@ export function useProfile() {
 
   // Calculate test insights
   const insights = useMemo((): TestInsights => {
-    const sections: GMATSection[] = ['quantitative', 'verbal', 'integrated-reasoning'];
+    const sections: IONOSSection[] = ['unit1', 'unit2', 'unit3'];
     
     // Find strongest and weakest sections (minimum 5 questions)
     const sectionData = sections
@@ -138,3 +138,4 @@ export function useProfile() {
     readinessScore,
   };
 }
+

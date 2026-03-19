@@ -9,7 +9,7 @@ import { useQuestions } from '@/hooks/useQuestions';
 import { QuestionForm } from '@/components/QuestionForm';
 import { MarkdownImporter } from '@/components/MarkdownImporter';
 import { QuestionTable } from '@/components/QuestionTable';
-import { Question, GMATSection } from '@/types/gmat';
+import { Question, IONOSSection } from '@/types/gmat';
 import { useToast } from '@/hooks/use-toast';
 import {
   Dialog,
@@ -46,10 +46,10 @@ export default function QuestionBankPage() {
 
   // Stats
   const stats = useMemo(() => {
-    const bySection: Record<GMATSection, { total: number; custom: number }> = {
-      quantitative: { total: 0, custom: 0 },
-      verbal: { total: 0, custom: 0 },
-      'integrated-reasoning': { total: 0, custom: 0 },
+    const bySection: Record<IONOSSection, { total: number; custom: number }> = {
+      'unit1': { total: 0, custom: 0 },
+      'unit2': { total: 0, custom: 0 },
+      'unit3': { total: 0, custom: 0 },
     };
 
     questions.forEach((q) => {
@@ -162,9 +162,9 @@ export default function QuestionBankPage() {
             <Card className="glass">
               <CardContent className="p-4 text-center">
                 <p className="text-2xl font-bold text-foreground">
-                  {stats.quantitative.total} / {stats.verbal.total} / {stats['integrated-reasoning'].total}
+                  {stats['unit1'].total} / {stats['unit2'].total} / {stats['unit3'].total}
                 </p>
-                <p className="text-xs text-muted-foreground">Quant / Verbal / IR</p>
+                <p className="text-xs text-muted-foreground">Unit 1 / Unit 2 / Unit 3</p>
               </CardContent>
             </Card>
             <Card className="glass">
@@ -304,3 +304,4 @@ export default function QuestionBankPage() {
     </div>
   );
 }
+

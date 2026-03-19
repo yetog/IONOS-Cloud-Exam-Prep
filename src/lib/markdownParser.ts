@@ -1,4 +1,4 @@
-import { Question, GMATSection, QuestionType } from '@/types/gmat';
+import { Question, IONOSSection, QuestionType } from '@/types/gmat';
 
 interface ParsedQuestion {
   question: Omit<Question, 'id'>;
@@ -12,11 +12,11 @@ interface ParseResult {
   globalErrors: string[];
 }
 
-const VALID_SECTIONS: GMATSection[] = ['quantitative', 'verbal', 'integrated-reasoning'];
-const VALID_TYPES: Record<GMATSection, QuestionType[]> = {
-  'quantitative': ['problem-solving', 'data-sufficiency'],
-  'verbal': ['reading-comprehension', 'critical-reasoning', 'sentence-correction'],
-  'integrated-reasoning': ['multi-source-reasoning', 'graphics-interpretation', 'two-part-analysis', 'table-analysis'],
+const VALID_SECTIONS: IONOSSection[] = ['unit1', 'unit2', 'unit3'];
+const VALID_TYPES: Record<IONOSSection, QuestionType[]> = {
+  'unit1': ['problem-solving', 'data-sufficiency'],
+  'unit2': ['reading-comprehension', 'critical-reasoning', 'sentence-correction'],
+  'unit3': ['multi-source-reasoning', 'graphics-interpretation', 'two-part-analysis', 'table-analysis'],
 };
 
 function parseFrontmatter(content: string): { frontmatter: Record<string, string>; body: string } {
@@ -103,7 +103,7 @@ function parseSingleQuestion(content: string, index: number): ParsedQuestion {
   const { frontmatter, body } = parseFrontmatter(content);
 
   // Validate section
-  const section = frontmatter.section?.toLowerCase() as GMATSection;
+  const section = frontmatter.section?.toLowerCase() as IONOSSection;
   if (!section) {
     errors.push('Missing required field: section');
   } else if (!VALID_SECTIONS.includes(section)) {
@@ -175,7 +175,7 @@ function parseSingleQuestion(content: string, index: number): ParsedQuestion {
 
   // Build question object
   const question: Omit<Question, 'id'> = {
-    section: section || 'quantitative',
+    section: section || 'unit1',
     type: type || 'problem-solving',
     difficulty: difficulty || 'medium',
     question: questionText || '',
@@ -233,11 +233,11 @@ export function parseMarkdown(markdown: string): ParseResult {
   };
 }
 
-export function generateMarkdownTemplate(section?: GMATSection, type?: QuestionType): string {
-  const sectionValue = section || 'quantitative';
+export function generateMarkdownTemplate(section?: IONOSSection, type?: QuestionType): string {
+  const sectionValue = section || 'unit1';
   const typeValue = type || 'problem-solving';
   const difficulty = 'medium';
-  const targetTime = sectionValue === 'integrated-reasoning' ? 150 : 90;
+  const targetTime = sectionValue === 'unit3' ? 150 : 90;
 
   return `---
 section: ${sectionValue}
@@ -309,3 +309,4 @@ ${question.strategy}
 ${trapsSection}
 `;
 }
+

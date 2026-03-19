@@ -23,10 +23,10 @@ interface DailyNote {
 const FOCUS_AREAS = [
   { value: 'quant-ps', label: 'Quant - Problem Solving' },
   { value: 'quant-ds', label: 'Quant - Data Sufficiency' },
-  { value: 'verbal-rc', label: 'Verbal - Reading Comprehension' },
-  { value: 'verbal-cr', label: 'Verbal - Critical Reasoning' },
-  { value: 'verbal-sc', label: 'Verbal - Sentence Correction' },
-  { value: 'ir', label: 'Integrated Reasoning' },
+  { value: 'Unit 2: Core Services-rc', label: 'Unit 2: Core Services - Reading Comprehension' },
+  { value: 'Unit 2: Core Services-cr', label: 'Unit 2: Core Services - Critical Reasoning' },
+  { value: 'Unit 2: Core Services-sc', label: 'Unit 2: Core Services - Sentence Correction' },
+  { value: 'ir', label: 'Unit 3: Management' },
   { value: 'general', label: 'General Practice' },
 ];
 
@@ -228,3 +228,4 @@ export function DailyMission() {
     </Card>
   );
 }
+

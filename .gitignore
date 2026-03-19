@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Build artifacts / temp files
+build.txt
+build_err.txt
+lint.json
+lint.txt
+replace_sections.js

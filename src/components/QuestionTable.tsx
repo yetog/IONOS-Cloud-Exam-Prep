@@ -21,7 +21,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { Question, GMATSection, QuestionType, SECTION_INFO } from '@/types/gmat';
+import { Question, IONOSSection, QuestionType, SECTION_INFO } from '@/types/gmat';
 
 interface QuestionTableProps {
   questions: Question[];
@@ -78,7 +78,7 @@ export function QuestionTable({
     if (sectionFilter === 'all') {
       return Object.values(SECTION_INFO).flatMap((s) => s.types);
     }
-    return SECTION_INFO[sectionFilter as GMATSection]?.types || [];
+    return SECTION_INFO[sectionFilter as IONOSSection]?.types || [];
   }, [sectionFilter]);
 
   const truncateText = (text: string, maxLength: number) => {
@@ -121,8 +121,8 @@ export function QuestionTable({
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">All Sections</SelectItem>
-                <SelectItem value="quantitative">Quantitative</SelectItem>
-                <SelectItem value="verbal">Verbal</SelectItem>
+                <SelectItem value="Unit 1: Cloud Basics">Unit 1: Cloud Basics</SelectItem>
+                <SelectItem value="Unit 2: Core Services">Unit 2: Core Services</SelectItem>
                 <SelectItem value="integrated-reasoning">IR</SelectItem>
               </SelectContent>
             </Select>
@@ -224,7 +224,7 @@ export function QuestionTable({
                     </TableCell>
                     <TableCell>
                       <Badge variant="outline" className="capitalize">
-                        {question.section === 'integrated-reasoning' ? 'IR' : question.section}
+                        {question.section === 'unit3' ? 'IR' : question.section}
                       </Badge>
                     </TableCell>
                     <TableCell>
@@ -280,3 +280,4 @@ export function QuestionTable({
     </div>
   );
 }
+

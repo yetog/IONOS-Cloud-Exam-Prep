@@ -4,7 +4,7 @@ import {
   UserProgress,
   UserAchievements,
   QuestionAttempt,
-  GMATSection,
+  IONOSSection,
   QuestionType,
   LEVEL_THRESHOLDS,
   ACHIEVEMENTS,
@@ -37,9 +37,9 @@ const DEFAULT_PROGRESS: UserProgress = {
   totalCorrect: 0,
   totalTimeSpent: 0,
   sectionStats: {
-    'quantitative': { ...DEFAULT_SECTION_STATS },
-    'verbal': { ...DEFAULT_SECTION_STATS },
-    'integrated-reasoning': { ...DEFAULT_SECTION_STATS },
+    'unit1': { ...DEFAULT_SECTION_STATS },
+    'unit2': { ...DEFAULT_SECTION_STATS },
+    'unit3': { ...DEFAULT_SECTION_STATS },
   },
   typeStats: {} as Record<QuestionType, TypeStats>,
 };
@@ -137,7 +137,7 @@ export function useProgress() {
   // Record an attempt
   const recordAttempt = useCallback((
     attempt: Omit<QuestionAttempt, 'xpEarned'>,
-    section: GMATSection,
+    section: IONOSSection,
     type: QuestionType,
     targetTime: number
   ) => {
@@ -197,7 +197,7 @@ export function useProgress() {
   }, [calculateXP, updateStreak, calculateLevel, setAttempts, setProgress]);
 
   // Check and unlock achievements
-  const checkAchievements = useCallback((attempt: QuestionAttempt, section: GMATSection) => {
+  const checkAchievements = useCallback((attempt: QuestionAttempt, section: IONOSSection) => {
     setAchievements(prev => {
       const newProgress = { ...prev.progress };
       const newUnlocked = [...prev.unlocked];
@@ -281,7 +281,7 @@ export function useProgress() {
   }, [progress.currentStreak, setAchievements, setProgress, calculateLevel]);
 
   // Get accuracy for a section
-  const getSectionAccuracy = useCallback((section: GMATSection): number => {
+  const getSectionAccuracy = useCallback((section: IONOSSection): number => {
     const stats = progress.sectionStats[section];
     if (!stats || stats.questionsAnswered === 0) return 0;
     return Math.round((stats.correct / stats.questionsAnswered) * 100);
@@ -305,3 +305,4 @@ export function useProgress() {
     resetProgress,
   };
 }
+

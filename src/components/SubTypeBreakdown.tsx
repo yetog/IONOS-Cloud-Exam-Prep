@@ -125,3 +125,4 @@ export function SubTypeBreakdown({ title, subTypes }: SubTypeBreakdownProps) {
     </Card>
   );
 }
+

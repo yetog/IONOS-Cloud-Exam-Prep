@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { useLocalStorage } from './useLocalStorage';
 import { UserNote, NoteFilters } from '@/types/notes';
-import { GMATSection, QuestionType } from '@/types/gmat';
+import { IONOSSection, QuestionType } from '@/types/gmat';
 
 const DEFAULT_NOTES: UserNote[] = [];
 
@@ -53,7 +53,7 @@ export function useNotes() {
     });
   }, [notes]);
 
-  const getNotesBySection = useCallback((section: GMATSection) => {
+  const getNotesBySection = useCallback((section: IONOSSection) => {
     return notes.filter(note => note.section === section);
   }, [notes]);
 
@@ -93,3 +93,4 @@ export function useNotes() {
     getAllTags,
   };
 }
+

@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 
 interface AttributeBarProps {
   name: string; // e.g., 'STR', 'INT'
-  label: string; // e.g., 'Quant', 'Verbal'
+  label: string; // e.g., 'Quant', 'unit2'
   value: number; // 0-100
   displayValue?: string; // Custom display (e.g., '7d' for streak)
   color: 'red' | 'blue' | 'purple' | 'yellow' | 'orange' | 'green';
@@ -72,3 +72,4 @@ export function AttributeBar({
     </div>
   );
 }
+

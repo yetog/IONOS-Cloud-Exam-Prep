@@ -1,6 +1,19 @@
+import React from 'react';
 import { motion } from 'framer-motion';
-import { icons } from 'lucide-react';
+import {
+  Target, Calculator, BookOpen, BarChart3, Brain,
+  Compass, XCircle, Timer, Hash, Percent, Variable,
+  Triangle, Dice5, GitBranch, Type, FileText, MessageSquare, Lightbulb,
+  Layers, LineChart, Puzzle, Table, Eye, Zap, Scan,
+} from 'lucide-react';
 import { Skill, SkillProgress, SKILL_LEVEL_COLORS, getSkillLevelProgress } from '@/types/skills';
+
+const ICON_MAP: Record<string, React.ElementType> = {
+  Target, Calculator, BookOpen, BarChart3, Brain,
+  Compass, XCircle, Timer, Hash, Percent, Variable,
+  Triangle, Dice5, GitBranch, Type, FileText, MessageSquare, Lightbulb,
+  Layers, LineChart, Puzzle, Table, Eye, Zap, Scan,
+};
 import { cn } from '@/lib/utils';
 
 interface SkillBarProps {
@@ -12,7 +25,7 @@ interface SkillBarProps {
 export function SkillBar({ skill, progress, compact = false }: SkillBarProps) {
   const levelProgress = getSkillLevelProgress(progress.xp);
   const levelColors = SKILL_LEVEL_COLORS[progress.level];
-  const IconComponent = icons[skill.icon as keyof typeof icons];
+  const IconComponent = ICON_MAP[skill.icon];
 
   if (compact) {
     return (
@@ -98,3 +111,4 @@ export function SkillBar({ skill, progress, compact = false }: SkillBarProps) {
     </motion.div>
   );
 }
+

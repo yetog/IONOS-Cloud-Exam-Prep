@@ -122,3 +122,4 @@ export function AchievementBadge({ achievement, unlocked, compact, progress }: A
     </motion.div>
   );
 }
+

@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, BookOpen, Calculator, BarChart3, ChevronRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { SECTION_INFO, GMATSection } from '@/types/gmat';
+import { SECTION_INFO, IONOSSection } from '@/types/gmat';
 
 const container = {
   hidden: { opacity: 0 },
@@ -19,14 +19,14 @@ const item = {
 };
 
 const sectionIcons = {
-  quantitative: Calculator,
-  verbal: BookOpen,
-  'integrated-reasoning': BarChart3,
+  'unit1': Calculator,
+  'unit2': BookOpen,
+  'unit3': BarChart3,
 };
 
 export default function LearnPage() {
   const navigate = useNavigate();
-  const sections: GMATSection[] = ['quantitative', 'verbal', 'integrated-reasoning'];
+  const sections: IONOSSection[] = ['unit1', 'unit2', 'unit3'];
 
   return (
     <div className="min-h-screen bg-background bg-grid">
@@ -98,3 +98,4 @@ export default function LearnPage() {
     </div>
   );
 }
+

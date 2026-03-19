@@ -1,18 +1,24 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useLocalStorage } from './useLocalStorage';
-import { Question, GMATSection, QuestionType } from '@/types/gmat';
+import { Question, IONOSSection, QuestionType } from '@/types/gmat';
 import { SAMPLE_QUESTIONS } from '@/data/sampleQuestions';
 
 export function useQuestions() {
   const [customQuestions, setCustomQuestions] = useLocalStorage<Question[]>('gmat-custom-questions', []);
+  const [bankQuestions, setBankQuestions] = useState<Question[]>([]);
 
-  // Combine sample and custom questions
+  // Lazy-load the full question bank so it doesn't block the initial render
+  useEffect(() => {
+    import('@/data/questionBank').then((m) => setBankQuestions(m.QUESTION_BANK));
+  }, []);
+
+  // Combine sample, bank, and custom questions
   const allQuestions = useMemo(() => {
-    return [...SAMPLE_QUESTIONS, ...customQuestions];
-  }, [customQuestions]);
+    return [...SAMPLE_QUESTIONS, ...bankQuestions, ...customQuestions];
+  }, [bankQuestions, customQuestions]);
 
   // Get questions by section
-  const getQuestionsBySection = useCallback((section: GMATSection): Question[] => {
+  const getQuestionsBySection = useCallback((section: IONOSSection): Question[] => {
     return allQuestions.filter(q => q.section === section);
   }, [allQuestions]);
 
@@ -23,7 +29,7 @@ export function useQuestions() {
 
   // Get filtered questions
   const getFilteredQuestions = useCallback((
-    section?: GMATSection,
+    section?: IONOSSection,
     types?: QuestionType[],
     difficulty?: 'easy' | 'medium' | 'hard'
   ): Question[] => {
@@ -37,7 +43,7 @@ export function useQuestions() {
 
   // Get random question
   const getRandomQuestion = useCallback((
-    section?: GMATSection,
+    section?: IONOSSection,
     types?: QuestionType[],
     excludeIds?: string[]
   ): Question | null => {
@@ -80,7 +86,7 @@ export function useQuestions() {
   }, [allQuestions]);
 
   // Get question count by section
-  const getQuestionCount = useCallback((section?: GMATSection): number => {
+  const getQuestionCount = useCallback((section?: IONOSSection): number => {
     if (!section) return allQuestions.length;
     return allQuestions.filter(q => q.section === section).length;
   }, [allQuestions]);
@@ -98,3 +104,4 @@ export function useQuestions() {
     getQuestionCount,
   };
 }
+

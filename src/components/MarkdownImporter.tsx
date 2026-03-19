@@ -7,12 +7,12 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { parseMarkdown, generateMarkdownTemplate } from '@/lib/markdownParser';
-import { Question, GMATSection, QuestionType } from '@/types/gmat';
+import { Question, IONOSSection, QuestionType } from '@/types/gmat';
 
 interface MarkdownImporterProps {
   onImport: (questions: Omit<Question, 'id'>[]) => void;
   onClose: () => void;
-  presetSection?: GMATSection;
+  presetSection?: IONOSSection;
   presetType?: QuestionType;
 }
 
@@ -100,7 +100,7 @@ export function MarkdownImporter({ onImport, onClose, presetSection, presetType 
             placeholder={`Paste your markdown here. Example format:
 
 ---
-section: quantitative
+section: Unit 1: Cloud Basics
 type: problem-solving
 difficulty: medium
 targetTime: 90
@@ -280,3 +280,4 @@ Isolate the variable by performing inverse operations.
     </div>
   );
 }
+

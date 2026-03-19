@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { useLocalStorage } from './useLocalStorage';
 import { SessionHistory, DEFAULT_SESSION_HISTORY } from '@/types/profile';
-import { GMATSection, QuestionType, SECTION_INFO } from '@/types/gmat';
+import { IONOSSection, QuestionType, SECTION_INFO } from '@/types/gmat';
 import { formatDistanceToNow } from 'date-fns';
 
 export function useSessionHistory() {
@@ -12,7 +12,7 @@ export function useSessionHistory() {
 
   // Update session after answering a question
   const recordSessionActivity = useCallback(
-    (section: GMATSection, type: QuestionType, isCorrect: boolean) => {
+    (section: IONOSSection, type: QuestionType, isCorrect: boolean) => {
       setSessionHistory(prev => {
         const newQuestionsInSession = prev.questionsInSession + 1;
         const correctInSession = Math.round(prev.sessionAccuracy * prev.questionsInSession / 100) + (isCorrect ? 1 : 0);
@@ -70,3 +70,4 @@ export function useSessionHistory() {
     isSessionRecent,
   };
 }
+

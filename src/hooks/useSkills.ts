@@ -98,8 +98,8 @@ export function useSkills() {
   const skillsByCategory = useMemo(() => {
     const grouped: Record<SkillCategory, typeof SKILLS> = {
       'strategic-foundations': [],
-      'quantitative-combat': [],
-      'verbal-warfare': [],
+      'Unit 1: Cloud Basics-combat': [],
+      'Unit 2: Core Services-warfare': [],
       'data-integration': [],
       'mental-fortitude': [],
     };
@@ -153,3 +153,4 @@ export function useSkills() {
     categories: SKILL_CATEGORIES,
   };
 }
+

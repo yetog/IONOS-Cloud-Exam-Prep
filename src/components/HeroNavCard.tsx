@@ -17,7 +17,7 @@ import { useSessionHistory } from '@/hooks/useSessionHistory';
 import { useProgress } from '@/hooks/useProgress';
 import { useSkills } from '@/hooks/useSkills';
 import { useGameSounds } from '@/hooks/useGameSounds';
-import { SECTION_INFO, GMATSection } from '@/types/gmat';
+import { SECTION_INFO, IONOSSection } from '@/types/gmat';
 import { cn } from '@/lib/utils';
 
 type CardState = 'onboarding' | 'continue' | 'recommend';
@@ -76,10 +76,10 @@ export function HeroNavCard() {
 
   // Find recommended section (lowest accuracy with min 3 questions, or least practiced)
   const recommendedSection = useMemo(() => {
-    const sections: GMATSection[] = ['quantitative', 'verbal', 'integrated-reasoning'];
+    const sections: IONOSSection[] = ['unit1', 'unit2', 'unit3'];
     
     // Find weakest section
-    let weakest: { section: GMATSection; accuracy: number; count: number } | null = null;
+    let weakest: { section: IONOSSection; accuracy: number; count: number } | null = null;
     
     for (const section of sections) {
       const stats = progress.sectionStats[section];
@@ -93,7 +93,7 @@ export function HeroNavCard() {
     
     // If no section has enough data, recommend least practiced
     if (!weakest) {
-      let leastPracticed: GMATSection = 'quantitative';
+      let leastPracticed: IONOSSection = 'unit1';
       let minCount = Infinity;
       for (const section of sections) {
         const count = progress.sectionStats[section]?.questionsAnswered || 0;
@@ -259,7 +259,7 @@ function ContinueContent({
   timeSinceLastPractice: string | null;
   questionsInSession: number;
   sessionAccuracy: number;
-  lastSection: GMATSection | null;
+  lastSection: IONOSSection | null;
   onReset: () => void;
 }) {
   return (
@@ -279,7 +279,7 @@ function ContinueContent({
         <span className="font-semibold">{sessionAccuracy}%</span> accuracy
       </p>
       <div className="flex flex-wrap gap-3">
-        <Link to={`/practice?section=${lastSection || 'quantitative'}`}>
+        <Link to={`/practice?section=${lastSection || 'unit1'}`}>
           <Button className="gap-2">
             <ArrowRight className="h-4 w-4" />
             Continue Session
@@ -302,7 +302,7 @@ function RecommendContent({
   accuracy,
 }: {
   sectionName: string;
-  section: GMATSection;
+  section: IONOSSection;
   reason: string;
   accuracy: number | null;
 }) {
@@ -349,3 +349,4 @@ function RecommendContent({
     </div>
   );
 }
+

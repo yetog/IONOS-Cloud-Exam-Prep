@@ -132,3 +132,4 @@ export function InsightsCard({ insights, targetTime = 90 }: InsightsCardProps) {
     </Card>
   );
 }
+

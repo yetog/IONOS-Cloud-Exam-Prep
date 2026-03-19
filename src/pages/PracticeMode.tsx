@@ -12,7 +12,7 @@ import { useQuestions } from '@/hooks/useQuestions';
 import { useProgress } from '@/hooks/useProgress';
 import { useNotes } from '@/hooks/useNotes';
 import { useGameSounds } from '@/hooks/useGameSounds';
-import { GMATSection, SECTION_INFO, Question } from '@/types/gmat';
+import { IONOSSection, SECTION_INFO, Question } from '@/types/gmat';
 import { QuestionCard } from '@/components/QuestionCard';
 import { AnalysisPanel } from '@/components/AnalysisPanel';
 import { cn } from '@/lib/utils';
@@ -24,7 +24,7 @@ export default function PracticeMode() {
   const { section } = useParams<{ section?: string }>();
   const navigate = useNavigate();
   
-  const currentSection = section as GMATSection | undefined;
+  const currentSection = section as IONOSSection | undefined;
   const sectionInfo = currentSection ? SECTION_INFO[currentSection] : null;
 
   const { getRandomQuestion, getQuestionCount } = useQuestions();
@@ -206,7 +206,7 @@ export default function PracticeMode() {
             transition={{ delay: 0.2 }}
             className="grid gap-4"
           >
-            {(Object.keys(SECTION_INFO) as GMATSection[]).map((sectionKey, index) => {
+            {(Object.keys(SECTION_INFO) as IONOSSection[]).map((sectionKey, index) => {
               const info = SECTION_INFO[sectionKey];
               const count = getQuestionCount(sectionKey);
               
@@ -508,3 +508,4 @@ export default function PracticeMode() {
     </div>
   );
 }
+

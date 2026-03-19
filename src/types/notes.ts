@@ -1,9 +1,9 @@
-import { GMATSection, QuestionType } from './gmat';
+import { IONOSSection, QuestionType } from './gmat';
 
 // User notes for the Notes & Insights section
 export interface UserNote {
   id: string;
-  section?: GMATSection;
+  section?: IONOSSection;
   questionType?: QuestionType;
   questionId?: string;
   title: string;
@@ -16,8 +16,9 @@ export interface UserNote {
 
 // Filter options for notes
 export interface NoteFilters {
-  section?: GMATSection;
+  section?: IONOSSection;
   questionType?: QuestionType;
   type?: UserNote['type'];
   searchQuery?: string;
 }
+

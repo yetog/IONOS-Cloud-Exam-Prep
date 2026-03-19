@@ -87,6 +87,25 @@ export function QuestionCard({
           </motion.div>
         )}
 
+        {/* Explanation (shown after answering) */}
+        {showResult && question.explanation && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            className="mb-6 p-4 rounded-lg bg-primary/10 border border-primary/30"
+          >
+            <div className="flex items-start gap-2">
+              <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+              <div>
+                <p className="text-sm font-medium text-primary mb-1">Explanation</p>
+                <p className="text-sm text-muted-foreground">
+                  {question.explanation}
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        )}
+
         {/* Answer Options */}
         <div className="space-y-3">
           {question.options.map((option, index) => {
@@ -145,3 +164,4 @@ export function QuestionCard({
     </Card>
   );
 }
+

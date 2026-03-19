@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
-import { GMATSection, SECTION_INFO, SectionStats } from '@/types/gmat';
+import { IONOSSection, SECTION_INFO, SectionStats } from '@/types/gmat';
 import { Calculator, BookOpen, BarChart3, ChevronRight } from 'lucide-react';
 
 const iconMap = {
@@ -12,8 +12,8 @@ const iconMap = {
 };
 
 interface SectionCardProps {
-  section: GMATSection;
-  info: typeof SECTION_INFO[GMATSection];
+  section: IONOSSection;
+  info: typeof SECTION_INFO[IONOSSection];
   accuracy: number;
   questionCount: number;
   stats: SectionStats;
@@ -76,3 +76,4 @@ export function SectionCard({ section, info, accuracy, questionCount, stats }: S
     </Link>
   );
 }
+

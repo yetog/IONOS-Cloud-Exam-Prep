@@ -555,7 +555,7 @@ export const RC_SUB_TYPES: QuestionSubType[] = [
   },
 ];
 
-// ========== INTEGRATED REASONING SUB-TYPES ==========
+// ========== Unit 3: Management SUB-TYPES ==========
 export const IR_GRAPHICS_SUB_TYPES: QuestionSubType[] = [
   {
     id: 'ir-gi-bar-line',
@@ -612,8 +612,8 @@ export const IR_TABLE_SUB_TYPES: QuestionSubType[] = [
 
 export const IR_TWO_PART_SUB_TYPES: QuestionSubType[] = [
   {
-    id: 'ir-tpa-verbal',
-    name: 'Verbal Two-Part',
+    id: 'ir-tpa-Unit 2: Core Services',
+    name: 'Unit 2: Core Services Two-Part',
     description: 'Two-part questions based on reading comprehension or logic.',
     identificationCues: [
       'Two columns asking about different aspects of a passage',
@@ -628,7 +628,7 @@ export const IR_TWO_PART_SUB_TYPES: QuestionSubType[] = [
   },
   {
     id: 'ir-tpa-quant',
-    name: 'Quantitative Two-Part',
+    name: 'Unit 1: Cloud Basics Two-Part',
     description: 'Two-part questions requiring calculations or constraint satisfaction.',
     identificationCues: [
       'Mathematical constraints or optimization',
@@ -662,3 +662,4 @@ export const IR_MSR_SUB_TYPES: QuestionSubType[] = [
     timeTarget: 180,
   },
 ];
+

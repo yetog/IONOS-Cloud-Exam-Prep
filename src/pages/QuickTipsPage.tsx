@@ -10,7 +10,7 @@ const tips = [
     title: 'Pace Yourself',
     icon: Clock,
     description: 'Keep track of time throughout each section. Know your target time per question and check periodically.',
-    detail: 'Quant: ~2 min/question. Verbal: ~1.5-2 min/question. IR: ~2.5 min/set.',
+    detail: 'Quant: ~2 min/question. Unit 2: Core Services: ~1.5-2 min/question. IR: ~2.5 min/set.',
     color: 'text-primary',
   },
   {
@@ -191,3 +191,4 @@ export default function QuickTipsPage() {
     </div>
   );
 }
+

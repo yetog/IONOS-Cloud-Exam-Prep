@@ -13,27 +13,27 @@ import { cn } from '@/lib/utils';
 // Determine player "class" based on performance
 function getPlayerClass(
   quantAccuracy: number,
-  verbalAccuracy: number,
+  unit2Accuracy: number,
   irAccuracy: number,
   avgTimePerformance: number
 ): { name: string; icon: string } {
   const quant = quantAccuracy || 0;
-  const verbal = verbalAccuracy || 0;
+  const unit2 = unit2Accuracy || 0;
   const ir = irAccuracy || 0;
 
   if (avgTimePerformance > 85) {
     return { name: 'Speed Demon', icon: '⚡' };
   }
-  if (quant > verbal + 10 && quant > ir) {
+  if (quant > unit2 + 10 && quant > ir) {
     return { name: 'Quant Warrior', icon: '⚔️' };
   }
-  if (verbal > quant + 10 && verbal > ir) {
-    return { name: 'Verbal Virtuoso', icon: '📚' };
+  if (unit2 > quant + 10 && unit2 > ir) {
+    return { name: 'Core Services Virtuoso', icon: '📚' };
   }
-  if (ir > quant && ir > verbal && ir > 60) {
+  if (ir > quant && ir > unit2 && ir > 60) {
     return { name: 'IR Specialist', icon: '📊' };
   }
-  return { name: 'GMAT Strategist', icon: '🎯' };
+  return { name: 'Cloud Strategist', icon: '🎯' };
 }
 
 export function ProfileCard() {
@@ -42,15 +42,15 @@ export function ProfileCard() {
   const { topSkills, getSkillProgress } = useSkills();
 
   // Calculate section accuracies
-  const quantStats = progress.sectionStats['quantitative'];
-  const verbalStats = progress.sectionStats['verbal'];
-  const irStats = progress.sectionStats['integrated-reasoning'];
+  const quantStats = progress.sectionStats['unit1'];
+  const unit2Stats = progress.sectionStats['unit2'];
+  const irStats = progress.sectionStats['unit3'];
 
   const quantAccuracy = quantStats?.questionsAnswered > 0
     ? Math.round((quantStats.correct / quantStats.questionsAnswered) * 100)
     : 0;
-  const verbalAccuracy = verbalStats?.questionsAnswered > 0
-    ? Math.round((verbalStats.correct / verbalStats.questionsAnswered) * 100)
+  const unit2Accuracy = unit2Stats?.questionsAnswered > 0
+    ? Math.round((unit2Stats.correct / unit2Stats.questionsAnswered) * 100)
     : 0;
   const irAccuracy = irStats?.questionsAnswered > 0
     ? Math.round((irStats.correct / irStats.questionsAnswered) * 100)
@@ -59,12 +59,12 @@ export function ProfileCard() {
   // Calculate speed performance (% under target time)
   const avgTimePerformance = progress.totalQuestionsAnswered > 0 ? 70 : 0; // Placeholder
 
-  const playerClass = getPlayerClass(quantAccuracy, verbalAccuracy, irAccuracy, avgTimePerformance);
+  const playerClass = getPlayerClass(quantAccuracy, unit2Accuracy, irAccuracy, avgTimePerformance);
 
   // RPG Stats
   const stats = [
-    { name: 'STR', label: 'Quant', value: quantAccuracy, color: 'text-red-400' },
-    { name: 'INT', label: 'Verbal', value: verbalAccuracy, color: 'text-blue-400' },
+    { name: 'STR', label: 'Cloud Basics', value: quantAccuracy, color: 'text-red-400' },
+    { name: 'INT', label: 'Core Services', value: unit2Accuracy, color: 'text-blue-400' },
     { name: 'WIS', label: 'IR', value: irAccuracy, color: 'text-purple-400' },
     { name: 'DEX', label: 'Speed', value: avgTimePerformance, color: 'text-yellow-400' },
     { name: 'CON', label: 'Streak', value: Math.min(progress.currentStreak * 10, 100), color: 'text-orange-400' },
@@ -208,3 +208,4 @@ export function ProfileCard() {
     </motion.div>
   );
 }
+

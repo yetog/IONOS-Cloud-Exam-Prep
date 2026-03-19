@@ -24,3 +24,4 @@ export function StatsCard({ icon: Icon, label, value }: StatsCardProps) {
     </Card>
   );
 }
+

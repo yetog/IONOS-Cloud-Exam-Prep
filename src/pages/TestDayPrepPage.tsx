@@ -7,8 +7,8 @@ import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const examStructure = [
-  { section: 'Quantitative Reasoning', questions: 21, time: '45 min', perQ: '~2 min' },
-  { section: 'Verbal Reasoning', questions: 23, time: '45 min', perQ: '~2 min' },
+  { section: 'Unit 1: Cloud Basics Reasoning', questions: 21, time: '45 min', perQ: '~2 min' },
+  { section: 'Unit 2: Core Services Reasoning', questions: 23, time: '45 min', perQ: '~2 min' },
   { section: 'Data Insights', questions: 20, time: '45 min', perQ: '~2.25 min' },
 ];
 
@@ -348,3 +348,4 @@ export default function TestDayPrepPage() {
     </div>
   );
 }
+
