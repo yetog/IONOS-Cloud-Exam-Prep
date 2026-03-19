@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IONOS Cloud Foundational - Unit 3.1: Data Center Designer and Account Management">
+  <meta name="author" content="">
+  <title>3.1 Data Center Designer and Account Management | Cloud Training</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#003d8f">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Overpass:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../../css/ionos-learn.css">
+  <link rel="stylesheet" href="../../../css/print.css" media="print">
+</head>
+<body>
+
+  <div class="page-wrapper">
+    <!-- Header -->
+    <header class="site-header" role="banner">
+      <div class="header-left">
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+
+        <!-- Logo -->
+        <a href="../../../index.html" class="logo" aria-label="IONOS Cloud Training Home">
+          <img src="../../../assets/ionos-logo.svg" alt="IONOS" width="100" height="32">
+        </a>
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../../index.html">Course</a>
+<span class="breadcrumb-separator">/</span>
+<span>Module 3</span>
+<span class="breadcrumb-separator">/</span>
+<span>Unit 3.1</span>
+        </nav>
+      </div>
+
+      <div class="header-right">
+        <a href="../../../products/index.html" class="header-link">Product Reference</a>
+        <div class="language-switcher">
+  <button class="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Change language">
+    <span class="lang-code">EN</span>
+  </button>
+  <div class="lang-dropdown" role="menu">
+    <a href="../../../en/courses/module-3/unit-3.1-dcd-account-management.html" class="lang-option current" role="menuitem">
+      <span class="lang-code">EN</span>
+      <span>English</span>
+    </a><a href="../../../de/courses/module-3/unit-3.1-dcd-account-management.html" class="lang-option" role="menuitem">
+      <span class="lang-code">DE</span>
+      <span>Deutsch</span>
+    </a><a href="../../../es/courses/module-3/unit-3.1-dcd-account-management.html" class="lang-option" role="menuitem">
+      <span class="lang-code">ES</span>
+      <span>Español</span>
+    </a><a href="../../../fr/courses/module-3/unit-3.1-dcd-account-management.html" class="lang-option" role="menuitem">
+      <span class="lang-code">FR</span>
+      <span>Français</span>
+    </a>
+  </div>
+</div>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" role="navigation" aria-label="Course navigation">
+        <div class="sidebar-header">
+          <div class="course-title">Cloud Training</div>
+          <div class="progress-container">
+            <div class="progress-label">
+              <span>Progress</span>
+              <span class="progress-percent">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="nav-modules">
+          <div class="nav-special-item">
+  <a href="../../index.html" class="special-link " data-page-id="overview">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6a.5.5 0 0 0 .708.708L8 2.207l5.646 5.647a.5.5 0 0 0 .708-.708l-6-6z"/>
+      <path d="M2.5 8.5v5.5h11v-5.5l-5.5-5.5-5.5 5.5z"/>
+    </svg>
+    <span>Course Overview</span>
+  </a>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 1: Cloud Concepts</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.1-cloud-computing-fundamentals.html" class="unit-link " data-unit-id="1.1">
+        <span class="unit-status"></span>
+        <span>1.1 Cloud Computing Fundamentals</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.2-cloud-service-benefits.html" class="unit-link " data-unit-id="1.2">
+        <span class="unit-status"></span>
+        <span>1.2 Cloud Service Benefits</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.3-cloud-deployment-models.html" class="unit-link " data-unit-id="1.3">
+        <span class="unit-status"></span>
+        <span>1.3 Cloud Service Type Categories</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-1/unit-1.4-knowledge-check.html" class="quiz-link " data-unit-id="1.4" data-quiz-id="1.4">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Cloud Concepts</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 2: IONOS Architecture and Services</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.1-core-components.html" class="unit-link " data-unit-id="2.1">
+        <span class="unit-status"></span>
+        <span>2.1 Core Architectural Components</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.2-compute.html" class="unit-link " data-unit-id="2.2">
+        <span class="unit-status"></span>
+        <span>2.2 Compute Services</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.3-storage-services.html" class="unit-link " data-unit-id="2.3">
+        <span class="unit-status"></span>
+        <span>2.3 Storage Services</span>
+        <span class="unit-time">~21 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.4-networking-services.html" class="unit-link " data-unit-id="2.4">
+        <span class="unit-status"></span>
+        <span>2.4 Networking Services</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.5-databases.html" class="unit-link " data-unit-id="2.5">
+        <span class="unit-status"></span>
+        <span>2.5 Database and Data Services</span>
+        <span class="unit-time">~20 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.6-security-ai-containers.html" class="unit-link " data-unit-id="2.6">
+        <span class="unit-status"></span>
+        <span>2.6 Security, AI, and Container Services</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-2/unit-2.7-knowledge-check.html" class="quiz-link " data-unit-id="2.7" data-quiz-id="2.7">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Architecture and Services</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header expanded">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 3: Management and Governance</span>
+  </div>
+  <ul class="unit-list expanded">
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.1-dcd-account-management.html" class="unit-link active" data-unit-id="3.1">
+        <span class="unit-status"></span>
+        <span>3.1 Data Center Designer and Account Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.2-iam.html" class="unit-link " data-unit-id="3.2">
+        <span class="unit-status"></span>
+        <span>3.2 Identity and Access Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.3-cost-billing.html" class="unit-link " data-unit-id="3.3">
+        <span class="unit-status"></span>
+        <span>3.3 Cost Management and Billing</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.4-logs-monitoring.html" class="unit-link " data-unit-id="3.4">
+        <span class="unit-status"></span>
+        <span>3.4 Activity Logs and Monitoring</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.5-security-compliance.html" class="unit-link " data-unit-id="3.5">
+        <span class="unit-status"></span>
+        <span>3.5 Security and Compliance</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-3/unit-3.6-knowledge-check.html" class="quiz-link " data-unit-id="3.6" data-quiz-id="3.6">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Management and Governance</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-special-item">
+  <a href="../../courses/completion.html" class="special-link " data-page-id="completion">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+    </svg>
+    <span>Course Completion</span>
+  </a>
+</div>
+        </nav>
+
+        <div class="sidebar-divider"></div>
+
+        <a href="../../../products/index.html" class="products-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+          <span>Product Reference</span>
+        </a>
+      </aside>
+
+      <!-- Sidebar Overlay (Mobile) -->
+      <div class="sidebar-overlay" aria-hidden="true"></div>
+
+      <!-- Main Content -->
+      <main id="main-content" class="content" role="main">
+        <div class="content-inner">
+          <!-- Unit Header Meta -->
+<div class="unit-meta">
+  <span class="reading-time">
+    <svg viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+      <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+    </svg>
+    18 min read
+  </span>
+</div>
+
+<!-- Learning Objectives -->
+<section class="learning-objectives" aria-labelledby="objectives-heading">
+  <h2 id="objectives-heading">Learning Objectives</h2>
+  <p>By the end of this module, you will be able to:</p>
+  <ul>
+    <li>Explain what the Data Center Designer (DCD) is and how it provides a visual interface for managing cloud infrastructure</li>
+<li>Describe the three account types (Contract Owner, Administrator, User) and their respective permissions</li>
+<li>Identify how to manage multiple contracts and switch between them</li>
+<li>Describe account security settings including two-factor authentication, password policies, and support PIN</li>
+  </ul>
+</section>
+
+<!-- Main Unit Content -->
+<article class="unit-content">
+  <h1 id="unit-31-data-center-designer-and-account-management">Unit 3.1: Data Center Designer and Account Management</h1><h2 id="introduction">Introduction</h2><p>Imagine walking into a modern factory floor where you can see the entire production line laid out visually, monitor every machine, and make changes simply by pointing and clicking. The Data Center Designer (DCD) provides exactly this experience for your cloud infrastructure. Instead of memorizing complex commands or navigating through endless menus, you can drag virtual machines, storage, and networks onto a visual canvas and watch your infrastructure come to life.</p>
+<p>In this unit, you will learn how IONOS Cloud&#x27;s primary management interface works, who can do what within your cloud account, and how to keep your account secure. Whether you are a contract owner managing multiple customers, an administrator overseeing daily operations, or a team member with specific responsibilities, understanding these management fundamentals ensures you can work efficiently and securely.</p>
+<h2 id="1-data-center-designer-dcd-overview">1. Data Center Designer (DCD) Overview</h2><p>The Data Center Designer (DCD) is IONOS Cloud&#x27;s web-based graphical control panel. It provides a drag-and-drop, JavaScript-driven user interface that lets you create, configure, and manage Virtual Data Centers (VDCs) and all the resources inside them, including virtual machines, storage, LANs, IP addresses, snapshots, firewall rules, and PaaS services. You can open the DCD in any modern browser without installing additional software.</p>
+<h3 id="11-visual-infrastructure-design">1.1 Visual Infrastructure Design</h3><p>The DCD uses a canvas-based approach where you design your cloud environment visually. Think of it like a blueprint or wiring diagram for your infrastructure. You drag resources (such as a virtual machine, cube, or network load balancer) from a palette onto the workspace, drop them where you want them positioned, and connect their interfaces by drawing lines between components. This visual layout shows exactly how each component is linked, which helps with troubleshooting and documentation.</p>
+<p>After arranging your resources on the canvas, you can click any element to open the Inspector pane, where you set properties such as CPU cores, RAM, storage size, operating system image, security groups, and networking configuration. Once you are satisfied with your design, you provision the changes, and the visual layout is materialized in the cloud.</p>
+<h3 id="12-canvas-mode-and-xpress-mode">1.2 Canvas Mode and Xpress Mode</h3><p>The DCD offers two creation modes to suit different needs:</p>
+<p><strong>Canvas Mode (Advanced)</strong> gives you full freedom to place and connect every element on the visual canvas. Power users who need complex, custom architectures typically use this mode because it provides complete control over resource placement and configuration.</p>
+<p><strong>Xpress Mode (Fast)</strong> is a guided wizard introduced to speed up standard IaaS workloads. If you need to quickly spin up a basic virtual machine with storage and networking, Xpress Mode walks you through the process step-by-step. Regardless of how an instance is created, all subsequent management is performed within Canvas Mode, ensuring a consistent experience.</p>
+<h3 id="13-unified-control-panel">1.3 Unified Control Panel</h3><p>The DCD serves as your single pane of glass for all IONOS Cloud services. You can manage compute, storage, networking, databases, Kubernetes clusters, AI model deployments, and more from the same workspace. This centralized approach reduces the time and effort required to switch between different consoles. You see the full state of your cloud environment in one place, including:</p>
+<ul>
+<li>Active <a href="../../../products/Management/cloud-savings-plans.html" class="product-ref">Cloud Savings Plans</a> and their utilization</li>
+<li>Resource usage tracking and limits</li>
+<li><a href="../../../products/Observability/activity-logs.html" class="product-ref">Activity Logs</a> and <a href="../../../products/Network_Services/flow-logs.html" class="product-ref">Flow Logs</a> for audit trails</li>
+<li>Monitoring dashboards and alerts</li>
+<li>Role-based access controls and user permissions</li>
+</ul>
+<p>The DCD also integrates common operational tools such as SSH key management, remote console access, cloud-init launch configurations, and flow log viewers. This means typical tasks like uploading an SSH key, accessing a virtual machine&#x27;s console, or inspecting network traffic logs are all reachable from the same workspace, cutting down on context-switching.</p>
+<h3 id="14-integration-with-infrastructure-as-code">1.4 Integration with Infrastructure as Code</h3><p>While the DCD is primarily a graphical tool, it works seamlessly with code-first tools like Terraform, Ansible, and the IONOS Cloud API. You can design infrastructure visually in the DCD, export the configuration, and manage it programmatically, or you can build infrastructure using code and later import the result into the DCD for visual monitoring.</p>
+<p>When resources are created via API or SDK, the DCD will display the resulting topology, though the exact visual placement may be stacked on the canvas since the programmatic creation does not control graphical layout. For large or frequently changing environments, this hybrid approach gives you the speed of automation with the clarity of visual representation.</p>
+<h2 id="2-account-types-and-permissions">2. Account Types and Permissions</h2><p>IONOS Cloud uses a structured permission model with three primary account types: Contract Owner, Administrator, and User. Each type has different capabilities and limitations, ensuring that users have the access they need without compromising security or compliance.</p>
+<h3 id="21-contract-owner">2.1 Contract Owner</h3><p>The Contract Owner is the first user who registers the contract. This account receives all privileges on the entire contract, with unrestricted access to view, edit, delete, and share any resource, regardless of who created it. The Contract Owner can add or remove any other user, including administrators, and this owner role cannot be revoked or transferred. Additionally, the Contract Owner receives all legal communications such as invoices and contract terms updates, and is the only account type that can change the payment method for the contract.</p>
+<p>In essence, the Contract Owner has ultimate authority over the cloud account. This role is critical for organizations because it controls billing, legal agreements, and top-level access management. If you are the Contract Owner, you should treat this account with the highest level of security, including enabling two-factor authentication and using a strong, unique password.</p>
+<h3 id="22-administrator">2.2 Administrator</h3><p>An Administrator is any user that the Contract Owner (or an existing administrator) promotes to the Administrator role. Administrators have the same operational privileges as the Contract Owner for every resource. They can view, edit, share, and delete any resource, and they can add or remove users except the Contract Owner&#x27;s own account.</p>
+<p>The key distinction is that Administrators cannot change the payment method of the contract. This restriction ensures that financial control remains exclusively with the Contract Owner. For day-to-day operations, administrators have full access to manage infrastructure, users, and permissions, making this role ideal for IT managers and senior technical staff.</p>
+<h3 id="23-user-explicit-privileges">2.3 User (Explicit Privileges)</h3><p>A User is created as a normal user account and then granted specific privileges, either directly or via a group. Unlike the Contract Owner and Administrator roles, a newly created user has no permissions by default until privileges are explicitly assigned. This follows the Principle of Least Privilege (PoLP), which means giving users only the minimum access they need to perform their job.</p>
+<p>Privileges are atomic grants such as Read, Edit, and Share that can be attached to a user or a group. For example, a developer might receive Read and Edit privileges on specific virtual machines but no access to billing information. A security analyst might receive Read-only access to <a href="../../../products/Observability/activity-logs.html" class="product-ref">Activity Logs</a> and <a href="../../../products/Network_Services/flow-logs.html" class="product-ref">Flow Logs</a> for auditing purposes.</p>
+<p>Groups let you assign the same set of privileges to many users at once, simplifying management at scale. Instead of configuring permissions individually for each team member, you create a group (such as &quot;Developers&quot; or &quot;Operations Team&quot;), assign the necessary privileges to that group, and add users to it. When a user joins or leaves the team, you simply add or remove them from the group, and their permissions update automatically.</p>
+<h3 id="24-permission-comparison-table">2.4 Permission Comparison Table</h3><p>The following table compares the three account types and their core capabilities:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Account Type</th>
+<th>How Created</th>
+<th>Core Permissions</th>
+<th>What They Cannot Do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contract Owner</strong></td>
+<td>First user to register the contract</td>
+<td>All privileges on the whole contract. Can see, edit, delete, share any resource. Can add or remove any user including administrators. Receives all legal communications. Cannot be stripped of the owner role.</td>
+<td>None - the owner has unrestricted access.</td>
+</tr>
+<tr>
+<td><strong>Administrator</strong></td>
+<td>Promoted by the owner or an existing admin</td>
+<td>Same privileges as the owner for every resource (view, edit, share, delete). Can add or remove users except the owner.</td>
+<td>Cannot change the payment method of the contract (only the owner can).</td>
+</tr>
+<tr>
+<td><strong>User (Explicit Privileges)</strong></td>
+<td>Created and granted specific privileges via groups or direct assignment</td>
+<td>Can perform only the actions that have been explicitly granted (e.g., Read, Edit, Share on selected resources). Privileges are fine-grained and managed through groups or per-resource permissions.</td>
+<td>No default access. Cannot manage other users unless a privilege allowing it is given.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>As shown above, the Contract Owner has full financial and administrative control, administrators have full operational control but not financial control, and users have only the specific permissions you grant them.</p>
+<h2 id="3-contract-management-and-multi-contract-access">3. Contract Management and Multi-Contract Access</h2><p>Many organizations and resellers work with multiple contracts or subcontracts. IONOS Cloud makes it easy to see and switch between contracts, manage user access across contracts, and create subcontracts for customers or business units.</p>
+<h3 id="31-contract-selector">3.1 Contract Selector</h3><p>In the Data Center Designer (DCD), after you log in, you see a contract selector (usually in the top-right corner of the interface). This selector displays the contract you are currently operating in and lets you switch to any other contract or subcontract you have rights to. The switch works only if you have at least read-only permission on the target contract. To perform actions, you must belong to a group that has the needed privileges.</p>
+<p>When you select a different contract, the UI reloads the context so all subsequent actions (creating VDCs, managing resources, viewing logs, etc.) happen in the selected contract. This seamless switching is available to contract owners, contract administrators, and any user that has been granted the &quot;access to contract&quot; privilege.</p>
+<h3 id="32-creating-subcontracts-resellers">3.2 Creating Subcontracts (Resellers)</h3><p>Resellers can create subcontracts for their customers from the reseller&#x27;s main contract. Only the reseller contract owner can create subcontracts and can also create administrators for those subcontracts. This structure enables managed service providers (MSPs) and resellers to operate separate cloud environments for each customer while maintaining centralized billing and oversight.</p>
+<p>For example, an MSP managing infrastructure for five clients can create five subcontracts, one per client. Each subcontract has its own Virtual Data Centers, resources, and users. The MSP&#x27;s contract owner can switch between subcontracts to manage them centrally, while each client&#x27;s users only see their own subcontract.</p>
+<h3 id="33-granting-multi-contract-access-to-users">3.3 Granting Multi-Contract Access to Users</h3><p>To give other users access to a different contract, use the Users and Groups feature in the DCD:</p>
+<ol>
+<li>Navigate to <strong>Menu &gt; Management &gt; Users &amp; Groups</strong></li>
+<li>Choose the <strong>Groups</strong> tab</li>
+<li>Select (or create) a group</li>
+<li>In the <strong>Privileges</strong> tab, assign the appropriate contract-level privilege (e.g., &quot;Access and manage contract&quot;)</li>
+<li>Add the users to that group</li>
+</ol>
+<p>Users inherit the contract-wide rights of the group. Administrators automatically have full access to every contract they are assigned to, but only the contract owner can change payment information. To remove or change a user&#x27;s rights on a contract, either remove the user from the group that carries the contract privilege, or disable the &quot;Administrator&quot; flag on the user account, which reverts the user to the privileges defined by groups.</p>
+<h3 id="34-key-points-for-multi-contract-management">3.4 Key Points for Multi-Contract Management</h3><ul>
+<li><strong>Contract Owner = Full Control</strong>: Can change payment data, create Savings Plans, and create subcontracts</li>
+<li><strong>Contract Administrators = Owner-level rights on resources</strong> but cannot change payment information</li>
+<li><strong>Regular Users</strong> get whatever rights you assign through groups (RBAC)</li>
+<li><strong>Reseller Contracts</strong> can create subcontracts, but Savings Plans created at the reseller level cannot be transferred to another subcontract</li>
+<li>Switching contracts is a UI action in the DCD; no extra API call is required once you have the appropriate permissions</li>
+</ul>
+<h2 id="4-account-security-settings">4. Account Security Settings</h2><p>Securing your IONOS Cloud account is critical to protecting your infrastructure, data, and billing information. IONOS provides several security controls to help you enforce strong authentication and manage access safely.</p>
+<h3 id="41-password-policy">4.1 Password Policy</h3><p>The Password Policy Manager in the DCD (accessed via <strong>Menu &gt; Management &gt; Password Policy</strong>) lets you define rules for password strength. You can specify requirements for minimum length, required character types (uppercase, lowercase, numbers, special characters), and minimum quantities for each character type.</p>
+<p>Only a Contract Owner can create, edit, or delete a password policy. After saving, the policy is automatically applied to any new password setup. You can have only one active policy per contract. A typical recommended password policy requires:</p>
+<ul>
+<li>Minimum length of 9-12 characters</li>
+<li>At least 1 uppercase letter</li>
+<li>At least 1 lowercase letter</li>
+<li>At least 1 digit</li>
+<li>At least 1 special character</li>
+</ul>
+<p>If you delete the policy, the account reverts to the IONOS standard, which requires at least 5 characters and recommends a mix of upper and lower case letters, at least one digit, and optional special characters. Enforcing a strong password policy reduces the risk of credential-stuffing and brute-force attacks.</p>
+<h3 id="42-two-factor-authentication-2fa">4.2 Two-Factor Authentication (2FA)</h3><p>Two-factor authentication (2FA) adds a second layer of security to your account. After entering your normal login credentials (email and password), you must also supply a time-based security code generated by an authenticator app on your mobile device. Once enabled, every login to the Data Center Designer (DCD) requires this code, protecting the account even if the password is compromised.</p>
+<p><strong>Enabling 2FA for Your Own Account</strong></p>
+<p>To enable 2FA for yourself:</p>
+<ol>
+<li>Open the DCD and navigate to <strong>Menu &gt; Your Profile &gt; Password &amp; Security</strong></li>
+<li>In the <strong>2-Factor Authentication</strong> section, click <strong>Enable 2-Factor Authentication</strong></li>
+<li>Follow the wizard: install an authenticator app (such as Google Authenticator or Authy), scan the QR code, enter the generated token, and finish</li>
+<li>On your next login, you will be prompted for the code</li>
+</ol>
+<p>Only the account user can enable 2FA for themselves. Administrators or contract owners cannot enable it on their behalf, but they can enforce it.</p>
+<p><strong>Enforcing 2FA for Sub-Users</strong></p>
+<p>To require 2FA for another user:</p>
+<ol>
+<li>Navigate to <strong>Menu &gt; Management &gt; Users &amp; Groups</strong></li>
+<li>Select the user, go to the <strong>Meta Data</strong> tab</li>
+<li>Check <strong>Force 2-Factor Auth</strong> and click <strong>Save</strong></li>
+</ol>
+<p>The user will be required to activate 2FA before their next login. This is useful for organizations that want to enforce a uniform security baseline across all users.</p>
+<p><strong>Prerequisites for 2FA</strong></p>
+<ul>
+<li>Install any authenticator app that can read QR codes and has automatic time sync</li>
+<li>The mobile device&#x27;s clock must be set to automatic to keep the generated codes in sync</li>
+<li>2FA is only available in the DCD UI; API access still requires a token generated via the Token Manager (which is mandatory for 2FA-enabled accounts)</li>
+</ul>
+<h3 id="43-support-pin">4.3 Support PIN</h3><p>The Support PIN is a security code that you set in your IONOS Cloud account to verify your identity when contacting IONOS Cloud Support. This PIN helps ensure that only authorized users can request changes or receive sensitive information about the account during support calls.</p>
+<p>To set or change your Support PIN:</p>
+<ol>
+<li>Open the Data Center Designer (DCD)</li>
+<li>Navigate to <strong>Menu &gt; Your Profile &gt; Password &amp; Security</strong></li>
+<li>In the <strong>Set Support PIN</strong> section, type the PIN you want to use</li>
+<li>Click <strong>Set Support PIN</strong> to save the change</li>
+</ol>
+<p>After you confirm, the PIN is stored and will be required when you contact IONOS Cloud Support. This simple step adds another layer of protection, ensuring that even if someone knows your login credentials, they cannot impersonate you when requesting support.</p>
+<h3 id="44-how-security-controls-work-together">4.4 How Security Controls Work Together</h3><p>Password policy, two-factor authentication, and support PIN work together to create a defense-in-depth strategy:</p>
+<ul>
+<li><strong>Password Policy</strong> ensures that the first factor (the password) meets minimum complexity requirements</li>
+<li><strong>2FA</strong> adds a second, independent factor, dramatically lowering the chance of unauthorized access even if the password is leaked</li>
+<li><strong>Support PIN</strong> protects against social engineering attacks where someone tries to manipulate support staff into making account changes</li>
+</ul>
+<p>Both password policy and 2FA can be mandated at the contract level. The contract owner defines the password policy, while administrators can force 2FA for all sub-users, ensuring a uniform security baseline across the organization.</p>
+<h2 id="common-use-cases">Common Use Cases</h2><p>Real-world scenarios where the Data Center Designer and account management features are used:</p>
+<ol>
+<li>
+<p><strong>Multi-Customer Managed Service Provider</strong>: An MSP manages cloud infrastructure for 20 customers. The MSP creates a subcontract for each customer, and the account owner switches between subcontracts using the DCD contract selector (discussed in Section 3.1). Each customer&#x27;s administrators and users only see their own subcontract. The MSP enforces 2FA and a strong password policy (Section 4.1 and 4.2) across all subcontracts to meet security compliance requirements.</p>
+</li>
+<li>
+<p><strong>Large Enterprise Development Team</strong>: A company with 50 developers, 10 operations engineers, and 5 security analysts needs fine-grained access control. The contract administrator creates three groups as described in Section 2.3: &quot;Developers&quot; (Read and Edit on VMs in the dev environment), &quot;Operations&quot; (Read, Edit, Share on all production resources), and &quot;Security&quot; (Read-only on <a href="../../../products/Observability/activity-logs.html" class="product-ref">Activity Logs</a> and <a href="../../../products/Network_Services/flow-logs.html" class="product-ref">Flow Logs</a>). As team members join or leave, the administrator simply adds or removes them from the appropriate group, and their permissions update automatically following the Principle of Least Privilege from Section 2.4.</p>
+</li>
+<li>
+<p><strong>Secure Financial Services Deployment</strong>: A financial institution deploys applications on IONOS Cloud and must comply with strict security and audit requirements. The contract owner configures a password policy requiring 12-character passwords with uppercase, lowercase, digits, and special characters (Section 4.1). All users are required to enable 2FA via the &quot;Force 2-Factor Auth&quot; setting explained in Section 4.2. The institution also sets support PINs for all administrators (Section 4.3). These security controls, combined with Activity Logs for audit trails (covered in Unit 3.4), ensure compliance with industry regulations.</p>
+</li>
+</ol>
+<h2 id="summary">Summary</h2><p>The Data Center Designer (DCD) is IONOS Cloud&#x27;s primary management interface, providing a visual, drag-and-drop canvas for designing and managing cloud infrastructure. It serves as a unified control panel where you can manage compute, storage, networking, databases, and more from a single workspace. The DCD offers two creation modes: Canvas Mode for advanced, custom designs, and Xpress Mode for fast, guided deployments.</p>
+<p>IONOS Cloud&#x27;s permission model includes three account types. The Contract Owner has full administrative and financial control, including the exclusive ability to change payment methods. Administrators have full operational control over resources and users but cannot change payment settings. Regular Users have only the specific privileges you grant them, following the Principle of Least Privilege. Managing permissions through Groups simplifies access control at scale.</p>
+<p>For organizations working with multiple contracts or subcontracts, the DCD contract selector makes it easy to switch between contexts. Resellers can create subcontracts for customers, and contract administrators can grant multi-contract access to users via group-based privileges.</p>
+<p>Account security in IONOS Cloud combines password policies, two-factor authentication (2FA), and support PINs. Password policies enforce strong password requirements, 2FA adds a second authentication factor using time-based codes, and support PINs protect against social engineering attacks. Together, these controls create a layered security approach that protects your cloud infrastructure and data.</p>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li>The Data Center Designer (DCD) is a web-based graphical interface for managing IONOS Cloud infrastructure using drag-and-drop visual design</li>
+<li>Three account types exist: Contract Owner (full control), Administrator (full operational control but no payment changes), and User (explicit privileges only)</li>
+<li>Multi-contract management is supported through the contract selector and group-based access controls, enabling resellers and enterprises to manage separate environments</li>
+<li>Account security settings include password policies (contract owner controlled), two-factor authentication (user or forced), and support PIN (user controlled)</li>
+<li>Groups simplify permission management by assigning privileges to multiple users at once, supporting the Principle of Least Privilege</li>
+<li>The DCD integrates with Infrastructure as Code tools (Terraform, Ansible, API) for hybrid visual and programmatic management</li>
+</ul>
+<p><strong>Important Terminology:</strong></p>
+<ul>
+<li><strong>Data Center Designer (DCD):</strong> IONOS Cloud&#x27;s web-based graphical control panel for creating, configuring, and managing Virtual Data Centers and cloud resources</li>
+<li><strong>Contract Owner:</strong> The first user to register the contract; has full administrative and financial control, including exclusive ability to change payment methods</li>
+<li><strong>Administrator:</strong> User with full operational privileges identical to the owner but cannot modify payment details</li>
+<li><strong>Principle of Least Privilege (PoLP):</strong> Security best practice of giving users only the minimum access they need to perform their job</li>
+<li><strong>Two-Factor Authentication (2FA):</strong> Security mechanism requiring a second verification step (time-based code from an authenticator app) in addition to password</li>
+<li><strong>Support PIN:</strong> Security code set by the user to verify identity when contacting IONOS Cloud Support</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2><p><strong>Continue Learning:</strong> <a href="unit-3.2-iam.html">Unit 3.2: Identity and Access Management</a></p>
+<p><strong>Related Topics:</strong></p>
+<ul>
+<li><a href="../module-2/unit-2.1-core-components.html">Unit 2.1: Core Architectural Components</a> - Understanding VDCs and resource organization</li>
+<li><a href="unit-3.4-logs-monitoring.html">Unit 3.4: Activity Logs and Monitoring</a> - Audit trails and security monitoring</li>
+</ul>
+
+</article>
+
+<!-- Mark Complete Button -->
+<div class="mark-complete">
+  <button class="btn-complete" data-unit-id="3.1"
+          data-label-complete="Completed"
+          data-label-incomplete="Mark as Complete"
+          aria-pressed="false">
+    <span class="btn-icon">
+      <svg viewBox="0 0 16 16" fill="currentColor">
+        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      </svg>
+    </span>
+    <span class="btn-text">Mark as Complete</span>
+  </button>
+</div>
+
+<!-- Unit Navigation -->
+<nav class="unit-navigation" aria-label="Unit navigation">
+  <div class="nav-prev">
+    <a href="../module-2/unit-2.7-knowledge-check.html">
+      <span class="nav-label">
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+        </svg>
+        Previous
+      </span>
+      <span class="nav-title">2.7 Knowledge Check - Architecture and Services</span>
+    </a>
+  </div>
+  <div class="nav-next">
+    <a href="../module-3/unit-3.2-iam.html">
+      <span class="nav-label">
+        Next
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+      </span>
+      <span class="nav-title">3.2 Identity and Access Management</span>
+    </a>
+  </div>
+</nav>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <p>&copy; 2026 . All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script>window.CW_I18N = {"keep_learning": "Keep Learning!", "completed_of_total": "You've completed <strong>{completed} of {total} units</strong> ({percentage}%).", "finish_all_units": "Finish all units to unlock your completion certificate.", "continue_learning": "Continue Learning", "back_to_overview": "Back to Overview", "skip_to_completion": "Skip to completion page", "quiz_submit": "Submit Answers", "quiz_score": "Your Score", "quiz_correct": "Correct", "quiz_incorrect": "Incorrect", "quiz_explanation": "Explanation", "quiz_show_explanation": "Show Explanation", "quiz_hide_explanation": "Hide Explanation", "quiz_passed": "Passed", "quiz_not_passed": "Not Passed", "quiz_retry": "Try Again", "quiz_of": "of", "quiz_pass_required": "You need at least {threshold}% to pass.", "finish_all_units_and_quizzes": "Finish all units and pass all quizzes to unlock your completion certificate.", "knowledge_check": "Knowledge Check"};</script>
+  <script src="../../../js/navigation.js"></script>
+  <script src="../../../js/progress.js"></script>
+  <script src="../../../js/quiz.js"></script>
+  <script src="../../../js/language-switcher.js"></script>
+</body>
+</html>

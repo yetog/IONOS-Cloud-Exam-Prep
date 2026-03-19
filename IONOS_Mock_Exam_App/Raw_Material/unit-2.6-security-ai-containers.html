@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IONOS Cloud Foundational - Unit 2.6: Security, AI, and Container Services">
+  <meta name="author" content="">
+  <title>2.6 Security, AI, and Container Services | Cloud Training</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#003d8f">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Overpass:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../../css/ionos-learn.css">
+  <link rel="stylesheet" href="../../../css/print.css" media="print">
+</head>
+<body>
+
+  <div class="page-wrapper">
+    <!-- Header -->
+    <header class="site-header" role="banner">
+      <div class="header-left">
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+
+        <!-- Logo -->
+        <a href="../../../index.html" class="logo" aria-label="IONOS Cloud Training Home">
+          <img src="../../../assets/ionos-logo.svg" alt="IONOS" width="100" height="32">
+        </a>
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../../index.html">Course</a>
+<span class="breadcrumb-separator">/</span>
+<span>Module 2</span>
+<span class="breadcrumb-separator">/</span>
+<span>Unit 2.6</span>
+        </nav>
+      </div>
+
+      <div class="header-right">
+        <a href="../../../products/index.html" class="header-link">Product Reference</a>
+        <div class="language-switcher">
+  <button class="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Change language">
+    <span class="lang-code">EN</span>
+  </button>
+  <div class="lang-dropdown" role="menu">
+    <a href="../../../en/courses/module-2/unit-2.6-security-ai-containers.html" class="lang-option current" role="menuitem">
+      <span class="lang-code">EN</span>
+      <span>English</span>
+    </a><a href="../../../de/courses/module-2/unit-2.6-security-ai-containers.html" class="lang-option" role="menuitem">
+      <span class="lang-code">DE</span>
+      <span>Deutsch</span>
+    </a><a href="../../../es/courses/module-2/unit-2.6-security-ai-containers.html" class="lang-option" role="menuitem">
+      <span class="lang-code">ES</span>
+      <span>Español</span>
+    </a><a href="../../../fr/courses/module-2/unit-2.6-security-ai-containers.html" class="lang-option" role="menuitem">
+      <span class="lang-code">FR</span>
+      <span>Français</span>
+    </a>
+  </div>
+</div>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" role="navigation" aria-label="Course navigation">
+        <div class="sidebar-header">
+          <div class="course-title">Cloud Training</div>
+          <div class="progress-container">
+            <div class="progress-label">
+              <span>Progress</span>
+              <span class="progress-percent">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="nav-modules">
+          <div class="nav-special-item">
+  <a href="../../index.html" class="special-link " data-page-id="overview">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6a.5.5 0 0 0 .708.708L8 2.207l5.646 5.647a.5.5 0 0 0 .708-.708l-6-6z"/>
+      <path d="M2.5 8.5v5.5h11v-5.5l-5.5-5.5-5.5 5.5z"/>
+    </svg>
+    <span>Course Overview</span>
+  </a>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 1: Cloud Concepts</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.1-cloud-computing-fundamentals.html" class="unit-link " data-unit-id="1.1">
+        <span class="unit-status"></span>
+        <span>1.1 Cloud Computing Fundamentals</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.2-cloud-service-benefits.html" class="unit-link " data-unit-id="1.2">
+        <span class="unit-status"></span>
+        <span>1.2 Cloud Service Benefits</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.3-cloud-deployment-models.html" class="unit-link " data-unit-id="1.3">
+        <span class="unit-status"></span>
+        <span>1.3 Cloud Service Type Categories</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-1/unit-1.4-knowledge-check.html" class="quiz-link " data-unit-id="1.4" data-quiz-id="1.4">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Cloud Concepts</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header expanded">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 2: IONOS Architecture and Services</span>
+  </div>
+  <ul class="unit-list expanded">
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.1-core-components.html" class="unit-link " data-unit-id="2.1">
+        <span class="unit-status"></span>
+        <span>2.1 Core Architectural Components</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.2-compute.html" class="unit-link " data-unit-id="2.2">
+        <span class="unit-status"></span>
+        <span>2.2 Compute Services</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.3-storage-services.html" class="unit-link " data-unit-id="2.3">
+        <span class="unit-status"></span>
+        <span>2.3 Storage Services</span>
+        <span class="unit-time">~21 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.4-networking-services.html" class="unit-link " data-unit-id="2.4">
+        <span class="unit-status"></span>
+        <span>2.4 Networking Services</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.5-databases.html" class="unit-link " data-unit-id="2.5">
+        <span class="unit-status"></span>
+        <span>2.5 Database and Data Services</span>
+        <span class="unit-time">~20 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.6-security-ai-containers.html" class="unit-link active" data-unit-id="2.6">
+        <span class="unit-status"></span>
+        <span>2.6 Security, AI, and Container Services</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-2/unit-2.7-knowledge-check.html" class="quiz-link " data-unit-id="2.7" data-quiz-id="2.7">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Architecture and Services</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 3: Management and Governance</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.1-dcd-account-management.html" class="unit-link " data-unit-id="3.1">
+        <span class="unit-status"></span>
+        <span>3.1 Data Center Designer and Account Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.2-iam.html" class="unit-link " data-unit-id="3.2">
+        <span class="unit-status"></span>
+        <span>3.2 Identity and Access Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.3-cost-billing.html" class="unit-link " data-unit-id="3.3">
+        <span class="unit-status"></span>
+        <span>3.3 Cost Management and Billing</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.4-logs-monitoring.html" class="unit-link " data-unit-id="3.4">
+        <span class="unit-status"></span>
+        <span>3.4 Activity Logs and Monitoring</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.5-security-compliance.html" class="unit-link " data-unit-id="3.5">
+        <span class="unit-status"></span>
+        <span>3.5 Security and Compliance</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-3/unit-3.6-knowledge-check.html" class="quiz-link " data-unit-id="3.6" data-quiz-id="3.6">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Management and Governance</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-special-item">
+  <a href="../../courses/completion.html" class="special-link " data-page-id="completion">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+    </svg>
+    <span>Course Completion</span>
+  </a>
+</div>
+        </nav>
+
+        <div class="sidebar-divider"></div>
+
+        <a href="../../../products/index.html" class="products-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+          <span>Product Reference</span>
+        </a>
+      </aside>
+
+      <!-- Sidebar Overlay (Mobile) -->
+      <div class="sidebar-overlay" aria-hidden="true"></div>
+
+      <!-- Main Content -->
+      <main id="main-content" class="content" role="main">
+        <div class="content-inner">
+          <!-- Unit Header Meta -->
+<div class="unit-meta">
+  <span class="reading-time">
+    <svg viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+      <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+    </svg>
+    17 min read
+  </span>
+</div>
+
+<!-- Learning Objectives -->
+<section class="learning-objectives" aria-labelledby="objectives-heading">
+  <h2 id="objectives-heading">Learning Objectives</h2>
+  <p>By the end of this module, you will be able to:</p>
+  <ul>
+    <li>Explain what Network Security Groups are and how they provide centralized firewall protection across your Virtual Data Centers</li>
+<li>Describe the purpose of Certificate Manager and SSH Key Manager in securing cloud resources</li>
+<li>Identify when to use AI Model Hub for pre-trained models versus AI Model Studio for custom model fine-tuning</li>
+<li>Compare Managed Kubernetes, Red Hat OpenShift, and SUSE Rancher Prime to understand when to use each container platform</li>
+<li>Understand when to use Private Container Registry</li>
+  </ul>
+</section>
+
+<!-- Main Unit Content -->
+<article class="unit-content">
+  <h1 id="unit-26-security-ai-and-container-services">Unit 2.6: Security, AI, and Container Services</h1><h2 id="introduction">Introduction</h2><p>Imagine building a modern city. You need security systems (traffic lights, surveillance), specialized services (hospitals, universities), and efficient transportation infrastructure (trains, highways). Your cloud environment requires similar specialized services beyond basic compute and storage. You need security tools to protect your resources, AI capabilities to add intelligence to applications, and container platforms to run modern microservices architectures.</p>
+<p>In this unit, you will explore three essential service categories that complement IONOS Cloud&#x27;s core infrastructure. We will cover security services that protect your network and manage credentials, AI services that bring machine learning capabilities to your applications, and container services that enable modern application deployment patterns. These services work together to provide a comprehensive cloud platform for diverse workloads.</p>
+<h2 id="1-network-security-services">1. Network Security Services</h2><p>IONOS Cloud provides security tools that help you control network access and protect against threats. Think of these as the security gates and guard systems for your digital infrastructure.</p>
+<h3 id="11-network-security-groups-nsgs">1.1 Network Security Groups (NSGs)</h3><p><a href="../../../products/Security/network-security-groups.html" class="product-ref">Network Security Groups</a> are IONOS Cloud&#x27;s virtual firewall building blocks for a Virtual Data Center (VDC). They act as centralized firewall policy managers that filter and control inbound (ingress) and outbound (egress) traffic for the resources they protect. Instead of managing individual firewall rules for each virtual machine individually, NSG can be used to apply rules to a group of VMs, thus enhancing efficiency when deploying many virtual machines that would have a similar set of firewalling rule requirements.</p>
+<p><strong>How NSGs work:</strong></p>
+<ul>
+<li>NSGs can be attached to Network Interface Cards (NICs) or entire Virtual Machines (VMs)</li>
+<li>When a VM is a member of an NSG, all of its NICs automatically inherit the group&#x27;s rules</li>
+<li>They contain a set of security rules based on source/destination IPs, ports, and protocols</li>
+<li>Any traffic not explicitly allowed by a rule is automatically denied (default-deny approach)</li>
+</ul>
+<p><strong>NSG types:</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Purpose</th>
+<th>Application</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Default NSG</strong></td>
+<td>Automatically created for each VDC</td>
+<td>Applied to all new VMs unless you specify otherwise, provides baseline protection</td>
+</tr>
+<tr>
+<td><strong>Custom NSG</strong></td>
+<td>Created for specific security requirements</td>
+<td>Attached to individual VMs or NICs for fine-grained control</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>When to use Network Security Groups:</strong></p>
+<p>You should use NSGs whenever you need centralized firewall management across your VDC. They are particularly valuable when you want to control both inbound and outbound traffic at the VM or NIC level, require fine-grained access control for specific workloads, or need to quickly adapt security as your business or threat landscape changes. NSGs help you avoid duplicated firewall configurations by letting you attach the same security policy to multiple resources.</p>
+<p><strong>Key security benefits:</strong></p>
+<ul>
+<li>Stateful virtual firewall that tracks connections and automatically allows return traffic</li>
+<li>Centralized policy management in one place for an entire VDC</li>
+<li>Fine-grained, per-resource control for precise rule application</li>
+<li>Default protection with minimal effort for all new VMs</li>
+<li>Streamlined management and compliance with easier auditing</li>
+</ul>
+<h3 id="12-ddos-protect">1.2 DDoS Protect</h3><p>DDoS protection in IONOS Cloud is a managed defense service that safeguards your resources against Distributed Denial-of-Service attacks. When an attack is detected, traffic is redirected to IONOS&#x27;s filtering and scrubbing platform. Malicious packets are removed and only genuine traffic is forwarded to the original destination, keeping your applications available even under heavy attack.</p>
+<p><strong>Protection scope:</strong></p>
+<p><a href="../../../products/Network_Services/ddos-protect.html" class="product-ref">DDoS Protect</a> defends against Layer 3 and Layer 4 attacks (such as UDP floods, SYN floods, and other volumetric and protocol-based attacks) for every resource in all IONOS data centers. This network-level protection ensures that your infrastructure remains accessible during attacks.</p>
+<p><strong>Available packages:</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Protection Level</th>
+<th>Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DDoS Protect Basic</strong></td>
+<td>Automatic, always-on</td>
+<td>Enabled for all users, no configuration required. Provides detection, automatic containment, and traffic filtering for common volumetric and protocol attacks</td>
+</tr>
+<tr>
+<td><strong>DDoS Protect Advanced</strong></td>
+<td>Enhanced, proactive</td>
+<td>Includes everything in Basic plus 24/7 expert support, proactive monitoring, and on-demand IP-specific filtering or attack diagnostics</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The service is cloud-native and always-on, filtering out malicious traffic at the network level without requiring manual intervention. This ensures continuous availability of your workloads during DDoS attacks.</p>
+<h2 id="2-credential-and-certificate-management">2. Credential and Certificate Management</h2><p>Managing access credentials and security certificates across cloud resources can become complex as your infrastructure grows. IONOS Cloud provides dedicated services to simplify these critical security tasks.</p>
+<h3 id="21-certificate-manager">2.1 Certificate Manager</h3><p><a href="../../../products/Security/certificate-manager.html" class="product-ref">Certificate Manager</a> is IONOS&#x27;s dedicated service for handling SSL/TLS certificates across your cloud resources. It simplifies the entire lifecycle of certificates (obtaining, installing, renewing, and revoking) so that web traffic and data exchanged between users and your servers stay encrypted and trusted.</p>
+<p><strong>What Certificate Manager does:</strong></p>
+<ul>
+<li>Imports and manages self-managed certificates (including the certificate chain and private key) for use with Application Load Balancers (ALBs) when terminating HTTPS traffic.</li>
+<li>Provides auto-renewable certificates via ACME providers such as Let&#x27;s Encrypt, DigiCert, Sectigo, GlobalSign, and ZeroSSL</li>
+<li>Auto-renewed certificates can be used with <a href="../../../products/Network_Services/cdn.html" class="product-ref">CDN</a> and API Gateway services, along with the Application Load Balancer</li>
+<li>Serves as the central hub for securely provisioning and maintaining TLS certificates</li>
+</ul>
+<p><strong>Why use Certificate Manager:</strong></p>
+<p>Instead of manually generating, tracking, and renewing certificates across multiple servers, Certificate Manager centralizes this process. You avoid expired certificates that break HTTPS connections, reduce manual effort in certificate renewal, and ensure consistent security across all your web-facing services. The service is generally available, independent of data center location, and works with IONOS Public Cloud resources.</p>
+<h3 id="22-ssh-key-manager">2.2 SSH Key Manager</h3><p>SSH key management in IONOS Cloud is the centralized handling of public SSH keys used to grant secure, password-less access to Linux-based virtual machines and other compute resources.</p>
+<p><strong>How <a href="../../../products/Security/ssh-key-manager.html" class="product-ref">SSH Key Manager</a> works:</strong></p>
+<p>The Data Center Designer provides an SSH Keys view where you can store up to 100 public SSH keys. This eliminates the need to copy and paste a key each time you configure access to a new VM. The service supports both saved keys and ad-hoc SSH keys for Dedicated Core servers, vCPU servers, and <a href="../../../products/Compute_Services/cubes.html" class="product-ref">Cubes</a>.</p>
+<p><strong>Key lifecycle actions:</strong></p>
+<ul>
+<li>Add keys by pasting text or uploading a key file</li>
+<li>Edit existing keys to update descriptions</li>
+<li>Set a default key that is pre-selected when configuring SSH access</li>
+<li>Delete keys when they are no longer needed</li>
+</ul>
+<p><strong>Why SSH key management matters:</strong></p>
+<p>SSH keys replace passwords with stronger, cryptographic authentication for remote logins. Storing keys centrally simplifies VM provisioning. When you create a Linux VM, you can select any stored key from the SSH Keys setting and the key is automatically injected into the VM&#x27;s image, enabling immediate SSH access without manual key distribution.</p>
+<p><strong>Typical workflow:</strong></p>
+<ol>
+<li>Generate a key pair locally using tools like ssh-keygen</li>
+<li>Add the public key to the DCD by pasting or uploading it</li>
+<li>Optionally set it as default for easier selection</li>
+<li>Associate the key with a VM during creation</li>
+<li>Connect to the VM using the corresponding private key</li>
+</ol>
+<h2 id="3-artificial-intelligence-services">3. Artificial Intelligence Services</h2><p>IONOS Cloud provides two complementary AI services that bring machine learning capabilities to your applications without requiring you to manage GPU infrastructure or become a machine learning expert.</p>
+<h3 id="31-ai-model-hub">3.1 AI Model Hub</h3><p><a href="../../../products/AI/ai-model-hub.html" class="product-ref">AI Model Hub</a> is IONOS&#x27;s inference service that provides a catalog of pre-trained foundation models ready to be used directly through REST APIs. These models have already been trained on large public datasets by their original developers, and you can use them immediately for inference without training or fine-tuning.</p>
+<p><strong>Types of pre-trained models available:</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Example Models</th>
+<th>Primary Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Large Language Models</strong> (text to text)</td>
+<td>Mistral Nemo 12B, Llama 3.1 8B, GPT-OSS 120B, Llama 3.1 405B</td>
+<td>Text generation, chat, code assistance</td>
+</tr>
+<tr>
+<td><strong>Embedding Models</strong> (text to vector)</td>
+<td>BGE Large v1.5, BGE m3, Paraphrase Multilingual MPNet v2</td>
+<td>Semantic search, similarity, clustering</td>
+</tr>
+<tr>
+<td><strong>Text-to-Image Models</strong> (text to image)</td>
+<td>FLUX.1-schnell, Stable Diffusion XL</td>
+<td>Image creation from prompts</td>
+</tr>
+<tr>
+<td><strong>Specialized Models</strong> (coding)</td>
+<td>Code Llama 13B</td>
+<td>Code generation and assistance</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>When to use AI Model Hub:</strong></p>
+<p>You should use AI Model Hub whenever you need advanced AI capabilities (text generation, image creation, embeddings, semantic search) without the operational burden of hardware, model training, or compliance work. The service is particularly valuable for text generation and chatbots, image generation for marketing or design, document collections with semantic search, and Retrieval-Augmented Generation (RAG) where LLM answers are grounded in your own documents.</p>
+<p><strong>Key benefits:</strong></p>
+<ul>
+<li>Managed hosting with no servers or GPU clusters to maintain</li>
+<li>Security and compliance with data staying in Germany, GDPR-aligned</li>
+<li>Scalability that auto-adjusts to meet request volume</li>
+<li>Unified, OpenAI-compatible API for easy integration</li>
+<li>Token-based billing that provides transparent, usage-driven pricing</li>
+</ul>
+<p>All models are exposed through a single API, and you can switch models on the fly without redeploying infrastructure. The service includes document collections management, RAG endpoints, and tool-calling capabilities for automation.</p>
+<h3 id="32-ai-model-studio">3.2 AI Model Studio</h3><p><a href="../../../products/AI/ai-model-studio.html" class="product-ref">AI Model Studio</a> is IONOS&#x27;s fully-managed web platform that lets you fine-tune pre-trained foundation models with your own data and then use the resulting custom model for inference. While <a href="../../../products/AI/ai-model-hub.html" class="product-ref">AI Model Hub</a> provides ready-to-use models, <a href="../../../products/AI/ai-model-studio.html" class="product-ref">AI Model Studio</a> enables you to customize models for your specific domain or use case.</p>
+<p><strong>What AI Model Studio provides:</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fine-tuning workflow</strong></td>
+<td>Continue training a base model on use-case-specific input-output pairs using efficient Low-Rank Adapter (LoRA) technique</td>
+</tr>
+<tr>
+<td><strong>Dataset management</strong></td>
+<td>Create, upload, or generate synthetic datasets for training</td>
+</tr>
+<tr>
+<td><strong>Training configuration</strong></td>
+<td>Set model name, base model, learning rate, batch size, epochs, and other parameters</td>
+</tr>
+<tr>
+<td><strong>Job monitoring</strong></td>
+<td>Run fine-tuning jobs and monitor their progress and status</td>
+</tr>
+<tr>
+<td><strong>Model testing</strong></td>
+<td>Test the fine-tuned model via built-in Playground or through REST API</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The service uses the LoRA technique, which freezes the original model weights and adds small trainable matrices, so only a few parameters need to be updated. This makes fine-tuning more efficient and accessible.</p>
+<p><strong>Supported models:</strong></p>
+<p>Currently, AI Model Studio offers smaller-to-medium sized text and multimodal models (such as Qwen3 0.6B, Qwen3 1.7B, Qwen2-VL 2B, Granite 3.3 Micro) that can be fine-tuned. The service is designed for creating domain-specific models that understand your industry&#x27;s terminology, business processes, or specialized knowledge.</p>
+<p><strong>Data handling:</strong></p>
+<p>All data stays within IONOS&#x27;s German data centers, complying with GDPR and providing full data privacy, security, and sovereignty. The service is currently offered as a free beta in the German market and can be accessed via the AI Model Studio web UI.</p>
+<p><strong>When to use AI Model Studio:</strong></p>
+<p>Use AI Model Studio when you need a model that understands your specific domain, industry terminology, or business processes better than a general-purpose model. For example, a healthcare provider might fine-tune a model on medical records and terminology, or a legal firm might train a model on case law and contracts. The resulting custom model can then be deployed for inference through API calls.</p>
+<h2 id="4-container-services">4. Container Services</h2><p>Container technology has become the standard way to package and run modern applications. IONOS Cloud provides managed container services that handle the complexity of running containerized workloads at scale.</p>
+<h3 id="41-managed-kubernetes">4.1 Managed Kubernetes</h3><p><a href="../../../products/Containers/managed-kubernetes.html" class="product-ref">Managed Kubernetes</a> is IONOS&#x27;s fully-automated service for running production-ready Kubernetes clusters without the operational overhead of managing the control plane and underlying infrastructure yourself.</p>
+<p><strong>Key benefits of Managed Kubernetes:</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Benefit</th>
+<th>What It Means</th>
+<th>Value to You</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fully-automated cluster provisioning</strong></td>
+<td>The service creates the control plane and worker nodes automatically</td>
+<td>No manual VM or networking setup required</td>
+</tr>
+<tr>
+<td><strong>Automatic updates and security patches</strong></td>
+<td>IONOS applies Kubernetes version upgrades and security fixes</td>
+<td>No intervention needed to stay current and secure</td>
+</tr>
+<tr>
+<td><strong>High-availability control plane</strong></td>
+<td>Control plane runs across multiple VMs in a region</td>
+<td>Built-in fault tolerance and continuous operation</td>
+</tr>
+<tr>
+<td><strong>Full administrator access</strong></td>
+<td>Complete control over Kubernetes API</td>
+<td>Retain control over workloads while IONOS manages infrastructure</td>
+</tr>
+<tr>
+<td><strong>Pay-as-you-go compute</strong></td>
+<td>Worker nodes billed only for resources used</td>
+<td>Cost-effective, no hidden admin overhead</td>
+</tr>
+<tr>
+<td><strong>Node-pool abstraction</strong></td>
+<td>Resources grouped into node pools</td>
+<td>Simple, consistent scaling and resource allocation</td>
+</tr>
+<tr>
+<td><strong>Built on vanilla Kubernetes</strong></td>
+<td>Standard open-source Kubernetes</td>
+<td>Maximum compatibility with ecosystem tools</td>
+</tr>
+<tr>
+<td><strong>Integrated monitoring</strong></td>
+<td>Kubernetes Manager shows status and provides kubeconfig</td>
+<td>Easy visibility into cluster health</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Managed vs Self-Managed Kubernetes:</strong></p>
+<p>The primary difference between managed and self-managed Kubernetes is who is responsible for the control plane, updates, and infrastructure management. With Managed Kubernetes, IONOS handles cluster provisioning, control plane management (including geo-redundant high availability), security patches, scaling, and node lifecycle. You focus on container workloads, CI/CD pipelines, and application scaling.</p>
+<p>With self-managed Kubernetes, you must install control plane components, handle HA architecture, apply security patches, manage VM lifecycle, and design backup strategies. While self-managed gives you full control over every component, it requires significant expertise and resources to maintain properly.</p>
+<p><strong>When to use Managed Kubernetes:</strong></p>
+<p>Choose Managed Kubernetes when your priority is rapid time-to-value, reduced operational overhead, and a reliable, automatically updated control plane. It is ideal for development teams that want to focus on building applications rather than managing infrastructure, organizations that need production-ready Kubernetes without dedicated platform engineering teams, and scenarios where you need to scale container workloads quickly without infrastructure concerns.</p>
+<p>Self-managed Kubernetes may be justified only if you need deep customization of the control plane or must run Kubernetes on infrastructure you control yourself, though you will need the expertise and resources to maintain it.</p>
+<h3 id="42-private-container-registry">4.2 Private Container Registry</h3><p>Container Registry is IONOS Cloud&#x27;s managed, private Docker/OCI artifact store. It provides an authenticated registry where OCI-compliant artifacts (Docker images, Helm charts, and other container artifacts) can be pushed, stored, and pulled over the public Internet, but only after valid credentials are presented.</p>
+<p><strong>What Container Registry provides:</strong></p>
+<ul>
+<li>A repository for Docker images and other OCI artifacts</li>
+<li>Storage for multiple repositories within each registry</li>
+<li>Access control via registry-access tokens with scoped permissions and optional expiration</li>
+<li>Fully managed infrastructure with continuous patching and updates</li>
+<li>Encryption at rest for all stored images</li>
+<li>Integration with CI/CD pipelines and Kubernetes workloads</li>
+</ul>
+<p><strong>Why use Private Container Registry:</strong></p>
+<p>Instead of relying on external providers like Docker Hub or managing your own registry infrastructure, IONOS Container Registry gives you a secure, highly-available registry that lives in the same cloud environment as your other resources. This eliminates the need to pull images across the public Internet from external providers, provides better control over who can access your container images, and ensures that proprietary application code and images remain private.</p>
+<p><strong>When to use Container Registry:</strong></p>
+<p>You should use Container Registry whenever you are deploying containerized applications on IONOS Cloud, especially with <a href="../../../products/Containers/managed-kubernetes.html" class="product-ref">Managed Kubernetes</a>. It is essential for organizations that need to store proprietary container images securely, teams that want to integrate container builds into CI/CD pipelines, and environments where you need fine-grained access control over who can push and pull images.</p>
+<p>The registry integrates seamlessly with Managed Kubernetes clusters, allowing your applications to pull images directly from the registry using the credentials you configure. This creates a complete container platform where you can build, store, and deploy containerized applications entirely within the IONOS Cloud environment.</p>
+<h3 id="43-red-hat-openshift">4.3 Red Hat OpenShift</h3><p><a href="../../../products/Containers/red-hat-openshift.html" class="product-ref">Red Hat OpenShift</a> is an enterprise Kubernetes platform available on IONOS Cloud that extends standard Kubernetes with integrated developer tools, CI/CD pipelines, and enhanced security features. OpenShift provides a complete application platform with built-in support for building, testing, and deploying containers, along with centralized logging, monitoring, and role-based access control.</p>
+<p><strong>When to use Red Hat OpenShift vs <a href="../../../products/Containers/managed-kubernetes.html" class="product-ref">Managed Kubernetes</a>:</strong></p>
+<p>Choose Red Hat OpenShift when your organization needs an enterprise-grade Kubernetes platform with integrated developer tooling, built-in CI/CD pipelines, and Red Hat enterprise support. OpenShift is particularly suited for regulated industries that require enhanced security controls and compliance features out of the box. Choose Managed Kubernetes when you need standard, open-source Kubernetes without additional enterprise tooling, prefer a simpler setup, or want to minimize costs for basic container orchestration.</p>
+<h3 id="44-suse-rancher-prime">4.4 SUSE Rancher Prime</h3><p><a href="../../../products/Containers/suse-rancher-prime.html" class="product-ref">SUSE Rancher Prime</a> is a sovereign Kubernetes management platform available on IONOS Cloud that provides centralized management of multiple Kubernetes clusters across cloud, on-premises, and edge environments. Rancher Prime offers a unified management console, policy-driven governance, and integrated security features while maintaining full data sovereignty within European infrastructure.</p>
+<p><strong>When to use SUSE Rancher Prime vs <a href="../../../products/Containers/managed-kubernetes.html" class="product-ref">Managed Kubernetes</a>:</strong></p>
+<p>Choose SUSE Rancher Prime when your organization operates multiple Kubernetes clusters across different environments and needs centralized management, consistent policy enforcement, and multi-cluster visibility from a single control plane. Rancher Prime is particularly valuable for organizations with European data sovereignty requirements and hybrid or multi-cloud Kubernetes strategies. Choose Managed Kubernetes when you need a single, straightforward Kubernetes cluster without multi-cluster management overhead.</p>
+<h2 id="common-use-cases">Common Use Cases</h2><p>Real-world scenarios where these security, AI, and container services are used:</p>
+<ol>
+<li><strong>Multi-Tier Application with <a href="../../../products/Security/network-security-groups.html" class="product-ref">Network Security Groups</a>:</strong> A software company runs a three-tier application (web, application, and database layers) in IONOS Cloud. They create custom NSGs for each tier as discussed in Section 1.1. The web tier NSG allows inbound HTTPS (port 443) from anywhere but only allows outbound connections to the application tier. The application tier NSG accepts traffic only from the web tier and can connect only to the database tier. The database tier NSG accepts connections only from the application tier. This layered security approach, using the centralized firewall management described in Section 1.1, ensures each tier is isolated and protected according to the principle of least privilege.</li>
+<li><strong>AI-Powered Customer Support with RAG:</strong> A financial services company wants to build an intelligent support chatbot that answers questions based on their internal knowledge base of policies, procedures, and FAQs. Using <a href="../../../products/AI/ai-model-hub.html" class="product-ref">AI Model Hub</a> (Section 3.1), they upload their document collection to the managed vector database, which creates embeddings for semantic search. They configure a RAG endpoint that combines document retrieval with a Large Language Model. When customers ask questions, the system searches the document collection for relevant policies and generates accurate, context-aware answers using the LLM. The token-based billing model and GDPR-compliant German data centers (mentioned in Section 3.1) ensure cost-effective operation while meeting regulatory requirements for financial data.</li>
+<li><strong>Microservices Platform with <a href="../../../products/Containers/managed-kubernetes.html" class="product-ref">Managed Kubernetes</a> and Container Registry:</strong> A growing e-commerce startup deploys their application as microservices using Managed Kubernetes (Section 4.1). They store all their container images in Private Container Registry (Section 4.2), including images for their product catalog service, payment processing service, and order management service. Their CI/CD pipeline automatically builds new images when developers commit code, pushes them to the Container Registry with proper access tokens, and triggers rolling updates in the Kubernetes cluster. Because IONOS manages the Kubernetes control plane (automatic updates and patches as described in Section 4.1), the startup&#x27;s small DevOps team can focus on application features rather than cluster maintenance. During holiday shopping peaks, they scale node pools up through the Kubernetes Manager, and scale back down after the rush, paying only for the resources used.</li>
+</ol>
+<h2 id="summary">Summary</h2><p>This unit explored three essential service categories that extend IONOS Cloud beyond basic infrastructure. Network security services protect your resources through centralized firewall policies and DDoS protection. AI services bring machine learning capabilities through pre-trained models and custom fine-tuning platforms. Container services enable modern application deployment with <a href="../../../products/Containers/managed-kubernetes.html" class="product-ref">Managed Kubernetes</a> and private image registries.</p>
+<p><a href="../../../products/Security/network-security-groups.html" class="product-ref">Network Security Groups</a> provide centralized, stateful firewall management across your Virtual Data Centers, with both default protection for all VMs and custom policies for specific workloads. <a href="../../../products/Network_Services/ddos-protect.html" class="product-ref">DDoS Protect</a> safeguards against network attacks with automatic traffic filtering and optional advanced support. <a href="../../../products/Security/certificate-manager.html" class="product-ref">Certificate Manager</a> simplifies SSL/TLS certificate lifecycle management, while <a href="../../../products/Security/ssh-key-manager.html" class="product-ref">SSH Key Manager</a> centralizes secure access to Linux VMs.</p>
+<p><a href="../../../products/AI/ai-model-hub.html" class="product-ref">AI Model Hub</a> offers immediate access to pre-trained foundation models for text generation, image creation, and semantic search without managing GPU infrastructure. <a href="../../../products/AI/ai-model-studio.html" class="product-ref">AI Model Studio</a> enables fine-tuning of models with your own data for domain-specific applications. Both services keep data in German data centers for GDPR compliance.</p>
+<p>Managed Kubernetes provides production-ready container orchestration with fully automated cluster provisioning, high-availability control planes, and automatic updates. <a href="../../../products/Containers/red-hat-openshift.html" class="product-ref">Red Hat OpenShift</a> extends Kubernetes with enterprise developer tools, CI/CD pipelines, and enhanced security for regulated environments. <a href="../../../products/Containers/suse-rancher-prime.html" class="product-ref">SUSE Rancher Prime</a> provides centralized multi-cluster Kubernetes management with policy-driven governance and European data sovereignty. Private Container Registry offers secure storage for Docker images and Helm charts with access control and encryption. Together, these services create a complete platform for modern microservices architectures.</p>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li>Network Security Groups act as centralized firewall policy managers that filter traffic at the VM and NIC level with default-deny security</li>
+<li>DDoS Protect provides always-on defense against Layer 3 and Layer 4 attacks with automatic traffic filtering</li>
+<li>Certificate Manager and SSH Key Manager centralize security credential management across your cloud resources</li>
+<li>AI Model Hub provides pre-trained foundation models for immediate use, while AI Model Studio enables custom model fine-tuning with your own data</li>
+<li>Managed Kubernetes handles control plane management, updates, and high availability so you can focus on applications</li>
+<li>Red Hat OpenShift provides enterprise Kubernetes with integrated developer tools, CI/CD, and enhanced security</li>
+<li>SUSE Rancher Prime enables centralized multi-cluster Kubernetes management with policy governance and data sovereignty</li>
+<li>Private Container Registry provides secure, encrypted storage for container images with fine-grained access control</li>
+</ul>
+<p><strong>Important Terminology:</strong></p>
+<ul>
+<li><strong>Network Security Group (NSG):</strong> Virtual firewall that filters inbound and outbound traffic for VMs and NICs based on centrally managed security rules</li>
+<li><strong>DDoS Protect:</strong> Managed defense service that redirects attack traffic to filtering platforms while allowing legitimate traffic to reach resources</li>
+<li><strong>Certificate Manager:</strong> Service that handles SSL/TLS certificate lifecycle (obtaining, installing, renewing, revoking) for web applications</li>
+<li><strong>AI Model Hub:</strong> Inference service providing REST API access to pre-trained foundation models (LLMs, embeddings, text-to-image) without managing infrastructure</li>
+<li><strong>AI Model Studio:</strong> Platform for fine-tuning pre-trained models with custom data using Low-Rank Adapter (LoRA) technique</li>
+<li><strong>Managed Kubernetes:</strong> Fully-automated container orchestration service with managed control plane, automatic updates, and high availability</li>
+<li><strong>Red Hat OpenShift:</strong> Enterprise Kubernetes platform with integrated developer tools, CI/CD pipelines, and enhanced security features</li>
+<li><strong>SUSE Rancher Prime:</strong> Sovereign Kubernetes management platform for centralized multi-cluster operations with policy-driven governance</li>
+<li><strong>Container Registry:</strong> Private, managed Docker/OCI artifact store with authentication, access control, and encryption at rest</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2><p><strong>Continue Learning:</strong> <a href="../module-3/unit-3.1-dcd-account-management.html">Unit 3.1: Data Center Designer and Account Management</a></p>
+<p><strong>Related Topics:</strong></p>
+<ul>
+<li><a href="unit-2.1-core-components.html">Unit 2.1: Core Architectural Components</a> - Understanding VDCs and networking fundamentals</li>
+<li><a href="../module-3/unit-3.2-iam.html">Unit 3.2: Identity and Access Management</a> - Managing user access and permissions</li>
+<li><a href="../module-3/unit-3.5-security-compliance.html">Unit 3.5: Security and Compliance</a> - Shared responsibility and security best practices</li>
+</ul>
+
+</article>
+
+<!-- Mark Complete Button -->
+<div class="mark-complete">
+  <button class="btn-complete" data-unit-id="2.6"
+          data-label-complete="Completed"
+          data-label-incomplete="Mark as Complete"
+          aria-pressed="false">
+    <span class="btn-icon">
+      <svg viewBox="0 0 16 16" fill="currentColor">
+        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      </svg>
+    </span>
+    <span class="btn-text">Mark as Complete</span>
+  </button>
+</div>
+
+<!-- Unit Navigation -->
+<nav class="unit-navigation" aria-label="Unit navigation">
+  <div class="nav-prev">
+    <a href="../module-2/unit-2.5-databases.html">
+      <span class="nav-label">
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+        </svg>
+        Previous
+      </span>
+      <span class="nav-title">2.5 Database and Data Services</span>
+    </a>
+  </div>
+  <div class="nav-next">
+    <a href="../module-2/unit-2.7-knowledge-check.html">
+      <span class="nav-label">
+        Next
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+      </span>
+      <span class="nav-title">2.7 Knowledge Check - Architecture and Services</span>
+    </a>
+  </div>
+</nav>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <p>&copy; 2026 . All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script>window.CW_I18N = {"keep_learning": "Keep Learning!", "completed_of_total": "You've completed <strong>{completed} of {total} units</strong> ({percentage}%).", "finish_all_units": "Finish all units to unlock your completion certificate.", "continue_learning": "Continue Learning", "back_to_overview": "Back to Overview", "skip_to_completion": "Skip to completion page", "quiz_submit": "Submit Answers", "quiz_score": "Your Score", "quiz_correct": "Correct", "quiz_incorrect": "Incorrect", "quiz_explanation": "Explanation", "quiz_show_explanation": "Show Explanation", "quiz_hide_explanation": "Hide Explanation", "quiz_passed": "Passed", "quiz_not_passed": "Not Passed", "quiz_retry": "Try Again", "quiz_of": "of", "quiz_pass_required": "You need at least {threshold}% to pass.", "finish_all_units_and_quizzes": "Finish all units and pass all quizzes to unlock your completion certificate.", "knowledge_check": "Knowledge Check"};</script>
+  <script src="../../../js/navigation.js"></script>
+  <script src="../../../js/progress.js"></script>
+  <script src="../../../js/quiz.js"></script>
+  <script src="../../../js/language-switcher.js"></script>
+</body>
+</html>

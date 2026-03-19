@@ -1,0 +1,321 @@
+/* ==========================================================================
+   IONOS Learn - Print Stylesheet
+   Optimized for printing course content
+   ========================================================================== */
+
+@media print {
+  /* ==========================================================================
+     1. Reset & Hide Non-Essential Elements
+     ========================================================================== */
+
+  /* Hide navigation and interactive elements */
+  .site-header,
+  .sidebar,
+  .sidebar-overlay,
+  .menu-toggle,
+  .unit-navigation,
+  .mark-complete,
+
+  .header-right,
+  .products-link,
+  .btn-complete {
+    display: none !important;
+  }
+
+  /* ==========================================================================
+     2. Page Layout
+     ========================================================================== */
+
+  /* Reset layout for print */
+  body {
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+  }
+
+  .page-wrapper,
+  .main-container {
+    display: block;
+  }
+
+  .content {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .content-inner {
+    max-width: 100%;
+  }
+
+  .site-footer {
+    margin: 0;
+    padding: 20pt 0;
+    border-top: 1pt solid #ccc;
+    background: none;
+  }
+
+  /* ==========================================================================
+     3. Typography for Print
+     ========================================================================== */
+
+  h1 {
+    font-size: 24pt;
+    color: #001b41;
+    page-break-after: avoid;
+  }
+
+  h2 {
+    font-size: 18pt;
+    color: #001b41;
+    margin-top: 24pt;
+    page-break-after: avoid;
+    border-bottom: 1pt solid #ddd;
+  }
+
+  h3 {
+    font-size: 14pt;
+    color: #001b41;
+    margin-top: 18pt;
+    page-break-after: avoid;
+  }
+
+  h4 {
+    font-size: 12pt;
+    color: #001b41;
+    margin-top: 14pt;
+    page-break-after: avoid;
+  }
+
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* ==========================================================================
+     4. Links
+     ========================================================================== */
+
+  /* Show URLs after links */
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #666;
+    word-wrap: break-word;
+  }
+
+  /* Don't show URL for internal links or product references */
+  a[href^="#"]:after,
+  a[href^="javascript"]:after,
+  a.product-ref:after {
+    content: "";
+  }
+
+  /* Product reference styling for print */
+  a.product-ref {
+    background: none;
+    padding: 0;
+    color: #3196d6;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  /* ==========================================================================
+     5. Tables
+     ========================================================================== */
+
+  .table-container {
+    overflow: visible;
+    border: none;
+    margin: 12pt 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9pt;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    background-color: #001b41 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  th {
+    background-color: #001b41 !important;
+    color: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    padding: 8pt;
+    border: 1pt solid #001b41;
+  }
+
+  td {
+    padding: 8pt;
+    border: 1pt solid #ccc;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f5f5f5 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ==========================================================================
+     6. Code Blocks
+     ========================================================================== */
+
+  pre {
+    background-color: #f5f5f5 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    border: 1pt solid #ddd;
+    padding: 10pt;
+    font-size: 9pt;
+    page-break-inside: avoid;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #333;
+  }
+
+  code {
+    background-color: #f0f0f0;
+    padding: 1pt 3pt;
+    font-size: 9pt;
+  }
+
+  pre code {
+    background: none;
+    padding: 0;
+  }
+
+  /* ==========================================================================
+     7. Special Sections
+     ========================================================================== */
+
+  /* Learning objectives */
+  .learning-objectives {
+    background-color: #f0f7ff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    border-left: 3pt solid #3196d6;
+    padding: 12pt;
+    margin: 12pt 0;
+    page-break-inside: avoid;
+  }
+
+  .learning-objectives h2 {
+    border-bottom: none;
+    margin-top: 0;
+    font-size: 12pt;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    background-color: #fffbf0 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    border-left: 3pt solid #11c7e6;
+    padding: 10pt;
+    margin: 12pt 0;
+    page-break-inside: avoid;
+  }
+
+  /* ==========================================================================
+     8. Page Breaks
+     ========================================================================== */
+
+  /* Avoid breaks inside key elements */
+  .learning-objectives,
+  .table-container,
+  blockquote,
+  pre,
+  figure,
+  .module-card,
+  .cheatsheet {
+    page-break-inside: avoid;
+  }
+
+  /* Start new page before major sections */
+  h2 {
+    page-break-before: auto;
+  }
+
+  /* ==========================================================================
+     9. Course Index Page Print Styles
+     ========================================================================== */
+
+  .course-hero {
+    background: #001b41 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color: #fff !important;
+    padding: 20pt;
+    margin-bottom: 20pt;
+  }
+
+  .course-hero h1 {
+    color: #fff !important;
+  }
+
+  .course-stats {
+    display: flex;
+    gap: 30pt;
+  }
+
+  .stat-value {
+    color: #11c7e6 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .module-card {
+    border: 1pt solid #ddd;
+    padding: 12pt;
+    margin-bottom: 12pt;
+    page-break-inside: avoid;
+  }
+
+  .module-number {
+    background-color: #3196d6 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color: #fff !important;
+    padding: 2pt 8pt;
+  }
+
+  /* ==========================================================================
+     10. Print Header/Footer (via @page)
+     ========================================================================== */
+
+  @page {
+    size: A4;
+    margin: 2cm;
+  }
+
+  @page :first {
+    margin-top: 1cm;
+  }
+
+  /* ==========================================================================
+     11. Utility Overrides
+     ========================================================================== */
+
+  .visually-hidden {
+    display: none !important;
+  }
+
+  /* Ensure images don't overflow */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  /* Remove box shadows */
+  * {
+    box-shadow: none !important;
+  }
+}

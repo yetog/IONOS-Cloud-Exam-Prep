@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IONOS Cloud Foundational - Unit 2.4: Networking Services">
+  <meta name="author" content="">
+  <title>2.4 Networking Services | Cloud Training</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#003d8f">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Overpass:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../../css/ionos-learn.css">
+  <link rel="stylesheet" href="../../../css/print.css" media="print">
+</head>
+<body>
+
+  <div class="page-wrapper">
+    <!-- Header -->
+    <header class="site-header" role="banner">
+      <div class="header-left">
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+
+        <!-- Logo -->
+        <a href="../../../index.html" class="logo" aria-label="IONOS Cloud Training Home">
+          <img src="../../../assets/ionos-logo.svg" alt="IONOS" width="100" height="32">
+        </a>
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../../index.html">Course</a>
+<span class="breadcrumb-separator">/</span>
+<span>Module 2</span>
+<span class="breadcrumb-separator">/</span>
+<span>Unit 2.4</span>
+        </nav>
+      </div>
+
+      <div class="header-right">
+        <a href="../../../products/index.html" class="header-link">Product Reference</a>
+        <div class="language-switcher">
+  <button class="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Change language">
+    <span class="lang-code">EN</span>
+  </button>
+  <div class="lang-dropdown" role="menu">
+    <a href="../../../en/courses/module-2/unit-2.4-networking-services.html" class="lang-option current" role="menuitem">
+      <span class="lang-code">EN</span>
+      <span>English</span>
+    </a><a href="../../../de/courses/module-2/unit-2.4-networking-services.html" class="lang-option" role="menuitem">
+      <span class="lang-code">DE</span>
+      <span>Deutsch</span>
+    </a><a href="../../../es/courses/module-2/unit-2.4-networking-services.html" class="lang-option" role="menuitem">
+      <span class="lang-code">ES</span>
+      <span>Español</span>
+    </a><a href="../../../fr/courses/module-2/unit-2.4-networking-services.html" class="lang-option" role="menuitem">
+      <span class="lang-code">FR</span>
+      <span>Français</span>
+    </a>
+  </div>
+</div>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" role="navigation" aria-label="Course navigation">
+        <div class="sidebar-header">
+          <div class="course-title">Cloud Training</div>
+          <div class="progress-container">
+            <div class="progress-label">
+              <span>Progress</span>
+              <span class="progress-percent">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="nav-modules">
+          <div class="nav-special-item">
+  <a href="../../index.html" class="special-link " data-page-id="overview">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6a.5.5 0 0 0 .708.708L8 2.207l5.646 5.647a.5.5 0 0 0 .708-.708l-6-6z"/>
+      <path d="M2.5 8.5v5.5h11v-5.5l-5.5-5.5-5.5 5.5z"/>
+    </svg>
+    <span>Course Overview</span>
+  </a>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 1: Cloud Concepts</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.1-cloud-computing-fundamentals.html" class="unit-link " data-unit-id="1.1">
+        <span class="unit-status"></span>
+        <span>1.1 Cloud Computing Fundamentals</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.2-cloud-service-benefits.html" class="unit-link " data-unit-id="1.2">
+        <span class="unit-status"></span>
+        <span>1.2 Cloud Service Benefits</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.3-cloud-deployment-models.html" class="unit-link " data-unit-id="1.3">
+        <span class="unit-status"></span>
+        <span>1.3 Cloud Service Type Categories</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-1/unit-1.4-knowledge-check.html" class="quiz-link " data-unit-id="1.4" data-quiz-id="1.4">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Cloud Concepts</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header expanded">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 2: IONOS Architecture and Services</span>
+  </div>
+  <ul class="unit-list expanded">
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.1-core-components.html" class="unit-link " data-unit-id="2.1">
+        <span class="unit-status"></span>
+        <span>2.1 Core Architectural Components</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.2-compute.html" class="unit-link " data-unit-id="2.2">
+        <span class="unit-status"></span>
+        <span>2.2 Compute Services</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.3-storage-services.html" class="unit-link " data-unit-id="2.3">
+        <span class="unit-status"></span>
+        <span>2.3 Storage Services</span>
+        <span class="unit-time">~21 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.4-networking-services.html" class="unit-link active" data-unit-id="2.4">
+        <span class="unit-status"></span>
+        <span>2.4 Networking Services</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.5-databases.html" class="unit-link " data-unit-id="2.5">
+        <span class="unit-status"></span>
+        <span>2.5 Database and Data Services</span>
+        <span class="unit-time">~20 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.6-security-ai-containers.html" class="unit-link " data-unit-id="2.6">
+        <span class="unit-status"></span>
+        <span>2.6 Security, AI, and Container Services</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-2/unit-2.7-knowledge-check.html" class="quiz-link " data-unit-id="2.7" data-quiz-id="2.7">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Architecture and Services</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 3: Management and Governance</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.1-dcd-account-management.html" class="unit-link " data-unit-id="3.1">
+        <span class="unit-status"></span>
+        <span>3.1 Data Center Designer and Account Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.2-iam.html" class="unit-link " data-unit-id="3.2">
+        <span class="unit-status"></span>
+        <span>3.2 Identity and Access Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.3-cost-billing.html" class="unit-link " data-unit-id="3.3">
+        <span class="unit-status"></span>
+        <span>3.3 Cost Management and Billing</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.4-logs-monitoring.html" class="unit-link " data-unit-id="3.4">
+        <span class="unit-status"></span>
+        <span>3.4 Activity Logs and Monitoring</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.5-security-compliance.html" class="unit-link " data-unit-id="3.5">
+        <span class="unit-status"></span>
+        <span>3.5 Security and Compliance</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-3/unit-3.6-knowledge-check.html" class="quiz-link " data-unit-id="3.6" data-quiz-id="3.6">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Management and Governance</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-special-item">
+  <a href="../../courses/completion.html" class="special-link " data-page-id="completion">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+    </svg>
+    <span>Course Completion</span>
+  </a>
+</div>
+        </nav>
+
+        <div class="sidebar-divider"></div>
+
+        <a href="../../../products/index.html" class="products-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+          <span>Product Reference</span>
+        </a>
+      </aside>
+
+      <!-- Sidebar Overlay (Mobile) -->
+      <div class="sidebar-overlay" aria-hidden="true"></div>
+
+      <!-- Main Content -->
+      <main id="main-content" class="content" role="main">
+        <div class="content-inner">
+          <!-- Unit Header Meta -->
+<div class="unit-meta">
+  <span class="reading-time">
+    <svg viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+      <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+    </svg>
+    16 min read
+  </span>
+</div>
+
+<!-- Learning Objectives -->
+<section class="learning-objectives" aria-labelledby="objectives-heading">
+  <h2 id="objectives-heading">Learning Objectives</h2>
+  <p>By the end of this module, you will be able to:</p>
+  <ul>
+    <li>Explain the differences between Managed Application Load Balancer and Managed Network Load Balancer and when to use each</li>
+<li>Describe the purpose of Managed NAT Gateway and VPN Gateway in cloud networking</li>
+<li>Identify when to use Cross Connect for connecting Virtual Data Centers</li>
+<li>Explain the benefits of Cloud DNS and IPv6 configuration in IONOS Cloud</li>
+  </ul>
+</section>
+
+<!-- Main Unit Content -->
+<article class="unit-content">
+  <h1 id="unit-24-networking-services">Unit 2.4: Networking Services</h1><h2 id="introduction">Introduction</h2><p>Think of networking services as the postal system of your cloud infrastructure. Just as mail needs to be sorted, routed, and delivered securely to the right addresses, your cloud applications need traffic distribution, secure connections, and efficient routing between services. IONOS Cloud provides a comprehensive suite of networking services that handle everything from distributing traffic across multiple servers to connecting your cloud resources securely to on-premises systems.</p>
+<p>In this unit, you will explore the key networking services that power IONOS Cloud infrastructure. Whether you need to balance traffic across multiple servers, provide secure internet access to private resources, or connect different parts of your infrastructure, understanding these services will help you design robust, scalable network architectures.</p>
+<h2 id="1-load-balancing-services">1. Load Balancing Services</h2><p>Load balancing is the practice of distributing incoming network traffic across multiple servers to ensure no single server becomes overwhelmed. IONOS Cloud offers two types of load balancers, each designed for different scenarios and operating at different layers of the network stack.</p>
+<h3 id="11-managed-application-load-balancer-alb">1.1 Managed Application Load Balancer (ALB)</h3><p>The <a href="../../../products/Network_Services/application-load-balancer.html" class="product-ref">Managed Application Load Balancer</a> operates at Layer 7 of the OSI model (the application layer), which means it can make intelligent routing decisions based on HTTP/HTTPS traffic content. When a request arrives at an ALB, it examines the HTTP attributes and forwards the request to the appropriate backend servers (called Target Groups) based on user-defined policies.</p>
+<p><strong>Key Characteristics:</strong></p>
+<p>The ALB supports advanced routing capabilities that go far beyond simple traffic distribution. You can route requests based on HTTP method, headers, hostname, URL path, or query string parameters. This makes it ideal for microservices architectures where different services handle different parts of your application. The ALB can also return fixed responses or redirect traffic to another host without involving any backend server, which is useful for maintenance pages or URL redirects.</p>
+<p>Health checks are built into the ALB, continuously probing registered targets to ensure only healthy servers receive traffic. This improves overall reliability and makes your architecture highly available. The service also supports both public load balancing (exposed to the internet) and private load balancing (internal traffic within your data center).</p>
+<p><strong>When to Use ALB:</strong></p>
+<p>Choose the Managed Application Load Balancer when you need application-layer intelligence such as URL-based routing, cookie-based session stickiness, HTTP redirects, or TLS termination. It is typical for web applications, SaaS front-ends, container or Kubernetes ingress controllers, and API services where content-aware routing is required.</p>
+<h3 id="12-managed-network-load-balancer-nlb">1.2 Managed Network Load Balancer (NLB)</h3><p>The <a href="../../../products/Network_Services/network-load-balancer.html" class="product-ref">Managed Network Load Balancer</a> operates at Layer 4 of the OSI model (the transport layer), working with raw TCP traffic. Unlike the ALB, the NLB does not inspect HTTP content. Instead, it simply forwards TCP packets to backend servers based on IP address and port, making it lighter weight and capable of handling higher throughput with lower latency.</p>
+<p><strong>Key Characteristics:</strong></p>
+<p>The NLB provides multiple Layer 4 load-balancing algorithms including Round Robin, Least Connection, Random, and Source IP. It can handle both public (internet-facing) and private (internal) traffic. Because the NLB does not terminate TLS, it can pass encrypted traffic unchanged to the backend, enabling end-to-end encryption. This makes it suitable for applications that require the backend to handle TLS directly.</p>
+<p>The NLB is designed for high performance, offering the lowest latency and highest connection-per-second capacity. Health checks are TCP-based (connection-oriented) rather than HTTP-based, ensuring backend servers are reachable at the network level.</p>
+<p><strong>When to Use NLB:</strong></p>
+<p>Choose the Managed Network Load Balancer when you need raw, high-performance TCP forwarding with no HTTP parsing, want to preserve TLS encryption all the way to the backend, or are balancing non-HTTP services such as databases, SSH, custom protocols, or high-throughput data pipelines.</p>
+<h3 id="13-choosing-between-alb-and-nlb">1.3 Choosing Between ALB and NLB</h3><p>The following table summarizes the core differences to help you decide which load balancer fits your needs:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>ALB (Layer 7)</th>
+<th>NLB (Layer 4)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Protocol support</strong></td>
+<td>HTTP/HTTPS only (ports 1-65535)</td>
+<td>TCP (ports 1-65535)</td>
+</tr>
+<tr>
+<td><strong>Routing logic</strong></td>
+<td>Host, path, method, header, query string, fixed response, redirects</td>
+<td>Simple IP/port forwarding, Layer 4 algorithms (Round Robin, Least Connection, Random, Source IP)</td>
+</tr>
+<tr>
+<td><strong>TLS handling</strong></td>
+<td>Terminates TLS at the listener (no end-to-end encryption by default)</td>
+<td>No TLS termination; traffic passes unchanged (end-to-end encryption possible)</td>
+</tr>
+<tr>
+<td><strong>Health checks</strong></td>
+<td>HTTP health checks</td>
+<td>TCP health checks (connection-based)</td>
+</tr>
+<tr>
+<td><strong>Performance</strong></td>
+<td>Slightly higher latency due to HTTP inspection</td>
+<td>Highest throughput, lowest latency</td>
+</tr>
+<tr>
+<td><strong>Use case examples</strong></td>
+<td>Web applications, microservices, API gateways, content-based routing</td>
+<td>Database proxies, SSH bastion, VPN, high-speed data pipelines</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="14-business-benefits-of-load-balancing">1.4 Business Benefits of Load Balancing</h3><p>Both load balancers provide critical business benefits. They improve scalability by distributing traffic across multiple compute resources, allowing you to add or remove servers without service interruption. They enhance reliability through health checks that ensure traffic only goes to healthy instances, eliminating single points of failure. High availability is built-in, with automatic failover if a component fails or during maintenance.</p>
+<p>Load balancers also enable zero-downtime deployments. Because traffic can be shifted away from instances being patched or upgraded, you can apply updates without taking your application offline. As fully managed services, they eliminate the need to provision, patch, or scale load balancer hardware or software yourself.</p>
+<h2 id="2-gateway-services">2. Gateway Services</h2><p>Gateway services provide controlled access between your cloud resources and external networks, whether that is the public internet, your on-premises data center, or other cloud environments. These managed services are available in the Public Cloud and enable secure connectivity for resources on private LANs.</p>
+<h3 id="21-managed-nat-gateway">2.1 Managed NAT Gateway</h3><p>A Network Address Translation (NAT) Gateway sits between a private network and the public internet, translating private IP addresses to public IP addresses when private resources initiate outbound connections. Crucially, it only allows outbound traffic; it does not permit unsolicited inbound connections from reaching your private resources.</p>
+<p><strong>What It Provides:</strong></p>
+<p>The <a href="../../../products/Network_Services/nat-gateway.html" class="product-ref">Managed NAT Gateway</a> performs Source NAT (SNAT), allowing VMs on private networks to reach the internet (for example, to download software updates, sync time with NTP servers, or push backups to cloud storage) without requiring each VM to have its own public IP address. All outbound traffic from attached private LANs is translated to one (or a few) public IP addresses.</p>
+<p>As a fully managed service, IONOS operates, patches, and updates the NAT Gateway. It is highly scalable to meet growing traffic demands and deployed across multiple availability zones for high availability and fault tolerance. You can attach up to six private networks per gateway and configure custom SNAT rules to control exactly which traffic is allowed outbound.</p>
+<p><strong>When to Use NAT Gateway:</strong></p>
+<p>Use the Managed NAT Gateway when your workload only needs outbound internet access and should never be reachable from the internet. This improves security by reducing the attack surface (VMs remain hidden from external threats) and simplifies your network architecture. It is ideal for application VMs that need to download patches, access external APIs, or push backups but do not serve web traffic directly.</p>
+<p><strong>Benefits:</strong></p>
+<p>The NAT Gateway improves security by ensuring VMs are not directly reachable from the internet. It simplifies architecture by replacing many individual public network interfaces with a single gateway and reduces costs by requiring only a single public IP address. You gain operational ease because IONOS handles all software updates, patches, and high-availability provisioning.</p>
+<h3 id="22-vpn-gateway">2.2 VPN Gateway</h3><p>A <a href="../../../products/Network_Services/vpn-gateway.html" class="product-ref">VPN Gateway</a> creates encrypted, site-to-site connections over the public internet, linking your on-premises network, branch offices, or other cloud environments to IONOS Virtual Data Centers. It uses IPSec or WireGuard protocols to establish secure tunnels that protect data in transit.</p>
+<p><strong>What It Provides:</strong></p>
+<p>The VPN Gateway is a fully managed service that runs in a virtual data center and is assigned a public IPv4 address. It supports both IPSec (IKEv2) and WireGuard protocols, which can be used simultaneously. You can choose from three tiers (Standard, Enhanced, Premium) that support increasing numbers of LANs and tunnels/peers. Each tier can optionally include high availability (active-passive VM pair) for automatic tunnel failover.</p>
+<p>The gateway supports static routing only (no BGP) and can handle both IPv4 and IPv6 traffic, though tunnel endpoints and gateway IPs are IPv4 only. Performance scales up to 1 Gbps per tunnel, and the Premium tier supports up to 30 tunnels or peers.</p>
+<p><strong>When to Use VPN Gateway:</strong></p>
+<p>Use the VPN Gateway when you need encrypted, bidirectional connectivity between IONOS and external networks that are not in the same IONOS region. Typical use cases include hybrid-cloud connectivity to an on-premises data center, multi-cloud interconnects (linking IONOS with AWS, Azure, or other providers), disaster-recovery and migration scenarios, hub-and-spoke or mesh network topologies, and secure remote access for employees.</p>
+<p><strong>Benefits:</strong></p>
+<p>The VPN Gateway provides strong encryption (AES-256, SHA-256/384/512) to protect data in motion, meeting regulatory and compliance requirements. It simplifies operations as a fully managed service that handles patching and updates. High availability options minimize downtime for critical workloads. The service offers flexibility in protocol choice: IPSec for broad compatibility or WireGuard for lower latency and higher throughput.</p>
+<h2 id="3-connecting-virtual-data-centers">3. Connecting Virtual Data Centers</h2><p>IONOS Cloud provides <a href="../../../products/Network_Services/cross-connect.html" class="product-ref">Cross Connect</a>, a feature that creates private LAN-based links between multiple Virtual Data Centers in the same geographic region and contract.</p>
+<h3 id="31-what-is-cross-connect">3.1 What is Cross Connect?</h3><p><a href="../../../products/Network_Services/cross-connect.html" class="product-ref">Cross Connect</a> is an internal networking feature that connects VDCs using IONOS&#x27;s private backbone infrastructure. Traffic between connected VDCs never leaves the IONOS network, eliminating public internet hops and providing low-latency, high-bandwidth connectivity comparable to a local network interface card (NIC).</p>
+<p><strong>How It Works:</strong></p>
+<p>Cross Connect establishes a private LAN connection between VDCs that belong to the same contract and are located in the same IONOS region. This constraint ensures data sovereignty and compliance by keeping traffic within the chosen geographic jurisdiction. The connection is transparent to your workloads; VMs in different VDCs can communicate as if they were on the same local network.</p>
+<h3 id="32-when-to-use-cross-connect">3.2 When to Use Cross Connect</h3><p><a href="../../../products/Network_Services/cross-connect.html" class="product-ref">Cross Connect</a> is designed for specific scenarios where you need fast, reliable communication between VDCs in the same region:</p>
+<p><strong>Resource Sharing:</strong> You can centralize services such as firewalls, VPN gateways, DNS servers, or databases in one VDC and have other VDCs connect to them securely without duplicating infrastructure.</p>
+<p><strong>Organizational Separation:</strong> Different VDCs can be used for separate billing units, teams, or projects while still allowing controlled data exchange through the private link.</p>
+<p><strong>Disaster Recovery and Backup:</strong> Fast replication between VDCs in the same region supports business continuity strategies. The low-latency, high-bandwidth connection makes it practical to maintain synchronized backup copies of critical data.</p>
+<p><strong>Scaling Infrastructure:</strong> As your infrastructure grows, you can add new VDCs and attach them to the existing Cross Connect, providing a scalable network fabric without additional networking overhead.</p>
+<h3 id="33-benefits-of-cross-connect">3.3 Benefits of Cross Connect</h3><p><a href="../../../products/Network_Services/cross-connect.html" class="product-ref">Cross Connect</a> offers several important advantages. It provides reduced latency and higher throughput because traffic stays on a private LAN, avoiding public internet congestion. Reliability is enhanced because private links are less prone to network spikes and congestion.</p>
+<p>Security and compliance are strengthened because data never leaves the IONOS private network, helping meet regulatory requirements. Cost efficiency is achieved by sharing central resources instead of replicating them in each VDC. The service supports scalability and flexibility, allowing you to add or remove VDCs without re-architecting your network. Cross Connect is also provided at no additional charge (both legacy and upgraded versions are free).</p>
+<h2 id="4-dns-and-ip-management">4. DNS and IP Management</h2><p>IONOS Cloud provides services for managing domain name resolution and modern IP addressing.</p>
+<h3 id="41-cloud-dns">4.1 Cloud DNS</h3><p>Cloud DNS is a managed Domain Name System service that translates human-readable domain names (like <code>example.com</code>) into IP addresses that computers use to locate services on the internet. As a fully managed service, IONOS handles the infrastructure, redundancy, and performance of your DNS resolution.</p>
+<p><strong>Why Use Cloud DNS:</strong></p>
+<p>Managing DNS manually requires maintaining multiple DNS servers for redundancy, configuring zone files correctly, and ensuring high availability. Cloud DNS eliminates this operational burden by providing a managed service with built-in reliability and global distribution. It simplifies DNS management while ensuring your domain names resolve quickly and reliably for users worldwide.</p>
+<p><strong>When to Use Cloud DNS:</strong></p>
+<p>Use Cloud DNS when you need to manage domain name resolution for web applications, APIs, or services hosted on IONOS Cloud. It is especially valuable for production workloads that require high availability and fast DNS resolution without the complexity of managing your own DNS servers.</p>
+<h3 id="42-ipv6-configuration">4.2 IPv6 Configuration</h3><p>IPv6 (Internet Protocol version 6) is the newest internet protocol standard, using 128-bit addresses instead of the 32-bit addresses used by IPv4. This provides an almost limitless pool of unique addresses, solving the IPv4 address exhaustion problem.</p>
+<p><strong>Why Use IPv6:</strong></p>
+<p>IPv4 address space has been depleted due to the exponential growth of internet-connected devices. IPv6 ensures future-proof connectivity by providing enough addresses for billions of devices without network address translation or address sharing. It also brings operational advantages such as simplified network configuration through automatic static address assignment via DHCPv6.</p>
+<p><strong>What IONOS Provides:</strong></p>
+<p>IONOS Cloud supports IPv6-enabled LANs with automatic DHCPv6 address assignment. Each VDC is automatically allocated a /56 IPv6 prefix, and each LAN can receive a /64 prefix, ensuring unique, routable IPv6 space for every workload. You can configure static IPv6 addresses on network interfaces directly from the Data Center Designer or API.</p>
+<p><strong>When to Use IPv6:</strong></p>
+<p>Enable IPv6 when you need to support modern cloud-native or IoT workloads that expect IPv6 connectivity, when you want to avoid the complexities of NAT, or when you are planning for long-term infrastructure that will outlast IPv4 availability.</p>
+<h2 id="5-content-delivery-and-connectivity">5. Content Delivery and Connectivity</h2><p>IONOS Cloud offers additional networking services for optimizing content delivery and establishing dedicated connectivity.</p>
+<h3 id="51-content-delivery-network-cdn">5.1 Content Delivery Network (CDN)</h3><p>A Content Delivery Network is a system of globally distributed edge servers that cache web content and applications close to end users. By serving requests from the nearest edge location, a <a href="../../../products/Network_Services/cdn.html" class="product-ref">CDN</a> reduces the distance data must travel, lowering latency and improving load times.</p>
+<p><strong>Key Benefits:</strong></p>
+<p>CDNs provide reduced latency by delivering content from the nearest edge server, shortening round-trip time for users. They enhance availability by serving cached copies even when the origin server is unavailable. Scalability is improved by offloading cacheable traffic from the origin, allowing your infrastructure to handle higher traffic spikes without degradation.</p>
+<p>Security is strengthened through DDoS protection, web application firewall capabilities, and SSL/TLS encryption. CDNs also improve cost efficiency by reducing origin bandwidth usage and the need for over-provisioned infrastructure.</p>
+<p><strong>When to Use CDN:</strong></p>
+<p>Use a CDN for website performance optimization (static assets like images, CSS, and JavaScript), software distribution (delivering updates and patches globally), and API request optimization (caching API responses at the edge to reduce backend load). CDNs are especially valuable for applications with global user bases that require consistently fast performance regardless of geographic location.</p>
+<h3 id="52-cross-connect-revisited-in-connectivity-context">5.2 Cross Connect (Revisited in Connectivity Context)</h3><p>In addition to connecting VDCs within the same region (covered in Section 3), <a href="../../../products/Network_Services/cross-connect.html" class="product-ref">Cross Connect</a> plays a broader role in enterprise connectivity strategies. Organizations often use it as part of hybrid-cloud architectures where certain workloads remain in IONOS Cloud while others run on-premises or in other clouds. By centralizing shared services in one VDC and connecting others via <a href="../../../products/Network_Services/cross-connect.html" class="product-ref">Cross Connect</a>, you can create hub-and-spoke topologies that simplify management and reduce costs.</p>
+<h2 id="common-use-cases">Common Use Cases</h2><p>Real-world scenarios where IONOS networking services are used:</p>
+<ol>
+<li><strong>E-Commerce Platform with Global Traffic:</strong> An online retailer uses <a href="../../../products/Network_Services/application-load-balancer.html" class="product-ref">Managed Application Load Balancer</a> to distribute incoming HTTP traffic across multiple web server instances during seasonal sales. The ALB&#x27;s health checks ensure only healthy servers receive traffic, and advanced routing directs mobile app traffic to optimized backends. <a href="../../../products/Network_Services/cross-connect.html" class="product-ref">Cross Connect</a> links the production VDC to a separate VDC hosting centralized logging and monitoring services (as covered in Section 3.1), while <a href="../../../products/Network_Services/cdn.html" class="product-ref">CDN</a> edge servers cache product images and static assets globally to reduce latency for international customers.</li>
+<li><strong>Hybrid Cloud Infrastructure with Secure Connectivity:</strong> A financial services company maintains sensitive customer databases on-premises while running analytics workloads in IONOS Cloud. They use <a href="../../../products/Network_Services/vpn-gateway.html" class="product-ref">VPN Gateway</a> with IPSec tunnels (discussed in Section 2.2) to create encrypted, bidirectional connectivity between their on-premises data center and IONOS VDCs. Application servers in private subnets use <a href="../../../products/Network_Services/nat-gateway.html" class="product-ref">Managed NAT Gateway</a> (Section 2.1) for outbound internet access to download security updates without exposing themselves to inbound connections. IPv6 is enabled (Section 4.2) to future-proof their infrastructure as they plan a 5-year cloud migration strategy.</li>
+<li><strong>Microservices Architecture with Internal Routing:</strong> A SaaS provider deploys microservices across multiple VDCs in the same region. They use Cross Connect (Section 3.1 and 3.2) to establish private, low-latency links between VDCs hosting different service tiers (frontend, backend, data processing). Managed Application Load Balancer routes API requests based on URL path and HTTP headers (Section 1.1), directing <code>/api/users</code> to the user service and <code>/api/orders</code> to the order service. Cloud DNS (Section 4.1) provides reliable domain name resolution for service discovery, while <a href="../../../products/Network_Services/network-load-balancer.html" class="product-ref">Managed Network Load Balancer</a> (Section 1.2) handles high-throughput database connections that require Layer 4 performance.</li>
+</ol>
+<h2 id="summary">Summary</h2><p>IONOS Cloud networking services provide the connectivity, security, and performance foundations your cloud infrastructure needs. Load balancers distribute traffic intelligently (ALB for application-layer routing, NLB for high-performance Layer 4 forwarding), gateways control access between networks (NAT Gateway for outbound-only internet access, <a href="../../../products/Network_Services/vpn-gateway.html" class="product-ref">VPN Gateway</a> for encrypted site-to-site connections), and <a href="../../../products/Network_Services/cross-connect.html" class="product-ref">Cross Connect</a> enables private, low-latency links between VDCs in the same region.</p>
+<p>Additional services such as Cloud DNS simplify domain name management, <a href="../../../products/Network_Services/ipv6.html" class="product-ref">IPv6 Configuration</a> future-proofs your infrastructure, and <a href="../../../products/Network_Services/cdn.html" class="product-ref">CDN</a> improves content delivery performance globally. Understanding when to use each service allows you to design network architectures that are secure, scalable, and cost-effective.</p>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li><a href="../../../products/Network_Services/application-load-balancer.html" class="product-ref">Managed Application Load Balancer</a> operates at Layer 7 with advanced HTTP/HTTPS routing, ideal for web applications and microservices</li>
+<li><a href="../../../products/Network_Services/network-load-balancer.html" class="product-ref">Managed Network Load Balancer</a> operates at Layer 4 for high-performance TCP forwarding with lowest latency</li>
+<li><a href="../../../products/Network_Services/nat-gateway.html" class="product-ref">Managed NAT Gateway</a> provides secure outbound-only internet access for private resources without exposing them to inbound connections</li>
+<li>VPN Gateway creates encrypted site-to-site tunnels for hybrid-cloud and multi-cloud connectivity</li>
+<li>Cross Connect establishes private LAN links between VDCs in the same region for low-latency, high-bandwidth communication</li>
+<li>IPv6 configuration solves address exhaustion and future-proofs infrastructure with automatic address assignment</li>
+</ul>
+<p><strong>Important Terminology:</strong></p>
+<ul>
+<li><strong>Layer 7 Load Balancing:</strong> Application-layer load balancing that can inspect and route based on HTTP content (method, headers, URL, query strings)</li>
+<li><strong>Layer 4 Load Balancing:</strong> Transport-layer load balancing that forwards TCP traffic based on IP address and port without inspecting content</li>
+<li><strong>Source NAT (SNAT):</strong> Network address translation that rewrites the source IP address of outbound traffic, allowing private resources to access the internet through a shared public IP</li>
+<li><strong>IPSec and WireGuard:</strong> VPN protocols for creating encrypted tunnels; IPSec offers broad compatibility, WireGuard provides lower latency and higher throughput</li>
+<li><strong>Cross Connect:</strong> Private LAN-based link between VDCs in the same region and contract, providing low-latency connectivity without traversing the public internet</li>
+<li><strong>CDN (Content Delivery Network):</strong> Globally distributed system of edge servers that cache content close to users to reduce latency and improve performance</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2><p><strong>Continue Learning:</strong> <a href="unit-2.5-databases.html">Unit 2.5: Database and Data Services</a></p>
+<p><strong>Related Topics:</strong></p>
+<ul>
+<li><a href="unit-2.1-core-components.html">Unit 2.1: Core Architectural Components</a></li>
+<li><a href="unit-2.6-security-ai-containers.html">Unit 2.6: Security, AI, and Container Services</a></li>
+<li><a href="../module-3/unit-3.4-logs-monitoring.html">Unit 3.4: Activity Logs and Monitoring</a></li>
+</ul>
+
+</article>
+
+<!-- Mark Complete Button -->
+<div class="mark-complete">
+  <button class="btn-complete" data-unit-id="2.4"
+          data-label-complete="Completed"
+          data-label-incomplete="Mark as Complete"
+          aria-pressed="false">
+    <span class="btn-icon">
+      <svg viewBox="0 0 16 16" fill="currentColor">
+        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      </svg>
+    </span>
+    <span class="btn-text">Mark as Complete</span>
+  </button>
+</div>
+
+<!-- Unit Navigation -->
+<nav class="unit-navigation" aria-label="Unit navigation">
+  <div class="nav-prev">
+    <a href="../module-2/unit-2.3-storage-services.html">
+      <span class="nav-label">
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+        </svg>
+        Previous
+      </span>
+      <span class="nav-title">2.3 Storage Services</span>
+    </a>
+  </div>
+  <div class="nav-next">
+    <a href="../module-2/unit-2.5-databases.html">
+      <span class="nav-label">
+        Next
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+      </span>
+      <span class="nav-title">2.5 Database and Data Services</span>
+    </a>
+  </div>
+</nav>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <p>&copy; 2026 . All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script>window.CW_I18N = {"keep_learning": "Keep Learning!", "completed_of_total": "You've completed <strong>{completed} of {total} units</strong> ({percentage}%).", "finish_all_units": "Finish all units to unlock your completion certificate.", "continue_learning": "Continue Learning", "back_to_overview": "Back to Overview", "skip_to_completion": "Skip to completion page", "quiz_submit": "Submit Answers", "quiz_score": "Your Score", "quiz_correct": "Correct", "quiz_incorrect": "Incorrect", "quiz_explanation": "Explanation", "quiz_show_explanation": "Show Explanation", "quiz_hide_explanation": "Hide Explanation", "quiz_passed": "Passed", "quiz_not_passed": "Not Passed", "quiz_retry": "Try Again", "quiz_of": "of", "quiz_pass_required": "You need at least {threshold}% to pass.", "finish_all_units_and_quizzes": "Finish all units and pass all quizzes to unlock your completion certificate.", "knowledge_check": "Knowledge Check"};</script>
+  <script src="../../../js/navigation.js"></script>
+  <script src="../../../js/progress.js"></script>
+  <script src="../../../js/quiz.js"></script>
+  <script src="../../../js/language-switcher.js"></script>
+</body>
+</html>

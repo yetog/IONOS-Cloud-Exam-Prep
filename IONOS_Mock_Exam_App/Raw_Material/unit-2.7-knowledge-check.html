@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IONOS Cloud Foundational - Knowledge Check: Knowledge Check - Architecture and Services">
+  <meta name="author" content="">
+  <title>2.7 Knowledge Check - Architecture and Services | Cloud Training</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#003d8f">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Overpass:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../../css/ionos-learn.css">
+  <link rel="stylesheet" href="../../../css/print.css" media="print">
+</head>
+<body>
+
+  <div class="page-wrapper">
+    <!-- Header -->
+    <header class="site-header" role="banner">
+      <div class="header-left">
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+
+        <!-- Logo -->
+        <a href="../../../index.html" class="logo" aria-label="IONOS Cloud Training Home">
+          <img src="../../../assets/ionos-logo.svg" alt="IONOS" width="100" height="32">
+        </a>
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../../index.html">Course</a>
+<span class="breadcrumb-separator">/</span>
+<span>Module 2</span>
+<span class="breadcrumb-separator">/</span>
+<span>Knowledge Check</span>
+        </nav>
+      </div>
+
+      <div class="header-right">
+        <a href="../../../products/index.html" class="header-link">Product Reference</a>
+        <div class="language-switcher">
+  <button class="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Change language">
+    <span class="lang-code">EN</span>
+  </button>
+  <div class="lang-dropdown" role="menu">
+    <a href="../../../en/courses/module-2/unit-2.7-knowledge-check.html" class="lang-option current" role="menuitem">
+      <span class="lang-code">EN</span>
+      <span>English</span>
+    </a><a href="../../../de/courses/module-2/unit-2.7-knowledge-check.html" class="lang-option" role="menuitem">
+      <span class="lang-code">DE</span>
+      <span>Deutsch</span>
+    </a><a href="../../../es/courses/module-2/unit-2.7-knowledge-check.html" class="lang-option" role="menuitem">
+      <span class="lang-code">ES</span>
+      <span>Español</span>
+    </a><a href="../../../fr/courses/module-2/unit-2.7-knowledge-check.html" class="lang-option" role="menuitem">
+      <span class="lang-code">FR</span>
+      <span>Français</span>
+    </a>
+  </div>
+</div>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" role="navigation" aria-label="Course navigation">
+        <div class="sidebar-header">
+          <div class="course-title">Cloud Training</div>
+          <div class="progress-container">
+            <div class="progress-label">
+              <span>Progress</span>
+              <span class="progress-percent">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="nav-modules">
+          <div class="nav-special-item">
+  <a href="../../index.html" class="special-link " data-page-id="overview">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6a.5.5 0 0 0 .708.708L8 2.207l5.646 5.647a.5.5 0 0 0 .708-.708l-6-6z"/>
+      <path d="M2.5 8.5v5.5h11v-5.5l-5.5-5.5-5.5 5.5z"/>
+    </svg>
+    <span>Course Overview</span>
+  </a>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 1: Cloud Concepts</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.1-cloud-computing-fundamentals.html" class="unit-link " data-unit-id="1.1">
+        <span class="unit-status"></span>
+        <span>1.1 Cloud Computing Fundamentals</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.2-cloud-service-benefits.html" class="unit-link " data-unit-id="1.2">
+        <span class="unit-status"></span>
+        <span>1.2 Cloud Service Benefits</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.3-cloud-deployment-models.html" class="unit-link " data-unit-id="1.3">
+        <span class="unit-status"></span>
+        <span>1.3 Cloud Service Type Categories</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-1/unit-1.4-knowledge-check.html" class="quiz-link " data-unit-id="1.4" data-quiz-id="1.4">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Cloud Concepts</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header expanded">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 2: IONOS Architecture and Services</span>
+  </div>
+  <ul class="unit-list expanded">
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.1-core-components.html" class="unit-link " data-unit-id="2.1">
+        <span class="unit-status"></span>
+        <span>2.1 Core Architectural Components</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.2-compute.html" class="unit-link " data-unit-id="2.2">
+        <span class="unit-status"></span>
+        <span>2.2 Compute Services</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.3-storage-services.html" class="unit-link " data-unit-id="2.3">
+        <span class="unit-status"></span>
+        <span>2.3 Storage Services</span>
+        <span class="unit-time">~21 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.4-networking-services.html" class="unit-link " data-unit-id="2.4">
+        <span class="unit-status"></span>
+        <span>2.4 Networking Services</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.5-databases.html" class="unit-link " data-unit-id="2.5">
+        <span class="unit-status"></span>
+        <span>2.5 Database and Data Services</span>
+        <span class="unit-time">~20 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.6-security-ai-containers.html" class="unit-link " data-unit-id="2.6">
+        <span class="unit-status"></span>
+        <span>2.6 Security, AI, and Container Services</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-2/unit-2.7-knowledge-check.html" class="quiz-link active" data-unit-id="2.7" data-quiz-id="2.7">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Architecture and Services</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 3: Management and Governance</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.1-dcd-account-management.html" class="unit-link " data-unit-id="3.1">
+        <span class="unit-status"></span>
+        <span>3.1 Data Center Designer and Account Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.2-iam.html" class="unit-link " data-unit-id="3.2">
+        <span class="unit-status"></span>
+        <span>3.2 Identity and Access Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.3-cost-billing.html" class="unit-link " data-unit-id="3.3">
+        <span class="unit-status"></span>
+        <span>3.3 Cost Management and Billing</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.4-logs-monitoring.html" class="unit-link " data-unit-id="3.4">
+        <span class="unit-status"></span>
+        <span>3.4 Activity Logs and Monitoring</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.5-security-compliance.html" class="unit-link " data-unit-id="3.5">
+        <span class="unit-status"></span>
+        <span>3.5 Security and Compliance</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-3/unit-3.6-knowledge-check.html" class="quiz-link " data-unit-id="3.6" data-quiz-id="3.6">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Management and Governance</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-special-item">
+  <a href="../../courses/completion.html" class="special-link " data-page-id="completion">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+    </svg>
+    <span>Course Completion</span>
+  </a>
+</div>
+        </nav>
+
+        <div class="sidebar-divider"></div>
+
+        <a href="../../../products/index.html" class="products-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+          <span>Product Reference</span>
+        </a>
+      </aside>
+
+      <!-- Sidebar Overlay (Mobile) -->
+      <div class="sidebar-overlay" aria-hidden="true"></div>
+
+      <!-- Main Content -->
+      <main id="main-content" class="content" role="main">
+        <div class="content-inner">
+          <!-- Quiz Container -->
+<div class="quiz-container" data-quiz-id="2.7" data-answers="eyIxIjoiQyIsIjIiOiJBIiwiMyI6IkQiLCI0IjoiQiIsIjUiOiJDIn0=" data-pass-threshold="0.6" data-total-questions="5">
+
+<div class="quiz-instructions">
+  <p>Test your understanding of the key concepts from Module 2. Select the best answer for each question, then submit to see your results. You need to score at least 60% to pass.</p>
+
+</div>
+
+  <div class="quiz-question" data-question="1" role="radiogroup" aria-label="Question 1">
+    <div class="quiz-question-text">
+      <span class="quiz-question-number">1.</span>
+      <p>A development team wants to build separate environments for production and testing on IONOS Cloud. They need each environment to have its own isolated network and resources, but both must be located in the same physical data center. Which IONOS Cloud concept best supports this requirement?</p>
+
+    </div>
+    <div class="quiz-options">
+      <label class="quiz-option" data-key="A">
+        <input type="radio" name="q1" value="A" aria-label="Option A">
+        <span class="quiz-option-key">A</span>
+        <span class="quiz-option-text">A region, which groups physical data centers by country</span>
+      </label>      <label class="quiz-option" data-key="B">
+        <input type="radio" name="q1" value="B" aria-label="Option B">
+        <span class="quiz-option-key">B</span>
+        <span class="quiz-option-text">A <a href="../../../products/Network_Services/cross-connect.html" class="product-ref">Cross Connect</a>, which links two separate networks across the internet</span>
+      </label>      <label class="quiz-option" data-key="C">
+        <input type="radio" name="q1" value="C" aria-label="Option C">
+        <span class="quiz-option-key">C</span>
+        <span class="quiz-option-text">A Virtual Data Center (VDC), which is a logically isolated container for resources tied to a specific region</span>
+      </label>      <label class="quiz-option" data-key="D">
+        <input type="radio" name="q1" value="D" aria-label="Option D">
+        <span class="quiz-option-key">D</span>
+        <span class="quiz-option-text">An availability zone, which is a subdivision of a region for fault tolerance</span>
+      </label>
+    </div>
+    <div class="quiz-explanation" hidden>
+      <strong>Explanation:</strong>
+      <p>A Virtual Data Center (VDC) is a logically isolated container where you provision and manage compute, storage, and networking resources, and each VDC is created in a specific region (such as de/txl or de/fra). Because VDCs are logical constructs, you can create multiple VDCs within the same region to separate environments while keeping them in the same physical location. A region defines the geographic location, not the isolation boundary, and <a href="../../../products/Network_Services/cross-connect.html" class="product-ref">Cross Connect</a> is used to link private networks between VDCs - not to isolate them. This concept is covered in Unit 2.1.</p>
+
+    </div>
+  </div>  <div class="quiz-question" data-question="2" role="radiogroup" aria-label="Question 2">
+    <div class="quiz-question-text">
+      <span class="quiz-question-number">2.</span>
+      <p>A financial services company runs a real-time transaction processing workload that requires consistent, predictable CPU performance without any interference from neighboring virtual machines. Which IONOS compute option is the best match for this requirement?</p>
+
+    </div>
+    <div class="quiz-options">
+      <label class="quiz-option" data-key="A">
+        <input type="radio" name="q2" value="A" aria-label="Option A">
+        <span class="quiz-option-key">A</span>
+        <span class="quiz-option-text">Dedicated Core server, because it allocates a physical CPU core exclusively to the VM</span>
+      </label>      <label class="quiz-option" data-key="B">
+        <input type="radio" name="q2" value="B" aria-label="Option B">
+        <span class="quiz-option-key">B</span>
+        <span class="quiz-option-text">vCPU server, because it supports up to 60 vCPUs and scales quickly</span>
+      </label>      <label class="quiz-option" data-key="C">
+        <input type="radio" name="q2" value="C" aria-label="Option C">
+        <span class="quiz-option-key">C</span>
+        <span class="quiz-option-text"><a href="../../../products/Compute_Services/cubes.html" class="product-ref">Cubes</a>, because they provide pre-configured templates with fixed resources</span>
+      </label>      <label class="quiz-option" data-key="D">
+        <input type="radio" name="q2" value="D" aria-label="Option D">
+        <span class="quiz-option-key">D</span>
+        <span class="quiz-option-text"><a href="../../../products/Network_Services/vm-auto-scaling.html" class="product-ref">VM Auto Scaling</a>, because it adds extra compute capacity when demand rises</span>
+      </label>
+    </div>
+    <div class="quiz-explanation" hidden>
+      <strong>Explanation:</strong>
+      <p>A Dedicated Core server gives each VM an exclusive physical CPU core (with Hyper-Threading providing two logical threads), which eliminates &quot;steal time&quot; caused by other tenants sharing the same hardware. This makes it the right choice for performance-intensive workloads like real-time transaction processing where consistent CPU performance is critical. vCPU servers use shared physical CPUs across multiple tenants, so performance can vary. <a href="../../../products/Compute_Services/cubes.html" class="product-ref">Cubes</a> and <a href="../../../products/Network_Services/vm-auto-scaling.html" class="product-ref">VM Auto Scaling</a> address different needs - fixed VPS templates and horizontal scaling respectively - not CPU isolation. This is covered in Unit 2.2.</p>
+
+    </div>
+  </div>  <div class="quiz-question" data-question="3" role="radiogroup" aria-label="Question 3">
+    <div class="quiz-question-text">
+      <span class="quiz-question-number">3.</span>
+      <p>A media company stores thousands of video files that must remain available for years, be accessible from any location, and cost as little as possible to store. They do not need the files to be attached to a virtual machine. Which IONOS storage service is the most appropriate choice?</p>
+
+    </div>
+    <div class="quiz-options">
+      <label class="quiz-option" data-key="A">
+        <input type="radio" name="q3" value="A" aria-label="Option A">
+        <span class="quiz-option-key">A</span>
+        <span class="quiz-option-text"><a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a> (SSD), because it delivers high performance for active workloads</span>
+      </label>      <label class="quiz-option" data-key="B">
+        <input type="radio" name="q3" value="B" aria-label="Option B">
+        <span class="quiz-option-key">B</span>
+        <span class="quiz-option-text"><a href="../../../products/Storage_&_Backup/network-file-storage.html" class="product-ref">Network File Storage</a> (NFS), because it allows multiple servers to share the same files</span>
+      </label>      <label class="quiz-option" data-key="C">
+        <input type="radio" name="q3" value="C" aria-label="Option C">
+        <span class="quiz-option-key">C</span>
+        <span class="quiz-option-text"><a href="../../../products/Storage_&_Backup/backup-service.html" class="product-ref">Backup Service</a>, because it is designed for long-term data retention</span>
+      </label>      <label class="quiz-option" data-key="D">
+        <input type="radio" name="q3" value="D" aria-label="Option D">
+        <span class="quiz-option-key">D</span>
+        <span class="quiz-option-text"><a href="../../../products/Storage_&_Backup/ionos-object-storage.html" class="product-ref">IONOS Cloud Object Storage</a>, because it provides S3-compatible unstructured data storage with no attachment requirement</span>
+      </label>
+    </div>
+    <div class="quiz-explanation" hidden>
+      <strong>Explanation:</strong>
+      <p><a href="../../../products/Storage_&_Backup/ionos-object-storage.html" class="product-ref">IONOS Cloud Object Storage</a> is designed for storing large amounts of unstructured data such as videos, images, and logs using an S3-compatible interface. Objects are accessible via HTTP/HTTPS from anywhere, do not need to be attached to a virtual machine, and can use lifecycle rules to manage costs over time. <a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a> (SSD) is a network-attached volume for active workloads on a running server. NFS is best for shared file access between multiple compute instances. The <a href="../../../products/Storage_&_Backup/backup-service.html" class="product-ref">Backup Service</a> is focused on protecting existing server data, not on cost-efficient long-term media archival. This concept is covered in Unit 2.3.</p>
+
+    </div>
+  </div>  <div class="quiz-question" data-question="4" role="radiogroup" aria-label="Question 4">
+    <div class="quiz-question-text">
+      <span class="quiz-question-number">4.</span>
+      <p>A team is deploying a web application that uses HTTP and HTTPS traffic. They need the load balancer to route requests to different backend server groups based on the URL path - for example, /api traffic goes to one group and /static traffic goes to another. Which IONOS load balancer should they use?</p>
+
+    </div>
+    <div class="quiz-options">
+      <label class="quiz-option" data-key="A">
+        <input type="radio" name="q4" value="A" aria-label="Option A">
+        <span class="quiz-option-key">A</span>
+        <span class="quiz-option-text"><a href="../../../products/Network_Services/network-load-balancer.html" class="product-ref">Managed Network Load Balancer</a>, because it supports the widest range of protocols</span>
+      </label>      <label class="quiz-option" data-key="B">
+        <input type="radio" name="q4" value="B" aria-label="Option B">
+        <span class="quiz-option-key">B</span>
+        <span class="quiz-option-text"><a href="../../../products/Network_Services/application-load-balancer.html" class="product-ref">Managed Application Load Balancer</a>, because it operates at Layer 7 and supports routing rules based on HTTP headers, hostnames, and URL paths</span>
+      </label>      <label class="quiz-option" data-key="C">
+        <input type="radio" name="q4" value="C" aria-label="Option C">
+        <span class="quiz-option-key">C</span>
+        <span class="quiz-option-text"><a href="../../../products/Network_Services/network-load-balancer.html" class="product-ref">Managed Network Load Balancer</a>, because it provides sticky sessions and source-IP affinity</span>
+      </label>      <label class="quiz-option" data-key="D">
+        <input type="radio" name="q4" value="D" aria-label="Option D">
+        <span class="quiz-option-key">D</span>
+        <span class="quiz-option-text"><a href="../../../products/Network_Services/nat-gateway.html" class="product-ref">Managed NAT Gateway</a>, because it routes outbound traffic from private networks</span>
+      </label>
+    </div>
+    <div class="quiz-explanation" hidden>
+      <strong>Explanation:</strong>
+      <p>The <a href="../../../products/Network_Services/application-load-balancer.html" class="product-ref">Managed Application Load Balancer</a> (ALB) operates at Layer 7 of the network stack, which means it can inspect HTTP content and apply advanced routing rules based on URL paths, hostnames, HTTP methods, and headers. This makes it the correct choice for routing /api and /static traffic to separate backend groups. The <a href="../../../products/Network_Services/network-load-balancer.html" class="product-ref">Managed Network Load Balancer</a> (NLB) operates at Layer 4 (TCP) and supports simple forwarding algorithms and sticky sessions, but it cannot inspect URL paths. The NAT Gateway provides outbound internet access for private LANs, not load balancing. Unit 2.4 covers both load balancer types.</p>
+
+    </div>
+  </div>  <div class="quiz-question" data-question="5" role="radiogroup" aria-label="Question 5">
+    <div class="quiz-question-text">
+      <span class="quiz-question-number">5.</span>
+      <p>An organization wants to apply consistent firewall rules to a group of virtual machines across their Virtual Data Center, so that all inbound and outbound traffic is controlled from a single policy definition rather than configuring each VM individually. Which IONOS service meets this need?</p>
+
+    </div>
+    <div class="quiz-options">
+      <label class="quiz-option" data-key="A">
+        <input type="radio" name="q5" value="A" aria-label="Option A">
+        <span class="quiz-option-key">A</span>
+        <span class="quiz-option-text"><a href="../../../products/Network_Services/ddos-protect.html" class="product-ref">DDoS Protect</a>, which filters volumetric attack traffic at the network edge</span>
+      </label>      <label class="quiz-option" data-key="B">
+        <input type="radio" name="q5" value="B" aria-label="Option B">
+        <span class="quiz-option-key">B</span>
+        <span class="quiz-option-text"><a href="../../../products/Security/certificate-manager.html" class="product-ref">Certificate Manager</a>, which manages TLS certificates for secure connections</span>
+      </label>      <label class="quiz-option" data-key="C">
+        <input type="radio" name="q5" value="C" aria-label="Option C">
+        <span class="quiz-option-key">C</span>
+        <span class="quiz-option-text"><a href="../../../products/Security/network-security-groups.html" class="product-ref">Network Security Groups</a> (NSG), which provide a stateful, centrally managed virtual firewall that can be applied to multiple VMs or NICs</span>
+      </label>      <label class="quiz-option" data-key="D">
+        <input type="radio" name="q5" value="D" aria-label="Option D">
+        <span class="quiz-option-key">D</span>
+        <span class="quiz-option-text"><a href="../../../products/Network_Services/nat-gateway.html" class="product-ref">Managed NAT Gateway</a>, which controls egress traffic for private networks</span>
+      </label>
+    </div>
+    <div class="quiz-explanation" hidden>
+      <strong>Explanation:</strong>
+      <p><a href="../../../products/Security/network-security-groups.html" class="product-ref">Network Security Groups</a> (NSGs) let you define firewall rules once and apply them to any number of VMs or NICs within a VDC. Each NSG is stateful, meaning return traffic for allowed connections is automatically permitted without additional rules. You can use a Default NSG to protect all newly created VMs, or create Custom NSGs for specific workload groups. <a href="../../../products/Network_Services/ddos-protect.html" class="product-ref">DDoS Protect</a> defends against large-scale volumetric attacks at the network edge and does not provide per-VM rule management. <a href="../../../products/Security/certificate-manager.html" class="product-ref">Certificate Manager</a> handles TLS certificate lifecycle, and NAT Gateway manages outbound internet access from private LANs. NSGs are introduced in Unit 2.6.</p>
+
+    </div>
+  </div>
+
+  <!-- Quiz Actions -->
+  <div class="quiz-actions">
+    <button class="quiz-submit-btn" type="button">
+      Submit Answers
+    </button>
+    <button class="quiz-retry-btn" type="button" hidden>
+      Try Again
+    </button>
+  </div>
+
+  <!-- Quiz Score -->
+  <div class="quiz-score" hidden aria-live="polite"></div>
+
+</div>
+
+<!-- Unit Navigation -->
+<nav class="unit-navigation" aria-label="Unit navigation">
+  <div class="nav-prev">
+    <a href="../module-2/unit-2.6-security-ai-containers.html">
+      <span class="nav-label">
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+        </svg>
+        Previous
+      </span>
+      <span class="nav-title">2.6 Security, AI, and Container Services</span>
+    </a>
+  </div>
+  <div class="nav-next">
+    <a href="../module-3/unit-3.1-dcd-account-management.html">
+      <span class="nav-label">
+        Next
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+      </span>
+      <span class="nav-title">3.1 Data Center Designer and Account Management</span>
+    </a>
+  </div>
+</nav>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <p>&copy; 2026 . All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script>window.CW_I18N = {"keep_learning": "Keep Learning!", "completed_of_total": "You've completed <strong>{completed} of {total} units</strong> ({percentage}%).", "finish_all_units": "Finish all units to unlock your completion certificate.", "continue_learning": "Continue Learning", "back_to_overview": "Back to Overview", "skip_to_completion": "Skip to completion page", "quiz_submit": "Submit Answers", "quiz_score": "Your Score", "quiz_correct": "Correct", "quiz_incorrect": "Incorrect", "quiz_explanation": "Explanation", "quiz_show_explanation": "Show Explanation", "quiz_hide_explanation": "Hide Explanation", "quiz_passed": "Passed", "quiz_not_passed": "Not Passed", "quiz_retry": "Try Again", "quiz_of": "of", "quiz_pass_required": "You need at least {threshold}% to pass.", "finish_all_units_and_quizzes": "Finish all units and pass all quizzes to unlock your completion certificate.", "knowledge_check": "Knowledge Check"};</script>
+  <script src="../../../js/navigation.js"></script>
+  <script src="../../../js/progress.js"></script>
+  <script src="../../../js/quiz.js"></script>
+  <script src="../../../js/language-switcher.js"></script>
+</body>
+</html>
