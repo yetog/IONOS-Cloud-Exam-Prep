@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IONOS Cloud Foundational - Unit 3.2: Identity and Access Management">
+  <meta name="author" content="">
+  <title>3.2 Identity and Access Management | Cloud Training</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#003d8f">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Overpass:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../../css/ionos-learn.css">
+  <link rel="stylesheet" href="../../../css/print.css" media="print">
+</head>
+<body>
+
+  <div class="page-wrapper">
+    <!-- Header -->
+    <header class="site-header" role="banner">
+      <div class="header-left">
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+
+        <!-- Logo -->
+        <a href="../../../index.html" class="logo" aria-label="IONOS Cloud Training Home">
+          <img src="../../../assets/ionos-logo.svg" alt="IONOS" width="100" height="32">
+        </a>
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../../index.html">Course</a>
+<span class="breadcrumb-separator">/</span>
+<span>Module 3</span>
+<span class="breadcrumb-separator">/</span>
+<span>Unit 3.2</span>
+        </nav>
+      </div>
+
+      <div class="header-right">
+        <a href="../../../products/index.html" class="header-link">Product Reference</a>
+        <div class="language-switcher">
+  <button class="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Change language">
+    <span class="lang-code">EN</span>
+  </button>
+  <div class="lang-dropdown" role="menu">
+    <a href="../../../en/courses/module-3/unit-3.2-iam.html" class="lang-option current" role="menuitem">
+      <span class="lang-code">EN</span>
+      <span>English</span>
+    </a><a href="../../../de/courses/module-3/unit-3.2-iam.html" class="lang-option" role="menuitem">
+      <span class="lang-code">DE</span>
+      <span>Deutsch</span>
+    </a><a href="../../../es/courses/module-3/unit-3.2-iam.html" class="lang-option" role="menuitem">
+      <span class="lang-code">ES</span>
+      <span>Español</span>
+    </a><a href="../../../fr/courses/module-3/unit-3.2-iam.html" class="lang-option" role="menuitem">
+      <span class="lang-code">FR</span>
+      <span>Français</span>
+    </a>
+  </div>
+</div>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" role="navigation" aria-label="Course navigation">
+        <div class="sidebar-header">
+          <div class="course-title">Cloud Training</div>
+          <div class="progress-container">
+            <div class="progress-label">
+              <span>Progress</span>
+              <span class="progress-percent">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="nav-modules">
+          <div class="nav-special-item">
+  <a href="../../index.html" class="special-link " data-page-id="overview">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6a.5.5 0 0 0 .708.708L8 2.207l5.646 5.647a.5.5 0 0 0 .708-.708l-6-6z"/>
+      <path d="M2.5 8.5v5.5h11v-5.5l-5.5-5.5-5.5 5.5z"/>
+    </svg>
+    <span>Course Overview</span>
+  </a>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 1: Cloud Concepts</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.1-cloud-computing-fundamentals.html" class="unit-link " data-unit-id="1.1">
+        <span class="unit-status"></span>
+        <span>1.1 Cloud Computing Fundamentals</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.2-cloud-service-benefits.html" class="unit-link " data-unit-id="1.2">
+        <span class="unit-status"></span>
+        <span>1.2 Cloud Service Benefits</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.3-cloud-deployment-models.html" class="unit-link " data-unit-id="1.3">
+        <span class="unit-status"></span>
+        <span>1.3 Cloud Service Type Categories</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-1/unit-1.4-knowledge-check.html" class="quiz-link " data-unit-id="1.4" data-quiz-id="1.4">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Cloud Concepts</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 2: IONOS Architecture and Services</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.1-core-components.html" class="unit-link " data-unit-id="2.1">
+        <span class="unit-status"></span>
+        <span>2.1 Core Architectural Components</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.2-compute.html" class="unit-link " data-unit-id="2.2">
+        <span class="unit-status"></span>
+        <span>2.2 Compute Services</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.3-storage-services.html" class="unit-link " data-unit-id="2.3">
+        <span class="unit-status"></span>
+        <span>2.3 Storage Services</span>
+        <span class="unit-time">~21 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.4-networking-services.html" class="unit-link " data-unit-id="2.4">
+        <span class="unit-status"></span>
+        <span>2.4 Networking Services</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.5-databases.html" class="unit-link " data-unit-id="2.5">
+        <span class="unit-status"></span>
+        <span>2.5 Database and Data Services</span>
+        <span class="unit-time">~20 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.6-security-ai-containers.html" class="unit-link " data-unit-id="2.6">
+        <span class="unit-status"></span>
+        <span>2.6 Security, AI, and Container Services</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-2/unit-2.7-knowledge-check.html" class="quiz-link " data-unit-id="2.7" data-quiz-id="2.7">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Architecture and Services</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header expanded">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 3: Management and Governance</span>
+  </div>
+  <ul class="unit-list expanded">
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.1-dcd-account-management.html" class="unit-link " data-unit-id="3.1">
+        <span class="unit-status"></span>
+        <span>3.1 Data Center Designer and Account Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.2-iam.html" class="unit-link active" data-unit-id="3.2">
+        <span class="unit-status"></span>
+        <span>3.2 Identity and Access Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.3-cost-billing.html" class="unit-link " data-unit-id="3.3">
+        <span class="unit-status"></span>
+        <span>3.3 Cost Management and Billing</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.4-logs-monitoring.html" class="unit-link " data-unit-id="3.4">
+        <span class="unit-status"></span>
+        <span>3.4 Activity Logs and Monitoring</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.5-security-compliance.html" class="unit-link " data-unit-id="3.5">
+        <span class="unit-status"></span>
+        <span>3.5 Security and Compliance</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-3/unit-3.6-knowledge-check.html" class="quiz-link " data-unit-id="3.6" data-quiz-id="3.6">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Management and Governance</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-special-item">
+  <a href="../../courses/completion.html" class="special-link " data-page-id="completion">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+    </svg>
+    <span>Course Completion</span>
+  </a>
+</div>
+        </nav>
+
+        <div class="sidebar-divider"></div>
+
+        <a href="../../../products/index.html" class="products-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+          <span>Product Reference</span>
+        </a>
+      </aside>
+
+      <!-- Sidebar Overlay (Mobile) -->
+      <div class="sidebar-overlay" aria-hidden="true"></div>
+
+      <!-- Main Content -->
+      <main id="main-content" class="content" role="main">
+        <div class="content-inner">
+          <!-- Unit Header Meta -->
+<div class="unit-meta">
+  <span class="reading-time">
+    <svg viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+      <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+    </svg>
+    18 min read
+  </span>
+</div>
+
+<!-- Learning Objectives -->
+<section class="learning-objectives" aria-labelledby="objectives-heading">
+  <h2 id="objectives-heading">Learning Objectives</h2>
+  <p>By the end of this module, you will be able to:</p>
+  <ul>
+    <li>Explain the IONOS Role-Based Access Control (RBAC) model and its three core roles</li>
+<li>Describe how Users and Groups enable scalable permission management</li>
+<li>Identify when to use Token Manager for API authentication</li>
+<li>Explain how IAM Federation and Single Sign-On (SSO) work in IONOS Cloud</li>
+<li>Apply the Principle of Least Privilege to control access to cloud resources</li>
+  </ul>
+</section>
+
+<!-- Main Unit Content -->
+<article class="unit-content">
+  <h1 id="unit-32-identity-and-access-management">Unit 3.2: Identity and Access Management</h1><h2 id="introduction">Introduction</h2><p>Think of managing access to cloud resources like running a busy office building. You need some people to have master keys (administrators), others to access only specific floors (department teams), and visitors who need temporary badges for limited areas. Without a system to control who enters which rooms, security falls apart. Identity and Access Management (IAM) provides exactly this kind of control for your cloud environment.</p>
+<p>In this unit, you will learn how IONOS Cloud implements IAM through Role-Based Access Control (RBAC), user and group management, API authentication tokens, and identity federation. Whether you are securing a small team&#x27;s resources or managing access across multiple organizations, understanding IAM is essential for maintaining security, compliance, and operational efficiency.</p>
+<h2 id="1-ionos-role-based-access-control-rbac-model">1. IONOS Role-Based Access Control (RBAC) Model</h2><p>IONOS Cloud uses a Role-Based Access Control (RBAC) model to manage who can perform which actions within a cloud contract. Access is granted through roles, privileges, and groups, allowing you to implement the Principle of Least Privilege across your entire platform.</p>
+<h3 id="11-the-three-core-roles">1.1 The Three Core Roles</h3><p>IONOS Cloud defines three primary roles, each with different levels of access:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Access Level</th>
+<th>Key Capabilities</th>
+<th>Restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Account Owner</strong></td>
+<td>Full access (unrestricted)</td>
+<td>- Holds all privileges and permissions (cannot be revoked)&lt;br&gt;- Receives all legal communications and invoices&lt;br&gt;- Can add or remove any other user&lt;br&gt;- Can change payment methods</td>
+<td>- Cannot be removed from the contract&lt;br&gt;- This role is automatically assigned to the user who creates the contract</td>
+</tr>
+<tr>
+<td><strong>Administrator</strong></td>
+<td>Full access (nearly unrestricted)</td>
+<td>- Same rights as Owner for resource management&lt;br&gt;- Can add or remove users (except the Owner)&lt;br&gt;- Can manage all cloud resources (VDCs, servers, storage, etc.)</td>
+<td>- Cannot change payment methods&lt;br&gt;- Cannot remove the Owner</td>
+</tr>
+<tr>
+<td><strong>User</strong></td>
+<td>Limited access (explicitly granted)</td>
+<td>- Can perform only actions explicitly assigned through privileges&lt;br&gt;- Can access only resources shared with their groups&lt;br&gt;- Ideal for applying Principle of Least Privilege</td>
+<td>- No default permissions&lt;br&gt;- Must be granted explicit privileges for each action</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The Owner role is automatically created when you first sign up for IONOS Cloud and cannot be transferred or removed. This ensures that there is always an account holder responsible for billing and legal matters.</p>
+<h3 id="12-how-privileges-work">1.2 How Privileges Work</h3><p>Privileges are action-level grants that define what a user or group can do. Examples include &quot;create a Virtual Data Center,&quot; &quot;read backups,&quot; &quot;manage <a href="../../../products/Storage_&_Backup/network-file-storage.html" class="product-ref">Network File Storage</a>,&quot; or &quot;share snapshots.&quot; Instead of giving someone broad administrative access, you assign only the specific privileges they need to perform their job.</p>
+<p>Privileges can be assigned in two ways:</p>
+<ul>
+<li><strong>Directly to individual users</strong> - Useful for one-off or unique access requirements</li>
+<li><strong>To groups</strong> - Recommended for scalable management of teams with shared responsibilities</li>
+</ul>
+<p>For example, a database administrator might receive privileges to &quot;Access and manage Database as a Service&quot; and &quot;Create snapshots,&quot; while a monitoring specialist receives only &quot;Access and manage Monitoring resources&quot; without the ability to modify infrastructure.</p>
+<h3 id="13-the-principle-of-least-privilege-polp">1.3 The Principle of Least Privilege (PoLP)</h3><p>The Principle of Least Privilege means granting users only the minimum permissions required to perform their tasks. This security best practice reduces the attack surface by limiting what a compromised account can access or damage.</p>
+<p>IONOS enables PoLP implementation through:</p>
+<ul>
+<li><strong>Custom group profiles</strong> - Pre-defined sets of fine-grained privileges tailored to specific job functions</li>
+<li><strong>Resource-level permissions</strong> - Granting access to specific VDCs, images, snapshots, or IP blocks rather than all resources</li>
+<li><strong>Regular access reviews</strong> - Periodically auditing user accounts and revoking unnecessary privileges</li>
+<li><strong>Multi-Factor Authentication (MFA)</strong> - Requiring a second authentication factor for privileged accounts</li>
+</ul>
+<p>When implementing PoLP, start by mapping each job function to the minimal set of actions required. Use the User role with explicit privileges instead of the Administrator role whenever possible, and conduct quarterly reviews to identify and remove stale access rights.</p>
+<h2 id="2-users-and-groups-management">2. Users and Groups Management</h2><p>Managing access for dozens or hundreds of users individually would be time-consuming and error-prone. IONOS Cloud provides Users and Groups functionality to streamline permission management at scale.</p>
+<h3 id="21-what-are-users">2.1 What Are Users?</h3><p>A user is an individual identity that can log in to the IONOS Cloud Data Center Designer (DCD) console. Each user is identified by a unique email address and can be assigned specific privileges that define which actions they can perform.</p>
+<p>When you create a user, you provide:</p>
+<ul>
+<li>First name and last name</li>
+<li>Unique email address (this becomes the login identifier)</li>
+<li>Initial password (the user should change this on first login)</li>
+</ul>
+<p>Users created through the DCD interface have basic access to the console. Users created via the API have limited permissions by default and cannot see any resources unless those resources are explicitly shared with a group they belong to.</p>
+<p>Only the contract Owner and Administrators can create and manage users.</p>
+<h3 id="22-what-are-groups">2.2 What Are Groups?</h3><p>A group is a logical collection of users that enables you to apply permissions collectively rather than individually. Groups simplify RBAC for large or dynamic teams by allowing you to define privileges once and have all group members inherit those rights automatically.</p>
+<p>For example, you might create groups such as:</p>
+<ul>
+<li><strong><a href="../../../products/Storage_&_Backup/network-file-storage.html" class="product-ref">Network File Storage</a> Users</strong> - Members can access and manage NFS resources</li>
+<li><strong>Database Operators</strong> - Members can manage <a href="../../../products/Database_as_a_Service/postgresql.html" class="product-ref">PostgreSQL</a>, <a href="../../../products/Database_as_a_Service/mariadb.html" class="product-ref">MariaDB</a>, and <a href="../../../products/Database_as_a_Service/mongodb.html" class="product-ref">MongoDB</a> databases</li>
+<li><strong><a href="../../../products/Observability/monitoring-service.html" class="product-ref">Monitoring Service</a> Viewers</strong> - Members have read-only access to monitoring dashboards</li>
+</ul>
+<p>When you add a user to a group, they immediately inherit all privileges assigned to that group. When you remove them from the group, they lose those privileges just as quickly.</p>
+<h3 id="23-creating-and-managing-groups">2.3 Creating and Managing Groups</h3><p>To create a group in IONOS Cloud:</p>
+<ol>
+<li>Navigate to Menu → Management → Users &amp; Groups</li>
+<li>Switch to the Groups tab</li>
+<li>Click Create and provide a descriptive group name</li>
+<li>Add users to the group via the Members tab</li>
+<li>Assign privileges via the Privileges tab (changes apply immediately)</li>
+<li>Optionally, grant the group access to specific resources via Grant Access</li>
+</ol>
+<p>Groups are particularly useful when team composition changes frequently. Instead of modifying privileges for each individual user, you simply add or remove them from the appropriate group. This approach is recommended for any permission that will be shared by two or more users.</p>
+<h3 id="24-resource-level-access-control">2.4 Resource-Level Access Control</h3><p>IONOS Cloud allows you to control access at the resource level, meaning you can specify which groups can view, edit, or share specific resources such as VDCs, images, snapshots, and IP blocks.</p>
+<p>Resources can have three permission levels:</p>
+<ul>
+<li><strong>View</strong> - Group members can see the resource but cannot modify it</li>
+<li><strong>Edit</strong> - Group members can modify the resource configuration</li>
+<li><strong>Share</strong> - Group members can share the resource with other groups, granting them view rights</li>
+</ul>
+<p>When you create a resource as the contract Owner, it is hidden from other users by default. To make it visible, you must share it with at least one group. This ensures that sensitive resources (such as production images or backup snapshots) remain confidential unless explicitly shared.</p>
+<h3 id="25-when-to-use-groups-vs-individual-permissions">2.5 When to Use Groups vs Individual Permissions</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Recommended Approach</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standard roles shared by multiple people (e.g., developers, operators)</td>
+<td>Create a group and assign privileges to the group</td>
+<td>Scalable, consistent, easy to audit</td>
+</tr>
+<tr>
+<td>Changing team composition (people join/leave frequently)</td>
+<td>Use groups - add or remove members without changing privileges</td>
+<td>Reduces administrative overhead</td>
+</tr>
+<tr>
+<td>One-off or highly specific access (e.g., temporary read access to a single resource)</td>
+<td>Assign permissions directly to the individual user</td>
+<td>Avoids creating unnecessary groups for unique cases</td>
+</tr>
+<tr>
+<td>Administrators and contract owners</td>
+<td>No group needed - they automatically have full access</td>
+<td>Administrators inherit all permissions by default</td>
+</tr>
+<tr>
+<td>Fine-grained resource sharing (e.g., specific VDC or snapshot)</td>
+<td>Assign the resource to a group via Grant Access</td>
+<td>Only group members can see or manage the resource</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In general, use groups for any permission shared by two or more users, and use individual permissions only for unique, temporary, or one-off requirements.</p>
+<h2 id="3-token-manager-for-api-authentication">3. Token Manager for API Authentication</h2><p>Many IONOS Cloud operations can be performed programmatically using the IONOS Cloud API. To authenticate API requests securely without sending your password, IONOS provides Token Manager.</p>
+<h3 id="31-what-is-token-manager">3.1 What Is Token Manager?</h3><p>Token Manager is a service that generates Bearer tokens (JSON Web Tokens or JWTs) representing your user session. These tokens can be used instead of your username and password when making API calls.</p>
+<p>A token is a short-lived credential that you include in the Authorization header of every API request. Instead of authenticating with your password each time, you authenticate once by generating a token, then use that token for all subsequent API calls until it expires.</p>
+<h3 id="32-why-use-token-manager">3.2 Why Use Token Manager?</h3><p>Token Manager provides several benefits over password-based authentication:</p>
+<ul>
+<li><strong>Required for 2FA accounts</strong> - If your account has Two-Factor Authentication (2FA) enabled, you cannot use password-only authentication for API calls. Token Manager provides the only way to authenticate API requests in this scenario.</li>
+<li><strong>Improved security</strong> - Tokens are time-limited and can be revoked immediately if compromised, whereas changing a password affects all your access methods.</li>
+<li><strong>Separation of concerns</strong> - You can create multiple tokens for different applications or automation scripts, and revoke individual tokens without affecting others.</li>
+<li><strong>Audit trail</strong> - Token usage can be tracked separately from interactive console logins.</li>
+</ul>
+<h3 id="33-how-token-manager-works">3.3 How Token Manager Works</h3><p>To use Token Manager:</p>
+<ol>
+<li>In the Data Center Designer, navigate to Menu → Management → Token Manager</li>
+<li>Click Generate Token</li>
+<li>Select a Time-To-Live (TTL) for the token (options range from 1 hour to 365 days)</li>
+<li>Click Create - the token value is displayed once and cannot be retrieved again</li>
+<li>Copy the token value and store it securely</li>
+</ol>
+<p>Once you have a token, include it in the Authorization header of your API requests:</p>
+<pre><code>Authorization: Bearer &lt;your-token-value&gt;
+</code></pre>
+<p>Each user can have up to 100 active tokens. You can delete a token at any time through the Token Manager interface, which immediately invalidates it even if the TTL has not expired.</p>
+<h3 id="34-token-attributes">3.4 Token Attributes</h3><p>Each token has the following attributes:</p>
+<ul>
+<li><strong>Token ID</strong> - Used to reference the token in the API (for example, when deleting it)</li>
+<li><strong>Creation Date</strong> - When the token was generated</li>
+<li><strong>Expiration Date</strong> - When the token will automatically expire (based on the selected TTL)</li>
+<li><strong>TTL (Time-To-Live)</strong> - The lifespan of the token (selectable from 1 hour to 365 days)</li>
+<li><strong>Token Value</strong> - The actual secret string used for authentication (shown only once at creation)</li>
+</ul>
+<p>For security reasons, it is recommended to use shorter TTLs (such as 1 day or 1 week) for tokens used in production environments, and to rotate tokens regularly.</p>
+<h2 id="4-iam-federation-and-single-sign-on-sso">4. IAM Federation and Single Sign-On (SSO)</h2><p>For organizations that already use an enterprise Identity Provider (IdP) such as Azure Active Directory, Okta, or OneLogin, IONOS Cloud supports <a href="../../../products/Management/iam-federation.html" class="product-ref">IAM Federation</a>. This feature allows users to authenticate using their corporate credentials instead of maintaining separate IONOS passwords.</p>
+<h3 id="41-what-is-iam-federation">4.1 What Is IAM Federation?</h3><p><a href="../../../products/Management/iam-federation.html" class="product-ref">IAM Federation</a> is a service that lets users authenticate to IONOS Cloud using credentials from an external Identity Provider. It supports two industry-standard protocols:</p>
+<ul>
+<li><strong>SAML 2.0</strong> - A widely-used XML-based protocol for web-based single sign-on</li>
+<li><strong>OpenID Connect (OIDC)</strong> - A modern JSON-based protocol built on top of OAuth 2.0</li>
+</ul>
+<p>When IAM Federation is enabled, users can log in to the IONOS Data Center Designer by clicking &quot;Sign in with a linked account&quot; and being redirected to their organization&#x27;s IdP. After successful authentication with the IdP, they are automatically signed in to IONOS Cloud without entering an IONOS-specific password.</p>
+<h3 id="42-benefits-of-iam-federation">4.2 Benefits of IAM Federation</h3><p><a href="../../../products/Management/iam-federation.html" class="product-ref">IAM Federation</a> provides several advantages:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Benefit</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Single Sign-On (SSO)</strong></td>
+<td>Users sign in once and gain access to multiple IONOS services (DCD, Control Panel, Reseller Portal) without repeated logins</td>
+</tr>
+<tr>
+<td><strong>Improved Security</strong></td>
+<td>Authentication is performed by your organization&#x27;s trusted IdP, often with Multi-Factor Authentication and conditional access policies already in place</td>
+</tr>
+<tr>
+<td><strong>Reduced Phishing Risk</strong></td>
+<td>User passwords are never stored in IONOS Cloud, eliminating one attack vector for credential theft</td>
+</tr>
+<tr>
+<td><strong>Cross-Domain Collaboration</strong></td>
+<td>Users from partner organizations can access your IONOS resources using their own IdP credentials, simplifying external collaboration</td>
+</tr>
+<tr>
+<td><strong>Simplified User Management</strong></td>
+<td>User accounts are managed centrally in your IdP - when someone leaves the organization or changes roles, access to IONOS Cloud is automatically updated</td>
+</tr>
+<tr>
+<td><strong>Enhanced User Experience</strong></td>
+<td>Seamless login with familiar corporate credentials, no need to remember multiple passwords</td>
+</tr>
+<tr>
+<td><strong>Reduced Administrative Overhead</strong></td>
+<td>No need to create, update, or delete IONOS user accounts separately from your existing identity management system</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="43-how-iam-federation-works">4.3 How IAM Federation Works</h3><p>Setting up <a href="../../../products/Management/iam-federation.html" class="product-ref">IAM Federation</a> involves the following steps:</p>
+<ol>
+<li><strong>Domain Ownership Verification</strong> - You prove ownership of your organization&#x27;s domain (such as yourcompany.com) by creating a TXT record in your DNS</li>
+<li><strong>Identity Provider Onboarding</strong> - You provide IONOS with your IdP&#x27;s discovery endpoint information (such as the SAML metadata XML URL or OIDC configuration endpoints)</li>
+<li><strong>User Account Linking</strong> - Each user links their existing IONOS Cloud account to their corporate identity via the IAM Federation menu in the DCD</li>
+<li><strong>SSO Login</strong> - Users can now log in to IONOS Cloud by entering their corporate email address and selecting &quot;Sign in with a linked account&quot;</li>
+</ol>
+<p>After linking, the user is redirected to the organization&#x27;s IdP login page, authenticates there (often with MFA), and is then returned to the IONOS Data Center Designer fully authenticated.</p>
+<h3 id="44-iam-privileges-and-federation">4.4 IAM Privileges and Federation</h3><p>It is important to understand that <a href="../../../products/Management/iam-federation.html" class="product-ref">IAM Federation</a> only handles authentication (verifying who the user is), not authorization (determining what the user can do). The IONOS RBAC privileges assigned to a user remain unchanged when they link to an external IdP.</p>
+<p>For example, if a user has the privilege &quot;Access and manage Database as a Service&quot; before linking to federation, they will still have that same privilege after linking. Federation provides an alternative login method but does not change the underlying permissions.</p>
+<h2 id="5-implementing-iam-best-practices">5. Implementing IAM Best Practices</h2><p>Effective IAM implementation goes beyond understanding the technical features. It requires following security best practices to protect your cloud environment.</p>
+<h3 id="51-security-best-practices-checklist">5.1 Security Best Practices Checklist</h3><p>When implementing IAM in IONOS Cloud, follow these guidelines:</p>
+<ol>
+<li>
+<p><strong>Apply the Principle of Least Privilege (PoLP)</strong> - Grant users only the minimum permissions required for their job functions. Use the User role with explicit privileges instead of the Administrator role whenever possible.</p>
+</li>
+<li>
+<p><strong>Use Groups for Team-Based Access</strong> - Create groups that reflect organizational roles (such as developers, operators, auditors) and assign privileges to groups rather than individual users. This simplifies management and ensures consistency.</p>
+</li>
+<li>
+<p><strong>Enable Multi-Factor Authentication (MFA)</strong> - Require MFA for the contract Owner, all Administrators, and any users with elevated privileges. This adds a critical second layer of security.</p>
+</li>
+<li>
+<p><strong>Conduct Regular Access Reviews</strong> - At least quarterly, review user accounts, group memberships, and assigned privileges. Revoke access immediately when employees change roles or leave the organization.</p>
+</li>
+<li>
+<p><strong>Rotate API Tokens Regularly</strong> - Use short TTLs for production tokens (1-7 days recommended) and rotate them on a regular schedule. Delete tokens that are no longer in use.</p>
+</li>
+<li>
+<p><strong>Use <a href="../../../products/Management/iam-federation.html" class="product-ref">IAM Federation</a> When Available</strong> - If your organization already has an enterprise IdP, use IAM Federation to centralize authentication and leverage your existing security controls.</p>
+</li>
+<li>
+<p><strong>Document Your IAM Policies</strong> - Maintain written documentation that defines roles, group structures, privilege assignments, and review schedules. This ensures consistency and helps with compliance audits.</p>
+</li>
+<li>
+<p><strong>Monitor <a href="../../../products/Observability/activity-logs.html" class="product-ref">Activity Logs</a></strong> - Use the Activity Logs service (covered in Unit 3.4) to track who performed which actions and when. This provides an audit trail for security and compliance purposes.</p>
+</li>
+</ol>
+<h3 id="52-common-iam-mistakes-to-avoid">5.2 Common IAM Mistakes to Avoid</h3><p>Several common mistakes can undermine IAM security:</p>
+<ul>
+<li><strong>Over-privileging users</strong> - Granting Administrator rights when specific privileges would suffice increases risk if an account is compromised</li>
+<li><strong>Sharing credentials</strong> - Each individual should have their own user account and credentials, never shared with teammates</li>
+<li><strong>Ignoring stale accounts</strong> - Failing to remove users who have left the organization or changed roles leaves unnecessary access in place</li>
+<li><strong>Using long-lived tokens</strong> - Tokens with 365-day TTLs are convenient but create long-term security risks if compromised</li>
+<li><strong>Forgetting to enable MFA</strong> - Relying on passwords alone leaves accounts vulnerable to phishing and credential stuffing attacks</li>
+<li><strong>Not documenting group structures</strong> - Without documentation, privilege assignments become unclear over time, making audits difficult</li>
+</ul>
+<h2 id="common-use-cases">Common Use Cases</h2><p>Real-world scenarios where Identity and Access Management is essential:</p>
+<ol>
+<li>
+<p><strong>Multi-Team Development Environment:</strong> A software company has separate teams for frontend, backend, and DevOps. Using IONOS Groups, they create &quot;Frontend Developers&quot; with privileges to manage <a href="../../../products/Compute_Services/compute-engine.html" class="product-ref">Compute Engine</a> and Load Balancers (covered in Unit 2.2 and 2.4), &quot;Backend Developers&quot; with access to Database as a Service and Object Storage (Unit 2.5 and 2.3), and &quot;DevOps Engineers&quot; with full infrastructure privileges. When developers change teams, administrators simply move them to the appropriate group rather than reconfiguring individual permissions.</p>
+</li>
+<li>
+<p><strong>Federated Access for Enterprise:</strong> A large corporation already uses Azure Active Directory for employee authentication across all internal systems. By implementing <a href="../../../products/Management/iam-federation.html" class="product-ref">IAM Federation</a> (Section 4), they allow employees to access IONOS Cloud using their corporate credentials and MFA policies. When an employee leaves, disabling their Azure AD account automatically revokes IONOS Cloud access without requiring separate deprovisioning steps.</p>
+</li>
+<li>
+<p><strong>API Automation with Token Manager:</strong> An e-commerce platform uses automated scripts to provision test environments every morning and tear them down each evening to save costs. Using Token Manager (Section 3), they generate a 7-day API token with minimal required privileges (&quot;Create VDC,&quot; &quot;Create Servers,&quot; &quot;Delete Resources&quot;) and use it in their automation scripts. The token is rotated weekly and provides an audit trail separate from individual user accounts.</p>
+</li>
+</ol>
+<h2 id="summary">Summary</h2><p>Identity and Access Management is the cornerstone of cloud security, determining who can access your resources and what they can do with them. IONOS Cloud provides a comprehensive IAM framework built on Role-Based Access Control, enabling you to implement fine-grained security policies that scale from small teams to large enterprises.</p>
+<p>You have learned how IONOS&#x27;s three-tier role system (Owner, Administrator, User) provides flexibility in access control, how Users and Groups enable scalable permission management, and how Token Manager secures API authentication. You have also explored how <a href="../../../products/Management/iam-federation.html" class="product-ref">IAM Federation</a> and Single Sign-On can integrate IONOS Cloud with your existing enterprise identity infrastructure, simplifying user management while improving security.</p>
+<p>Effective IAM implementation requires more than technical configuration. It demands a commitment to the Principle of Least Privilege, regular access reviews, Multi-Factor Authentication enforcement, and clear documentation of policies and procedures. By following these best practices, you can significantly reduce security risks while maintaining operational efficiency.</p>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li>IONOS Cloud uses a Role-Based Access Control (RBAC) model with three roles: Owner (full unrestricted access), Administrator (full access except payment changes), and User (explicitly granted privileges only)</li>
+<li>Groups enable scalable permission management by allowing you to assign privileges collectively to multiple users rather than individually</li>
+<li>Token Manager generates Bearer tokens for secure API authentication, required for accounts with Two-Factor Authentication enabled</li>
+<li>IAM Federation supports SAML 2.0 and OpenID Connect, allowing users to authenticate with external Identity Providers for Single Sign-On</li>
+<li>The Principle of Least Privilege means granting users only the minimum permissions required for their job functions, reducing security risk</li>
+<li>Best practices include enabling MFA, conducting quarterly access reviews, rotating API tokens regularly, and documenting IAM policies</li>
+</ul>
+<p><strong>Important Terminology:</strong></p>
+<ul>
+<li><strong>RBAC (Role-Based Access Control):</strong> A model for managing access based on predefined roles with specific privileges</li>
+<li><strong>Privilege:</strong> An action-level grant that defines what a user or group can perform (e.g., create VDCs, manage databases)</li>
+<li><strong>Group:</strong> A logical collection of users that inherit privileges collectively</li>
+<li><strong>Token Manager:</strong> A service for generating Bearer tokens (JWTs) used for API authentication</li>
+<li><strong>IAM Federation:</strong> A service allowing users to authenticate with external Identity Providers using SAML 2.0 or OIDC</li>
+<li><strong>SSO (Single Sign-On):</strong> Authentication method allowing users to log in once and access multiple services without repeated credential entry</li>
+<li><strong>Principle of Least Privilege (PoLP):</strong> Security practice of granting users only the minimum permissions required for their tasks</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2><p><strong>Continue Learning:</strong> <a href="unit-3.3-cost-billing.html">Unit 3.3: Cost Management and Billing</a></p>
+<p><strong>Related Topics:</strong></p>
+<ul>
+<li><a href="unit-3.1-dcd-account-management.html">Unit 3.1: Data Center Designer and Account Management</a></li>
+<li><a href="unit-3.4-logs-monitoring.html">Unit 3.4: Activity Logs and Monitoring</a></li>
+<li><a href="unit-3.5-security-compliance.html">Unit 3.5: Security and Compliance</a></li>
+</ul>
+
+</article>
+
+<!-- Mark Complete Button -->
+<div class="mark-complete">
+  <button class="btn-complete" data-unit-id="3.2"
+          data-label-complete="Completed"
+          data-label-incomplete="Mark as Complete"
+          aria-pressed="false">
+    <span class="btn-icon">
+      <svg viewBox="0 0 16 16" fill="currentColor">
+        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      </svg>
+    </span>
+    <span class="btn-text">Mark as Complete</span>
+  </button>
+</div>
+
+<!-- Unit Navigation -->
+<nav class="unit-navigation" aria-label="Unit navigation">
+  <div class="nav-prev">
+    <a href="../module-3/unit-3.1-dcd-account-management.html">
+      <span class="nav-label">
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+        </svg>
+        Previous
+      </span>
+      <span class="nav-title">3.1 Data Center Designer and Account Management</span>
+    </a>
+  </div>
+  <div class="nav-next">
+    <a href="../module-3/unit-3.3-cost-billing.html">
+      <span class="nav-label">
+        Next
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+      </span>
+      <span class="nav-title">3.3 Cost Management and Billing</span>
+    </a>
+  </div>
+</nav>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <p>&copy; 2026 . All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script>window.CW_I18N = {"keep_learning": "Keep Learning!", "completed_of_total": "You've completed <strong>{completed} of {total} units</strong> ({percentage}%).", "finish_all_units": "Finish all units to unlock your completion certificate.", "continue_learning": "Continue Learning", "back_to_overview": "Back to Overview", "skip_to_completion": "Skip to completion page", "quiz_submit": "Submit Answers", "quiz_score": "Your Score", "quiz_correct": "Correct", "quiz_incorrect": "Incorrect", "quiz_explanation": "Explanation", "quiz_show_explanation": "Show Explanation", "quiz_hide_explanation": "Hide Explanation", "quiz_passed": "Passed", "quiz_not_passed": "Not Passed", "quiz_retry": "Try Again", "quiz_of": "of", "quiz_pass_required": "You need at least {threshold}% to pass.", "finish_all_units_and_quizzes": "Finish all units and pass all quizzes to unlock your completion certificate.", "knowledge_check": "Knowledge Check"};</script>
+  <script src="../../../js/navigation.js"></script>
+  <script src="../../../js/progress.js"></script>
+  <script src="../../../js/quiz.js"></script>
+  <script src="../../../js/language-switcher.js"></script>
+</body>
+</html>

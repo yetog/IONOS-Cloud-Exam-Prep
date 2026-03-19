@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IONOS Cloud Foundational - Unit 2.5: Database and Data Services">
+  <meta name="author" content="">
+  <title>2.5 Database and Data Services | Cloud Training</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#003d8f">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Overpass:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../../css/ionos-learn.css">
+  <link rel="stylesheet" href="../../../css/print.css" media="print">
+</head>
+<body>
+
+  <div class="page-wrapper">
+    <!-- Header -->
+    <header class="site-header" role="banner">
+      <div class="header-left">
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+
+        <!-- Logo -->
+        <a href="../../../index.html" class="logo" aria-label="IONOS Cloud Training Home">
+          <img src="../../../assets/ionos-logo.svg" alt="IONOS" width="100" height="32">
+        </a>
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../../index.html">Course</a>
+<span class="breadcrumb-separator">/</span>
+<span>Module 2</span>
+<span class="breadcrumb-separator">/</span>
+<span>Unit 2.5</span>
+        </nav>
+      </div>
+
+      <div class="header-right">
+        <a href="../../../products/index.html" class="header-link">Product Reference</a>
+        <div class="language-switcher">
+  <button class="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Change language">
+    <span class="lang-code">EN</span>
+  </button>
+  <div class="lang-dropdown" role="menu">
+    <a href="../../../en/courses/module-2/unit-2.5-databases.html" class="lang-option current" role="menuitem">
+      <span class="lang-code">EN</span>
+      <span>English</span>
+    </a><a href="../../../de/courses/module-2/unit-2.5-databases.html" class="lang-option" role="menuitem">
+      <span class="lang-code">DE</span>
+      <span>Deutsch</span>
+    </a><a href="../../../es/courses/module-2/unit-2.5-databases.html" class="lang-option" role="menuitem">
+      <span class="lang-code">ES</span>
+      <span>Español</span>
+    </a><a href="../../../fr/courses/module-2/unit-2.5-databases.html" class="lang-option" role="menuitem">
+      <span class="lang-code">FR</span>
+      <span>Français</span>
+    </a>
+  </div>
+</div>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" role="navigation" aria-label="Course navigation">
+        <div class="sidebar-header">
+          <div class="course-title">Cloud Training</div>
+          <div class="progress-container">
+            <div class="progress-label">
+              <span>Progress</span>
+              <span class="progress-percent">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="nav-modules">
+          <div class="nav-special-item">
+  <a href="../../index.html" class="special-link " data-page-id="overview">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6a.5.5 0 0 0 .708.708L8 2.207l5.646 5.647a.5.5 0 0 0 .708-.708l-6-6z"/>
+      <path d="M2.5 8.5v5.5h11v-5.5l-5.5-5.5-5.5 5.5z"/>
+    </svg>
+    <span>Course Overview</span>
+  </a>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 1: Cloud Concepts</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.1-cloud-computing-fundamentals.html" class="unit-link " data-unit-id="1.1">
+        <span class="unit-status"></span>
+        <span>1.1 Cloud Computing Fundamentals</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.2-cloud-service-benefits.html" class="unit-link " data-unit-id="1.2">
+        <span class="unit-status"></span>
+        <span>1.2 Cloud Service Benefits</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.3-cloud-deployment-models.html" class="unit-link " data-unit-id="1.3">
+        <span class="unit-status"></span>
+        <span>1.3 Cloud Service Type Categories</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-1/unit-1.4-knowledge-check.html" class="quiz-link " data-unit-id="1.4" data-quiz-id="1.4">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Cloud Concepts</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header expanded">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 2: IONOS Architecture and Services</span>
+  </div>
+  <ul class="unit-list expanded">
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.1-core-components.html" class="unit-link " data-unit-id="2.1">
+        <span class="unit-status"></span>
+        <span>2.1 Core Architectural Components</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.2-compute.html" class="unit-link " data-unit-id="2.2">
+        <span class="unit-status"></span>
+        <span>2.2 Compute Services</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.3-storage-services.html" class="unit-link " data-unit-id="2.3">
+        <span class="unit-status"></span>
+        <span>2.3 Storage Services</span>
+        <span class="unit-time">~21 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.4-networking-services.html" class="unit-link " data-unit-id="2.4">
+        <span class="unit-status"></span>
+        <span>2.4 Networking Services</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.5-databases.html" class="unit-link active" data-unit-id="2.5">
+        <span class="unit-status"></span>
+        <span>2.5 Database and Data Services</span>
+        <span class="unit-time">~20 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.6-security-ai-containers.html" class="unit-link " data-unit-id="2.6">
+        <span class="unit-status"></span>
+        <span>2.6 Security, AI, and Container Services</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-2/unit-2.7-knowledge-check.html" class="quiz-link " data-unit-id="2.7" data-quiz-id="2.7">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Architecture and Services</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 3: Management and Governance</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.1-dcd-account-management.html" class="unit-link " data-unit-id="3.1">
+        <span class="unit-status"></span>
+        <span>3.1 Data Center Designer and Account Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.2-iam.html" class="unit-link " data-unit-id="3.2">
+        <span class="unit-status"></span>
+        <span>3.2 Identity and Access Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.3-cost-billing.html" class="unit-link " data-unit-id="3.3">
+        <span class="unit-status"></span>
+        <span>3.3 Cost Management and Billing</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.4-logs-monitoring.html" class="unit-link " data-unit-id="3.4">
+        <span class="unit-status"></span>
+        <span>3.4 Activity Logs and Monitoring</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.5-security-compliance.html" class="unit-link " data-unit-id="3.5">
+        <span class="unit-status"></span>
+        <span>3.5 Security and Compliance</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-3/unit-3.6-knowledge-check.html" class="quiz-link " data-unit-id="3.6" data-quiz-id="3.6">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Management and Governance</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-special-item">
+  <a href="../../courses/completion.html" class="special-link " data-page-id="completion">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+    </svg>
+    <span>Course Completion</span>
+  </a>
+</div>
+        </nav>
+
+        <div class="sidebar-divider"></div>
+
+        <a href="../../../products/index.html" class="products-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+          <span>Product Reference</span>
+        </a>
+      </aside>
+
+      <!-- Sidebar Overlay (Mobile) -->
+      <div class="sidebar-overlay" aria-hidden="true"></div>
+
+      <!-- Main Content -->
+      <main id="main-content" class="content" role="main">
+        <div class="content-inner">
+          <!-- Unit Header Meta -->
+<div class="unit-meta">
+  <span class="reading-time">
+    <svg viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+      <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+    </svg>
+    20 min read
+  </span>
+</div>
+
+<!-- Learning Objectives -->
+<section class="learning-objectives" aria-labelledby="objectives-heading">
+  <h2 id="objectives-heading">Learning Objectives</h2>
+  <p>By the end of this module, you will be able to:</p>
+  <ul>
+    <li>Explain what managed database services are and why organizations choose them over self-managed solutions</li>
+<li>Describe the key characteristics and use cases for Managed PostgreSQL, MongoDB, and MariaDB</li>
+<li>Identify when to use In-Memory DB for caching and real-time analytics</li>
+<li>Explain how Event Streams for Apache Kafka enables real-time data processing and IoT scenarios</li>
+  </ul>
+</section>
+
+<!-- Main Unit Content -->
+<article class="unit-content">
+  <h1 id="unit-25-database-and-data-services">Unit 2.5: Database and Data Services</h1><h2 id="introduction">Introduction</h2><p>Imagine a busy restaurant kitchen where the chef focuses entirely on creating amazing dishes while a dedicated team handles equipment maintenance, ingredient inventory, and cleaning. The chef does not worry about fixing the ovens or ordering supplies because those responsibilities belong to specialists. Managed database services work the same way. They let your team focus on building great applications while IONOS handles the infrastructure, patching, backups, and maintenance.</p>
+<p>In this unit, you will explore IONOS Database-as-a-Service (DBaaS) offerings. You will learn about relational databases like Managed <a href="../../../products/Database_as_a_Service/postgresql.html" class="product-ref">PostgreSQL</a> and <a href="../../../products/Database_as_a_Service/mariadb.html" class="product-ref">MariaDB</a> for structured data, document databases like Managed <a href="../../../products/Database_as_a_Service/mongodb.html" class="product-ref">MongoDB</a> for flexible schemas, <a href="../../../products/Database_as_a_Service/in-memory-db.html" class="product-ref">In-Memory DB</a> for ultra-fast caching, and <a href="../../../products/Data_Analytics/kafka.html" class="product-ref">Event Streams for Apache Kafka</a> for real-time event processing. Understanding these services helps you choose the right database for your application needs.</p>
+<h2 id="1-managed-databases-overview">1. Managed Databases Overview</h2><p>Database-as-a-Service (DBaaS) delivers fully managed database engines that run on dedicated infrastructure inside your Virtual Data Center. IONOS handles provisioning, patching, backups, and high availability while you retain full control over your data and database configuration.</p>
+<h3 id="11-what-makes-a-database-managed">1.1 What Makes a Database &quot;Managed&quot;</h3><p>A managed database service takes responsibility for the entire database stack, from hardware and operating system to the database engine and ongoing maintenance. You provision a cluster through the Data Center Designer or API, and within minutes you have a production-ready database without installing software or configuring servers.</p>
+<p>Managed databases differ from self-managed deployments in several key ways. The cloud provider supplies the hardware, applies firmware and operating system patches, and manages database software updates. You avoid purchasing physical servers, racking equipment, and maintaining infrastructure. Databases come pre-configured with security best practices, automated backups, and high-availability features built in. Your team focuses on schema design, query optimization, and application development instead of routine operations.</p>
+<h3 id="12-benefits-of-managed-database-services">1.2 Benefits of Managed Database Services</h3><p>The following table compares managed databases to self-managed deployments across critical operational areas:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Managed DB Benefits</th>
+<th>Self-Managed Requirements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hardware &amp; Firmware</strong></td>
+<td>Provider provisions, installs and maintains servers, drivers, and firmware automatically</td>
+<td>Purchase, rack, power, network-connect and patch physical machines manually</td>
+</tr>
+<tr>
+<td><strong>Initial Setup</strong></td>
+<td>Databases are pre-configured and ready to use on demand</td>
+<td>Install database software, tune parameters, configure replication and security</td>
+</tr>
+<tr>
+<td><strong>Operations &amp; Staffing</strong></td>
+<td>Staff focuses on application development instead of routine operations</td>
+<td>Requires DBAs or engineers to handle installs, patches, monitoring, and troubleshooting</td>
+</tr>
+<tr>
+<td><strong>Patching &amp; Upgrades</strong></td>
+<td>Regular patches applied automatically during maintenance windows</td>
+<td>Track security releases, schedule downtime, test upgrades, apply manually</td>
+</tr>
+<tr>
+<td><strong>High Availability</strong></td>
+<td>Built-in HA clusters with automatic fail-over and replication</td>
+<td>Design and implement your own replication topology and test fail-over procedures</td>
+</tr>
+<tr>
+<td><strong>Backup &amp; Restore</strong></td>
+<td>Daily automated backups with point-in-time recovery</td>
+<td>Deploy backup agents, schedule snapshots, manage retention, test restores</td>
+</tr>
+<tr>
+<td><strong>Scalability</strong></td>
+<td>Vertical and horizontal scaling via API or console</td>
+<td>Procure larger servers, add nodes, re-configure load balancers, migrate data</td>
+</tr>
+<tr>
+<td><strong>Security</strong></td>
+<td>TLS encryption, role-based access control, private-network connectivity</td>
+<td>Harden OS, manage certificates, configure firewalls and network segmentation</td>
+</tr>
+<tr>
+<td><strong>Monitoring</strong></td>
+<td>Integrated metrics, logs, alerts available in control panel or via API</td>
+<td>Install monitoring agents, build dashboards, maintain alerting pipelines</td>
+</tr>
+<tr>
+<td><strong>Cost Model</strong></td>
+<td>Pay-as-you-go per-minute billing for resources used</td>
+<td>Capital expense for hardware, over-provisioned capacity, long-term contracts</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Managed databases deliver speed and simplicity by providing production-ready environments in minutes. They offer reliability through automated high-availability configurations and vendor-supported patches. They improve operational efficiency by freeing your team from routine administration tasks. They provide financial flexibility through consumption-based pricing that scales with your actual usage.</p>
+<h3 id="13-common-managed-database-features">1.3 Common Managed Database Features</h3><p>All IONOS managed database services share core capabilities that ensure enterprise-grade reliability and security. Every service runs on dedicated virtual machines with guaranteed CPU, RAM, and storage resources. Clusters deploy within private LANs in your Virtual Data Center, ensuring network isolation and security.</p>
+<p>High availability comes standard through multi-node clusters with automatic fail-over. If one node fails, the cluster automatically promotes a replica to maintain service continuity. Replication can be configured as asynchronous for best performance, synchronous for stronger consistency, or strict-synchronous for zero data loss.</p>
+<p>Security is built into every layer. All client connections use TLS encryption to protect data in transit. Role-based access control lets you define granular permissions for users and applications. Databases are reachable only through private networks, never exposed directly to the internet. Backups are encrypted and stored securely in <a href="../../../products/Storage_&_Backup/ionos-object-storage.html" class="product-ref">IONOS Cloud Object Storage</a>.</p>
+<p>Automated backups run daily and support point-in-time recovery, typically for up to one week. You can restore entire clusters or specific databases to any moment during the retention period. Maintenance windows allow you to schedule patches and upgrades at convenient times with minimal disruption.</p>
+<p>Monitoring and reporting are integrated into the Data Center Designer and available through APIs. You can track CPU usage, memory consumption, storage capacity, connection counts, and query performance. Metrics and logs help you optimize performance and troubleshoot issues before they impact users.</p>
+<h2 id="2-relational-database-services">2. Relational Database Services</h2><p>Relational databases organize data into tables with defined schemas, enforce relationships through foreign keys, and support complex queries using SQL. IONOS offers two relational database engines: <a href="../../../products/Database_as_a_Service/postgresql.html" class="product-ref">PostgreSQL</a> and <a href="../../../products/Database_as_a_Service/mariadb.html" class="product-ref">MariaDB</a>.</p>
+<h3 id="21-managed-postgresql">2.1 Managed PostgreSQL</h3><p>Managed <a href="../../../products/Database_as_a_Service/postgresql.html" class="product-ref">PostgreSQL</a> delivers a fully compatible, enterprise-class <a href="../../../products/Database_as_a_Service/postgresql.html" class="product-ref">PostgreSQL</a> database as a managed service. <a href="../../../products/Database_as_a_Service/postgresql.html" class="product-ref">PostgreSQL</a> is known for its advanced features, extensibility, and support for both traditional relational data and modern JSON documents. It runs on dedicated clusters with configurable CPU, RAM, and storage inside your Virtual Data Center.</p>
+<p>PostgreSQL supports ACID transactions, ensuring data consistency and reliability for mission-critical applications. It provides advanced indexing options, full-text search, and powerful query optimization. You can use PostgreSQL extensions to add functionality like geospatial data support (PostGIS), advanced statistics, and cryptographic functions. The database handles both structured data in tables and semi-structured data stored as JSON or JSONB.</p>
+<p>Key capabilities include vertical scaling (add CPU, RAM, storage on the fly) and horizontal scaling (add replica instances for read traffic). High availability is achieved through multi-node clusters with configurable replication modes. Choose asynchronous replication for best performance, synchronous for guaranteed writes to at least one replica, or strict-synchronous for zero data loss commit guarantees.</p>
+<p>Monitoring exposes cluster metrics through the Data Center Designer, Telemetry API, and <a href="../../../products/Observability/monitoring-service.html" class="product-ref">Monitoring Service</a> with two-week retention. Automated backups combine continuous write-ahead log (WAL) archiving with daily base backups, enabling point-in-time recovery for up to one week. You can even clone clusters from existing backups for testing or development environments.</p>
+<h3 id="22-managed-mariadb">2.2 Managed MariaDB</h3><p>Managed <a href="../../../products/Database_as_a_Service/mariadb.html" class="product-ref">MariaDB</a> provides a MySQL-compatible relational database that originated as a community-driven fork of MySQL. It powers high-traffic services like Wikipedia and WordPress.com. <a href="../../../products/Database_as_a_Service/mariadb.html" class="product-ref">MariaDB</a> offers familiar MySQL syntax and behavior while adding enhancements for performance, storage engines, and analytics.</p>
+<p>MariaDB is fully ACID-compliant and supports triggers, stored procedures, and views. It includes multiple storage engines optimized for different workloads, from transactional InnoDB to column-store engines for analytics. Native support for JSON and GIS functions makes it suitable for applications that mix structured and semi-structured data.</p>
+<p>The service provides vertical scaling up to 16 cores and 32 GB RAM per node, with multi-node high-availability clusters for automatic fail-over. Each user has 250 connections and <code>max_connections</code> is set to 500. Storage is SSD-backed, the upper limit for Storage Size is 2 TB.</p>
+<p>A unique self-restore feature lets you restore specific backups or roll back to any point in time during the one-week retention period directly through the Data Center Designer or API. This capability reduces downtime and data loss risk without requiring support tickets.</p>
+<h3 id="23-choosing-between-postgresql-and-mariadb">2.3 Choosing Between PostgreSQL and MariaDB</h3><p>Both <a href="../../../products/Database_as_a_Service/postgresql.html" class="product-ref">PostgreSQL</a> and <a href="../../../products/Database_as_a_Service/mariadb.html" class="product-ref">MariaDB</a> are excellent relational databases, but they excel in different scenarios. Understanding when to use each helps you make the right choice for your application.</p>
+<p>Choose PostgreSQL when you need sophisticated features like advanced indexing, extensive extensions, or strict transactional consistency. PostgreSQL excels at complex analytical queries, applications that mix relational and JSON data, and workloads requiring synchronous replication with zero data loss. It is ideal for financial systems, ERP applications, and data warehousing where ACID guarantees and query flexibility are critical.</p>
+<p>Choose MariaDB when you have existing MySQL knowledge or applications, need a familiar MySQL-compatible syntax, or are building web applications and e-commerce platforms. MariaDB offers excellent performance for high-concurrency read-heavy workloads and provides strong GIS and JSON capabilities. It is well-suited for content management systems, SaaS platforms, and scenarios where MySQL compatibility simplifies migration.</p>
+<h2 id="3-document-database-and-nosql-services">3. Document Database and NoSQL Services</h2><p>Document databases store data as flexible JSON-like documents instead of fixed-schema tables. This flexibility makes them ideal for applications with rapidly evolving data models or highly variable data structures.</p>
+<h3 id="31-managed-mongodb">3.1 Managed MongoDB</h3><p>Managed <a href="../../../products/Database_as_a_Service/mongodb.html" class="product-ref">MongoDB</a> is IONOS&#x27;s fully managed service for the <a href="../../../products/Database_as_a_Service/mongodb.html" class="product-ref">MongoDB</a> document database. <a href="../../../products/Database_as_a_Service/mongodb.html" class="product-ref">MongoDB</a> stores data as BSON documents (binary JSON) in collections, allowing each document to have a different structure. This schema flexibility accelerates development by eliminating rigid schema migrations.</p>
+<p>MongoDB is offered in three editions to match different needs. Playground edition provides a free single-node cluster with 2 GB RAM, 1 vCPU, and 50 GB storage based on Cube VMs and NVMe storage for development and testing. Business edition offers pre-defined templates for production workloads with multi-instance clusters also based on Cube VMs and NVMe storage. Enterprise edition provides full control over node sizing using Dedicated Core VMs, SSD and HDD <a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a>, sharding configurations, and includes access to MongoDB&#x27;s professional support team in addition to IONOS support.</p>
+<p>Key capabilities include horizontal scaling through built-in sharding and replica sets. Sharding distributes data across multiple nodes to handle massive datasets and high write throughput. Replica sets provide high availability with automatic fail-over. MongoDB supports up to 51,200 connections per cluster, far exceeding relational database connection limits.</p>
+<p>NVMe storage is available in Business edition that is hosted on Cube VMs. SSD or HDD block storage is available in the Enterprise edition that is hosted on dedicated core VMs. Multi-instance clusters automatically replicate data across nodes, with the primary handling writes and secondaries serving reads. The service includes continuous log collection with 30-day retention and built-in metrics for CPU, memory, storage, connections, and cluster health.</p>
+<p>MongoDB is certified by MongoDB Inc. and fully compatible with standard MongoDB tools, drivers, and the mongo shell. You manage clusters through the Data Center Designer, API v6, or SDKs. Daily off-site snapshots are stored in Object Storage for up to seven days with point-in-time recovery support.</p>
+<h3 id="32-when-to-use-mongodb">3.2 When to Use MongoDB</h3><p><a href="../../../products/Database_as_a_Service/mongodb.html" class="product-ref">MongoDB</a> excels in scenarios where schema flexibility is valuable. Rapid development projects benefit from the ability to change document structure without database migrations. Content management systems, mobile application backends, and IoT platforms often have variable data structures that fit naturally into document models.</p>
+<p>High-write workloads leverage MongoDB&#x27;s horizontal scaling through sharding. Applications that generate massive volumes of data, such as click-stream analytics or user event tracking, can distribute writes across multiple shards for better performance. The document model also simplifies storing complex nested data structures that would require multiple tables and joins in relational databases.</p>
+<p>Use MongoDB when your application has evolving requirements and you need to add new fields or change data structures frequently. Choose it for multi-tenant SaaS applications where each tenant may have custom fields. Consider it for real-time analytics where schema flexibility and high connection counts are advantages.</p>
+<h2 id="4-specialized-database-services">4. Specialized Database Services</h2><p>Beyond traditional relational and document databases, IONOS offers specialized services for caching and event streaming. These services solve specific performance and architectural challenges.</p>
+<h3 id="41-in-memory-db">4.1 In-Memory DB</h3><p><a href="../../../products/Database_as_a_Service/in-memory-db.html" class="product-ref">In-Memory DB</a> is IONOS&#x27;s fully managed, Redis-compatible database service that stores all data in RAM for sub-millisecond access times. Unlike disk-based databases that read from storage, <a href="../../../products/Database_as_a_Service/in-memory-db.html" class="product-ref">In-Memory DB</a> serves data directly from memory, delivering performance thousands of times faster.</p>
+<p>The service is built on Redis, an open-source in-memory data structure server. It supports various data types including strings, hashes, lists, sets, sorted sets, bitmaps, hyperloglogs, geospatial indexes, and streams. This flexibility makes it useful beyond simple key-value caching.</p>
+<p>Persistence options let you balance speed with durability. Choose no persistence for pure caching where data can be rebuilt, RDB snapshots for periodic checkpoints, AOF (Append-Only File) logging for continuous write durability, or combine both for maximum protection. Persistence writes data to SSD so that clusters can recover after restarts.</p>
+<p>In-Memory DB provides vertical scaling (add CPU, RAM, storage) and horizontal scaling (add nodes). Storage capacity scales automatically based on RAM and the chosen persistence mode. High availability is achieved through multi-node clusters with asynchronous replication by default, with an optional semi-synchronous mode for stronger consistency.</p>
+<p>Security includes TLS-encrypted client connections, role-based access control, and private-network-only deployment. Each instance runs on dedicated Enterprise VMs and is reachable only via private LANs within your VDC. Resource limits include a maximum of 16 CPU cores, 32 GB RAM, 2 TB storage per instance, and up to 10 default instances per contract.</p>
+<h3 id="42-in-memory-db-use-cases">4.2 In-Memory DB Use Cases</h3><p><a href="../../../products/Database_as_a_Service/in-memory-db.html" class="product-ref">In-Memory DB</a> excels as a database caching layer. Place it in front of your primary database to store frequently accessed data in RAM. This reduces the number of queries hitting your database, lowers latency, and improves overall application responsiveness. Caching is especially valuable for read-heavy workloads where the same data is accessed repeatedly by many users.</p>
+<p>Real-time analytics applications use In-Memory DB to process streaming data with sub-millisecond latency. Online advertising platforms, recommendation engines, and real-time dashboards require instant data access that disk-based storage cannot provide. In-Memory DB can aggregate large volumes of events in memory, perform calculations, and serve results to applications immediately.</p>
+<p>Session storage is another common use case. Web applications store user session data in In-Memory DB for fast access across multiple application servers. The in-memory storage ensures that session lookups do not slow down user interactions. Message brokering and leaderboards for gaming applications also benefit from the speed and data structure support that In-Memory DB provides.</p>
+<h3 id="43-event-streams-for-apache-kafka">4.3 Event Streams for Apache Kafka</h3><p><a href="../../../products/Data_Analytics/kafka.html" class="product-ref">Event Streams for Apache Kafka</a> is IONOS&#x27;s fully managed service for real-time event streaming and processing. Apache Kafka is a distributed streaming platform that acts as a high-throughput message broker and event log. Applications publish event streams to Kafka topics, and other applications subscribe to those topics to process events in real time.</p>
+<p>Kafka organizes data into topics, which are partitioned and replicated across multiple brokers for scalability and durability. Partitions allow parallel processing while maintaining message order within each partition. Replication ensures that data is not lost if a broker fails. Producers write events to topics, and consumers read events at their own pace, enabling flexible architectures.</p>
+<p>IONOS Event Streams provides five pre-defined cluster sizes from XS to XL, each with dedicated CPU, RAM, and SSD storage. You can scale clusters up or down as your throughput and storage needs change. High availability is built in through redundant nodes and automatic fail-over. You configure the replication factor to control how many copies of each partition exist across brokers.</p>
+<p>Security includes TLS-encrypted communication, strong authentication through TLS certificates, and fine-grained authorization controls. Clusters attach to private LANs for isolated network traffic between your applications and Kafka. You can adjust partitions, retention time, and retention size to match throughput and storage requirements.</p>
+<p>Management is available through the graphical Data Center Designer, APIs, and SDKs. You can create and configure clusters, topics, brokers, and permissions without deep Kafka expertise. The service handles the underlying infrastructure, patching, and monitoring, allowing your team to focus on building streaming applications.</p>
+<h3 id="44-event-streams-use-cases">4.4 Event Streams Use Cases</h3><p>Event Streams excels at real-time data processing at scale. E-commerce platforms ingest millions of transactions, inventory updates, and user interactions per day. Kafka handles this volume through partitioning and parallel processing. Stream processing frameworks like Kafka Streams, Apache Flink, or Spark read from Kafka topics, perform complex event processing, and write results to downstream systems like databases or dashboards. This enables real-time personalization, fraud detection, and operational analytics.</p>
+<p>IoT data management leverages Kafka to collect continuous streams from thousands of sensors. Smart city initiatives deploy Kafka clusters near edge locations to minimize latency. Sensors push telemetry into topics, and stream-processing jobs detect patterns, trigger alerts, and feed AI/ML pipelines. Log compaction keeps the latest state per device while retention policies manage historical data. This architecture enables real-time monitoring, anomaly detection, and predictive maintenance.</p>
+<p>Click-stream analytics for websites and mobile apps is another common use case. User interactions flow into Kafka topics where they can be analyzed in real time to personalize content, detect behavior patterns, and track business metrics. Financial services use Kafka for transaction processing, regulatory reporting, and market data feeds where low latency and guaranteed ordering are critical.</p>
+<h2 id="5-choosing-the-right-database-service">5. Choosing the Right Database Service</h2><p>Selecting the appropriate database service depends on your data model, consistency requirements, scalability needs, and performance expectations. Understanding the strengths of each option helps you match services to application requirements.</p>
+<h3 id="51-decision-framework">5.1 Decision Framework</h3><p>The following table compares IONOS database services across key characteristics:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Feature / Consideration</th>
+<th>Managed PostgreSQL</th>
+<th>Managed MongoDB</th>
+<th>Managed MariaDB</th>
+<th>In-Memory DB</th>
+<th>Event Streams for Kafka</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data Model</strong></td>
+<td>Relational (SQL) with JSON and GIS</td>
+<td>Document (BSON/JSON)</td>
+<td>Relational (MySQL-compatible)</td>
+<td>Key-value with data structures</td>
+<td>Event log / Message stream</td>
+</tr>
+<tr>
+<td><strong>Best For</strong></td>
+<td>Complex transactions, ACID compliance, joins</td>
+<td>Flexible schemas, rapid development</td>
+<td>Web apps, MySQL migration</td>
+<td>Caching, real-time analytics</td>
+<td>Real-time event processing, IoT</td>
+</tr>
+<tr>
+<td><strong>Scalability</strong></td>
+<td>Vertical + horizontal (replicas)</td>
+<td>Vertical + horizontal (sharding + replicas)</td>
+<td>Vertical + horizontal (replicas)</td>
+<td>Vertical + horizontal</td>
+<td>Horizontal (partitions)</td>
+</tr>
+<tr>
+<td><strong>Consistency</strong></td>
+<td>Strong (strict-sync available)</td>
+<td>Eventual (configurable)</td>
+<td>Strong</td>
+<td>Eventual (configurable)</td>
+<td>Configurable per topic</td>
+</tr>
+<tr>
+<td><strong>Latency</strong></td>
+<td>Low (milliseconds)</td>
+<td>Low (milliseconds)</td>
+<td>Low (milliseconds)</td>
+<td>Ultra-low (sub-millisecond)</td>
+<td>Low (milliseconds)</td>
+</tr>
+<tr>
+<td><strong>Storage Type</strong></td>
+<td>SSD or HDD (up to 4 TB)</td>
+<td>NVMe (Business), SSD or HDD (Enterprise - up to 4 TB)</td>
+<td>SSD (up to 2 TB)</td>
+<td>RAM + SSD persistence</td>
+<td>SSD</td>
+</tr>
+<tr>
+<td><strong>Use Cases</strong></td>
+<td>Finance, ERP, data warehousing</td>
+<td>CMS, mobile backends, IoT</td>
+<td>Web apps, e-commerce, SaaS</td>
+<td>Session storage, real-time dashboards</td>
+<td>Streaming analytics, log aggregation</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Use relational databases (<a href="../../../products/Database_as_a_Service/postgresql.html" class="product-ref">PostgreSQL</a> or <a href="../../../products/Database_as_a_Service/mariadb.html" class="product-ref">MariaDB</a>) when you need strong transactional consistency, complex joins across multiple tables, and well-defined schemas. Choose document databases (<a href="../../../products/Database_as_a_Service/mongodb.html" class="product-ref">MongoDB</a>) when your data model evolves frequently or varies by record. Select <a href="../../../products/Database_as_a_Service/in-memory-db.html" class="product-ref">In-Memory DB</a> when you need caching or ultra-low latency access. Choose Event Streams when you need to process high-volume event streams in real time.</p>
+<h3 id="52-combining-database-services">5.2 Combining Database Services</h3><p>Many applications use multiple database services together to meet different requirements. A common pattern pairs a relational database for transactional data with <a href="../../../products/Database_as_a_Service/in-memory-db.html" class="product-ref">In-Memory DB</a> for caching. The relational database ensures data integrity and supports complex queries, while the cache reduces load and improves response times.</p>
+<p>Another pattern combines a primary database with Event Streams for real-time processing. Application writes go to the database and are also published as events to Kafka. Stream processors consume events to update search indexes, trigger workflows, or feed analytics systems. This architecture enables event-driven microservices and real-time data pipelines without coupling systems directly.</p>
+<p>E-commerce platforms might use <a href="../../../products/Database_as_a_Service/postgresql.html" class="product-ref">PostgreSQL</a> for orders and inventory, <a href="../../../products/Database_as_a_Service/mongodb.html" class="product-ref">MongoDB</a> for product catalogs with variable attributes, In-Memory DB for shopping cart sessions, and Event Streams to process user activity and inventory updates in real time. Each service handles the workload it is best suited for, creating a flexible and performant architecture.</p>
+<h2 id="common-use-cases">Common Use Cases</h2><p>Real-world scenarios demonstrate how IONOS database services solve business challenges:</p>
+<ol>
+<li><strong>E-Commerce Platform with Multi-Database Architecture:</strong> An online retailer uses Managed <a href="../../../products/Database_as_a_Service/postgresql.html" class="product-ref">PostgreSQL</a> for order processing and financial transactions where ACID guarantees are critical (Section 2.1). Product catalogs with varying attributes like clothing sizes and electronics specifications are stored in Managed <a href="../../../products/Database_as_a_Service/mongodb.html" class="product-ref">MongoDB</a> for schema flexibility (Section 3.1). Customer shopping carts and session data live in <a href="../../../products/Database_as_a_Service/in-memory-db.html" class="product-ref">In-Memory DB</a> for instant access and minimal latency (Section 4.1). User click-streams flow through <a href="../../../products/Data_Analytics/kafka.html" class="product-ref">Event Streams for Apache Kafka</a> to power real-time recommendations and inventory updates (Section 4.3). This combination matches each data type to the optimal database service.</li>
+<li><strong>SaaS Application with Caching and High Availability:</strong> A multi-tenant SaaS platform runs Managed <a href="../../../products/Database_as_a_Service/mariadb.html" class="product-ref">MariaDB</a> for customer data with multi-node high-availability clusters ensuring zero downtime (Section 2.2). In-Memory DB caches frequently accessed tenant configurations and reduces database queries by 80%, improving response times from seconds to milliseconds (Section 4.2). Automated backups with point-in-time recovery protect against data loss, and self-restore capabilities let the team quickly recover from mistakes without contacting support. The private-network deployment ensures tenant data isolation and security.</li>
+<li><strong>IoT Platform with Real-Time Analytics:</strong> A smart city initiative collects data from thousands of traffic sensors and environmental monitors. Event Streams for Apache Kafka ingests sensor telemetry with partitioning for parallel processing (Section 4.3). Stream-processing jobs analyze traffic patterns in real time and trigger alerts when anomalies are detected. Historical sensor data is stored in Managed MongoDB using time-series collections optimized for write-heavy workloads (Section 3.1). In-Memory DB maintains the latest sensor states for instant dashboard updates (Section 4.1). This architecture processes millions of events per hour while maintaining sub-second latency for operational decision-making.</li>
+</ol>
+<h2 id="summary">Summary</h2><p>Database and data services are fundamental building blocks for cloud applications. IONOS provides fully managed database offerings that handle infrastructure provisioning, patching, backups, and high availability while you focus on application development and schema design. Managed services deliver faster time to market, lower operational overhead, and consumption-based pricing compared to self-managed deployments.</p>
+<p>Relational databases like Managed <a href="../../../products/Database_as_a_Service/postgresql.html" class="product-ref">PostgreSQL</a> and <a href="../../../products/Database_as_a_Service/mariadb.html" class="product-ref">MariaDB</a> provide strong consistency, ACID transactions, and SQL query capabilities for traditional applications requiring structured data and complex joins. Document databases like Managed <a href="../../../products/Database_as_a_Service/mongodb.html" class="product-ref">MongoDB</a> offer schema flexibility and horizontal scaling for modern applications with evolving requirements. Specialized services including <a href="../../../products/Database_as_a_Service/in-memory-db.html" class="product-ref">In-Memory DB</a> for caching and <a href="../../../products/Data_Analytics/kafka.html" class="product-ref">Event Streams for Apache Kafka</a> enable real-time processing and ultra-low latency access patterns.</p>
+<p>Choosing the right database service requires understanding your data model, consistency needs, scalability requirements, and performance expectations. Many applications combine multiple services to leverage the strengths of each. Understanding these options helps you design architectures that are performant, reliable, and cost-effective.</p>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li>Managed database services handle infrastructure, patching, backups, and high availability automatically, freeing your team to focus on applications instead of operations</li>
+<li>Managed PostgreSQL and MariaDB provide relational SQL databases with ACID compliance, suitable for transactional workloads, financial systems, and data warehousing</li>
+<li>Managed MongoDB offers a document database with flexible schemas and horizontal scaling for content management, mobile backends, and rapidly evolving applications</li>
+<li>In-Memory DB delivers sub-millisecond latency through RAM-based storage, ideal for caching, session storage, and real-time analytics</li>
+<li>Event Streams for Apache Kafka enables high-throughput event streaming for real-time data processing, IoT telemetry, and event-driven architectures</li>
+<li>Choosing the right database service depends on data model (relational vs document vs key-value vs streaming), consistency requirements, and scalability needs</li>
+</ul>
+<p><strong>Important Terminology:</strong></p>
+<ul>
+<li><strong>Database-as-a-Service (DBaaS):</strong> Fully managed database service where the provider handles infrastructure, maintenance, and operations</li>
+<li><strong>ACID:</strong> Atomicity, Consistency, Isolation, Durability - properties that guarantee reliable database transactions</li>
+<li><strong>Replication:</strong> Copying data across multiple database nodes to provide high availability and fault tolerance</li>
+<li><strong>Point-in-Time Recovery (PITR):</strong> Ability to restore a database to any specific moment within the backup retention period</li>
+<li><strong>Sharding:</strong> Distributing data across multiple database nodes to scale horizontally and handle larger datasets</li>
+<li><strong>Document Database:</strong> NoSQL database that stores data as flexible JSON-like documents instead of fixed-schema tables</li>
+<li><strong>In-Memory Database:</strong> Database that stores data in RAM for ultra-fast access with sub-millisecond latency</li>
+<li><strong>Event Streaming:</strong> Continuous flow of event data through a distributed log system for real-time processing</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2><p><strong>Continue Learning:</strong> <a href="unit-2.6-security-ai-containers.html">Unit 2.6: Security, AI, and Container Services</a></p>
+<p><strong>Related Topics:</strong></p>
+<ul>
+<li><a href="unit-2.3-storage-services.html">Unit 2.3: Storage Services</a> - Persistent data storage options that complement database services</li>
+<li><a href="../module-3/unit-3.4-logs-monitoring.html">Unit 3.4: Activity Logs and Monitoring</a> - Monitoring database performance and operations</li>
+</ul>
+
+</article>
+
+<!-- Mark Complete Button -->
+<div class="mark-complete">
+  <button class="btn-complete" data-unit-id="2.5"
+          data-label-complete="Completed"
+          data-label-incomplete="Mark as Complete"
+          aria-pressed="false">
+    <span class="btn-icon">
+      <svg viewBox="0 0 16 16" fill="currentColor">
+        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      </svg>
+    </span>
+    <span class="btn-text">Mark as Complete</span>
+  </button>
+</div>
+
+<!-- Unit Navigation -->
+<nav class="unit-navigation" aria-label="Unit navigation">
+  <div class="nav-prev">
+    <a href="../module-2/unit-2.4-networking-services.html">
+      <span class="nav-label">
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+        </svg>
+        Previous
+      </span>
+      <span class="nav-title">2.4 Networking Services</span>
+    </a>
+  </div>
+  <div class="nav-next">
+    <a href="../module-2/unit-2.6-security-ai-containers.html">
+      <span class="nav-label">
+        Next
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+      </span>
+      <span class="nav-title">2.6 Security, AI, and Container Services</span>
+    </a>
+  </div>
+</nav>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <p>&copy; 2026 . All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script>window.CW_I18N = {"keep_learning": "Keep Learning!", "completed_of_total": "You've completed <strong>{completed} of {total} units</strong> ({percentage}%).", "finish_all_units": "Finish all units to unlock your completion certificate.", "continue_learning": "Continue Learning", "back_to_overview": "Back to Overview", "skip_to_completion": "Skip to completion page", "quiz_submit": "Submit Answers", "quiz_score": "Your Score", "quiz_correct": "Correct", "quiz_incorrect": "Incorrect", "quiz_explanation": "Explanation", "quiz_show_explanation": "Show Explanation", "quiz_hide_explanation": "Hide Explanation", "quiz_passed": "Passed", "quiz_not_passed": "Not Passed", "quiz_retry": "Try Again", "quiz_of": "of", "quiz_pass_required": "You need at least {threshold}% to pass.", "finish_all_units_and_quizzes": "Finish all units and pass all quizzes to unlock your completion certificate.", "knowledge_check": "Knowledge Check"};</script>
+  <script src="../../../js/navigation.js"></script>
+  <script src="../../../js/progress.js"></script>
+  <script src="../../../js/quiz.js"></script>
+  <script src="../../../js/language-switcher.js"></script>
+</body>
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IONOS Cloud Foundational - Unit 3.3: Cost Management and Billing">
+  <meta name="author" content="">
+  <title>3.3 Cost Management and Billing | Cloud Training</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#003d8f">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Overpass:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../../css/ionos-learn.css">
+  <link rel="stylesheet" href="../../../css/print.css" media="print">
+</head>
+<body>
+
+  <div class="page-wrapper">
+    <!-- Header -->
+    <header class="site-header" role="banner">
+      <div class="header-left">
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+
+        <!-- Logo -->
+        <a href="../../../index.html" class="logo" aria-label="IONOS Cloud Training Home">
+          <img src="../../../assets/ionos-logo.svg" alt="IONOS" width="100" height="32">
+        </a>
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../../index.html">Course</a>
+<span class="breadcrumb-separator">/</span>
+<span>Module 3</span>
+<span class="breadcrumb-separator">/</span>
+<span>Unit 3.3</span>
+        </nav>
+      </div>
+
+      <div class="header-right">
+        <a href="../../../products/index.html" class="header-link">Product Reference</a>
+        <div class="language-switcher">
+  <button class="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Change language">
+    <span class="lang-code">EN</span>
+  </button>
+  <div class="lang-dropdown" role="menu">
+    <a href="../../../en/courses/module-3/unit-3.3-cost-billing.html" class="lang-option current" role="menuitem">
+      <span class="lang-code">EN</span>
+      <span>English</span>
+    </a><a href="../../../de/courses/module-3/unit-3.3-cost-billing.html" class="lang-option" role="menuitem">
+      <span class="lang-code">DE</span>
+      <span>Deutsch</span>
+    </a><a href="../../../es/courses/module-3/unit-3.3-cost-billing.html" class="lang-option" role="menuitem">
+      <span class="lang-code">ES</span>
+      <span>Español</span>
+    </a><a href="../../../fr/courses/module-3/unit-3.3-cost-billing.html" class="lang-option" role="menuitem">
+      <span class="lang-code">FR</span>
+      <span>Français</span>
+    </a>
+  </div>
+</div>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" role="navigation" aria-label="Course navigation">
+        <div class="sidebar-header">
+          <div class="course-title">Cloud Training</div>
+          <div class="progress-container">
+            <div class="progress-label">
+              <span>Progress</span>
+              <span class="progress-percent">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="nav-modules">
+          <div class="nav-special-item">
+  <a href="../../index.html" class="special-link " data-page-id="overview">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6a.5.5 0 0 0 .708.708L8 2.207l5.646 5.647a.5.5 0 0 0 .708-.708l-6-6z"/>
+      <path d="M2.5 8.5v5.5h11v-5.5l-5.5-5.5-5.5 5.5z"/>
+    </svg>
+    <span>Course Overview</span>
+  </a>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 1: Cloud Concepts</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.1-cloud-computing-fundamentals.html" class="unit-link " data-unit-id="1.1">
+        <span class="unit-status"></span>
+        <span>1.1 Cloud Computing Fundamentals</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.2-cloud-service-benefits.html" class="unit-link " data-unit-id="1.2">
+        <span class="unit-status"></span>
+        <span>1.2 Cloud Service Benefits</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.3-cloud-deployment-models.html" class="unit-link " data-unit-id="1.3">
+        <span class="unit-status"></span>
+        <span>1.3 Cloud Service Type Categories</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-1/unit-1.4-knowledge-check.html" class="quiz-link " data-unit-id="1.4" data-quiz-id="1.4">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Cloud Concepts</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 2: IONOS Architecture and Services</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.1-core-components.html" class="unit-link " data-unit-id="2.1">
+        <span class="unit-status"></span>
+        <span>2.1 Core Architectural Components</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.2-compute.html" class="unit-link " data-unit-id="2.2">
+        <span class="unit-status"></span>
+        <span>2.2 Compute Services</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.3-storage-services.html" class="unit-link " data-unit-id="2.3">
+        <span class="unit-status"></span>
+        <span>2.3 Storage Services</span>
+        <span class="unit-time">~21 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.4-networking-services.html" class="unit-link " data-unit-id="2.4">
+        <span class="unit-status"></span>
+        <span>2.4 Networking Services</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.5-databases.html" class="unit-link " data-unit-id="2.5">
+        <span class="unit-status"></span>
+        <span>2.5 Database and Data Services</span>
+        <span class="unit-time">~20 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.6-security-ai-containers.html" class="unit-link " data-unit-id="2.6">
+        <span class="unit-status"></span>
+        <span>2.6 Security, AI, and Container Services</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-2/unit-2.7-knowledge-check.html" class="quiz-link " data-unit-id="2.7" data-quiz-id="2.7">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Architecture and Services</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header expanded">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 3: Management and Governance</span>
+  </div>
+  <ul class="unit-list expanded">
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.1-dcd-account-management.html" class="unit-link " data-unit-id="3.1">
+        <span class="unit-status"></span>
+        <span>3.1 Data Center Designer and Account Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.2-iam.html" class="unit-link " data-unit-id="3.2">
+        <span class="unit-status"></span>
+        <span>3.2 Identity and Access Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.3-cost-billing.html" class="unit-link active" data-unit-id="3.3">
+        <span class="unit-status"></span>
+        <span>3.3 Cost Management and Billing</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.4-logs-monitoring.html" class="unit-link " data-unit-id="3.4">
+        <span class="unit-status"></span>
+        <span>3.4 Activity Logs and Monitoring</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.5-security-compliance.html" class="unit-link " data-unit-id="3.5">
+        <span class="unit-status"></span>
+        <span>3.5 Security and Compliance</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-3/unit-3.6-knowledge-check.html" class="quiz-link " data-unit-id="3.6" data-quiz-id="3.6">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Management and Governance</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-special-item">
+  <a href="../../courses/completion.html" class="special-link " data-page-id="completion">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+    </svg>
+    <span>Course Completion</span>
+  </a>
+</div>
+        </nav>
+
+        <div class="sidebar-divider"></div>
+
+        <a href="../../../products/index.html" class="products-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+          <span>Product Reference</span>
+        </a>
+      </aside>
+
+      <!-- Sidebar Overlay (Mobile) -->
+      <div class="sidebar-overlay" aria-hidden="true"></div>
+
+      <!-- Main Content -->
+      <main id="main-content" class="content" role="main">
+        <div class="content-inner">
+          <!-- Unit Header Meta -->
+<div class="unit-meta">
+  <span class="reading-time">
+    <svg viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+      <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+    </svg>
+    17 min read
+  </span>
+</div>
+
+<!-- Learning Objectives -->
+<section class="learning-objectives" aria-labelledby="objectives-heading">
+  <h2 id="objectives-heading">Learning Objectives</h2>
+  <p>By the end of this module, you will be able to:</p>
+  <ul>
+    <li>Explain how the Cost and Usage dashboard tracks resource consumption and billing</li>
+<li>Describe how Cost Alerts help prevent unexpected charges</li>
+<li>Identify the difference between pay-per-use pricing and Cloud Savings Plans</li>
+<li>Understand resource limits, quotas, and how to track usage against them</li>
+<li>Recognize the role of the Billing API in programmatic cost management</li>
+  </ul>
+</section>
+
+<!-- Main Unit Content -->
+<article class="unit-content">
+  <h1 id="unit-33-cost-management-and-billing">Unit 3.3: Cost Management and Billing</h1><h2 id="introduction">Introduction</h2><p>Managing cloud costs is like keeping a household budget. Just as you track monthly expenses across groceries, utilities, and entertainment to avoid overdrafts, you need visibility into cloud resource consumption to prevent billing surprises. The difference is that cloud resources can scale up or down in minutes, so tracking expenses in real time becomes critical.</p>
+<p>IONOS Cloud provides a comprehensive set of tools for monitoring costs, setting budget alerts, and optimizing spending. Whether you are running a small development environment or a production infrastructure serving thousands of users, understanding these cost management capabilities helps you make informed decisions about resource allocation and financial planning. In this unit, you will learn how to use IONOS cost tracking tools, understand different pricing models, and implement strategies to keep your cloud spending under control.</p>
+<h2 id="1-cost-and-usage-dashboard">1. Cost and Usage Dashboard</h2><p>The Cost and Usage dashboard is your central command center for monitoring cloud spending. It provides detailed visibility into what you are consuming and what it costs, enabling you to identify trends, spot anomalies, and make data-driven decisions about resource allocation.</p>
+<h3 id="11-what-the-dashboard-shows">1.1 What the Dashboard Shows</h3><p>The Cost and Usage dashboard aggregates billing information across all your IONOS Cloud services. When you open the dashboard (Menu → Management → Cost &amp; Usage in the Data Center Designer), you see a comprehensive breakdown of consumption and charges.</p>
+<p>The dashboard includes a period selector that lets you view the current month or any of the previous five months, giving you up to six months of billing history. For the current month, the dashboard shows accumulated costs from the first day through the report generation date. For past months, it displays the complete month-end totals.</p>
+<p>At the top of the dashboard, you see the current total amount, which is the sum of all charges for the selected period. Below that, the dashboard breaks down costs by product category. Each category (<a href="../../../products/Compute_Services/compute-engine.html" class="product-ref">Compute Engine</a>, Storage, <a href="../../../products/Containers/managed-kubernetes.html" class="product-ref">Managed Kubernetes</a>, etc.) shows its individual total. You can click any category to expand it and see line-item details.</p>
+<h3 id="12-understanding-usage-metrics">1.2 Understanding Usage Metrics</h3><p>The detailed table within each product category shows four key columns: item description, price per unit, usage (units consumed), and total (price multiplied by usage). This granular data helps you understand exactly what you are paying for.</p>
+<p>For example, if you are running virtual machines, you might see entries like &quot;1 hour per GB RAM&quot; or &quot;1 hour per CPU core.&quot; The usage column shows how many units you consumed (perhaps 720 hours for a VM running continuously for a month), and the total shows the calculated cost.</p>
+<p>The dashboard displays list prices, which means the amounts shown do not include volume discounts, <a href="../../../products/Management/cloud-savings-plans.html" class="product-ref">Cloud Savings Plans</a> adjustments, or VAT. This standardized view makes it easier to compare costs across periods and identify consumption patterns, even if your final invoice includes additional pricing considerations.</p>
+<h3 id="13-tracking-costs-by-virtual-data-center">1.3 Tracking Costs by Virtual Data Center</h3><p>One valuable feature of the Cost and Usage dashboard is its ability to show costs by Virtual Data Center (VDC). If you organize resources into multiple VDCs for different projects, teams, or environments (development, staging, production), the dashboard lets you see which VDC is driving the most spending.</p>
+<p>This visibility supports chargeback models where you need to allocate cloud costs back to specific business units or projects. You can identify which environments are consuming the most resources and adjust allocations accordingly. For example, if your production VDC is running significantly more expensive resources than anticipated, you can investigate whether those resources are necessary or if optimizations are possible.</p>
+<h2 id="2-cost-alerts-and-budget-management">2. Cost Alerts and Budget Management</h2><p>Tracking costs is important, but proactive notifications are even more valuable. Cost Alerts give you early warning when spending reaches defined thresholds, allowing you to take action before costs spiral out of control.</p>
+<h3 id="21-how-cost-alerts-work">2.1 How Cost Alerts Work</h3><p>A Cost Alert is a threshold-based notification system that monitors your contract&#x27;s net invoice amount (excluding VAT) and sends an email when spending reaches or exceeds a value you define. The alert is informational only and does not automatically stop services or prevent additional charges.</p>
+<p>When you create a Cost Alert, you specify two things: a monetary threshold (for example, $500) and a recipient email address. IONOS runs periodic billing aggregations, and when the calculated net amount for your contract reaches or exceeds the threshold, the system sends an email notification to the specified address.</p>
+<p>It is important to understand that Cost Alerts trigger only once per threshold breach. After the initial notification is sent, the alert does not fire again even if spending continues to increase. This design prevents email flooding, but it also means you should monitor costs regularly even after receiving an alert.</p>
+<h3 id="22-who-can-manage-cost-alerts">2.2 Who Can Manage Cost Alerts</h3><p>Only contract owners and administrators can create, edit, or delete Cost Alerts. This restriction ensures that budget management remains under the control of users with appropriate authority. Other users on the contract can view resources and usage but cannot configure cost notifications.</p>
+<p>To create a Cost Alert in the Data Center Designer, navigate to Menu → Management → Cost Alert, then click Create cost alert. Enter the threshold amount and email address, then click Create. You can edit the threshold or email address later if your budget requirements change, or delete the alert entirely if it is no longer needed.</p>
+<h3 id="23-integrating-alerts-with-billing-workflows">2.3 Integrating Alerts with Billing Workflows</h3><p>Cost Alerts work best as part of a broader cost management strategy. Rather than setting a single alert at your maximum budget, consider creating multiple alerts at different thresholds. For example, you might set alerts at 50%, 75%, and 90% of your monthly budget, giving you multiple opportunities to review spending and adjust resources before reaching your limit.</p>
+<p>Combine Cost Alerts with regular reviews of the Cost and Usage dashboard. The alert tells you when a threshold is crossed, but the dashboard shows you why spending increased. This combination of reactive notification and proactive analysis gives you the tools to maintain budget discipline.</p>
+<h2 id="3-pricing-models-and-cloud-savings-plans">3. Pricing Models and Cloud Savings Plans</h2><p>IONOS Cloud offers two primary pricing models: pay-per-use (also called pay-as-you-go or PAYG) and <a href="../../../products/Management/cloud-savings-plans.html" class="product-ref">Cloud Savings Plans</a>. Understanding the difference between these models is essential for optimizing your cloud costs.</p>
+<h3 id="31-pay-per-use-pricing">3.1 Pay-Per-Use Pricing</h3><p>Pay-per-use pricing is the most flexible pricing model. You pay for resources by the hour based on actual consumption, with no upfront commitments. If you spin up a virtual machine at 9:00 AM and shut it down at 5:00 PM, you pay for eight hours of compute time.</p>
+<p>This model is ideal for workloads with unpredictable demand, short-term projects, development and testing environments, or situations where you are still evaluating resource requirements. The trade-off for this flexibility is a higher hourly rate compared to committed pricing models.</p>
+<p>Pay-per-use pricing makes it easy to get started with IONOS Cloud because there are no minimum commitments or upfront costs. You can experiment with different resource configurations, scale up and down as needed, and only pay for what you actually use. However, for stable, long-running workloads, pay-per-use rates can add up quickly.</p>
+<h3 id="32-cloud-savings-plans-overview">3.2 Cloud Savings Plans Overview</h3><p><a href="../../../products/Management/cloud-savings-plans.html" class="product-ref">Cloud Savings Plans</a> are a commitment-based pricing model that offers significantly lower hourly rates in exchange for committing to a specific amount of resource usage for a fixed term. Instead of paying the standard pay-per-use rate, you agree to use a defined quantity of resources (such as CPU cores or RAM) for one year or three years, and IONOS provides a discounted hourly rate.</p>
+<p>The key benefit of Cloud Savings Plans is cost reduction. By selecting a one-year or three-year term, you can receive substantially lower hourly rates compared to pay-per-use pricing. The longer the commitment, the greater the discount, with three-year plans typically offering savings of 30-40% off the standard pay-per-use rate.</p>
+<p>Cloud Savings Plans are resource-based rather than instance-based. This means the committed amount applies to any eligible usage across various CPU models, VM sizes, regions, and operating systems. You are not locked into a specific virtual machine type or location. If you commit to 50 CPU cores, that commitment can be used by any combination of virtual machines that collectively consume 50 cores, regardless of where they run or what operating system they use.</p>
+<h3 id="33-how-cloud-savings-plans-apply-to-usage">3.3 How Cloud Savings Plans Apply to Usage</h3><p>When you have a Cloud Savings Plan, IONOS automatically applies the plan&#x27;s discounted rate to your usage. If your consumption is less than or equal to the committed quantity, all usage is billed at the plan&#x27;s lower rate. However, you are charged for the full committed amount even if you do not use all of it. Unused resources do not roll over to the next month.</p>
+<p>If your consumption exceeds the committed quantity, the usage up to the commitment is billed at the plan&#x27;s discounted rate, and any excess usage is billed at the standard pay-per-use rate. This hybrid billing ensures you are never blocked from scaling beyond your commitment, but you pay the higher rate for resources above the plan.</p>
+<p>You can create multiple <a href="../../../products/Management/cloud-savings-plans.html" class="product-ref">Cloud Savings Plans</a> for different resource types (for example, one plan for CPU cores and another for RAM) or even multiple plans for the same resource type. When multiple plans exist, IONOS applies them starting with the oldest plan first, then moves to newer plans, and finally applies pay-per-use rates to any remaining usage.</p>
+<h3 id="34-choosing-between-pricing-models">3.4 Choosing Between Pricing Models</h3><p>The following table compares the two pricing models to help you understand when to use each:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Pay-Per-Use (PAYG)</th>
+<th>Cloud Savings Plans</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Commitment</strong></td>
+<td>No upfront commitment; pay for every hour you use</td>
+<td>Commit to fixed resources (cores, RAM) for 1 or 3 years</td>
+</tr>
+<tr>
+<td><strong>Hourly rate</strong></td>
+<td>Standard list price</td>
+<td>Discounted rate (approximately 30% cheaper for 1-year, 30-40% cheaper for 3-year)</td>
+</tr>
+<tr>
+<td><strong>Flexibility of usage</strong></td>
+<td>Fully flexible; start/stop any VM anytime, change size, region, OS</td>
+<td>Resource-based; committed amount applies across any eligible VM, region, or OS</td>
+</tr>
+<tr>
+<td><strong>Billing when consumption ≤ plan</strong></td>
+<td>All consumption billed at PAYG rate</td>
+<td>Consumption billed at plan&#x27;s lower rate; plan billed in full even if not fully used</td>
+</tr>
+<tr>
+<td><strong>Billing when consumption &gt; plan</strong></td>
+<td>All excess usage continues at PAYG price</td>
+<td>Usage up to commitment at plan rate; over-usage at PAYG rate</td>
+</tr>
+<tr>
+<td><strong>Ideal workload</strong></td>
+<td>Sporadic, short-term, experimental, or highly variable workloads</td>
+<td>Stable, predictable, long-running workloads with consistent usage</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Use pay-per-use pricing when your workloads are sporadic, short-lived, or when you are still determining long-term resource needs. Use <a href="../../../products/Management/cloud-savings-plans.html" class="product-ref">Cloud Savings Plans</a> when you have stable, predictable workloads where the committed amount can be reliably consumed month after month.</p>
+<h2 id="4-resource-limits-and-quotas">4. Resource Limits and Quotas</h2><p>Beyond tracking costs, you also need to understand the physical and contractual limits on what you can provision. IONOS Cloud enforces both technical resource limits (the maximum the platform can support) and contract-specific quotas (the portion of those limits your account can use).</p>
+<h3 id="41-what-are-resource-limits">4.1 What Are Resource Limits</h3><p>Resource limits are the maximum values that IONOS Cloud allows for specific resource types. These limits protect the underlying infrastructure and ensure predictable performance across all customers. Resource limits are published in IONOS documentation and apply to all accounts, though individual contract quotas may be lower.</p>
+<p>Examples of resource limits include the maximum number of vCPUs per virtual machine (256), the maximum RAM per VM (6 TB), the maximum number of virtual disks per VM (256), and the maximum disk size (62 TB). At the cluster level, limits include the maximum number of VMs per cluster (8,000) and the maximum number of hosts per cluster (3-64, depending on configuration).</p>
+<p>These technical limits represent the ceiling of what the platform can support. In practice, most customers operate well below these limits, but it is important to know they exist, especially when planning large-scale deployments.</p>
+<h3 id="42-understanding-quotas">4.2 Understanding Quotas</h3><p>Quotas are the contract-specific allocations that define how much of each resource type your account can use. While resource limits represent the platform maximum, quotas represent your contracted allowance. Quotas are set when your account is created and can be adjusted by contacting IONOS support.</p>
+<p>For example, your contract might have a quota of 500 CPU cores, 2 TB of RAM, and 100 TB of storage, even though the platform&#x27;s resource limits are much higher. These quotas ensure fair distribution of resources across all customers and align with the service level you have purchased.</p>
+<h3 id="43-monitoring-resource-usage">4.3 Monitoring Resource Usage</h3><p>The Resource Overview window in the Data Center Designer (Menu → Management → Resource Overview) shows your current usage against your quotas for every resource type. This compact view lists resource types such as CPUs, RAM, virtual machines, disks, and network adapters, along with your current usage and the limit for each.</p>
+<p>At a glance, you can see how much capacity you have consumed and how much remains available. If you are approaching a quota limit, the Resource Overview provides visibility so you can either optimize current usage or request a quota increase from IONOS support before you hit the ceiling.</p>
+<p>Monitoring resource usage is particularly important when planning capacity expansions. If you know you will need more resources for an upcoming project or seasonal demand spike, checking the Resource Overview helps you determine whether your current quotas can accommodate the growth or if you need to request increases in advance.</p>
+<h2 id="5-billing-api-for-programmatic-access">5. Billing API for Programmatic Access</h2><p>For organizations that need to integrate billing data into internal systems, automate reporting, or build custom invoicing solutions, IONOS provides a Billing API that exposes cost and usage information programmatically.</p>
+<h3 id="51-what-the-billing-api-provides">5.1 What the Billing API Provides</h3><p>The Billing API is the programmatic interface for all billing-related information in IONOS Cloud. It allows you to retrieve detailed resource usage data, fetch invoices (in PDF or JSON format), manage Cost Alerts, and access billing information for your contract.</p>
+<p>Key capabilities of the Billing API include retrieving granular, per-resource usage data for selected billing periods, fetching the latest invoices with line-item breakdowns and net amounts, creating, editing, and deleting Cost Alert notifications, and supporting reseller workflows where resellers can access billing data for both their own contract and tenant contracts they manage.</p>
+<p>The Billing API is accessible only to contract owners and administrators, ensuring that sensitive financial data remains protected. Authentication uses either basic authentication or bearer tokens, with bearer tokens required for accounts that use multi-factor authentication.</p>
+<h3 id="52-use-cases-for-the-billing-api">5.2 Use Cases for the Billing API</h3><p>The Billing API enables several valuable use cases. Large organizations use it to feed IONOS billing data into internal financial systems, consolidating cloud costs with other IT expenses. Resellers and managed service providers use the API to retrieve usage data, apply markups, and generate custom invoices for their customers. IT teams use the API to build automated cost reports, create dashboards that visualize spending trends, or trigger alerts based on custom business logic.</p>
+<p>For example, a managed service provider might use the Billing API to pull detailed usage data for a tenant contract, add a service margin and additional managed services, and generate a consolidated invoice. An enterprise IT team might automate a weekly report that shows spending by department, compares current month costs to the previous month, and flags any VDCs where spending increased by more than 20%.</p>
+<h3 id="53-integrating-the-billing-api">5.3 Integrating the Billing API</h3><p>While the Billing API provides powerful capabilities, it requires programming knowledge to use effectively. If you are comfortable with REST APIs and authentication workflows, the Billing API offers the flexibility to build exactly the cost management workflows your organization needs.</p>
+<p>For users who do not need programmatic access, the Data Center Designer provides a graphical interface to the same underlying data. The Cost and Usage dashboard and Cost Alerts are built on the Billing API, so you get the same information through a user-friendly interface without writing code.</p>
+<h2 id="common-use-cases">Common Use Cases</h2><p>Real-world scenarios where IONOS cost management tools are used:</p>
+<ol>
+<li>
+<p><strong>Startup Managing Growth with Cost Alerts:</strong> A fast-growing startup runs its application on IONOS Cloud with a monthly budget of $2,000. They set Cost Alerts at $1,000 (50%), $1,500 (75%), and $1,800 (90%) of their budget. When the first alert triggers, they review the Cost and Usage dashboard (Section 1.2) and discover that a development environment was left running overnight. They shut down non-essential resources and stay within budget.</p>
+</li>
+<li>
+<p><strong>Enterprise Optimizing with <a href="../../../products/Management/cloud-savings-plans.html" class="product-ref">Cloud Savings Plans</a>:</strong> A large enterprise runs a stable production workload requiring 200 CPU cores and 800 GB RAM continuously. Initially on pay-per-use pricing, they analyze six months of Cost and Usage data (Section 1.1) and realize their consumption is highly predictable. They purchase a three-year Cloud Savings Plan (Section 3.2), reducing their hourly rate by 35% and saving approximately $50,000 annually.</p>
+</li>
+<li>
+<p><strong>Reseller Building Custom Invoices with Billing API:</strong> A managed service provider serves multiple small business clients on IONOS Cloud. They use the Billing API (Section 5.1) to programmatically retrieve detailed usage data for each tenant contract, apply a 20% service margin, bundle managed support services, and generate PDF invoices branded with their company logo, all automatically at the end of each month.</p>
+</li>
+</ol>
+<h2 id="summary">Summary</h2><p>Cost management on IONOS Cloud is about visibility, control, and optimization. The Cost and Usage dashboard provides detailed breakdowns of resource consumption and spending by product category and Virtual Data Center, helping you understand where money is being spent. Cost Alerts give you proactive notifications when spending reaches defined thresholds, preventing budget overruns. <a href="../../../products/Management/cloud-savings-plans.html" class="product-ref">Cloud Savings Plans</a> offer substantial discounts for predictable, long-running workloads in exchange for committing to resource quantities over one or three years. Resource limits and quotas define what you can provision, with the Resource Overview window showing your current usage against contracted allowances. For programmatic access, the Billing API enables integration with internal financial systems and custom reporting workflows.</p>
+<p>Effective cost management combines these tools into a cohesive strategy: monitor usage regularly with the dashboard, set alerts to catch unexpected spending, use Cloud Savings Plans for stable workloads, track resource consumption against quotas to plan capacity, and leverage the Billing API when automation is needed. By understanding these capabilities and using them appropriately, you can maintain budget discipline while ensuring your infrastructure has the resources it needs.</p>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li>The Cost and Usage dashboard tracks consumption by product category, VDC, and time period, showing item-level details including price per unit and usage</li>
+<li>Cost Alerts send one-time email notifications when net invoice amounts reach defined thresholds, providing early warning of budget overruns</li>
+<li>Pay-per-use pricing offers maximum flexibility with no commitments but at standard hourly rates, ideal for variable or experimental workloads</li>
+<li>Cloud Savings Plans provide discounted rates (30-40% savings) in exchange for committing to resource quantities for one or three years, best for stable workloads</li>
+<li>Resource limits are platform maximums while quotas are contract-specific allocations, both visible in the Resource Overview window</li>
+<li>The Billing API enables programmatic access to usage data, invoices, and Cost Alert management for automation and integration</li>
+</ul>
+<p><strong>Important Terminology:</strong></p>
+<ul>
+<li><strong>Cost and Usage Dashboard:</strong> Centralized tool for viewing detailed resource consumption and billing information by product category and time period</li>
+<li><strong>Cost Alert:</strong> Threshold-based email notification that triggers when contract net invoice amount reaches or exceeds a defined value</li>
+<li><strong>Pay-Per-Use (PAYG):</strong> Pricing model where you pay for resources by the hour based on actual consumption with no upfront commitment</li>
+<li><strong>Cloud Savings Plans:</strong> Commitment-based pricing model offering discounted hourly rates in exchange for committing to resource quantities for one or three years</li>
+<li><strong>Resource Limits:</strong> Platform maximum values for specific resource types (CPUs, RAM, VMs, storage)</li>
+<li><strong>Quotas:</strong> Contract-specific allocations defining how much of each resource type your account can use</li>
+<li><strong>Billing API:</strong> Programmatic interface for retrieving usage data, invoices, and managing Cost Alerts</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2><p><strong>Continue Learning:</strong> <a href="unit-3.4-logs-monitoring.html">Unit 3.4: Activity Logs and Monitoring</a></p>
+<p><strong>Related Topics:</strong></p>
+<ul>
+<li><a href="../module-1/unit-1.2-cloud-service-benefits.html">Unit 1.2: Cloud Service Benefits</a> - Cloud cost optimization and TCO</li>
+<li><a href="unit-3.1-dcd-account-management.html">Unit 3.1: Data Center Designer and Account Management</a> - Contract management and user roles</li>
+</ul>
+
+</article>
+
+<!-- Mark Complete Button -->
+<div class="mark-complete">
+  <button class="btn-complete" data-unit-id="3.3"
+          data-label-complete="Completed"
+          data-label-incomplete="Mark as Complete"
+          aria-pressed="false">
+    <span class="btn-icon">
+      <svg viewBox="0 0 16 16" fill="currentColor">
+        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      </svg>
+    </span>
+    <span class="btn-text">Mark as Complete</span>
+  </button>
+</div>
+
+<!-- Unit Navigation -->
+<nav class="unit-navigation" aria-label="Unit navigation">
+  <div class="nav-prev">
+    <a href="../module-3/unit-3.2-iam.html">
+      <span class="nav-label">
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+        </svg>
+        Previous
+      </span>
+      <span class="nav-title">3.2 Identity and Access Management</span>
+    </a>
+  </div>
+  <div class="nav-next">
+    <a href="../module-3/unit-3.4-logs-monitoring.html">
+      <span class="nav-label">
+        Next
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+      </span>
+      <span class="nav-title">3.4 Activity Logs and Monitoring</span>
+    </a>
+  </div>
+</nav>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <p>&copy; 2026 . All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script>window.CW_I18N = {"keep_learning": "Keep Learning!", "completed_of_total": "You've completed <strong>{completed} of {total} units</strong> ({percentage}%).", "finish_all_units": "Finish all units to unlock your completion certificate.", "continue_learning": "Continue Learning", "back_to_overview": "Back to Overview", "skip_to_completion": "Skip to completion page", "quiz_submit": "Submit Answers", "quiz_score": "Your Score", "quiz_correct": "Correct", "quiz_incorrect": "Incorrect", "quiz_explanation": "Explanation", "quiz_show_explanation": "Show Explanation", "quiz_hide_explanation": "Hide Explanation", "quiz_passed": "Passed", "quiz_not_passed": "Not Passed", "quiz_retry": "Try Again", "quiz_of": "of", "quiz_pass_required": "You need at least {threshold}% to pass.", "finish_all_units_and_quizzes": "Finish all units and pass all quizzes to unlock your completion certificate.", "knowledge_check": "Knowledge Check"};</script>
+  <script src="../../../js/navigation.js"></script>
+  <script src="../../../js/progress.js"></script>
+  <script src="../../../js/quiz.js"></script>
+  <script src="../../../js/language-switcher.js"></script>
+</body>
+</html>

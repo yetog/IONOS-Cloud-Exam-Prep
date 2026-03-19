@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IONOS Cloud Foundational - Unit 2.3: Storage Services">
+  <meta name="author" content="">
+  <title>2.3 Storage Services | Cloud Training</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#003d8f">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Overpass:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../../css/ionos-learn.css">
+  <link rel="stylesheet" href="../../../css/print.css" media="print">
+</head>
+<body>
+
+  <div class="page-wrapper">
+    <!-- Header -->
+    <header class="site-header" role="banner">
+      <div class="header-left">
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+
+        <!-- Logo -->
+        <a href="../../../index.html" class="logo" aria-label="IONOS Cloud Training Home">
+          <img src="../../../assets/ionos-logo.svg" alt="IONOS" width="100" height="32">
+        </a>
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../../index.html">Course</a>
+<span class="breadcrumb-separator">/</span>
+<span>Module 2</span>
+<span class="breadcrumb-separator">/</span>
+<span>Unit 2.3</span>
+        </nav>
+      </div>
+
+      <div class="header-right">
+        <a href="../../../products/index.html" class="header-link">Product Reference</a>
+        <div class="language-switcher">
+  <button class="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Change language">
+    <span class="lang-code">EN</span>
+  </button>
+  <div class="lang-dropdown" role="menu">
+    <a href="../../../en/courses/module-2/unit-2.3-storage-services.html" class="lang-option current" role="menuitem">
+      <span class="lang-code">EN</span>
+      <span>English</span>
+    </a><a href="../../../de/courses/module-2/unit-2.3-storage-services.html" class="lang-option" role="menuitem">
+      <span class="lang-code">DE</span>
+      <span>Deutsch</span>
+    </a><a href="../../../es/courses/module-2/unit-2.3-storage-services.html" class="lang-option" role="menuitem">
+      <span class="lang-code">ES</span>
+      <span>Español</span>
+    </a><a href="../../../fr/courses/module-2/unit-2.3-storage-services.html" class="lang-option" role="menuitem">
+      <span class="lang-code">FR</span>
+      <span>Français</span>
+    </a>
+  </div>
+</div>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" role="navigation" aria-label="Course navigation">
+        <div class="sidebar-header">
+          <div class="course-title">Cloud Training</div>
+          <div class="progress-container">
+            <div class="progress-label">
+              <span>Progress</span>
+              <span class="progress-percent">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="nav-modules">
+          <div class="nav-special-item">
+  <a href="../../index.html" class="special-link " data-page-id="overview">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6a.5.5 0 0 0 .708.708L8 2.207l5.646 5.647a.5.5 0 0 0 .708-.708l-6-6z"/>
+      <path d="M2.5 8.5v5.5h11v-5.5l-5.5-5.5-5.5 5.5z"/>
+    </svg>
+    <span>Course Overview</span>
+  </a>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 1: Cloud Concepts</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.1-cloud-computing-fundamentals.html" class="unit-link " data-unit-id="1.1">
+        <span class="unit-status"></span>
+        <span>1.1 Cloud Computing Fundamentals</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.2-cloud-service-benefits.html" class="unit-link " data-unit-id="1.2">
+        <span class="unit-status"></span>
+        <span>1.2 Cloud Service Benefits</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.3-cloud-deployment-models.html" class="unit-link " data-unit-id="1.3">
+        <span class="unit-status"></span>
+        <span>1.3 Cloud Service Type Categories</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-1/unit-1.4-knowledge-check.html" class="quiz-link " data-unit-id="1.4" data-quiz-id="1.4">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Cloud Concepts</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header expanded">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 2: IONOS Architecture and Services</span>
+  </div>
+  <ul class="unit-list expanded">
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.1-core-components.html" class="unit-link " data-unit-id="2.1">
+        <span class="unit-status"></span>
+        <span>2.1 Core Architectural Components</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.2-compute.html" class="unit-link " data-unit-id="2.2">
+        <span class="unit-status"></span>
+        <span>2.2 Compute Services</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.3-storage-services.html" class="unit-link active" data-unit-id="2.3">
+        <span class="unit-status"></span>
+        <span>2.3 Storage Services</span>
+        <span class="unit-time">~21 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.4-networking-services.html" class="unit-link " data-unit-id="2.4">
+        <span class="unit-status"></span>
+        <span>2.4 Networking Services</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.5-databases.html" class="unit-link " data-unit-id="2.5">
+        <span class="unit-status"></span>
+        <span>2.5 Database and Data Services</span>
+        <span class="unit-time">~20 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.6-security-ai-containers.html" class="unit-link " data-unit-id="2.6">
+        <span class="unit-status"></span>
+        <span>2.6 Security, AI, and Container Services</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-2/unit-2.7-knowledge-check.html" class="quiz-link " data-unit-id="2.7" data-quiz-id="2.7">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Architecture and Services</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 3: Management and Governance</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.1-dcd-account-management.html" class="unit-link " data-unit-id="3.1">
+        <span class="unit-status"></span>
+        <span>3.1 Data Center Designer and Account Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.2-iam.html" class="unit-link " data-unit-id="3.2">
+        <span class="unit-status"></span>
+        <span>3.2 Identity and Access Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.3-cost-billing.html" class="unit-link " data-unit-id="3.3">
+        <span class="unit-status"></span>
+        <span>3.3 Cost Management and Billing</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.4-logs-monitoring.html" class="unit-link " data-unit-id="3.4">
+        <span class="unit-status"></span>
+        <span>3.4 Activity Logs and Monitoring</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.5-security-compliance.html" class="unit-link " data-unit-id="3.5">
+        <span class="unit-status"></span>
+        <span>3.5 Security and Compliance</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-3/unit-3.6-knowledge-check.html" class="quiz-link " data-unit-id="3.6" data-quiz-id="3.6">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Management and Governance</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-special-item">
+  <a href="../../courses/completion.html" class="special-link " data-page-id="completion">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+    </svg>
+    <span>Course Completion</span>
+  </a>
+</div>
+        </nav>
+
+        <div class="sidebar-divider"></div>
+
+        <a href="../../../products/index.html" class="products-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+          <span>Product Reference</span>
+        </a>
+      </aside>
+
+      <!-- Sidebar Overlay (Mobile) -->
+      <div class="sidebar-overlay" aria-hidden="true"></div>
+
+      <!-- Main Content -->
+      <main id="main-content" class="content" role="main">
+        <div class="content-inner">
+          <!-- Unit Header Meta -->
+<div class="unit-meta">
+  <span class="reading-time">
+    <svg viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+      <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+    </svg>
+    21 min read
+  </span>
+</div>
+
+<!-- Learning Objectives -->
+<section class="learning-objectives" aria-labelledby="objectives-heading">
+  <h2 id="objectives-heading">Learning Objectives</h2>
+  <p>By the end of this module, you will be able to:</p>
+  <ul>
+    <li>Describe the key IONOS storage services and explain when to use each type</li>
+<li>Compare Block Storage, IONOS Cloud Object Storage, and Network File Storage based on their characteristics and use cases</li>
+<li>Identify the appropriate storage solution for different workload requirements</li>
+<li>Explain the performance differences between SSD and HDD storage options</li>
+  </ul>
+</section>
+
+<!-- Main Unit Content -->
+<article class="unit-content">
+  <h1 id="unit-23-storage-services">Unit 2.3: Storage Services</h1><h2 id="introduction">Introduction</h2><p>Imagine you are organizing your home office. Some documents need to be immediately accessible in a filing cabinet right next to your desk (fast access, small quantities). Other materials, like photo albums or archived tax records, can live in a storage unit across town (slower access, large quantities). Meanwhile, you might have a shared family calendar on the refrigerator that everyone needs to see and update (shared access, concurrent users). Cloud storage works exactly the same way.</p>
+<p>In this unit, you will explore IONOS Cloud&#x27;s three primary storage services: <a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a> for high-performance virtual disks, <a href="../../../products/Storage_&_Backup/ionos-object-storage.html" class="product-ref">IONOS Cloud Object Storage</a> for durable, scalable object-based storage, and <a href="../../../products/Storage_&_Backup/network-file-storage.html" class="product-ref">Network File Storage</a> for shared file systems. You will learn what makes each service unique, how they differ in performance and access patterns, and which scenarios call for each solution. Whether you are storing database files, backing up critical data, or sharing application content across multiple servers, understanding these storage options is essential for designing efficient cloud architectures.</p>
+<h2 id="1-block-storage">1. Block Storage</h2><p><a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a> is IONOS Cloud&#x27;s managed storage service that presents data to virtual machines as raw block devices, similar to traditional hard drives or SSDs attached to a physical server. Unlike a file system service, <a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a> provides the underlying blocks of storage that you format with your own file system (ext4, XFS, NTFS, etc.) and use as if it were a local disk.</p>
+<h3 id="11-what-is-block-storage">1.1 What is Block Storage?</h3><p><a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a> operates at the block level, meaning data is stored in fixed-size blocks rather than as files or objects. When you attach a <a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a> volume to a <a href="../../../products/Compute_Services/compute-engine.html" class="product-ref">Compute Engine</a> VM or Cube, the operating system sees it as a raw disk device that can be partitioned, formatted, and mounted. This makes <a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a> ideal for workloads that require low-latency, random-access input/output operations, such as databases, application servers, and VM boot disks.</p>
+<p>Every Block Storage volume is dual-redundant, meaning data is written synchronously to two separate storage servers, each with its own RAID configuration. This active-active redundancy ensures that if a disk or even an entire storage server fails, your data remains available without interruption. Additionally, all Block Storage data is encrypted at rest by default, and deleted blocks are securely erased to prevent recovery, meeting strict data protection requirements.</p>
+<h3 id="12-storage-media-types">1.2 Storage Media Types</h3><p>IONOS offers <a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a> in three media types, each optimized for different performance and cost profiles:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Media Type</th>
+<th>Typical Use Cases</th>
+<th>Volume Size Range</th>
+<th>Maximum Volumes per VM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HDD</strong></td>
+<td>Backups, archives, cold storage</td>
+<td>1 GiB - 4 TiB</td>
+<td>Up to 24 HDD per VM</td>
+</tr>
+<tr>
+<td><strong>SSD Standard</strong></td>
+<td>General-purpose workloads, databases, applications</td>
+<td>1 GiB - 4 TiB</td>
+<td>Up to 24 SSD Standard per VM</td>
+</tr>
+<tr>
+<td><strong>SSD Premium</strong></td>
+<td>High-performance databases, mission-critical applications</td>
+<td>1 GiB - 4 TiB</td>
+<td>Up to 4 SSD Premium per VM</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>HDD volumes</strong> provide a fixed performance level of 200 MiB/s sequential throughput and approximately 1,100 IOPS for random operations, regardless of volume size. This makes them cost-effective for workloads where performance is not the primary concern, such as long-term backups or archival storage.</p>
+<p><strong>SSD Standard</strong> volumes deliver performance that scales linearly with volume size at 0.5 MiB/s per GiB (capped at 300 MiB/s per volume). For random I/O, you get 40 IOPS per GiB for reads (up to 24,000 IOPS) and 30 IOPS per GiB for writes (up to 18,000 IOPS). This makes SSD Standard suitable for most production workloads, including databases and application servers.</p>
+<p><strong>SSD Premium</strong> volumes offer the highest performance, scaling at 1 MiB/s per GiB (capped at 600 MiB/s per volume) with 75 IOPS per GiB for reads (up to 45,000 IOPS) and 50 IOPS per GiB for writes (up to 30,000 IOPS). Premium SSD is designed for latency-sensitive applications that demand maximum throughput and IOPS, such as large relational databases or high-transaction applications.</p>
+<h3 id="13-key-block-storage-features">1.3 Key Block Storage Features</h3><p><a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a> volumes are attached to VMs over a high-speed network, providing low latency and high throughput. Because the storage is network-attached rather than physically attached, you can detach a volume from one VM and reattach it to another, enabling flexible infrastructure management and disaster recovery scenarios.</p>
+<p>The dual-redundant architecture means every write is synchronously replicated to a second storage server, ensuring data durability even in the event of hardware failure. Combined with encryption at rest and secure deletion capabilities, Block Storage provides enterprise-grade reliability and security for your most critical workloads.</p>
+<h2 id="2-ionos-cloud-object-storage">2. IONOS Cloud Object Storage</h2><p><a href="../../../products/Storage_&_Backup/ionos-object-storage.html" class="product-ref">IONOS Cloud Object Storage</a> is a highly scalable, S3-compatible storage service designed for storing large volumes of unstructured data. Unlike <a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a>, which presents data as virtual disks, Object Storage organizes data into buckets and objects, where each object consists of the data itself, associated metadata, and a unique identifier (key).</p>
+<h3 id="21-what-is-object-storage">2.1 What is Object Storage?</h3><p>Object Storage uses a flat, non-hierarchical structure. Instead of organizing files into directories and subdirectories, you place objects (files) into buckets and address them by unique keys. For example, you might store a file as <code>s3://my-bucket/images/photo.jpg</code>, where <code>my-bucket</code> is the bucket name and <code>images/photo.jpg</code> is the object key. This flat structure allows Object Storage to scale to virtually unlimited capacity without the constraints of traditional file systems.</p>
+<p><a href="../../../products/Storage_&_Backup/ionos-object-storage.html" class="product-ref">IONOS Cloud Object Storage</a> is fully compatible with the Amazon S3 API, meaning you can use any S3-compatible tool, SDK, or client (such as AWS CLI, Terraform, rclone, or Cyberduck) without modification. This compatibility extends to advanced features like pre-signed URLs, bucket policies, access control lists (ACLs), versioning, object locking, lifecycle rules, and cross-region replication.</p>
+<h3 id="22-object-storage-use-cases">2.2 Object Storage Use Cases</h3><p>Object Storage excels at use cases where data is written once and read many times, or where you need durable, cost-effective storage for large datasets:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Why Object Storage Fits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data Backup and Restore</strong></td>
+<td>Built-in versioning and replication protect critical data; lifecycle rules automate retention policies</td>
+</tr>
+<tr>
+<td><strong>Website Asset Storage</strong></td>
+<td>Store images, PDFs, and downloadable files separately from web servers, reducing storage costs and improving scalability</td>
+</tr>
+<tr>
+<td><strong>Static Website Hosting</strong></td>
+<td>Host static HTML, CSS, and JavaScript directly from a bucket with public-read access, eliminating the need for a web server</td>
+</tr>
+<tr>
+<td><strong>Multimedia Asset Hosting</strong></td>
+<td>Large, rarely-changed media files receive a unique URL for easy embedding in applications or websites</td>
+</tr>
+<tr>
+<td><strong>Private File Storage</strong></td>
+<td>Default private buckets combined with ACLs and bucket policies keep data inaccessible to the public</td>
+</tr>
+<tr>
+<td><strong>Unstructured Data and Big Data</strong></td>
+<td>Flat structure and rich metadata make it easy to store and retrieve large datasets, logs, or analytics inputs</td>
+</tr>
+<tr>
+<td><strong>Artifact and Software Distribution</strong></td>
+<td>Developers can upload build artifacts or software packages and share them via secure, pre-signed URLs</td>
+</tr>
+<tr>
+<td><strong>Periodic Data Retention</strong></td>
+<td>Lifecycle rules automatically delete or archive data after a defined period, ideal for log retention and compliance</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Object Storage is accessible over HTTPS from anywhere, making it ideal for distributing content globally or providing backup storage that does not require a VM to access. Because you only pay for the storage you use (pay-as-you-go pricing), Object Storage is particularly cost-effective for workloads with variable storage needs.</p>
+<h3 id="23-object-storage-features">2.3 Object Storage Features</h3><p>Object Storage provides several features that enhance durability, security, and manageability. Versioning allows you to preserve multiple versions of an object, protecting against accidental deletions or overwrites. Object Lock (Write-Once-Read-Many, or WORM) ensures that objects cannot be modified or deleted for a specified retention period, meeting regulatory compliance requirements.</p>
+<p>Lifecycle management rules let you automate data retention policies. For example, you can configure a rule to delete log files after 90 days, transition older backups to a lower-cost storage tier, or remove incomplete multipart uploads. These rules reduce manual intervention and help control storage costs over time.</p>
+<p>Pre-signed URLs allow you to grant temporary access to private objects without changing their permissions. This is useful for sharing files with external users or enabling time-limited downloads from otherwise restricted buckets.</p>
+<h2 id="3-network-file-storage">3. Network File Storage</h2><p><a href="../../../products/Storage_&_Backup/network-file-storage.html" class="product-ref">Network File Storage</a> (NFS) is IONOS Cloud&#x27;s managed, shared file system service that delivers POSIX-compliant storage over the NFSv4.2 protocol. Unlike <a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a>, which requires you to format and manage the file system yourself, <a href="../../../products/Storage_&_Backup/network-file-storage.html" class="product-ref">Network File Storage</a> presents a ready-to-use file system that multiple VMs can mount and access simultaneously.</p>
+<h3 id="31-what-is-network-file-storage">3.1 What is Network File Storage?</h3><p><a href="../../../products/Storage_&_Backup/network-file-storage.html" class="product-ref">Network File Storage</a> runs on SSD-based infrastructure and provides active-active redundancy, similar to <a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a>. However, instead of presenting raw block devices, it exposes a file-level interface that supports standard POSIX file operations such as open, read, write, rename, and lock. Multiple VMs can mount the same NFS share concurrently, making it ideal for workloads that require shared access to a common set of files.</p>
+<p>Because Network File Storage is managed by IONOS, you do not need to worry about provisioning, patching, or maintaining the underlying storage infrastructure. The service is accessible only from IONOS virtual machines over a private LAN, ensuring secure, low-latency connectivity. It is also compatible with IONOS <a href="../../../products/Containers/managed-kubernetes.html" class="product-ref">Managed Kubernetes</a>, allowing containerized applications to use NFS volumes for persistent storage.</p>
+<h3 id="32-key-network-file-storage-features">3.2 Key Network File Storage Features</h3><p>The following table summarizes the core features of <a href="../../../products/Storage_&_Backup/network-file-storage.html" class="product-ref">Network File Storage</a>:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>What it Provides</th>
+<th>Why it Matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SSD Standard storage</strong></td>
+<td>Fast, instant data access in shared-usage mode. Minimum cluster size is 2 TiB, maximum is 42 TiB (usable space).</td>
+<td>Guarantees low latency and high throughput for file-level workloads.</td>
+</tr>
+<tr>
+<td><strong>NFSv4.2 protocol</strong></td>
+<td>Latest NFS version with compound operations, caching, and parallel connections.</td>
+<td>Reduces protocol overhead, enables efficient read/write operations, and supports live data movement.</td>
+</tr>
+<tr>
+<td><strong>Encryption at rest</strong></td>
+<td>Data encrypted on the physical media by default.</td>
+<td>Protects data from unauthorized access when not in use.</td>
+</tr>
+<tr>
+<td><strong>Root-squash security</strong></td>
+<td>Maps client-side root or all users to an anonymous UID/GID, preventing super-user privileges on the NFS server.</td>
+<td>Mitigates the risk of compromised client machines attacking the storage backend.</td>
+</tr>
+<tr>
+<td><strong>Secure deletion</strong></td>
+<td>Guarantees that deleted data cannot be recovered from the underlying block storage.</td>
+<td>Meets compliance and data privacy requirements.</td>
+</tr>
+<tr>
+<td><strong>Active-active redundancy</strong></td>
+<td>Data stored on two storage servers (hardware or software RAID) with active-active mirroring.</td>
+<td>Provides high availability and durability.</td>
+</tr>
+<tr>
+<td><strong>POSIX-compliant file system</strong></td>
+<td>Full POSIX semantics for permissions, ownership, and locking.</td>
+<td>Enables seamless sharing of home directories, databases, web content, and more.</td>
+</tr>
+<tr>
+<td><strong>Managed service</strong></td>
+<td>IONOS handles provisioning, patching, hardware replacement, and scaling.</td>
+<td>Removes operational overhead from the customer.</td>
+</tr>
+<tr>
+<td><strong>Scalable performance</strong></td>
+<td>Up to 300 MiB/s per 4 TiB (1 MiB block), 24,000 IOPS read / 18,000 IOPS write per 4 TiB (4 KiB block). Performance scales linearly with size.</td>
+<td>Ensures consistent performance as storage needs grow.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Network File Storage is particularly useful for centralized user home directories, shared storage for databases and application servers, and web content repositories that need to be accessed by multiple front-end servers. By providing a single, shared file system, Network File Storage simplifies infrastructure management and ensures that all VMs see a consistent view of the data.</p>
+<h3 id="33-network-file-storage-use-cases">3.3 Network File Storage Use Cases</h3><p>Common scenarios for <a href="../../../products/Storage_&_Backup/network-file-storage.html" class="product-ref">Network File Storage</a> include:</p>
+<ul>
+<li><strong>Centralized user home directories for Linux VMs:</strong> All users across multiple VMs access their home directories from a single NFS share, simplifying user management and ensuring data consistency.</li>
+<li><strong>Shared storage for databases and application servers:</strong> Multiple database instances or application servers can read and write to the same NFS share, enabling horizontal scaling and cost-efficient resource utilization.</li>
+<li><strong>Web content repository served by multiple web servers:</strong> A single NFS share holds static and dynamic web content, ensuring that all front-end servers deliver identical content to users.</li>
+<li><strong>Persistent storage for Kubernetes workloads:</strong> Containers running in IONOS <a href="../../../products/Containers/managed-kubernetes.html" class="product-ref">Managed Kubernetes</a> can mount NFS volumes for persistent data, supporting stateful applications and shared configuration files.</li>
+</ul>
+<h2 id="4-backup-service">4. Backup Service</h2><p><a href="../../../products/Storage_&_Backup/backup-service.html" class="product-ref">Backup Service</a> (formerly known as Managed Backup) is IONOS Cloud&#x27;s managed backup and recovery solution, powered by Acronis Cyber Protect Cloud. It provides a comprehensive platform for protecting data across VMs, physical servers, databases, NAS devices, and cloud workloads, with centralized management through a web-based console.</p>
+<h3 id="41-what-is-backup-service">4.1 What is Backup Service?</h3><p><a href="../../../products/Storage_&_Backup/backup-service.html" class="product-ref">Backup Service</a> allows you to create Backup Units, which are logical containers that hold Acronis credentials and the devices you want to protect. You manage backups through the <a href="../../../products/Storage_&_Backup/backup-service.html" class="product-ref">Backup Service</a> Console, accessible via single sign-on from the Data Center Designer (DCD) or directly at <code>https://backup.ionos.com</code>. The console supports 25 languages and provides role-based permissions, allowing you to control who can create backup units, manage protection plans, and restore data.</p>
+<p>Backup Service supports multiple backup targets. By default, backups are stored in the internal Acronis cloud infrastructure located in Berlin, Germany. Optionally, you can configure backups to store in <a href="../../../products/Storage_&_Backup/ionos-object-storage.html" class="product-ref">IONOS Cloud Object Storage</a> buckets, allowing you to choose your preferred region (Berlin, Frankfurt, Spain, etc.) and take advantage of lower per-GB storage rates.</p>
+<h3 id="42-backup-service-features">4.2 Backup Service Features</h3><p><a href="../../../products/Storage_&_Backup/backup-service.html" class="product-ref">Backup Service</a> provides end-to-end data protection with several key capabilities:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>What it Provides</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pricing models</strong></td>
+<td>Standard pay-as-you-go charges per GB of backup storage; Advanced packages add per-device fees for features like continuous data protection (CDP) and immutable storage.</td>
+</tr>
+<tr>
+<td><strong>Backup targets</strong></td>
+<td>Internal Acronis cloud (Berlin) or external S3-compatible IONOS Cloud Object Storage (choose your region).</td>
+</tr>
+<tr>
+<td><strong>Encryption at rest</strong></td>
+<td>AES-256 server-side encryption by default; optional client-side encryption with customer-managed keys.</td>
+</tr>
+<tr>
+<td><strong>Encryption in transit</strong></td>
+<td>TLS/HTTPS with Diffie-Hellman and RSA key exchange.</td>
+</tr>
+<tr>
+<td><strong>Secure deletion</strong></td>
+<td>NIST SP 800-88 Rev. 1 compliant erasure or physical destruction of media.</td>
+</tr>
+<tr>
+<td><strong>Full and incremental backups</strong></td>
+<td>User-defined retention policies, customizable compression levels.</td>
+</tr>
+<tr>
+<td><strong>Pre- and post-script execution</strong></td>
+<td>Run scripts before or after backups (e.g., database dumps, service stop/start).</td>
+</tr>
+<tr>
+<td><strong>Restore options</strong></td>
+<td>Full VM/device restore, file-level recovery, point-in-time recovery.</td>
+</tr>
+<tr>
+<td><strong>High availability</strong></td>
+<td>Storage volumes synchronously replicated across separate fire zones; 99.95% data center SLA.</td>
+</tr>
+<tr>
+<td><strong>Advanced features</strong></td>
+<td>Immutable storage, multi-factor authentication (MFA), extended detection and response (XDR), continuous data protection (CDP), patch management (available in Advanced and higher tiers).</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Backup traffic to the European Acronis infrastructure is whitelisted, meaning there are no egress charges for data transferred to the internal backup cloud. If you use <a href="../../../products/Storage_&_Backup/ionos-object-storage.html" class="product-ref">IONOS Cloud Object Storage</a> as a backup target, inbound traffic is free, and outbound traffic follows standard Object Storage pricing.</p>
+<h3 id="43-backup-service-use-cases">4.3 Backup Service Use Cases</h3><p><a href="../../../products/Storage_&_Backup/backup-service.html" class="product-ref">Backup Service</a> is designed for a wide range of backup and recovery scenarios, including:</p>
+<ul>
+<li><strong>Enterprise backup strategy:</strong> Store nightly snapshots of production databases, VM images, or file systems in a highly durable, geo-redundant backup repository.</li>
+<li><strong>Rapid restore:</strong> Retrieve any backup version instantly via the console or API, supporting recovery point objectives (RPO) and recovery time objectives (RTO).</li>
+<li><strong>Regulatory compliance:</strong> Use immutable storage and lifecycle rules to automatically delete backups after a legally required retention period.</li>
+<li><strong>Multi-platform protection:</strong> Protect Windows, Linux, macOS, iOS, Android, VMware, Hyper-V, dedicated servers, virtual servers, NAS devices (Synology), and Google Workspaces.</li>
+</ul>
+<p>Backup Service simplifies data protection by handling provisioning, maintenance, and scaling, while giving you full control over backup schedules, retention policies, and recovery workflows.</p>
+<h2 id="5-choosing-the-right-storage-service">5. Choosing the Right Storage Service</h2><p>Selecting the appropriate storage service depends on your workload&#x27;s access patterns, performance requirements, and whether you need shared or dedicated storage. The following decision framework will help you choose the right service for your needs.</p>
+<h3 id="51-storage-service-comparison">5.1 Storage Service Comparison</h3><p>The table below compares the three primary storage services based on key characteristics:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Storage Type</th>
+<th>What It Is</th>
+<th>Typical Access Pattern</th>
+<th>Ideal Workloads</th>
+<th>Key Strengths</th>
+<th>When to Prefer It</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Block Storage</strong></td>
+<td>Raw virtual disks presented as block devices (e.g., /dev/sdx). Managed, double-redundant, SSD/HDD, encrypted at rest.</td>
+<td>Random-access reads/writes, low-latency I/O, file-system-level control.</td>
+<td>Databases, VM system disks, high-performance applications, stateful services needing consistent low-latency block I/O.</td>
+<td>Very high IOPS/throughput (up to 24,000 IOPS per 4 TiB SSD Standard); encryption at rest and secure deletion; active-active redundancy across two storage servers.</td>
+<td>You need a mountable disk that the OS will format (ext4, XFS, NTFS, etc.); your application expects block-level semantics (e.g., PostgreSQL, MySQL, VM boot disks).</td>
+</tr>
+<tr>
+<td><strong>Object Storage</strong></td>
+<td>Flat namespace of objects (data + metadata) addressed by a unique key inside a bucket. Access via HTTP(S) APIs (S3, REST, SDKs).</td>
+<td>Write-once / read-many, sequential or bulk transfers; no POSIX file system semantics.</td>
+<td>Backup and archive, static website assets, media libraries, big data / analytics datasets, software distribution, log retention, artifact storage, any unstructured data addressed by a key.</td>
+<td>Unlimited scalability, virtually infinite capacity; built-in durability via erasure coding and replication; lifecycle rules, versioning, Object Lock (WORM) for compliance; accessible from anywhere over HTTPS.</td>
+<td>You do not need a traditional file system or block-level random I/O; data is largely static or append-only (logs, backups, media); you want cost-effective, highly durable, globally reachable storage.</td>
+</tr>
+<tr>
+<td><strong>Network File Storage</strong></td>
+<td>Managed, POSIX-compliant shared file system exported via NFSv4.2. Internally built on SSD Standard block storage but presented as a file service.</td>
+<td>File-level operations (open, read, write, rename, lock) over a network share; multiple VMs can mount the same share concurrently.</td>
+<td>Home directories, shared application data, web content served by several web servers, collaborative workspaces, small-to-medium databases on NFS, any workload needing a common file hierarchy.</td>
+<td>Shared, concurrent access with POSIX permissions; high-performance SSD backend (300 MiB/s per 4 TiB, 24,000 IOPS); encryption at rest; managed, no-hardware maintenance.</td>
+<td>You need a shared filesystem that multiple VMs can read/write simultaneously; applications rely on file-level semantics (e.g., NFS-based CMS, shared home directories, container image caches); you want the simplicity of a mount point rather than managing a block device.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="52-decision-flow">5.2 Decision Flow</h3><p>Use the following decision flow to determine which storage service best fits your workload:</p>
+<ol>
+<li><strong>Do you need a mountable disk that the OS will format and treat as a local drive?</strong>
+Yes - Use <strong><a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a></strong>. It is ideal for database data files, VM OS disks, or any workload that requires low-latency random I/O.</li>
+<li><strong>Do you need many VMs to see the same directory tree with POSIX permissions?</strong>
+Yes - Use <strong><a href="../../../products/Storage_&_Backup/network-file-storage.html" class="product-ref">Network File Storage</a></strong>. It provides an NFS share that can be mounted on several instances at once (home directories, shared web content, collaborative folders).</li>
+<li><strong>Is the data unstructured, static or append-only, and you mainly access it via key-based APIs?</strong>
+Yes - Use <strong>Object Storage</strong>. It is ideal for backups, static website hosting, media assets, logs, large datasets, software distribution, etc.</li>
+<li><strong>If more than one of the above applies, combine services:</strong>
+<ul>
+<li>Store a database on <strong>Block Storage</strong> but keep daily backups in <strong>Object Storage</strong> (via snapshots or third-party backup tools).</li>
+<li>Host a web application&#x27;s dynamic data on <strong>Block Storage</strong>, serve static assets via <strong>Object Storage</strong>, and keep shared configuration files on <strong>Network File Storage</strong>.</li>
+</ul>
+</li>
+</ol>
+<h3 id="53-performance-considerations">5.3 Performance Considerations</h3><p>When choosing between HDD and SSD for <a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a>, consider the following performance characteristics:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Characteristic</th>
+<th>HDD</th>
+<th>SSD Standard</th>
+<th>SSD Premium</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sequential throughput</strong></td>
+<td>200 MiB/s (fixed for any volume size)</td>
+<td>0.5 MiB/s per GiB (capped at 300 MiB/s per volume)</td>
+<td>1 MiB/s per GiB (capped at 600 MiB/s per volume)</td>
+</tr>
+<tr>
+<td><strong>Random read IOPS</strong></td>
+<td>1,100 IOPS @ 4 KiB (fixed)</td>
+<td>40 IOPS per GiB (max 24,000 IOPS per volume)</td>
+<td>75 IOPS per GiB (max 45,000 IOPS per volume)</td>
+</tr>
+<tr>
+<td><strong>Random write IOPS</strong></td>
+<td>Included in 1,100 IOPS</td>
+<td>30 IOPS per GiB (max 18,000 IOPS per volume)</td>
+<td>50 IOPS per GiB (max 30,000 IOPS per volume)</td>
+</tr>
+<tr>
+<td><strong>Performance scaling</strong></td>
+<td>Static (does not change with volume size)</td>
+<td>Size-dependent (scales linearly with GB until caps)</td>
+<td>Size-dependent (scales linearly with GB until caps)</td>
+</tr>
+<tr>
+<td><strong>Typical use cases</strong></td>
+<td>Backups, archives, cold storage</td>
+<td>General-purpose databases, applications, VM disks</td>
+<td>High-performance databases, mission-critical apps</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>HDD provides consistent, moderate performance regardless of volume size, making it cost-effective for non-performance-critical workloads. SSD performance grows with volume size, so a 100 GiB SSD Standard volume delivers 50 MiB/s and 4,000 read IOPS, while a 500 GiB volume delivers 250 MiB/s and 20,000 read IOPS. SSD Premium roughly doubles the performance of SSD Standard, at approximately twice the price per GB.</p>
+<h2 id="common-use-cases">Common Use Cases</h2><p>Real-world scenarios where IONOS storage services are used:</p>
+<ol>
+<li><strong>E-commerce Platform with Multi-Tier Storage:</strong> An online retailer runs its <a href="../../../products/Database_as_a_Service/postgresql.html" class="product-ref">PostgreSQL</a> product database on SSD Premium <a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a> for maximum transaction performance (as discussed in Section 1.2). Static product images and downloadable PDFs are stored in <a href="../../../products/Storage_&_Backup/ionos-object-storage.html" class="product-ref">IONOS Cloud Object Storage</a>, which serves them directly to the website via HTTPS (Section 2.2). Configuration files and shared session data are kept on <a href="../../../products/Storage_&_Backup/network-file-storage.html" class="product-ref">Network File Storage</a>, mounted by all front-end web servers (Section 3.3). Nightly database backups are sent to Object Storage using <a href="../../../products/Storage_&_Backup/backup-service.html" class="product-ref">Backup Service</a> (Section 4.2), leveraging lifecycle rules to delete backups older than 90 days.</li>
+<li><strong>Media Production Company with Shared Asset Repository:</strong> A video production studio uses Network File Storage to create a centralized repository of raw footage, project files, and final renders (Section 3.1). Multiple editors mount the NFS share simultaneously, allowing collaborative editing workflows with full POSIX permissions (Section 3.2). Completed videos are published to IONOS Cloud Object Storage for distribution via pre-signed URLs (Section 2.3), and long-term archival copies are stored on HDD Block Storage volumes attached to dedicated archive VMs (Section 1.2).</li>
+<li><strong>SaaS Application with Disaster Recovery Strategy:</strong> A SaaS provider runs application VMs with SSD Standard Block Storage for the operating system and application binaries (Section 1.1). User-uploaded files are stored in IONOS Cloud Object Storage with versioning enabled, protecting against accidental deletions (Section 2.3). The company uses Backup Service to create daily snapshots of all VMs, storing them in Object Storage in a different region for geographic redundancy (Section 4.1). The storage decision flow (Section 5.2) guided the architecture: Block Storage for low-latency disk I/O, Object Storage for durable file storage and backups, and Backup Service for centralized recovery management.</li>
+</ol>
+<h2 id="summary">Summary</h2><p>IONOS Cloud offers a comprehensive portfolio of storage services designed to meet diverse workload requirements. <a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a> provides high-performance, dual-redundant virtual disks in HDD, SSD Standard, and SSD Premium configurations, ideal for databases, VM boot disks, and applications requiring low-latency block-level I/O. <a href="../../../products/Storage_&_Backup/ionos-object-storage.html" class="product-ref">IONOS Cloud Object Storage</a> delivers S3-compatible, scalable storage for unstructured data, backups, static website hosting, and multimedia distribution, with features like versioning, lifecycle management, and object locking. <a href="../../../products/Storage_&_Backup/network-file-storage.html" class="product-ref">Network File Storage</a> offers a managed, POSIX-compliant NFS service for shared file access across multiple VMs, supporting home directories, shared application data, and web content repositories. <a href="../../../products/Storage_&_Backup/backup-service.html" class="product-ref">Backup Service</a> provides centralized, managed backup and recovery for all your workloads, with flexible storage targets and advanced features like immutable storage and continuous data protection.</p>
+<p>Choosing the right storage service depends on your workload&#x27;s access patterns, performance needs, and whether you require shared or dedicated storage. Block Storage is best when you need mountable disks with block-level semantics. Network File Storage is ideal when multiple VMs need concurrent access to a shared file system. Object Storage excels at storing large volumes of static or append-only data accessible via HTTP(S) APIs. Many architectures combine multiple storage types to balance performance, cost, and durability.</p>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li>Block Storage delivers high-performance virtual disks with HDD, SSD Standard, and SSD Premium options, dual redundancy, and encryption at rest</li>
+<li>IONOS Cloud Object Storage is an S3-compatible service ideal for backups, static content, media hosting, and unstructured data with virtually unlimited scalability</li>
+<li>Network File Storage provides managed, NFSv4.2-based shared file systems with POSIX compliance, supporting concurrent access from multiple VMs</li>
+<li>Backup Service offers centralized, managed backup and recovery with flexible storage targets, encryption, and advanced features like immutable storage</li>
+<li>SSD performance scales linearly with volume size, while HDD provides fixed performance suitable for non-critical workloads</li>
+<li>Use Block Storage for databases and VM disks, Object Storage for backups and static content, and Network File Storage for shared file access</li>
+</ul>
+<p><strong>Important Terminology:</strong></p>
+<ul>
+<li><strong>Block Storage:</strong> Managed storage service that presents data as raw block devices, formatted with customer-chosen file systems</li>
+<li><strong>Dual-redundant:</strong> Data written synchronously to two separate storage servers, ensuring availability even during hardware failures</li>
+<li><strong>IONOS Cloud Object Storage:</strong> S3-compatible storage service organizing data into buckets and objects, accessed via HTTP(S) APIs</li>
+<li><strong>Network File Storage (NFS):</strong> Managed, POSIX-compliant shared file system service accessible over NFSv4.2 protocol</li>
+<li><strong>IOPS (Input/Output Operations Per Second):</strong> Measurement of storage performance for random read and write operations</li>
+<li><strong>Backup Service:</strong> Managed backup and recovery solution powered by Acronis, supporting multiple platforms and storage targets</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2><p><strong>Continue Learning:</strong> <a href="unit-2.4-networking-services.html">Unit 2.4: Networking Services</a></p>
+<p><strong>Related Topics:</strong></p>
+<ul>
+<li><a href="unit-2.2-compute.html">Unit 2.2: Compute Services</a></li>
+<li><a href="unit-2.5-databases.html">Unit 2.5: Database and Data Services</a></li>
+</ul>
+
+</article>
+
+<!-- Mark Complete Button -->
+<div class="mark-complete">
+  <button class="btn-complete" data-unit-id="2.3"
+          data-label-complete="Completed"
+          data-label-incomplete="Mark as Complete"
+          aria-pressed="false">
+    <span class="btn-icon">
+      <svg viewBox="0 0 16 16" fill="currentColor">
+        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      </svg>
+    </span>
+    <span class="btn-text">Mark as Complete</span>
+  </button>
+</div>
+
+<!-- Unit Navigation -->
+<nav class="unit-navigation" aria-label="Unit navigation">
+  <div class="nav-prev">
+    <a href="../module-2/unit-2.2-compute.html">
+      <span class="nav-label">
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+        </svg>
+        Previous
+      </span>
+      <span class="nav-title">2.2 Compute Services</span>
+    </a>
+  </div>
+  <div class="nav-next">
+    <a href="../module-2/unit-2.4-networking-services.html">
+      <span class="nav-label">
+        Next
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+      </span>
+      <span class="nav-title">2.4 Networking Services</span>
+    </a>
+  </div>
+</nav>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <p>&copy; 2026 . All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script>window.CW_I18N = {"keep_learning": "Keep Learning!", "completed_of_total": "You've completed <strong>{completed} of {total} units</strong> ({percentage}%).", "finish_all_units": "Finish all units to unlock your completion certificate.", "continue_learning": "Continue Learning", "back_to_overview": "Back to Overview", "skip_to_completion": "Skip to completion page", "quiz_submit": "Submit Answers", "quiz_score": "Your Score", "quiz_correct": "Correct", "quiz_incorrect": "Incorrect", "quiz_explanation": "Explanation", "quiz_show_explanation": "Show Explanation", "quiz_hide_explanation": "Hide Explanation", "quiz_passed": "Passed", "quiz_not_passed": "Not Passed", "quiz_retry": "Try Again", "quiz_of": "of", "quiz_pass_required": "You need at least {threshold}% to pass.", "finish_all_units_and_quizzes": "Finish all units and pass all quizzes to unlock your completion certificate.", "knowledge_check": "Knowledge Check"};</script>
+  <script src="../../../js/navigation.js"></script>
+  <script src="../../../js/progress.js"></script>
+  <script src="../../../js/quiz.js"></script>
+  <script src="../../../js/language-switcher.js"></script>
+</body>
+</html>

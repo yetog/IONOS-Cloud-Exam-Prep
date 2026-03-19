@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IONOS Cloud Foundational - Unit 3.4: Activity Logs and Monitoring">
+  <meta name="author" content="">
+  <title>3.4 Activity Logs and Monitoring | Cloud Training</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#003d8f">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Overpass:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../../css/ionos-learn.css">
+  <link rel="stylesheet" href="../../../css/print.css" media="print">
+</head>
+<body>
+
+  <div class="page-wrapper">
+    <!-- Header -->
+    <header class="site-header" role="banner">
+      <div class="header-left">
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+
+        <!-- Logo -->
+        <a href="../../../index.html" class="logo" aria-label="IONOS Cloud Training Home">
+          <img src="../../../assets/ionos-logo.svg" alt="IONOS" width="100" height="32">
+        </a>
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../../index.html">Course</a>
+<span class="breadcrumb-separator">/</span>
+<span>Module 3</span>
+<span class="breadcrumb-separator">/</span>
+<span>Unit 3.4</span>
+        </nav>
+      </div>
+
+      <div class="header-right">
+        <a href="../../../products/index.html" class="header-link">Product Reference</a>
+        <div class="language-switcher">
+  <button class="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Change language">
+    <span class="lang-code">EN</span>
+  </button>
+  <div class="lang-dropdown" role="menu">
+    <a href="../../../en/courses/module-3/unit-3.4-logs-monitoring.html" class="lang-option current" role="menuitem">
+      <span class="lang-code">EN</span>
+      <span>English</span>
+    </a><a href="../../../de/courses/module-3/unit-3.4-logs-monitoring.html" class="lang-option" role="menuitem">
+      <span class="lang-code">DE</span>
+      <span>Deutsch</span>
+    </a><a href="../../../es/courses/module-3/unit-3.4-logs-monitoring.html" class="lang-option" role="menuitem">
+      <span class="lang-code">ES</span>
+      <span>Español</span>
+    </a><a href="../../../fr/courses/module-3/unit-3.4-logs-monitoring.html" class="lang-option" role="menuitem">
+      <span class="lang-code">FR</span>
+      <span>Français</span>
+    </a>
+  </div>
+</div>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" role="navigation" aria-label="Course navigation">
+        <div class="sidebar-header">
+          <div class="course-title">Cloud Training</div>
+          <div class="progress-container">
+            <div class="progress-label">
+              <span>Progress</span>
+              <span class="progress-percent">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="nav-modules">
+          <div class="nav-special-item">
+  <a href="../../index.html" class="special-link " data-page-id="overview">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6a.5.5 0 0 0 .708.708L8 2.207l5.646 5.647a.5.5 0 0 0 .708-.708l-6-6z"/>
+      <path d="M2.5 8.5v5.5h11v-5.5l-5.5-5.5-5.5 5.5z"/>
+    </svg>
+    <span>Course Overview</span>
+  </a>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 1: Cloud Concepts</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.1-cloud-computing-fundamentals.html" class="unit-link " data-unit-id="1.1">
+        <span class="unit-status"></span>
+        <span>1.1 Cloud Computing Fundamentals</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.2-cloud-service-benefits.html" class="unit-link " data-unit-id="1.2">
+        <span class="unit-status"></span>
+        <span>1.2 Cloud Service Benefits</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.3-cloud-deployment-models.html" class="unit-link " data-unit-id="1.3">
+        <span class="unit-status"></span>
+        <span>1.3 Cloud Service Type Categories</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-1/unit-1.4-knowledge-check.html" class="quiz-link " data-unit-id="1.4" data-quiz-id="1.4">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Cloud Concepts</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 2: IONOS Architecture and Services</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.1-core-components.html" class="unit-link " data-unit-id="2.1">
+        <span class="unit-status"></span>
+        <span>2.1 Core Architectural Components</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.2-compute.html" class="unit-link " data-unit-id="2.2">
+        <span class="unit-status"></span>
+        <span>2.2 Compute Services</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.3-storage-services.html" class="unit-link " data-unit-id="2.3">
+        <span class="unit-status"></span>
+        <span>2.3 Storage Services</span>
+        <span class="unit-time">~21 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.4-networking-services.html" class="unit-link " data-unit-id="2.4">
+        <span class="unit-status"></span>
+        <span>2.4 Networking Services</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.5-databases.html" class="unit-link " data-unit-id="2.5">
+        <span class="unit-status"></span>
+        <span>2.5 Database and Data Services</span>
+        <span class="unit-time">~20 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.6-security-ai-containers.html" class="unit-link " data-unit-id="2.6">
+        <span class="unit-status"></span>
+        <span>2.6 Security, AI, and Container Services</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-2/unit-2.7-knowledge-check.html" class="quiz-link " data-unit-id="2.7" data-quiz-id="2.7">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Architecture and Services</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header expanded">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 3: Management and Governance</span>
+  </div>
+  <ul class="unit-list expanded">
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.1-dcd-account-management.html" class="unit-link " data-unit-id="3.1">
+        <span class="unit-status"></span>
+        <span>3.1 Data Center Designer and Account Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.2-iam.html" class="unit-link " data-unit-id="3.2">
+        <span class="unit-status"></span>
+        <span>3.2 Identity and Access Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.3-cost-billing.html" class="unit-link " data-unit-id="3.3">
+        <span class="unit-status"></span>
+        <span>3.3 Cost Management and Billing</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.4-logs-monitoring.html" class="unit-link active" data-unit-id="3.4">
+        <span class="unit-status"></span>
+        <span>3.4 Activity Logs and Monitoring</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.5-security-compliance.html" class="unit-link " data-unit-id="3.5">
+        <span class="unit-status"></span>
+        <span>3.5 Security and Compliance</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-3/unit-3.6-knowledge-check.html" class="quiz-link " data-unit-id="3.6" data-quiz-id="3.6">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Management and Governance</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-special-item">
+  <a href="../../courses/completion.html" class="special-link " data-page-id="completion">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+    </svg>
+    <span>Course Completion</span>
+  </a>
+</div>
+        </nav>
+
+        <div class="sidebar-divider"></div>
+
+        <a href="../../../products/index.html" class="products-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+          <span>Product Reference</span>
+        </a>
+      </aside>
+
+      <!-- Sidebar Overlay (Mobile) -->
+      <div class="sidebar-overlay" aria-hidden="true"></div>
+
+      <!-- Main Content -->
+      <main id="main-content" class="content" role="main">
+        <div class="content-inner">
+          <!-- Unit Header Meta -->
+<div class="unit-meta">
+  <span class="reading-time">
+    <svg viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+      <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+    </svg>
+    17 min read
+  </span>
+</div>
+
+<!-- Learning Objectives -->
+<section class="learning-objectives" aria-labelledby="objectives-heading">
+  <h2 id="objectives-heading">Learning Objectives</h2>
+  <p>By the end of this module, you will be able to:</p>
+  <ul>
+    <li>Explain what Activity Logs are and why they are essential for security auditing and compliance</li>
+<li>Describe how Flow Logs provide network visibility and help troubleshoot connectivity issues</li>
+<li>Identify the key capabilities of the Monitoring Service and how it helps track system health</li>
+<li>Explain how the Logging Service centralizes log management across your infrastructure</li>
+<li>Compare these services and determine when to use each for different observability needs</li>
+  </ul>
+</section>
+
+<!-- Main Unit Content -->
+<article class="unit-content">
+  <h1 id="unit-34-activity-logs-and-monitoring">Unit 3.4: Activity Logs and Monitoring</h1><h2 id="introduction">Introduction</h2><p>Imagine running a large office building where you need to know three critical things: who entered which rooms and when (security access logs), what&#x27;s happening in the ventilation system (network flow monitoring), and whether all the equipment is running smoothly (performance metrics). In the cloud, you need similar visibility into your infrastructure to maintain security, troubleshoot issues, and ensure everything operates as expected.</p>
+<p>IONOS Cloud provides multiple observability services that work together to give you complete visibility into your environment. <a href="../../../products/Observability/activity-logs.html" class="product-ref">Activity Logs</a> track every user action for security and compliance. <a href="../../../products/Network_Services/flow-logs.html" class="product-ref">Flow Logs</a> capture network traffic patterns for connectivity troubleshooting. The <a href="../../../products/Observability/monitoring-service.html" class="product-ref">Monitoring Service</a> visualizes system performance metrics in real-time dashboards. The <a href="../../../products/Observability/logging-service.html" class="product-ref">Logging Service</a> centralizes application and infrastructure logs for analysis. Understanding what each service does and when to use it is essential for managing any cloud environment effectively.</p>
+<h2 id="1-activity-logs-for-audit-trails">1. Activity Logs for Audit Trails</h2><p><a href="../../../products/Observability/activity-logs.html" class="product-ref">Activity Logs</a> provide a read-only, chronological record of every action performed on your IONOS Cloud resources. Think of them as a security camera system for your cloud account, recording who did what, when they did it, and from where.</p>
+<h3 id="11-what-activity-logs-capture">1.1 What Activity Logs Capture</h3><p><a href="../../../products/Observability/activity-logs.html" class="product-ref">Activity Logs</a> record a comprehensive range of events across your contract, creating an immutable audit trail that you cannot modify or delete. Every entry includes:</p>
+<ul>
+<li><strong>User actions</strong> - Logins, logouts, and authentication events</li>
+<li><strong>Resource operations</strong> - Provisioning new resources, configuration changes, deletions</li>
+<li><strong>Data access</strong> - When users accessed or modified data</li>
+<li><strong>Source information</strong> - IP addresses, services, or systems that initiated the action</li>
+<li><strong>Timeline details</strong> - Precise timestamps for every event</li>
+<li><strong>Affected resources</strong> - The specific resource type, ID, and the action taken</li>
+</ul>
+<p>Because Activity Logs are read-only, you interact with them exclusively through GET requests via the API. This design ensures the logs cannot be tampered with, preserving their integrity for security investigations and compliance reporting.</p>
+<h3 id="12-why-activity-logs-matter">1.2 Why Activity Logs Matter</h3><p><a href="../../../products/Observability/activity-logs.html" class="product-ref">Activity Logs</a> deliver critical benefits for security, operations, and compliance:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Benefit</th>
+<th>How Activity Logs Deliver It</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Full visibility</strong></td>
+<td>Every action across your contract is recorded with details about who, what, when, and where</td>
+</tr>
+<tr>
+<td><strong>Security investigations</strong></td>
+<td>Quickly identify suspicious activity, trace breaches, and respond appropriately</td>
+</tr>
+<tr>
+<td><strong>Audit reporting</strong></td>
+<td>Generate access reports that list user login data, device/IP information, and resource actions</td>
+</tr>
+<tr>
+<td><strong>Regulatory compliance</strong></td>
+<td>Provide the evidence required by GDPR, SOX, HIPAA, and other frameworks</td>
+</tr>
+<tr>
+<td><strong>Access reviews</strong></td>
+<td>Review activity over specific date ranges, spot excessive privileges, and revoke unnecessary access</td>
+</tr>
+<tr>
+<td><strong>Tamper resistance</strong></td>
+<td>Read-only design ensures logs cannot be altered, preserving integrity for audits</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Organizations use Activity Logs to answer critical questions like &quot;Who deleted this snapshot?&quot; or &quot;When did a user log in from an unusual IP address?&quot; The logs are filterable by date range and grouped by contract, making it easy to narrow down investigations to specific time periods or accounts.</p>
+<h3 id="13-activity-logs-in-practice">1.3 Activity Logs in Practice</h3><p>Contract owners and administrators access <a href="../../../products/Observability/activity-logs.html" class="product-ref">Activity Logs</a> through the IONOS API. The logs are filterable by date ranges, allowing you to download entries for specific periods as JSON data. This makes it straightforward to integrate <a href="../../../products/Observability/activity-logs.html" class="product-ref">Activity Logs</a> with security information and event management (SIEM) systems or to generate compliance reports for auditors.</p>
+<p>Because logs are partitioned by contract, you see only the activity relevant to your specific resources, ensuring data isolation between different customers and accounts. This architecture supports multi-contract environments where administrators manage multiple customer accounts while keeping their audit trails separate.</p>
+<h2 id="2-flow-logs-for-network-visibility">2. Flow Logs for Network Visibility</h2><p><a href="../../../products/Network_Services/flow-logs.html" class="product-ref">Flow Logs</a> capture detailed information about network traffic that passes through your virtual machines, <a href="../../../products/Network_Services/nat-gateway.html" class="product-ref">Managed NAT Gateway</a>, or Managed Load Balancers. Unlike <a href="../../../products/Observability/activity-logs.html" class="product-ref">Activity Logs</a> that track user actions, <a href="../../../products/Network_Services/flow-logs.html" class="product-ref">Flow Logs</a> show you the actual network communication patterns happening inside your infrastructure.</p>
+<h3 id="21-what-flow-logs-capture">2.1 What Flow Logs Capture</h3><p><a href="../../../products/Network_Services/flow-logs.html" class="product-ref">Flow Logs</a> record metadata about every packet flow that traverses a network interface. The following table shows what they capture and how it provides visibility:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>What They Capture</th>
+<th>How They Provide Visibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IPv4 and IPv6 flow data</strong> - source/destination IPs, ports, protocol, packet/byte counts, timestamps, and firewall action (accepted, rejected, or any)</td>
+<td>Complete, queryable history of inbound, outbound, or bidirectional traffic. Identify which traffic is allowed vs. blocked, detect unexpected sources or spikes, audit firewall rule effectiveness, and perform security investigations</td>
+</tr>
+<tr>
+<td><strong>Direction</strong> - Ingress (incoming), Egress (outgoing), or Bidirectional</td>
+<td>Focused visibility on only incoming traffic, only outgoing traffic, or the full picture, depending on troubleshooting needs</td>
+</tr>
+<tr>
+<td><strong>Action filter</strong> - Accepted, Rejected, or Any</td>
+<td>Concentrate on denied traffic (security-oriented) or all traffic (performance-oriented)</td>
+</tr>
+<tr>
+<td><strong>Target storage</strong> - Logs written to IONOS Cloud Object Storage bucket with optional prefix</td>
+<td>Centralized storage makes data easy to ingest into analytics tools (Grafana, Logging Service, custom pipelines) for dashboards, alerts, and long-term retention</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The glossary defines flow logs as &quot;a feature that allows you to capture data related to IPv4 network traffic flows, enabled for any network interface of a VM instance and Network Load Balancer, as well as the public interfaces of the NAT Gateway.&quot;</p>
+<h3 id="22-why-flow-logs-matter">2.2 Why Flow Logs Matter</h3><p><a href="../../../products/Network_Services/flow-logs.html" class="product-ref">Flow Logs</a> provide network-level observability that complements <a href="../../../products/Observability/activity-logs.html" class="product-ref">Activity Logs</a>&#x27; user-level visibility. They help you:</p>
+<ul>
+<li><strong>Monitor network security</strong> - See which connections are being blocked by firewall rules and identify potential security threats</li>
+<li><strong>Troubleshoot connectivity</strong> - Diagnose why traffic isn&#x27;t reaching its destination by examining flow patterns</li>
+<li><strong>Audit firewall rules</strong> - Verify that security rules are working as intended by reviewing accepted vs. rejected traffic</li>
+<li><strong>Detect anomalies</strong> - Identify unexpected traffic sources, unusual port usage, or sudden traffic spikes</li>
+<li><strong>Support compliance</strong> - Many regulations require tracking and reporting network flows for data security audits</li>
+</ul>
+<p>Once activated, a green indicator on the network interface properties shows the flow log rule is valid and provisioned, meaning data collection has begun. The flow data is stored as objects in <a href="../../../products/Storage_&_Backup/ionos-object-storage.html" class="product-ref">IONOS Cloud Object Storage</a>, where you control retention policies and can query the data using standard analytics tools.</p>
+<h3 id="23-flow-logs-in-practice">2.3 Flow Logs in Practice</h3><p>You create flow log rules for specific network resources (VM network interfaces, <a href="../../../products/Network_Services/nat-gateway.html" class="product-ref">Managed NAT Gateway</a>, <a href="../../../products/Network_Services/network-load-balancer.html" class="product-ref">Managed Network Load Balancer</a>, or <a href="../../../products/Network_Services/application-load-balancer.html" class="product-ref">Managed Application Load Balancer</a>). Each rule specifies:</p>
+<ul>
+<li><strong>Name</strong> - Descriptive identifier for the rule</li>
+<li><strong>Direction</strong> - What traffic to capture (Ingress, Egress, or Bidirectional)</li>
+<li><strong>Action</strong> - Which packets to log (Accepted, Rejected, or Any)</li>
+<li><strong>Target bucket</strong> - The <a href="../../../products/Storage_&_Backup/ionos-object-storage.html" class="product-ref">IONOS Cloud Object Storage</a> bucket where logs will be stored</li>
+<li><strong>Optional prefix</strong> - Organizes logs within the bucket using a folder-like structure</li>
+</ul>
+<p>The logs are written continuously as objects to your specified bucket, where they remain until you delete them or your bucket lifecycle policies remove them. This gives you complete control over retention periods while supporting long-term storage for compliance requirements.</p>
+<h2 id="3-monitoring-service-overview">3. Monitoring Service Overview</h2><p>The <a href="../../../products/Observability/monitoring-service.html" class="product-ref">Monitoring Service</a> provides real-time visibility into system performance by collecting, aggregating, and visualizing metrics from your entire infrastructure. Unlike <a href="../../../products/Observability/activity-logs.html" class="product-ref">Activity Logs</a> and <a href="../../../products/Network_Services/flow-logs.html" class="product-ref">Flow Logs</a> that focus on security and networking, the <a href="../../../products/Observability/monitoring-service.html" class="product-ref">Monitoring Service</a> tracks the health and performance of your applications, servers, and services.</p>
+<h3 id="31-how-the-monitoring-service-works">3.1 How the Monitoring Service Works</h3><p>The <a href="../../../products/Observability/monitoring-service.html" class="product-ref">Monitoring Service</a> uses a centralized architecture that collects metrics from multiple sources and displays them in Grafana dashboards. The following table outlines what you can monitor:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Metric Category</th>
+<th>What You Can Track</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Host-based</strong></td>
+<td>CPU utilization, memory usage, disk space, processes, network traffic, storage I/O, system metrics</td>
+</tr>
+<tr>
+<td><strong>Application</strong></td>
+<td>Error/success rates, service failures/restarts, response latency, resource usage</td>
+</tr>
+<tr>
+<td><strong>Network &amp; connectivity</strong></td>
+<td>Connectivity status, packet loss, latency, bandwidth utilization</td>
+</tr>
+<tr>
+<td><strong>Server-pool</strong></td>
+<td>Pooled resource usage, scaling indicators, degraded instances</td>
+</tr>
+<tr>
+<td><strong>External-dependency</strong></td>
+<td>Service status, success/error rates, run-rate, resource exhaustion</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>All metrics are visualized in a single Grafana instance, giving you one place to query, explore, and analyze data from any source you push to the service. The Monitoring Service is designed to handle high volumes of metrics with near-real-time ingestion (approximately one-minute intervals by default), ensuring dashboards stay responsive even under heavy load.</p>
+<h3 id="32-dashboard-customization-and-alerts">3.2 Dashboard Customization and Alerts</h3><p>The <a href="../../../products/Observability/monitoring-service.html" class="product-ref">Monitoring Service</a> offers powerful dashboard customization through Grafana. You can:</p>
+<ul>
+<li><strong>Create new dashboards</strong> - Build custom views tailored to your specific monitoring needs</li>
+<li><strong>Edit existing panels</strong> - Modify queries, change visualization types (graphs, tables, heat maps), adjust time ranges</li>
+<li><strong>Share dashboards</strong> - Make dashboards accessible to other users or public within your organization</li>
+<li><strong>Set up alerts</strong> - Define thresholds and conditions that trigger notifications via email, Slack, webhooks, or other channels</li>
+<li><strong>Manage access</strong> - Use role-based access control to determine who can view, edit, or administer dashboards</li>
+</ul>
+<p>Every sub-user gets at least a Viewer role, allowing them to see dashboards. Administrators can grant Editor or Admin roles to enable team members to create dashboards or configure alerts. Alerts are defined directly in Grafana panels by setting thresholds and conditions. When a metric breaches a rule, Grafana sends notifications through your configured channels.</p>
+<h3 id="33-monitoring-service-in-practice">3.3 Monitoring Service in Practice</h3><p>To use the <a href="../../../products/Observability/monitoring-service.html" class="product-ref">Monitoring Service</a>, you create a monitoring pipeline in your desired region. The service returns a unique Grafana URL that remains consistent for all your monitoring pipelines. You then configure agents or exporters (Prometheus, Grafana Agent, OpenTelemetry, FluentBit) on your servers to push metrics to the regional endpoint.</p>
+<p>Once metrics begin flowing, you open the Grafana URL and log in with your IONOS credentials. You&#x27;ll see a default dashboard showing an overview of all metrics. From there, you can clone the default dashboard, customize it, and save your changes. Dashboards automatically refresh at configurable intervals, providing live visibility into your infrastructure&#x27;s health.</p>
+<p>The service supports flexible data retention policies, allowing you to store metrics for the periods required by your business or compliance needs. The default push interval is one minute, but you can adjust this based on your monitoring requirements and cost considerations.</p>
+<h2 id="4-logging-service-and-centralized-log-management">4. Logging Service and Centralized Log Management</h2><p>The <a href="../../../products/Observability/logging-service.html" class="product-ref">Logging Service</a> provides a centralized platform for collecting, storing, indexing, and visualizing logs from all your applications, containers, virtual machines, and infrastructure components. While <a href="../../../products/Observability/activity-logs.html" class="product-ref">Activity Logs</a> track user actions and <a href="../../../products/Network_Services/flow-logs.html" class="product-ref">Flow Logs</a> capture network traffic, the <a href="../../../products/Observability/logging-service.html" class="product-ref">Logging Service</a> handles application logs, system logs, and any other log data your infrastructure generates.</p>
+<h3 id="41-how-the-logging-service-works">4.1 How the Logging Service Works</h3><p>The <a href="../../../products/Observability/logging-service.html" class="product-ref">Logging Service</a> follows a shared responsibility model with two main components:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Responsibility</th>
+<th>How It Works</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Log Collection</strong></td>
+<td>User (you)</td>
+<td>Install and configure a log-forwarding agent (Fluent Bit) on each log source. The agent sends logs via TLS to a pipeline endpoint using a Tag and a SharedKey for authentication</td>
+</tr>
+<tr>
+<td><strong>Log Aggregation</strong></td>
+<td>IONOS (provider)</td>
+<td>The service manages the aggregation layer (storage, indexing, search) and exposes a pipeline endpoint. Logs are stored with server-side encryption and made available through a Grafana interface</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The architecture enables near-real-time log ingestion (typically within seconds), giving DevOps teams immediate visibility into what&#x27;s happening across their infrastructure. Each log pipeline gets a unique regional endpoint, and every log source within a pipeline must use a unique tag so logs can be distinguished even when sharing the same endpoint.</p>
+<h3 id="42-key-capabilities">4.2 Key Capabilities</h3><p>The <a href="../../../products/Observability/logging-service.html" class="product-ref">Logging Service</a> delivers several essential capabilities for modern cloud operations:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>What It Provides</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Unified visualization</strong></td>
+<td>All collected logs appear in a single Grafana instance where you can query, explore, and visualize data from any source</td>
+</tr>
+<tr>
+<td><strong>Retention policies</strong></td>
+<td>Configure automatic deletion of logs after defined periods to control costs while supporting compliance-driven long-term storage</td>
+</tr>
+<tr>
+<td><strong>Real-time monitoring</strong></td>
+<td>Near-real-time ingestion enables live log visualization, alerting, and dashboard updates</td>
+</tr>
+<tr>
+<td><strong>Security</strong></td>
+<td>TLS-encrypted transport, server-side encryption at rest, optional client-side encryption before transmission</td>
+</tr>
+<tr>
+<td><strong>Access control</strong></td>
+<td>Create sub-users and assign pipeline-level permissions. Sub-users see only pipelines they&#x27;re granted access to</td>
+</tr>
+<tr>
+<td><strong>Scalability</strong></td>
+<td>Designed to handle extensive log volumes with auto-scaling capabilities. Logs are available 24/7 via the web UI</td>
+</tr>
+<tr>
+<td><strong>Integration</strong></td>
+<td>Central logging can be enabled on Application Load Balancers, Network Load Balancers, Object Storage buckets, and other services</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The default ingestion rate is 50 HTTP requests per second per pipeline, though this can be adjusted based on your needs. Each pipeline runs in its own partition, ensuring data isolation between users and preventing cross-contamination of log data.</p>
+<h3 id="43-logging-service-in-practice">4.3 Logging Service in Practice</h3><p>Using the <a href="../../../products/Observability/logging-service.html" class="product-ref">Logging Service</a> involves several steps:</p>
+<ol>
+<li><strong>Create a pipeline</strong> through the Data Center Designer or API in your desired region</li>
+<li><strong>Install Fluent Bit</strong> on each host or container that produces logs you want to collect</li>
+<li><strong>Configure Fluent Bit</strong> with the pipeline endpoint host and port, a unique tag for the log source, and the SharedKey token</li>
+<li><strong>Start the agent</strong> to begin forwarding logs over TLS to the pipeline</li>
+<li><strong>Access Grafana</strong> to view, analyze, and create alerts on your log data</li>
+<li><strong>Set retention policies</strong> and configure sub-user access as needed</li>
+</ol>
+<p>The Grafana interface lets you search logs, create dashboards combining log data with metrics from the <a href="../../../products/Observability/monitoring-service.html" class="product-ref">Monitoring Service</a>, and set up alerts based on specific log events. This integration provides a unified observability platform where logs and metrics appear side-by-side for comprehensive troubleshooting.</p>
+<h2 id="5-choosing-the-right-service">5. Choosing the Right Service</h2><p>With four different observability services available, understanding when to use each is essential for effective cloud management. Each service focuses on a specific type of data and serves distinct operational needs.</p>
+<h3 id="51-service-comparison">5.1 Service Comparison</h3><p>The following table summarizes what each service records, where data lives, and typical use cases:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>What It Records</th>
+<th>Where It Lives</th>
+<th>Typical Use Cases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Activity Logs</strong></td>
+<td>User-level actions on IONOS Cloud resources - logins, provisioning, configuration changes, data access events</td>
+<td>Read-only API (GET requests) - downloadable as JSON</td>
+<td>Security &amp; compliance audits, forensic investigations, tracking who did what and when, reviewing privileged-user activity</td>
+</tr>
+<tr>
+<td><strong>Flow Logs</strong></td>
+<td>Network-traffic records for NICs, Managed NAT Gateway, or Managed Load Balancers - source/destination IP, ports, protocol, direction, and firewall action</td>
+<td>Written as objects to IONOS Cloud Object Storage bucket</td>
+<td>Network-security monitoring, troubleshooting connectivity/firewall rules, detecting unexpected or blocked traffic, compliance reporting of network flows</td>
+</tr>
+<tr>
+<td><strong>Monitoring Service</strong></td>
+<td>Metric data (CPU, memory, latency, error rates, business KPIs) collected from applications, servers, databases, IoT devices</td>
+<td>Central metric store visualized via Grafana with configurable retention</td>
+<td>Performance &amp; availability monitoring, capacity planning, CI/CD pipeline health, business-metric tracking, real-time alerting on thresholds</td>
+</tr>
+<tr>
+<td><strong>Logging Service</strong></td>
+<td>Application logs, system logs, and any custom log data generated by infrastructure</td>
+<td>Stored in service-managed aggregation layer, accessible via Grafana</td>
+<td>Centralized log management, troubleshooting application issues, DevOps monitoring during deployments, long-term log retention for compliance</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="52-decision-guide">5.2 Decision Guide</h3><p>Use this guide to determine which service best fits your specific needs:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>If You Need To...</th>
+<th>Use This Service</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Know who performed an action on a cloud resource and when (e.g., &quot;Who deleted this snapshot?&quot; or &quot;When did a user log in from an unusual IP?&quot;)</td>
+<td><strong>Activity Logs</strong> - they provide a chronological, contract-wide view of all user-initiated operations</td>
+</tr>
+<tr>
+<td>See network traffic that traverses a specific interface - verify firewall effectiveness, audit connections, or comply with network-flow regulations</td>
+<td><strong>Flow Logs</strong> - configure direction (Ingress/Egress/Bidirectional) and action (Accepted/Rejected/Any) and store logs in Object Storage</td>
+</tr>
+<tr>
+<td>Monitor the health, performance, or business metrics of applications, servers, or databases with real-time dashboards and alerts</td>
+<td><strong>Monitoring Service</strong> - ingest metrics, visualize in Grafana, set custom alerts, and trigger automated remediation</td>
+</tr>
+<tr>
+<td>Centralize application and system logs for troubleshooting, searching specific log events, or long-term retention</td>
+<td><strong>Logging Service</strong> - forward logs from all sources to a unified platform with powerful search and visualization</td>
+</tr>
+<tr>
+<td>Get a combined view of security events and network traffic</td>
+<td>Use both <strong>Activity Logs</strong> (user-level audit) and <strong>Flow Logs</strong> (packet-level audit) together</td>
+</tr>
+<tr>
+<td>Integrate logs and metrics in a single dashboard for comprehensive observability</td>
+<td>Use <strong>Monitoring Service</strong> and <strong>Logging Service</strong> together - both use Grafana for visualization</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Many organizations use multiple services together to achieve complete observability. For example, you might use <a href="../../../products/Observability/activity-logs.html" class="product-ref">Activity Logs</a> for compliance audits, <a href="../../../products/Network_Services/flow-logs.html" class="product-ref">Flow Logs</a> to troubleshoot network connectivity issues, the <a href="../../../products/Observability/monitoring-service.html" class="product-ref">Monitoring Service</a> to track server performance, and the <a href="../../../products/Observability/logging-service.html" class="product-ref">Logging Service</a> to investigate application errors.</p>
+<h2 id="common-use-cases">Common Use Cases</h2><p>Real-world scenarios where these services work together:</p>
+<ol>
+<li>
+<p><strong>Security Incident Investigation:</strong> A financial services company detects unusual database access patterns. They use <a href="../../../products/Observability/activity-logs.html" class="product-ref">Activity Logs</a> to identify which user account was compromised, <a href="../../../products/Network_Services/flow-logs.html" class="product-ref">Flow Logs</a> to trace the source IP addresses and connection patterns, and the <a href="../../../products/Observability/logging-service.html" class="product-ref">Logging Service</a> to examine application logs for signs of data exfiltration. The combined visibility from all three services enables them to contain the breach, revoke compromised credentials, and file a detailed incident report for regulators.</p>
+</li>
+<li>
+<p><strong>Application Performance Troubleshooting:</strong> An e-commerce platform experiences slow checkout page loads during a promotional event. The operations team uses the <a href="../../../products/Observability/monitoring-service.html" class="product-ref">Monitoring Service</a> dashboards (covered in Section 3) to identify elevated database query latency. They then examine the Logging Service (Section 4) for database error messages and discover a missing index. Flow Logs (Section 2) confirm that network connectivity to the database server is healthy, ruling out network issues. The team resolves the performance problem by adding the index.</p>
+</li>
+<li>
+<p><strong>Compliance Audit Preparation:</strong> A healthcare provider must demonstrate HIPAA compliance for their patient portal. They configure Activity Logs (Section 1) to track all user access to patient data, set retention policies in the Logging Service (Section 4.2) to keep application logs for seven years, and enable Flow Logs (Section 2.1) to document network access patterns. During the audit, they generate reports showing who accessed what data, when access occurred, and that all access was properly authenticated and authorized.</p>
+</li>
+</ol>
+<h2 id="summary">Summary</h2><p>IONOS Cloud provides a comprehensive suite of observability services that work together to give you complete visibility into your infrastructure, applications, and user activity. <a href="../../../products/Observability/activity-logs.html" class="product-ref">Activity Logs</a> create an immutable audit trail of user actions for security and compliance. <a href="../../../products/Network_Services/flow-logs.html" class="product-ref">Flow Logs</a> capture network traffic patterns for troubleshooting connectivity and monitoring security. The <a href="../../../products/Observability/monitoring-service.html" class="product-ref">Monitoring Service</a> collects and visualizes performance metrics in real-time Grafana dashboards. The <a href="../../../products/Observability/logging-service.html" class="product-ref">Logging Service</a> centralizes application and system logs for analysis and long-term retention.</p>
+<p>Understanding what each service does and when to use it is essential for effective cloud management. Activity Logs answer &quot;who did what,&quot; Flow Logs reveal &quot;what network traffic occurred,&quot; the Monitoring Service shows &quot;how systems are performing,&quot; and the Logging Service helps you &quot;troubleshoot application issues.&quot; Many organizations use multiple services together to achieve comprehensive observability across security, networking, performance, and application layers.</p>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li>Activity Logs provide a read-only, tamper-resistant audit trail of all user actions across your IONOS Cloud contracts, essential for security investigations and compliance reporting</li>
+<li>Flow Logs capture detailed network traffic metadata (source/destination IPs, ports, protocols, firewall actions) and store it in Object Storage for security monitoring and troubleshooting</li>
+<li>The Monitoring Service collects performance metrics from infrastructure, applications, and services, displaying them in customizable Grafana dashboards with alerting capabilities</li>
+<li>The Logging Service centralizes application and system logs using Fluent Bit agents, providing near-real-time visibility and long-term retention through a Grafana interface</li>
+<li>Each service serves distinct needs: Activity Logs for user actions, Flow Logs for network visibility, Monitoring Service for performance metrics, and Logging Service for application logs</li>
+<li>Organizations often use multiple services together to achieve complete observability across security, networking, performance, and application layers</li>
+</ul>
+<p><strong>Important Terminology:</strong></p>
+<ul>
+<li><strong>Activity Logs:</strong> Read-only audit trail recording every user action (logins, provisioning, configuration changes, data access) on IONOS Cloud resources with details about who, what, when, and where</li>
+<li><strong>Flow Logs:</strong> Network traffic metadata capture that records source/destination IPs, ports, protocols, and firewall actions for VM network interfaces, <a href="../../../products/Network_Services/nat-gateway.html" class="product-ref">Managed NAT Gateway</a>, and Managed Load Balancers</li>
+<li><strong>Monitoring Service:</strong> Centralized platform that collects performance metrics (CPU, memory, latency, error rates) from infrastructure and applications, visualized through Grafana dashboards</li>
+<li><strong>Logging Service:</strong> SaaS-based platform that aggregates application and system logs from multiple sources into a single searchable repository accessible via Grafana</li>
+<li><strong>Grafana:</strong> Open-source visualization and analytics platform used by both the Monitoring Service and Logging Service to display dashboards, create alerts, and explore data</li>
+<li><strong>Fluent Bit:</strong> Lightweight log forwarding agent used by the Logging Service to collect logs from various sources and send them securely to the aggregation platform</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2><p><strong>Continue Learning:</strong> <a href="unit-3.5-security-compliance.html">Unit 3.5: Security and Compliance</a></p>
+<p><strong>Related Topics:</strong></p>
+<ul>
+<li><a href="../module-2/unit-2.4-networking-services.html">Unit 2.4: Networking Services</a></li>
+<li><a href="unit-3.2-iam.html">Unit 3.2: Identity and Access Management</a></li>
+<li><a href="unit-3.3-cost-billing.html">Unit 3.3: Cost Management and Billing</a></li>
+</ul>
+
+</article>
+
+<!-- Mark Complete Button -->
+<div class="mark-complete">
+  <button class="btn-complete" data-unit-id="3.4"
+          data-label-complete="Completed"
+          data-label-incomplete="Mark as Complete"
+          aria-pressed="false">
+    <span class="btn-icon">
+      <svg viewBox="0 0 16 16" fill="currentColor">
+        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      </svg>
+    </span>
+    <span class="btn-text">Mark as Complete</span>
+  </button>
+</div>
+
+<!-- Unit Navigation -->
+<nav class="unit-navigation" aria-label="Unit navigation">
+  <div class="nav-prev">
+    <a href="../module-3/unit-3.3-cost-billing.html">
+      <span class="nav-label">
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+        </svg>
+        Previous
+      </span>
+      <span class="nav-title">3.3 Cost Management and Billing</span>
+    </a>
+  </div>
+  <div class="nav-next">
+    <a href="../module-3/unit-3.5-security-compliance.html">
+      <span class="nav-label">
+        Next
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+      </span>
+      <span class="nav-title">3.5 Security and Compliance</span>
+    </a>
+  </div>
+</nav>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <p>&copy; 2026 . All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script>window.CW_I18N = {"keep_learning": "Keep Learning!", "completed_of_total": "You've completed <strong>{completed} of {total} units</strong> ({percentage}%).", "finish_all_units": "Finish all units to unlock your completion certificate.", "continue_learning": "Continue Learning", "back_to_overview": "Back to Overview", "skip_to_completion": "Skip to completion page", "quiz_submit": "Submit Answers", "quiz_score": "Your Score", "quiz_correct": "Correct", "quiz_incorrect": "Incorrect", "quiz_explanation": "Explanation", "quiz_show_explanation": "Show Explanation", "quiz_hide_explanation": "Hide Explanation", "quiz_passed": "Passed", "quiz_not_passed": "Not Passed", "quiz_retry": "Try Again", "quiz_of": "of", "quiz_pass_required": "You need at least {threshold}% to pass.", "finish_all_units_and_quizzes": "Finish all units and pass all quizzes to unlock your completion certificate.", "knowledge_check": "Knowledge Check"};</script>
+  <script src="../../../js/navigation.js"></script>
+  <script src="../../../js/progress.js"></script>
+  <script src="../../../js/quiz.js"></script>
+  <script src="../../../js/language-switcher.js"></script>
+</body>
+</html>
