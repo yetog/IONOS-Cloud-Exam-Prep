@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IONOS Cloud Foundational - Unit 1.3: Cloud Service Type Categories">
+  <meta name="author" content="">
+  <title>1.3 Cloud Service Type Categories | Cloud Training</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#003d8f">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Overpass:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../../css/ionos-learn.css">
+  <link rel="stylesheet" href="../../../css/print.css" media="print">
+</head>
+<body>
+
+  <div class="page-wrapper">
+    <!-- Header -->
+    <header class="site-header" role="banner">
+      <div class="header-left">
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+
+        <!-- Logo -->
+        <a href="../../../index.html" class="logo" aria-label="IONOS Cloud Training Home">
+          <img src="../../../assets/ionos-logo.svg" alt="IONOS" width="100" height="32">
+        </a>
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../../index.html">Course</a>
+<span class="breadcrumb-separator">/</span>
+<span>Module 1</span>
+<span class="breadcrumb-separator">/</span>
+<span>Unit 1.3</span>
+        </nav>
+      </div>
+
+      <div class="header-right">
+        <a href="../../../products/index.html" class="header-link">Product Reference</a>
+        <div class="language-switcher">
+  <button class="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Change language">
+    <span class="lang-code">EN</span>
+  </button>
+  <div class="lang-dropdown" role="menu">
+    <a href="../../../en/courses/module-1/unit-1.3-cloud-deployment-models.html" class="lang-option current" role="menuitem">
+      <span class="lang-code">EN</span>
+      <span>English</span>
+    </a><a href="../../../de/courses/module-1/unit-1.3-cloud-deployment-models.html" class="lang-option" role="menuitem">
+      <span class="lang-code">DE</span>
+      <span>Deutsch</span>
+    </a><a href="../../../es/courses/module-1/unit-1.3-cloud-deployment-models.html" class="lang-option" role="menuitem">
+      <span class="lang-code">ES</span>
+      <span>Español</span>
+    </a><a href="../../../fr/courses/module-1/unit-1.3-cloud-deployment-models.html" class="lang-option" role="menuitem">
+      <span class="lang-code">FR</span>
+      <span>Français</span>
+    </a>
+  </div>
+</div>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" role="navigation" aria-label="Course navigation">
+        <div class="sidebar-header">
+          <div class="course-title">Cloud Training</div>
+          <div class="progress-container">
+            <div class="progress-label">
+              <span>Progress</span>
+              <span class="progress-percent">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="nav-modules">
+          <div class="nav-special-item">
+  <a href="../../index.html" class="special-link " data-page-id="overview">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6a.5.5 0 0 0 .708.708L8 2.207l5.646 5.647a.5.5 0 0 0 .708-.708l-6-6z"/>
+      <path d="M2.5 8.5v5.5h11v-5.5l-5.5-5.5-5.5 5.5z"/>
+    </svg>
+    <span>Course Overview</span>
+  </a>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-module">
+  <div class="module-header expanded">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 1: Cloud Concepts</span>
+  </div>
+  <ul class="unit-list expanded">
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.1-cloud-computing-fundamentals.html" class="unit-link " data-unit-id="1.1">
+        <span class="unit-status"></span>
+        <span>1.1 Cloud Computing Fundamentals</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.2-cloud-service-benefits.html" class="unit-link " data-unit-id="1.2">
+        <span class="unit-status"></span>
+        <span>1.2 Cloud Service Benefits</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.3-cloud-deployment-models.html" class="unit-link active" data-unit-id="1.3">
+        <span class="unit-status"></span>
+        <span>1.3 Cloud Service Type Categories</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-1/unit-1.4-knowledge-check.html" class="quiz-link " data-unit-id="1.4" data-quiz-id="1.4">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Cloud Concepts</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 2: IONOS Architecture and Services</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.1-core-components.html" class="unit-link " data-unit-id="2.1">
+        <span class="unit-status"></span>
+        <span>2.1 Core Architectural Components</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.2-compute.html" class="unit-link " data-unit-id="2.2">
+        <span class="unit-status"></span>
+        <span>2.2 Compute Services</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.3-storage-services.html" class="unit-link " data-unit-id="2.3">
+        <span class="unit-status"></span>
+        <span>2.3 Storage Services</span>
+        <span class="unit-time">~21 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.4-networking-services.html" class="unit-link " data-unit-id="2.4">
+        <span class="unit-status"></span>
+        <span>2.4 Networking Services</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.5-databases.html" class="unit-link " data-unit-id="2.5">
+        <span class="unit-status"></span>
+        <span>2.5 Database and Data Services</span>
+        <span class="unit-time">~20 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.6-security-ai-containers.html" class="unit-link " data-unit-id="2.6">
+        <span class="unit-status"></span>
+        <span>2.6 Security, AI, and Container Services</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-2/unit-2.7-knowledge-check.html" class="quiz-link " data-unit-id="2.7" data-quiz-id="2.7">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Architecture and Services</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 3: Management and Governance</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.1-dcd-account-management.html" class="unit-link " data-unit-id="3.1">
+        <span class="unit-status"></span>
+        <span>3.1 Data Center Designer and Account Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.2-iam.html" class="unit-link " data-unit-id="3.2">
+        <span class="unit-status"></span>
+        <span>3.2 Identity and Access Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.3-cost-billing.html" class="unit-link " data-unit-id="3.3">
+        <span class="unit-status"></span>
+        <span>3.3 Cost Management and Billing</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.4-logs-monitoring.html" class="unit-link " data-unit-id="3.4">
+        <span class="unit-status"></span>
+        <span>3.4 Activity Logs and Monitoring</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.5-security-compliance.html" class="unit-link " data-unit-id="3.5">
+        <span class="unit-status"></span>
+        <span>3.5 Security and Compliance</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-3/unit-3.6-knowledge-check.html" class="quiz-link " data-unit-id="3.6" data-quiz-id="3.6">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Management and Governance</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-special-item">
+  <a href="../../courses/completion.html" class="special-link " data-page-id="completion">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+    </svg>
+    <span>Course Completion</span>
+  </a>
+</div>
+        </nav>
+
+        <div class="sidebar-divider"></div>
+
+        <a href="../../../products/index.html" class="products-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+          <span>Product Reference</span>
+        </a>
+      </aside>
+
+      <!-- Sidebar Overlay (Mobile) -->
+      <div class="sidebar-overlay" aria-hidden="true"></div>
+
+      <!-- Main Content -->
+      <main id="main-content" class="content" role="main">
+        <div class="content-inner">
+          <!-- Unit Header Meta -->
+<div class="unit-meta">
+  <span class="reading-time">
+    <svg viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+      <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+    </svg>
+    16 min read
+  </span>
+</div>
+
+<!-- Learning Objectives -->
+<section class="learning-objectives" aria-labelledby="objectives-heading">
+  <h2 id="objectives-heading">Learning Objectives</h2>
+  <p>By the end of this module, you will be able to:</p>
+  <ul>
+    <li>Explain the three main cloud service models (IaaS, PaaS, and SaaS) and their key characteristics</li>
+<li>Compare the levels of control and responsibility across different service models</li>
+<li>Describe the shared responsibility model and how security duties are divided between cloud provider and customer</li>
+<li>Identify which IONOS Cloud services map to each service model category</li>
+  </ul>
+</section>
+
+<!-- Main Unit Content -->
+<article class="unit-content">
+  <h1 id="unit-13-cloud-service-type-categories">Unit 1.3: Cloud Service Type Categories</h1><h2 id="introduction">Introduction</h2><p>Imagine you&#x27;re planning to make a pizza. You have three choices: buy all the raw ingredients and make it from scratch at home, order a take-and-bake pizza from the grocery store where the dough and toppings are prepared but you bake it yourself, or have a fully cooked pizza delivered to your door. Each option gives you a different level of control and convenience.</p>
+<p>Cloud computing works the same way. Depending on your needs, technical expertise, and how much infrastructure management you want to handle, you can choose from three main service models: Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS). Each model represents a different level of abstraction, with the cloud provider taking on more operational responsibility as you move from IaaS to PaaS to SaaS. Understanding these service categories is essential for selecting the right cloud approach for your workloads and knowing exactly what you&#x27;re responsible for managing versus what the provider handles.</p>
+<h2 id="1-infrastructure-as-a-service-iaas">1. Infrastructure as a Service (IaaS)</h2><p>Infrastructure as a Service provides the fundamental building blocks of a data center: virtual CPUs, memory, storage, and networking. Think of IaaS as having the raw materials and tools to build your own custom solution. The cloud provider supplies and maintains the physical hardware and virtualization layer, while you have complete control over everything above that layer.</p>
+<h3 id="11-what-iaas-provides">1.1 What IaaS Provides</h3><p>With IaaS, the cloud provider delivers virtual compute resources that you can provision on demand. You receive access to virtual machines with configurable CPU cores, RAM, and storage, along with networking components like virtual networks, IP addresses, and firewalls. The provider owns and operates the physical data centers, handles hardware maintenance, ensures power and cooling, and manages the hypervisor that creates your virtual machines.</p>
+<p>In the IONOS IaaS model, the provider manages the underlying hardware, the hypervisor, and the shared control-plane infrastructure. You have the flexibility to install, configure, patch, and manage the operating system of each virtual machine according to your specific requirements. This is a core characteristic of IaaS: while the infrastructure is managed for you, you maintain full control over the operating system that runs on your virtual machines.</p>
+<h3 id="12-customer-responsibilities-in-iaas">1.2 Customer Responsibilities in IaaS</h3><p>When you use IaaS, you gain maximum control and flexibility over your environment. You manage the operating system, including applying security patches and updates according to your schedule and requirements. You install and configure all middleware (web servers, application servers, databases) and your application code exactly as needed. You&#x27;re also in control of data management, including backups, encryption, and compliance with regulatory requirements.</p>
+<p>You configure network security by setting up firewall rules, <a href="../../../products/Security/network-security-groups.html" class="product-ref">Network Security Groups</a>, and routing tables to meet your specific security policies. User access management, including role-based permissions and authentication, is under your control. You have the ability to detect, classify, and remediate security events within your virtual machines or applications through vulnerability scanning and compliance audits.</p>
+<h3 id="13-ionos-iaas-services">1.3 IONOS IaaS Services</h3><p>IONOS offers a comprehensive IaaS portfolio designed to give you maximum flexibility and control. The core compute offerings include <a href="../../../products/Compute_Services/compute-engine.html" class="product-ref">Compute Engine</a>, which provides flexible virtual machines with either Dedicated Core or vCPU options, and <a href="../../../products/Compute_Services/cubes.html" class="product-ref">Cubes</a>, which are pre-configured virtual private server instances with fixed vCPU, RAM, and NVMe storage resources.</p>
+<p>Supporting these compute resources are essential infrastructure services. Cloud <a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a> provides persistent, network-attached storage volumes up to 4TB (larger volumes available on request) with options for HDD or SSD (Standard and Premium) delivered in dual-redundant configurations. <a href="../../../products/Storage_&_Backup/network-file-storage.html" class="product-ref">Network File Storage</a> offers managed shared file systems accessible over private LANs. <a href="../../../products/Storage_&_Backup/ionos-object-storage.html" class="product-ref">IONOS Cloud Object Storage</a> delivers S3-compatible object storage for unstructured data at massive scale.</p>
+<p>Networking services round out the IaaS layer with NAT Gateway for outbound internet access, <a href="../../../products/Network_Services/vpn-gateway.html" class="product-ref">VPN Gateway</a> for secure site-to-site connectivity, and Cloud DNS for domain name resolution. All these services provide the raw infrastructure components you need to build, deploy, and scale your applications while maintaining full control over the software stack.</p>
+<h2 id="2-platform-as-a-service-paas">2. Platform as a Service (PaaS)</h2><p>Platform as a Service provides a complete runtime environment where infrastructure management is handled for you. With PaaS, you focus on writing code and deploying applications while the platform handles servers, operating systems, scaling, and often includes managed services like databases and container orchestration.</p>
+<h3 id="21-what-paas-provides">2.1 What PaaS Provides</h3><p>A PaaS environment gives developers a ready-to-use platform where they can deploy code, databases, or containers without managing the underlying servers. The platform includes built-in scalability that automatically adjusts resources based on demand, monitoring capabilities to track application health, and often integrates managed services that would require additional setup in an IaaS environment.</p>
+<p>The key difference from IaaS is abstraction. Instead of provisioning virtual machines and installing software, you deploy your application directly to the platform. The provider manages the operating system patches, runtime updates, capacity planning, and infrastructure scaling. You concentrate on application logic, data, and business functionality.</p>
+<h3 id="22-customer-responsibilities-in-paas">2.2 Customer Responsibilities in PaaS</h3><p>In a PaaS model, your responsibilities focus on your application and data. You write, test, and deploy your applications, manage application-level configurations, and ensure your code is secure and performant. Data management remains your responsibility, including how data is structured, accessed, and protected within the application.</p>
+<p>You still control user access to your applications and data. The platform provider handles operating system security, server patches, and runtime environment updates through automated maintenance windows and rolling updates that minimize service interruption.</p>
+<h3 id="23-ionos-paas-services">2.3 IONOS PaaS Services</h3><p>IONOS provides several PaaS offerings that sit on top of the IaaS foundation. <a href="../../../products/Containers/managed-kubernetes.html" class="product-ref">Managed Kubernetes</a> gives you fully <a href="../../../products/Containers/managed-kubernetes.html" class="product-ref">Managed Kubernetes</a> clusters where you can deploy containerized workloads without managing the control plane. The service handles cluster upgrades, security patches, and scaling, allowing you to focus on deploying and managing your applications.</p>
+<p>The Database-as-a-Service portfolio includes managed databases that eliminate infrastructure management. Managed <a href="../../../products/Database_as_a_Service/postgresql.html" class="product-ref">PostgreSQL</a> provides dedicated clusters with vertical and horizontal scaling, high availability, automated backups, point-in-time recovery, and TLS encryption. Similarly, Managed <a href="../../../products/Database_as_a_Service/mariadb.html" class="product-ref">MariaDB</a> and Managed <a href="../../../products/Database_as_a_Service/mongodb.html" class="product-ref">MongoDB</a> offer fully managed database clusters with automated patching, upgrades, and monitoring. <a href="../../../products/Database_as_a_Service/in-memory-db.html" class="product-ref">In-Memory DB</a> delivers managed Redis clusters with automatic failover and backups.</p>
+<p><a href="../../../products/Data_Analytics/kafka.html" class="product-ref">Event Streams for Apache Kafka</a> provides managed streaming data infrastructure, while the <a href="../../../products/Storage_&_Backup/backup-service.html" class="product-ref">Backup Service</a> offers integrated, Acronis-based backup for compute and storage resources. These PaaS services integrate seamlessly with the underlying IaaS layer, connecting via private networks to ensure security while delivering the operational simplicity of a managed platform.</p>
+<h2 id="3-software-as-a-service-saas">3. Software as a Service (SaaS)</h2><p>Software as a Service represents the highest level of abstraction. The provider delivers fully functional applications over the internet, owning and managing the entire technology stack from infrastructure to the application itself. Users simply consume the software through a web interface or API.</p>
+<h3 id="31-what-saas-provides">3.1 What SaaS Provides</h3><p>SaaS applications are ready to use immediately after signup. The provider handles all infrastructure provisioning, platform management, application updates, scaling, and availability. Updates roll out automatically without requiring any action from users. The application runs in a provider-controlled environment, often using containerized infrastructure that allows seamless updates and scaling without service interruption.</p>
+<p>From an end-user perspective, SaaS eliminates infrastructure and platform management entirely. You don&#x27;t install software, manage licenses, or worry about compatibility. You access the application through a browser or mobile app, and the provider ensures it&#x27;s always available, secure, and running the latest version.</p>
+<h3 id="32-customer-responsibilities-in-saas">3.2 Customer Responsibilities in SaaS</h3><p>In a SaaS model, your responsibilities are limited to using the application and managing your data within it. You configure user accounts, set permissions, and manage how your organization uses the software. You&#x27;re responsible for the data you create or upload to the application, including ensuring it complies with your organization&#x27;s security and privacy policies.</p>
+<p>You don&#x27;t manage infrastructure, platforms, or application code. You don&#x27;t handle updates, patches, or scaling. Your interaction is purely at the application and data level. This makes SaaS suitable for business applications where you need specific functionality without operational management.</p>
+<h3 id="33-saas-in-the-ionos-ecosystem">3.3 SaaS in the IONOS Ecosystem</h3><p>IONOS does not currently offer SaaS products. Instead, IONOS provides the complete IaaS and PaaS foundation that enables you to build and deliver your own SaaS applications. This approach gives you full control over your software architecture, features, and business model while leveraging enterprise-grade infrastructure.</p>
+<p>By combining IONOS IaaS compute and storage with PaaS services like <a href="../../../products/Containers/managed-kubernetes.html" class="product-ref">Managed Kubernetes</a> and managed databases, you can create sophisticated software products and deliver them to your end users as a service. This demonstrates how the service models build on each other: SaaS applications run on PaaS platforms, which in turn run on IaaS infrastructure. IONOS provides the foundational layers that enable you to create whatever solutions your business requires, whether that&#x27;s a customer-facing application, an internal business system, or a commercial SaaS product for your own customers.</p>
+<h2 id="4-shared-responsibility-model">4. Shared Responsibility Model</h2><p>The shared responsibility model is a framework that clearly defines which security and operational tasks belong to the cloud provider and which belong to the customer. Understanding this model is critical because it determines where your responsibilities begin and end.</p>
+<h3 id="41-how-responsibilities-are-divided">4.1 How Responsibilities Are Divided</h3><p>At the foundation, IONOS is responsible for the physical infrastructure and security of the cloud itself. This includes owning and operating data centers with physical security, power, cooling, and network connectivity. IONOS maintains the hardware, network fabric, virtualization layer, and hypervisor, including host-based firewalls and intrusion detection systems.</p>
+<p>The platform layer responsibilities vary by service model. For IaaS, IONOS provides a secure, compliant platform with network security, patching of the management stack, and capacity management of the management cluster. For PaaS services like <a href="../../../products/Containers/managed-kubernetes.html" class="product-ref">Managed Kubernetes</a>, IONOS also handles security updates and patches to the control plane and runtime environments.</p>
+<p>Customers have control above the platform layer. This includes configuring <a href="../../../products/Security/network-security-groups.html" class="product-ref">Network Security Groups</a>, firewall rules, and routing for virtual networks they control. For virtual machines, customers manage patching and updates to the operating system and applications, control access and user accounts, implement encryption for data at rest and in transit, and monitor and remediate security events affecting their workloads.</p>
+<h3 id="42-shared-responsibility-by-service-model">4.2 Shared Responsibility by Service Model</h3><p>The exact division of responsibilities shifts depending on which service model you use. The following table illustrates how responsibilities are distributed:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Responsibility Area</th>
+<th>IaaS</th>
+<th>PaaS</th>
+<th>SaaS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Physical Infrastructure</strong></td>
+<td>IONOS</td>
+<td>IONOS</td>
+<td>IONOS</td>
+</tr>
+<tr>
+<td><strong>Virtualization &amp; Hypervisor</strong></td>
+<td>IONOS</td>
+<td>IONOS</td>
+<td>IONOS</td>
+</tr>
+<tr>
+<td><strong>Operating System</strong></td>
+<td>Customer</td>
+<td>IONOS</td>
+<td>IONOS</td>
+</tr>
+<tr>
+<td><strong>Runtime &amp; Middleware</strong></td>
+<td>Customer</td>
+<td>IONOS</td>
+<td>IONOS</td>
+</tr>
+<tr>
+<td><strong>Application Code</strong></td>
+<td>Customer</td>
+<td>Customer</td>
+<td>IONOS</td>
+</tr>
+<tr>
+<td><strong>Data</strong></td>
+<td>Customer</td>
+<td>Customer</td>
+<td>Customer</td>
+</tr>
+<tr>
+<td><strong>Access Management</strong></td>
+<td>Customer</td>
+<td>Customer</td>
+<td>Customer</td>
+</tr>
+<tr>
+<td><strong>Network Configuration</strong></td>
+<td>Customer</td>
+<td>Shared</td>
+<td>IONOS</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p>Note: The SaaS column is provided for educational comparison. IONOS does not currently offer SaaS products.</p>
+</blockquote>
+<p>Notice that as you move from IaaS to PaaS to SaaS, more responsibility shifts to the provider. However, data and access management typically remain the customer&#x27;s responsibility regardless of service model. You always control who can access your data and how it&#x27;s used.</p>
+<h3 id="43-practical-implications">4.3 Practical Implications</h3><p>Understanding the shared responsibility model helps you make informed decisions about security, compliance, and operations. In an IaaS environment, you have control over operating system security, patching processes, and vulnerability management. In PaaS, these tasks are handled by the provider, giving you less control over the underlying platform but allowing you to focus on your applications.</p>
+<p>Both parties must collaborate for effective cloud security. IONOS provides the tools such as secure base images, monitoring services, and platform-level security controls. Customers apply best practice security within their environments, including regular operating system patching, access control policies, encryption implementation, backup strategies, and incident handling procedures.</p>
+<p>By clearly separating these duties, the shared responsibility model maximizes the benefits of cloud computing while maintaining a robust security posture. You gain the flexibility and scalability of the cloud while understanding exactly which security and operational tasks belong to you versus those managed by IONOS.</p>
+<h2 id="5-choosing-the-right-service-model">5. Choosing the Right Service Model</h2><p>Selecting the appropriate service model depends on your specific requirements, technical capabilities, and business objectives. Each model offers different trade-offs between control, convenience, and operational responsibility.</p>
+<h3 id="51-when-to-choose-iaas">5.1 When to Choose IaaS</h3><p>IaaS is ideal when you need maximum control and flexibility. Choose IaaS when you have specific operating system requirements, need to run custom or legacy applications that require particular configurations, or want full control over the software stack for compliance or security reasons. IaaS works well for workloads that require customization at the infrastructure level or when migrating existing on-premises applications to the cloud with minimal changes.</p>
+<p>Organizations with technical teams that want to manage infrastructure, or those with specific performance requirements that need fine-tuned configurations, benefit from IaaS. The IONOS <a href="../../../products/Compute_Services/compute-engine.html" class="product-ref">Compute Engine</a> and <a href="../../../products/Compute_Services/cubes.html" class="product-ref">Cubes</a> offerings give you this flexibility, allowing you to build exactly the environment your applications need.</p>
+<h3 id="52-when-to-choose-paas">5.2 When to Choose PaaS</h3><p>PaaS is the right choice when you want to focus on application development rather than infrastructure management. Choose PaaS when you&#x27;re building new applications, need rapid development and deployment cycles, or want built-in scalability and high availability without managing the underlying infrastructure. PaaS is excellent for microservices architectures, containerized applications, and managed database workloads.</p>
+<p>Development teams that want to concentrate on writing code rather than managing servers, or organizations looking to streamline operations, find PaaS valuable. Services like IONOS <a href="../../../products/Containers/managed-kubernetes.html" class="product-ref">Managed Kubernetes</a> and Database-as-a-Service deliver platform capabilities, letting you deploy applications faster and with greater reliability.</p>
+<h3 id="53-when-to-choose-saas">5.3 When to Choose SaaS</h3><p>SaaS makes sense when you need specific business functionality without managing technology. Choose SaaS for standard business applications like email, customer relationship management, collaboration tools, or office productivity software. SaaS eliminates technical management, making it suitable for organizations that want to focus entirely on using software rather than deploying or maintaining it.</p>
+<p>Non-technical teams, small organizations without dedicated IT staff, or any use case where the application functionality matters more than infrastructure control benefit from SaaS. While IONOS specializes in IaaS and PaaS, understanding SaaS helps you make informed decisions about which parts of your technology stack to build on IONOS infrastructure versus consume as ready-made applications.</p>
+<h2 id="common-use-cases">Common Use Cases</h2><p>Real-world scenarios where these service models are applied:</p>
+<ol>
+<li><strong>E-Commerce Platform on IaaS:</strong> An online retailer runs its e-commerce application on IONOS <a href="../../../products/Compute_Services/compute-engine.html" class="product-ref">Compute Engine</a> virtual machines, giving complete control over the web server configuration, application middleware, and database tuning. They use <a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a> for persistent data and configure custom firewall rules to meet PCI-DSS compliance requirements. This IaaS approach provides the flexibility needed for their specific performance requirements and regulatory obligations, as described in Section 1.3, while allowing them to optimize costs by scaling compute resources based on seasonal traffic patterns.</li>
+<li><strong>Microservices Application on PaaS:</strong> A software company deploys its microservices-based application on IONOS <a href="../../../products/Containers/managed-kubernetes.html" class="product-ref">Managed Kubernetes</a>, as covered in Section 2.3. The development team focuses on writing and deploying containerized services while <a href="../../../products/Containers/managed-kubernetes.html" class="product-ref">Managed Kubernetes</a> handles cluster upgrades, scaling, and security patches automatically. They connect to Managed <a href="../../../products/Database_as_a_Service/postgresql.html" class="product-ref">PostgreSQL</a> databases over private networks (Section 2.3 integration), eliminating infrastructure management. This PaaS approach accelerates development velocity by removing infrastructure operations discussed in Section 2.2, allowing the team to ship features faster.</li>
+<li><strong>Custom SaaS Alternative on IONOS:</strong> A healthcare company needs CRM functionality but cannot use public SaaS due to strict data sovereignty requirements. Instead, they build a custom CRM application on IONOS IaaS (Compute Engine for the application servers) and PaaS (Managed PostgreSQL for patient data). This gives them SaaS-like functionality for their users while maintaining complete control over where data resides and how it&#x27;s secured.</li>
+<li><strong>Hybrid Service Model Strategy:</strong> A financial services firm uses both IaaS and PaaS strategically. They run core banking systems on IaaS Compute Engine for maximum control and compliance, and use Managed PostgreSQL (PaaS) for customer data requiring automated backups and high availability (Section 2.3). This demonstrates how the shared responsibility model (Section 4) varies by workload, with each service model chosen based on specific control, compliance, and operational requirements.</li>
+</ol>
+<h2 id="summary">Summary</h2><p>Cloud service models represent different levels of abstraction and responsibility. IaaS provides raw infrastructure components like virtual machines, storage, and networking, giving you maximum control over operating systems, middleware, and applications. PaaS offers a complete runtime environment where you deploy code and data while the platform handles infrastructure, scaling, and operational tasks. SaaS delivers fully functional applications where the provider manages everything from infrastructure to application updates, leaving you to focus solely on using the software.</p>
+<p>The shared responsibility model defines the security and operational boundary between cloud provider and customer. IONOS always manages physical infrastructure, data centers, and the virtualization layer. As you move from IaaS to PaaS to SaaS, more responsibility shifts to the provider, but you always retain control over your data and who can access it. Understanding this model is essential for proper security implementation and compliance management.</p>
+<p>IONOS Cloud offers a comprehensive portfolio spanning IaaS and PaaS. The IaaS layer includes <a href="../../../products/Compute_Services/compute-engine.html" class="product-ref">Compute Engine</a>, <a href="../../../products/Compute_Services/cubes.html" class="product-ref">Cubes</a>, <a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a>, Object Storage, <a href="../../../products/Storage_&_Backup/network-file-storage.html" class="product-ref">Network File Storage</a>, and networking services. The PaaS layer delivers <a href="../../../products/Containers/managed-kubernetes.html" class="product-ref">Managed Kubernetes</a>, Database-as-a-Service offerings (<a href="../../../products/Database_as_a_Service/postgresql.html" class="product-ref">PostgreSQL</a>, <a href="../../../products/Database_as_a_Service/mariadb.html" class="product-ref">MariaDB</a>, <a href="../../../products/Database_as_a_Service/mongodb.html" class="product-ref">MongoDB</a>, In-Memory), <a href="../../../products/Data_Analytics/kafka.html" class="product-ref">Event Streams for Apache Kafka</a>, and the <a href="../../../products/Storage_&_Backup/backup-service.html" class="product-ref">Backup Service</a>. These services integrate seamlessly, allowing you to choose the right level of abstraction for each workload.</p>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li>IaaS provides infrastructure building blocks (compute, storage, networking) with customer control over operating systems and applications</li>
+<li>PaaS delivers managed runtime environments where customers focus on code and data while the platform handles infrastructure operations</li>
+<li>SaaS offers fully managed applications with the provider handling all infrastructure, platform, and application management</li>
+<li>The shared responsibility model clearly divides security and operational duties between cloud provider and customer, varying by service model</li>
+<li>IONOS Cloud services span IaaS (Compute Engine, Cubes, storage, networking) and PaaS (Managed Kubernetes, managed databases, backup)</li>
+<li>Choosing the right service model depends on your need for control, technical capabilities, and operational preferences</li>
+</ul>
+<p><strong>Important Terminology:</strong></p>
+<ul>
+<li><strong>IaaS (Infrastructure as a Service):</strong> Cloud service model providing virtualized compute, storage, and networking resources with customer control over operating systems and applications</li>
+<li><strong>PaaS (Platform as a Service):</strong> Cloud service model providing a managed runtime environment where developers deploy applications without managing underlying infrastructure</li>
+<li><strong>SaaS (Software as a Service):</strong> Cloud service model delivering fully managed applications accessible via web interfaces or APIs</li>
+<li><strong>Shared Responsibility Model:</strong> Framework defining which security and operational tasks belong to the cloud provider versus the customer</li>
+<li><strong>Compute Engine:</strong> IONOS flexible virtual machine service with configurable dedicated-core or vCPU options (IaaS)</li>
+<li><strong>Managed Kubernetes:</strong> IONOS fully managed Kubernetes service handling control plane operations and scaling (PaaS)</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2><p><strong>Continue Learning:</strong> <a href="../module-2/unit-2.1-core-components.html">Unit 2.1: Core Architectural Components</a></p>
+<p><strong>Related Topics:</strong></p>
+<ul>
+<li><a href="unit-1.1-cloud-computing-fundamentals.html">Unit 1.1: Cloud Computing Fundamentals</a></li>
+<li><a href="unit-1.2-cloud-service-benefits.html">Unit 1.2: Cloud Service Benefits</a></li>
+<li><a href="../module-2/unit-2.2-compute.html">Unit 2.2: Compute Services</a></li>
+</ul>
+
+</article>
+
+<!-- Mark Complete Button -->
+<div class="mark-complete">
+  <button class="btn-complete" data-unit-id="1.3"
+          data-label-complete="Completed"
+          data-label-incomplete="Mark as Complete"
+          aria-pressed="false">
+    <span class="btn-icon">
+      <svg viewBox="0 0 16 16" fill="currentColor">
+        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      </svg>
+    </span>
+    <span class="btn-text">Mark as Complete</span>
+  </button>
+</div>
+
+<!-- Unit Navigation -->
+<nav class="unit-navigation" aria-label="Unit navigation">
+  <div class="nav-prev">
+    <a href="../module-1/unit-1.2-cloud-service-benefits.html">
+      <span class="nav-label">
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+        </svg>
+        Previous
+      </span>
+      <span class="nav-title">1.2 Cloud Service Benefits</span>
+    </a>
+  </div>
+  <div class="nav-next">
+    <a href="../module-1/unit-1.4-knowledge-check.html">
+      <span class="nav-label">
+        Next
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+      </span>
+      <span class="nav-title">1.4 Knowledge Check - Cloud Concepts</span>
+    </a>
+  </div>
+</nav>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <p>&copy; 2026 . All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script>window.CW_I18N = {"keep_learning": "Keep Learning!", "completed_of_total": "You've completed <strong>{completed} of {total} units</strong> ({percentage}%).", "finish_all_units": "Finish all units to unlock your completion certificate.", "continue_learning": "Continue Learning", "back_to_overview": "Back to Overview", "skip_to_completion": "Skip to completion page", "quiz_submit": "Submit Answers", "quiz_score": "Your Score", "quiz_correct": "Correct", "quiz_incorrect": "Incorrect", "quiz_explanation": "Explanation", "quiz_show_explanation": "Show Explanation", "quiz_hide_explanation": "Hide Explanation", "quiz_passed": "Passed", "quiz_not_passed": "Not Passed", "quiz_retry": "Try Again", "quiz_of": "of", "quiz_pass_required": "You need at least {threshold}% to pass.", "finish_all_units_and_quizzes": "Finish all units and pass all quizzes to unlock your completion certificate.", "knowledge_check": "Knowledge Check"};</script>
+  <script src="../../../js/navigation.js"></script>
+  <script src="../../../js/progress.js"></script>
+  <script src="../../../js/quiz.js"></script>
+  <script src="../../../js/language-switcher.js"></script>
+</body>
+</html>

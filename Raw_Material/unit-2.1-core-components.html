@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IONOS Cloud Foundational - Unit 2.1: Core Architectural Components">
+  <meta name="author" content="">
+  <title>2.1 Core Architectural Components | Cloud Training</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#003d8f">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Overpass:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../../css/ionos-learn.css">
+  <link rel="stylesheet" href="../../../css/print.css" media="print">
+</head>
+<body>
+
+  <div class="page-wrapper">
+    <!-- Header -->
+    <header class="site-header" role="banner">
+      <div class="header-left">
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+
+        <!-- Logo -->
+        <a href="../../../index.html" class="logo" aria-label="IONOS Cloud Training Home">
+          <img src="../../../assets/ionos-logo.svg" alt="IONOS" width="100" height="32">
+        </a>
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../../index.html">Course</a>
+<span class="breadcrumb-separator">/</span>
+<span>Module 2</span>
+<span class="breadcrumb-separator">/</span>
+<span>Unit 2.1</span>
+        </nav>
+      </div>
+
+      <div class="header-right">
+        <a href="../../../products/index.html" class="header-link">Product Reference</a>
+        <div class="language-switcher">
+  <button class="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Change language">
+    <span class="lang-code">EN</span>
+  </button>
+  <div class="lang-dropdown" role="menu">
+    <a href="../../../en/courses/module-2/unit-2.1-core-components.html" class="lang-option current" role="menuitem">
+      <span class="lang-code">EN</span>
+      <span>English</span>
+    </a><a href="../../../de/courses/module-2/unit-2.1-core-components.html" class="lang-option" role="menuitem">
+      <span class="lang-code">DE</span>
+      <span>Deutsch</span>
+    </a><a href="../../../es/courses/module-2/unit-2.1-core-components.html" class="lang-option" role="menuitem">
+      <span class="lang-code">ES</span>
+      <span>Español</span>
+    </a><a href="../../../fr/courses/module-2/unit-2.1-core-components.html" class="lang-option" role="menuitem">
+      <span class="lang-code">FR</span>
+      <span>Français</span>
+    </a>
+  </div>
+</div>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" role="navigation" aria-label="Course navigation">
+        <div class="sidebar-header">
+          <div class="course-title">Cloud Training</div>
+          <div class="progress-container">
+            <div class="progress-label">
+              <span>Progress</span>
+              <span class="progress-percent">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="nav-modules">
+          <div class="nav-special-item">
+  <a href="../../index.html" class="special-link " data-page-id="overview">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6a.5.5 0 0 0 .708.708L8 2.207l5.646 5.647a.5.5 0 0 0 .708-.708l-6-6z"/>
+      <path d="M2.5 8.5v5.5h11v-5.5l-5.5-5.5-5.5 5.5z"/>
+    </svg>
+    <span>Course Overview</span>
+  </a>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 1: Cloud Concepts</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.1-cloud-computing-fundamentals.html" class="unit-link " data-unit-id="1.1">
+        <span class="unit-status"></span>
+        <span>1.1 Cloud Computing Fundamentals</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.2-cloud-service-benefits.html" class="unit-link " data-unit-id="1.2">
+        <span class="unit-status"></span>
+        <span>1.2 Cloud Service Benefits</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.3-cloud-deployment-models.html" class="unit-link " data-unit-id="1.3">
+        <span class="unit-status"></span>
+        <span>1.3 Cloud Service Type Categories</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-1/unit-1.4-knowledge-check.html" class="quiz-link " data-unit-id="1.4" data-quiz-id="1.4">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Cloud Concepts</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header expanded">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 2: IONOS Architecture and Services</span>
+  </div>
+  <ul class="unit-list expanded">
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.1-core-components.html" class="unit-link active" data-unit-id="2.1">
+        <span class="unit-status"></span>
+        <span>2.1 Core Architectural Components</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.2-compute.html" class="unit-link " data-unit-id="2.2">
+        <span class="unit-status"></span>
+        <span>2.2 Compute Services</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.3-storage-services.html" class="unit-link " data-unit-id="2.3">
+        <span class="unit-status"></span>
+        <span>2.3 Storage Services</span>
+        <span class="unit-time">~21 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.4-networking-services.html" class="unit-link " data-unit-id="2.4">
+        <span class="unit-status"></span>
+        <span>2.4 Networking Services</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.5-databases.html" class="unit-link " data-unit-id="2.5">
+        <span class="unit-status"></span>
+        <span>2.5 Database and Data Services</span>
+        <span class="unit-time">~20 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.6-security-ai-containers.html" class="unit-link " data-unit-id="2.6">
+        <span class="unit-status"></span>
+        <span>2.6 Security, AI, and Container Services</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-2/unit-2.7-knowledge-check.html" class="quiz-link " data-unit-id="2.7" data-quiz-id="2.7">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Architecture and Services</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 3: Management and Governance</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.1-dcd-account-management.html" class="unit-link " data-unit-id="3.1">
+        <span class="unit-status"></span>
+        <span>3.1 Data Center Designer and Account Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.2-iam.html" class="unit-link " data-unit-id="3.2">
+        <span class="unit-status"></span>
+        <span>3.2 Identity and Access Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.3-cost-billing.html" class="unit-link " data-unit-id="3.3">
+        <span class="unit-status"></span>
+        <span>3.3 Cost Management and Billing</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.4-logs-monitoring.html" class="unit-link " data-unit-id="3.4">
+        <span class="unit-status"></span>
+        <span>3.4 Activity Logs and Monitoring</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.5-security-compliance.html" class="unit-link " data-unit-id="3.5">
+        <span class="unit-status"></span>
+        <span>3.5 Security and Compliance</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-3/unit-3.6-knowledge-check.html" class="quiz-link " data-unit-id="3.6" data-quiz-id="3.6">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Management and Governance</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-special-item">
+  <a href="../../courses/completion.html" class="special-link " data-page-id="completion">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+    </svg>
+    <span>Course Completion</span>
+  </a>
+</div>
+        </nav>
+
+        <div class="sidebar-divider"></div>
+
+        <a href="../../../products/index.html" class="products-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+          <span>Product Reference</span>
+        </a>
+      </aside>
+
+      <!-- Sidebar Overlay (Mobile) -->
+      <div class="sidebar-overlay" aria-hidden="true"></div>
+
+      <!-- Main Content -->
+      <main id="main-content" class="content" role="main">
+        <div class="content-inner">
+          <!-- Unit Header Meta -->
+<div class="unit-meta">
+  <span class="reading-time">
+    <svg viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+      <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+    </svg>
+    15 min read
+  </span>
+</div>
+
+<!-- Learning Objectives -->
+<section class="learning-objectives" aria-labelledby="objectives-heading">
+  <h2 id="objectives-heading">Learning Objectives</h2>
+  <p>By the end of this module, you will be able to:</p>
+  <ul>
+    <li>Explain the role and structure of Virtual Data Centers (VDCs) in organizing cloud resources</li>
+<li>Describe how IONOS Cloud regions and availability zones support resilience and geographic distribution</li>
+<li>Identify the networking fundamentals that enable VDC connectivity and isolation</li>
+<li>Organize resources effectively within VDCs following IONOS best practices</li>
+  </ul>
+</section>
+
+<!-- Main Unit Content -->
+<article class="unit-content">
+  <h1 id="unit-21-core-architectural-components">Unit 2.1: Core Architectural Components</h1><h2 id="introduction">Introduction</h2><p>Think of building a data center from scratch. You would need to provision servers, set up networks, configure storage, secure everything with firewalls, and manage it all from a single control plane. Now imagine doing that entirely in software, where you can create, modify, and delete infrastructure in minutes instead of months. That is exactly what a Virtual Data Center (VDC) gives you on IONOS Cloud.</p>
+<p>In this unit, you will learn about the foundational architectural components that make up IONOS Cloud. You will discover how VDCs serve as logical containers for all your cloud resources, how regions and availability zones provide geographic flexibility and high availability, and how networking fundamentals enable secure communication within and between your environments. Understanding these core components is essential before diving into specific services like compute, storage, and databases in upcoming units.</p>
+<h2 id="1-virtual-data-centers-vdcs">1. Virtual Data Centers (VDCs)</h2><p>At the heart of IONOS Cloud architecture is the Virtual Data Center. A VDC is a logical container that groups all the cloud resources you need to build an enterprise-grade IT infrastructure. Think of it as your own private data center, but entirely virtualized and managed through software.</p>
+<h3 id="11-what-is-a-virtual-data-center">1.1 What is a Virtual Data Center?</h3><p>According to IONOS documentation, a Virtual Data Center is defined as &quot;a collection of cloud resources used for creating an enterprise-grade IT infrastructure. VDC resources include the processors, memory, disk space, and networks from which virtual machines are built.&quot;</p>
+<p>A VDC bundles together:</p>
+<ul>
+<li>Compute resources (processors, memory)</li>
+<li>Storage resources (disk space)</li>
+<li>Networking resources (virtual networks, IP addresses)</li>
+<li>Security controls (firewalls, access policies)</li>
+</ul>
+<p>All of these resources are managed as a single unit through the Data Center Designer (DCD), IONOS Cloud&#x27;s graphical management interface. When you create a VDC, you are essentially provisioning a complete virtual data center that can host your applications, databases, and services.</p>
+<h3 id="12-how-vdcs-organize-resources">1.2 How VDCs Organize Resources</h3><p>Every VDC is created in a specific geographic region (such as Berlin or Frankfurt), and all resources within that VDC belong to that location. This regional binding is important for data sovereignty, latency considerations, and compliance requirements.</p>
+<p>Within a VDC, resources are organized hierarchically:</p>
+<ol>
+<li><strong>Contract level</strong>: The top-most container owned by your organization</li>
+<li><strong>VDC level</strong>: Logical data centers within your contract</li>
+<li><strong>Resource level</strong>: Individual servers, storage volumes, networks, and other infrastructure components</li>
+</ol>
+<p>This hierarchy enables clear organizational structure and cost tracking. Each VDC appears as a distinct line item on your monthly bill, making it easy to attribute costs to specific projects, teams, or environments.</p>
+<h3 id="13-vdc-management-and-access-control">1.3 VDC Management and Access Control</h3><p>Access to VDCs is controlled through IONOS Identity and Access Management (IAM). Contract owners and administrators can create VDCs, and they can grant specific permissions to users and groups at the VDC level. Permissions include:</p>
+<ul>
+<li><strong>Read</strong>: View VDC resources and configurations</li>
+<li><strong>Edit</strong>: Modify VDC resources</li>
+<li><strong>Share</strong>: Grant access to other users</li>
+</ul>
+<p>These permissions are inherited by all resources within the VDC, providing centralized access control. You can also set more granular permissions at the individual resource level when needed, supporting the principle of least privilege.</p>
+<h2 id="2-regions-and-availability-zones">2. Regions and Availability Zones</h2><p>IONOS Cloud operates data centers across multiple geographic locations. Understanding how regions and availability zones work is crucial for designing resilient and compliant cloud architectures.</p>
+<h3 id="21-ionos-cloud-regions">2.1 IONOS Cloud Regions</h3><p>A region is a geographic location where IONOS operates one or more data centers. Each region is an independent deployment with its own infrastructure, networking, and services. IONOS Cloud regions include:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Region</th>
+<th>Location</th>
+<th>Region Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Berlin</td>
+<td>Germany</td>
+<td>de/txl</td>
+</tr>
+<tr>
+<td>Frankfurt</td>
+<td>Germany</td>
+<td>de/fra</td>
+</tr>
+<tr>
+<td>Frankfurt 2</td>
+<td>Germany</td>
+<td>de/fra-2</td>
+</tr>
+<tr>
+<td>London</td>
+<td>United Kingdom</td>
+<td>gb/lhr</td>
+</tr>
+<tr>
+<td>Worcester</td>
+<td>United Kingdom</td>
+<td>gb/bhx</td>
+</tr>
+<tr>
+<td>Paris</td>
+<td>France</td>
+<td>fr/par</td>
+</tr>
+<tr>
+<td>Logroño</td>
+<td>Spain</td>
+<td>es/vit</td>
+</tr>
+<tr>
+<td>Lenexa</td>
+<td>USA</td>
+<td>us/mci</td>
+</tr>
+<tr>
+<td>Las Vegas</td>
+<td>USA</td>
+<td>us/las</td>
+</tr>
+<tr>
+<td>Newark</td>
+<td>USA</td>
+<td>us/ewr</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>When you create a VDC, you select a region, and all resources in that VDC must reside in the chosen location. This regional architecture supports several important use cases:</p>
+<ul>
+<li><strong>Data sovereignty</strong>: Keep data within specific geographic boundaries to meet legal and regulatory requirements</li>
+<li><strong>Latency optimization</strong>: Deploy resources close to your users for better performance</li>
+<li><strong>Disaster recovery</strong>: Distribute workloads across regions for business continuity</li>
+</ul>
+<p>It is important to note that IONOS does not automatically replicate data across regions. If you need multi-region resilience, you must implement your own replication and backup strategies.</p>
+<h3 id="22-availability-zones-within-regions">2.2 Availability Zones Within Regions</h3><p>Within each region, IONOS Cloud infrastructure is divided into isolated physical zones called Availability Zones (AZs). Each AZ is housed in a separate physical location (different rooms or fire zones) within the data center, with independent racks, power feeds, and cooling systems. AZs are interconnected within each datacenter through a dedicated network. This isolation ensures that a hardware failure or maintenance event in one AZ does not affect resources in another AZ.</p>
+<p>Typically, each region supports at least two availability zones (AZ 1 and AZ 2). When you provision resources like servers or storage volumes within a VDC, you can assign them to specific availability zones.</p>
+<p>Distributing your resources across multiple AZs provides fault tolerance at the infrastructure level. For example, if you run a web application with servers in both AZ 1 and AZ 2, your application remains available even if one entire availability zone experiences an outage. This is the foundation of high-availability architecture on IONOS Cloud.</p>
+<h3 id="23-choosing-regions-and-availability-zones">2.3 Choosing Regions and Availability Zones</h3><p>When designing your cloud architecture, consider these factors:</p>
+<p><strong>For region selection:</strong></p>
+<ul>
+<li>Where are your users located? (Choose regions close to your user base)</li>
+<li>What are your compliance requirements? (Certain regulations mandate data residency)</li>
+<li>Do you need disaster recovery across regions? (Plan for multi-region deployment)</li>
+</ul>
+<p><strong>For availability zone distribution:</strong></p>
+<ul>
+<li>Spread critical workloads across at least two AZs</li>
+<li>Place database replicas in different AZs for high availability</li>
+<li>Configure load balancers to distribute traffic across AZs</li>
+</ul>
+<p>While availability zones protect against data center-level failures, cross-region deployment protects against regional disasters. Most production workloads benefit from multi-AZ deployment within a single region, with cross-region deployment reserved for mission-critical applications requiring the highest level of resilience.</p>
+<h2 id="3-networking-fundamentals">3. Networking Fundamentals</h2><p>Networking is the foundation that connects all your VDC resources together. IONOS Cloud provides software-defined networking that behaves like physical networks but with the flexibility and isolation advantages of virtualization.</p>
+<h3 id="31-virtual-networks-and-lans">3.1 Virtual Networks and LANs</h3><p>Within a VDC, you create Local Area Networks (LANs) to interconnect your virtual machines and other resources. These LANs are entirely software-defined and provide complete traffic isolation.</p>
+<p>As documented by IONOS, &quot;Virtual networks work just like normal physical networks. Transmitted data is completely isolated from other subnets and cannot be intercepted by other users.&quot; Each LAN acts as a private Ethernet segment where your resources can communicate securely.</p>
+<p>You can create two types of LANs:</p>
+<ul>
+<li><strong>Private LANs</strong>: Internal networks that are not accessible from the Internet. Resources on private LANs can only communicate with other resources within your VDC or connected VDCs.</li>
+<li><strong>Public LANs</strong>: Networks that provide Internet connectivity. Resources on public LANs can reach external services and can be reached from the Internet if configured with appropriate firewall rules.</li>
+</ul>
+<p>Both private and public LANs support dual-stack operation, meaning they can handle both IPv4 and IPv6 traffic simultaneously.</p>
+<h3 id="32-ip-addressing-and-dhcp">3.2 IP Addressing and DHCP</h3><p>IP addresses are given to the network cards (NICs) in your virtual machines. By default, IONOS Cloud assigns these automatically using DHCP, so you usually don’t need to worry about it.</p>
+<p><strong>IPv4 addresses:</strong></p>
+<ul>
+<li>Your private networks get a block of addresses to use internally.</li>
+<li>Public dynamic IPv4 addresses are assigned automatically when a machine connects to the internet.</li>
+<li>If you need a permanent public address for something, you can reserve a static one.</li>
+</ul>
+<p><strong>IPv6 addresses:</strong></p>
+<ul>
+<li>Each cloud environment gets a large block of public IPv6 addresses.</li>
+<li>From this block, you can create smaller networks for your machines.</li>
+<li>Each NIC gets its own slice of addresses, including a single main address.</li>
+<li>IPv6 addresses are permanent and won’t change even if you restart your VM.</li>
+</ul>
+<p>You can also choose to set addresses manually instead of using automatic assignment. This is useful for important services like DNS, load balancers, or VPNs that need a fixed address.</p>
+<h3 id="33-network-interface-cards-nics-and-connectivity">3.3 Network Interface Cards (NICs) and Connectivity</h3><p>Virtual machines connect to LANs through Network Interface Cards (NICs). Each NIC can be attached to one LAN and provides:</p>
+<ul>
+<li>Up to 6 Gbps internal throughput (traffic within the VDC)</li>
+<li>Up to 6 Gbps external throughput (traffic to/from the Internet)</li>
+</ul>
+<p>A single virtual machine can have multiple NICs, each connected to different LANs. This multi-homing capability enables advanced network topologies, such as separating management traffic from application traffic or creating demilitarized zones (DMZs) for public-facing services.</p>
+<h3 id="34-firewall-configuration">3.4 Firewall Configuration</h3><p>Every NIC can have a firewall configured directly on the interface. When you activate a firewall, you choose the traffic direction:</p>
+<ul>
+<li><strong>Ingress</strong>: Controls incoming traffic to the NIC</li>
+<li><strong>Egress</strong>: Controls outgoing traffic from the NIC</li>
+<li><strong>Bidirectional</strong>: Controls both directions</li>
+</ul>
+<p>By default, activating a firewall blocks all incoming traffic. You then create firewall rules to allow specific protocols, ports, source addresses, and destination addresses. Supported protocols include TCP, UDP, ICMP (IPv4 ping), ICMPv6 (IPv6 ping), and several others.</p>
+<p>However, IONOS recommends using <a href="../../../products/Security/network-security-groups.html" class="product-ref">Network Security Groups</a> (NSGs) instead of NIC-based firewalls for most use cases. NSGs provide centralized, stateful firewall management that can be applied consistently across multiple VMs and NICs. We will cover NSGs in detail in Unit 2.6 on Security Services.</p>
+<h3 id="35-cross-connect-for-vdc-to-vdc-communication">3.5 Cross Connect for VDC-to-VDC Communication</h3><p>When you need to connect multiple VDCs together, you can use <a href="../../../products/Network_Services/cross-connect.html" class="product-ref">Cross Connect</a>. This feature creates dedicated, private LAN-based links between VDCs in the same region and contract.</p>
+<p>Cross Connect provides:</p>
+<ul>
+<li>High bandwidth, low-latency communication without traversing the public Internet</li>
+<li>Complete traffic isolation from other tenants</li>
+<li>Support for disaster recovery replication and workload balancing across VDCs</li>
+</ul>
+<p>Each private LAN can belong to only one Cross Connect, ensuring clean network segmentation. All VDCs participating in a Cross Connect must use the same IP address range to avoid routing conflicts.</p>
+<h2 id="4-resource-organization-best-practices">4. Resource Organization Best Practices</h2><p>Properly organizing resources within and across VDCs is essential for operational efficiency, cost management, and security.</p>
+<h3 id="41-separating-resources-by-function-and-environment">4.1 Separating Resources by Function and Environment</h3><p>A common best practice is to create separate VDCs for different logical domains:</p>
+<ul>
+<li><strong>Core VDC</strong>: Hosts shared services like firewalls, VPN gateways, monitoring, and centralized logging</li>
+<li><strong>Production VDC</strong>: Hosts live applications and customer-facing services</li>
+<li><strong>Development VDC</strong>: Hosts development and testing workloads</li>
+<li><strong>Project-specific VDCs</strong>: Each major project gets its own VDC for clear cost attribution</li>
+</ul>
+<p>This separation provides several benefits:</p>
+<ul>
+<li>Clear financial reporting (each VDC is billed separately)</li>
+<li>Simplified access control (grant developers access to dev VDC but not production)</li>
+<li>Reduced blast radius (a mistake in development cannot affect production)</li>
+</ul>
+<h3 id="42-centralizing-shared-infrastructure">4.2 Centralizing Shared Infrastructure</h3><p>Rather than duplicating common services in every VDC, deploy them once in a core VDC and connect other VDCs via <a href="../../../products/Network_Services/cross-connect.html" class="product-ref">Cross Connect</a>. This centralization:</p>
+<ul>
+<li>Reduces licensing and operational costs</li>
+<li>Ensures consistent security policies across all environments</li>
+<li>Simplifies management and monitoring</li>
+</ul>
+<p>For example, you might deploy a centralized firewall appliance, <a href="../../../products/Network_Services/vpn-gateway.html" class="product-ref">VPN Gateway</a>, and log aggregation service in your core VDC. All other VDCs connect to the core VDC through Cross Connect, routing their traffic through the shared security infrastructure.</p>
+<h3 id="43-applying-access-controls-with-groups">4.3 Applying Access Controls with Groups</h3><p>IONOS IAM supports user groups, which are collections of users with similar access needs. Best practices for using groups include:</p>
+<ul>
+<li>Create groups that mirror organizational roles (e.g., Network-Engineers, Database-Admins, Security-Team)</li>
+<li>Grant permissions to groups rather than individual users</li>
+<li>Apply the principle of least privilege (give only the minimum permissions needed)</li>
+<li>Use the &quot;Access and manage Identity and Access Management resources&quot; privilege carefully, as it allows users to manage IAM objects</li>
+</ul>
+<p>When a user joins or leaves a team, you simply add or remove them from the appropriate group. Their permissions are inherited automatically from group membership, making access management scalable and auditable.</p>
+<h3 id="44-distributing-workloads-across-availability-zones">4.4 Distributing Workloads Across Availability Zones</h3><p>For resilience, always distribute production workloads across at least two availability zones within a VDC. This protects against data center-level failures. Examples include:</p>
+<ul>
+<li>Running web servers in both AZ 1 and AZ 2 with a load balancer distributing traffic</li>
+<li>Deploying database replicas in different AZs for high availability</li>
+<li>Placing backup storage in a separate AZ from primary workloads</li>
+</ul>
+<p>Availability zone placement is configured when you create resources like servers and storage volumes. IONOS does not automatically balance resources across AZs, so this must be planned as part of your architecture design.</p>
+<h2 id="common-use-cases">Common Use Cases</h2><p>Real-world scenarios where IONOS Cloud core architectural components are used:</p>
+<ol>
+<li><strong>Multi-Tier Web Application with High Availability:</strong> A SaaS company deploys its application across three VDCs (development, staging, production) in the Frankfurt region. The production VDC distributes web servers across AZ 1 and AZ 2 as described in Section 2.2, with an application load balancer routing traffic between zones. The core VDC hosts shared services like VPN, centralized logging, and security monitoring, connected to all environments via <a href="../../../products/Network_Services/cross-connect.html" class="product-ref">Cross Connect</a> as explained in Section 3.5. This architecture provides resilience against availability zone failures while maintaining clear separation between environments.</li>
+<li><strong>Global Content Delivery with Regional Data Residency:</strong> An e-commerce platform serves customers in Europe and North America. The company creates separate VDCs in Frankfurt (de/fra) and Lenexa (us/len) regions, as shown in Section 2.1. European customer data stays within EU data centers for GDPR compliance, while North American traffic is served from the US region for lower latency. Each regional VDC spans multiple availability zones following the distribution strategy in Section 2.2, providing localized high availability.</li>
+<li><strong>Centralized Security Architecture for Multiple Projects:</strong> An IT services company manages infrastructure for five different client projects. They create a core VDC containing shared firewall appliances and VPN gateways, plus five project-specific VDCs (one per client). Following the resource organization pattern in Section 4.1 and 4.2, all project VDCs route traffic through the core VDC&#x27;s security infrastructure via Cross Connect. The company uses IAM groups as described in Section 4.3 to grant each client&#x27;s team access only to their project VDC, ensuring complete isolation while centralizing security management.</li>
+</ol>
+<h2 id="summary">Summary</h2><p>In this unit, you explored the core architectural components that form the foundation of IONOS Cloud. You learned that Virtual Data Centers (VDCs) serve as logical containers for all your cloud resources, providing a software-defined equivalent of physical data centers. You discovered how IONOS Cloud regions and availability zones enable geographic distribution, data sovereignty, and fault tolerance. You examined networking fundamentals including virtual LANs, IP addressing, NICs, and firewall configuration that enable secure communication within your infrastructure. Finally, you reviewed best practices for organizing resources across VDCs, using IAM groups for access control, and distributing workloads across availability zones.</p>
+<p>These core components work together to provide the flexibility, isolation, and resilience needed for enterprise cloud deployments. Understanding VDCs, regions, availability zones, and networking fundamentals prepares you to make informed decisions about compute, storage, and other services covered in subsequent units.</p>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li>Virtual Data Centers (VDCs) are logical containers that group compute, storage, and networking resources in a single geographic region</li>
+<li>IONOS Cloud regions provide geographic distribution across Europe and North America, while availability zones within each region enable fault-tolerant architecture</li>
+<li>Virtual LANs provide isolated networking within VDCs, with support for both IPv4 and IPv6 addressing</li>
+<li>Resources can be connected across VDCs using <a href="../../../products/Network_Services/cross-connect.html" class="product-ref">Cross Connect</a>, enabling centralized shared services and workload distribution</li>
+<li>Best practices include separating environments into distinct VDCs, distributing workloads across availability zones, and using IAM groups for access control</li>
+<li>Regional boundaries are strict (no automatic cross-region replication), requiring explicit design for multi-region resilience</li>
+</ul>
+<p><strong>Important Terminology:</strong></p>
+<ul>
+<li><strong>Virtual Data Center (VDC)</strong>: A logical container for cloud resources including compute, storage, and networking, bound to a specific region</li>
+<li><strong>Region</strong>: A geographic location where IONOS operates data centers, such as Berlin (de/txl) or Frankfurt (de/fra)</li>
+<li><strong>Availability Zone (AZ)</strong>: An isolated physical zone within a region with independent power, cooling, and networking</li>
+<li><strong>LAN (Local Area Network)</strong>: A software-defined virtual network that connects resources within a VDC, supporting both private and public connectivity</li>
+<li><strong>Network Interface Card (NIC)</strong>: A virtual network adapter that connects a virtual machine to a LAN</li>
+<li><strong>Cross Connect</strong>: A private, dedicated link between LANs in different VDCs within the same region and contract</li>
+<li><strong>Data Center Designer (DCD)</strong>: IONOS Cloud&#x27;s graphical interface for creating and managing VDCs and their resources</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2><p><strong>Continue Learning:</strong> <a href="unit-2.2-compute.html">Unit 2.2: Compute Services</a></p>
+<p><strong>Related Topics:</strong></p>
+<ul>
+<li><a href="../module-3/unit-3.1-dcd-account-management.html">Unit 3.1: Data Center Designer and Account Management</a></li>
+<li><a href="../module-3/unit-3.2-iam.html">Unit 3.2: Identity and Access Management</a></li>
+</ul>
+
+</article>
+
+<!-- Mark Complete Button -->
+<div class="mark-complete">
+  <button class="btn-complete" data-unit-id="2.1"
+          data-label-complete="Completed"
+          data-label-incomplete="Mark as Complete"
+          aria-pressed="false">
+    <span class="btn-icon">
+      <svg viewBox="0 0 16 16" fill="currentColor">
+        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      </svg>
+    </span>
+    <span class="btn-text">Mark as Complete</span>
+  </button>
+</div>
+
+<!-- Unit Navigation -->
+<nav class="unit-navigation" aria-label="Unit navigation">
+  <div class="nav-prev">
+    <a href="../module-1/unit-1.4-knowledge-check.html">
+      <span class="nav-label">
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+        </svg>
+        Previous
+      </span>
+      <span class="nav-title">1.4 Knowledge Check - Cloud Concepts</span>
+    </a>
+  </div>
+  <div class="nav-next">
+    <a href="../module-2/unit-2.2-compute.html">
+      <span class="nav-label">
+        Next
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+      </span>
+      <span class="nav-title">2.2 Compute Services</span>
+    </a>
+  </div>
+</nav>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <p>&copy; 2026 . All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script>window.CW_I18N = {"keep_learning": "Keep Learning!", "completed_of_total": "You've completed <strong>{completed} of {total} units</strong> ({percentage}%).", "finish_all_units": "Finish all units to unlock your completion certificate.", "continue_learning": "Continue Learning", "back_to_overview": "Back to Overview", "skip_to_completion": "Skip to completion page", "quiz_submit": "Submit Answers", "quiz_score": "Your Score", "quiz_correct": "Correct", "quiz_incorrect": "Incorrect", "quiz_explanation": "Explanation", "quiz_show_explanation": "Show Explanation", "quiz_hide_explanation": "Hide Explanation", "quiz_passed": "Passed", "quiz_not_passed": "Not Passed", "quiz_retry": "Try Again", "quiz_of": "of", "quiz_pass_required": "You need at least {threshold}% to pass.", "finish_all_units_and_quizzes": "Finish all units and pass all quizzes to unlock your completion certificate.", "knowledge_check": "Knowledge Check"};</script>
+  <script src="../../../js/navigation.js"></script>
+  <script src="../../../js/progress.js"></script>
+  <script src="../../../js/quiz.js"></script>
+  <script src="../../../js/language-switcher.js"></script>
+</body>
+</html>

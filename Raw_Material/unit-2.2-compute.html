@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IONOS Cloud Foundational - Unit 2.2: Compute Services">
+  <meta name="author" content="">
+  <title>2.2 Compute Services | Cloud Training</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#003d8f">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Overpass:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../../css/ionos-learn.css">
+  <link rel="stylesheet" href="../../../css/print.css" media="print">
+</head>
+<body>
+
+  <div class="page-wrapper">
+    <!-- Header -->
+    <header class="site-header" role="banner">
+      <div class="header-left">
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+
+        <!-- Logo -->
+        <a href="../../../index.html" class="logo" aria-label="IONOS Cloud Training Home">
+          <img src="../../../assets/ionos-logo.svg" alt="IONOS" width="100" height="32">
+        </a>
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../../index.html">Course</a>
+<span class="breadcrumb-separator">/</span>
+<span>Module 2</span>
+<span class="breadcrumb-separator">/</span>
+<span>Unit 2.2</span>
+        </nav>
+      </div>
+
+      <div class="header-right">
+        <a href="../../../products/index.html" class="header-link">Product Reference</a>
+        <div class="language-switcher">
+  <button class="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Change language">
+    <span class="lang-code">EN</span>
+  </button>
+  <div class="lang-dropdown" role="menu">
+    <a href="../../../en/courses/module-2/unit-2.2-compute.html" class="lang-option current" role="menuitem">
+      <span class="lang-code">EN</span>
+      <span>English</span>
+    </a><a href="../../../de/courses/module-2/unit-2.2-compute.html" class="lang-option" role="menuitem">
+      <span class="lang-code">DE</span>
+      <span>Deutsch</span>
+    </a><a href="../../../es/courses/module-2/unit-2.2-compute.html" class="lang-option" role="menuitem">
+      <span class="lang-code">ES</span>
+      <span>Español</span>
+    </a><a href="../../../fr/courses/module-2/unit-2.2-compute.html" class="lang-option" role="menuitem">
+      <span class="lang-code">FR</span>
+      <span>Français</span>
+    </a>
+  </div>
+</div>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" role="navigation" aria-label="Course navigation">
+        <div class="sidebar-header">
+          <div class="course-title">Cloud Training</div>
+          <div class="progress-container">
+            <div class="progress-label">
+              <span>Progress</span>
+              <span class="progress-percent">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="nav-modules">
+          <div class="nav-special-item">
+  <a href="../../index.html" class="special-link " data-page-id="overview">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6a.5.5 0 0 0 .708.708L8 2.207l5.646 5.647a.5.5 0 0 0 .708-.708l-6-6z"/>
+      <path d="M2.5 8.5v5.5h11v-5.5l-5.5-5.5-5.5 5.5z"/>
+    </svg>
+    <span>Course Overview</span>
+  </a>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 1: Cloud Concepts</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.1-cloud-computing-fundamentals.html" class="unit-link " data-unit-id="1.1">
+        <span class="unit-status"></span>
+        <span>1.1 Cloud Computing Fundamentals</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.2-cloud-service-benefits.html" class="unit-link " data-unit-id="1.2">
+        <span class="unit-status"></span>
+        <span>1.2 Cloud Service Benefits</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.3-cloud-deployment-models.html" class="unit-link " data-unit-id="1.3">
+        <span class="unit-status"></span>
+        <span>1.3 Cloud Service Type Categories</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-1/unit-1.4-knowledge-check.html" class="quiz-link " data-unit-id="1.4" data-quiz-id="1.4">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Cloud Concepts</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header expanded">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 2: IONOS Architecture and Services</span>
+  </div>
+  <ul class="unit-list expanded">
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.1-core-components.html" class="unit-link " data-unit-id="2.1">
+        <span class="unit-status"></span>
+        <span>2.1 Core Architectural Components</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.2-compute.html" class="unit-link active" data-unit-id="2.2">
+        <span class="unit-status"></span>
+        <span>2.2 Compute Services</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.3-storage-services.html" class="unit-link " data-unit-id="2.3">
+        <span class="unit-status"></span>
+        <span>2.3 Storage Services</span>
+        <span class="unit-time">~21 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.4-networking-services.html" class="unit-link " data-unit-id="2.4">
+        <span class="unit-status"></span>
+        <span>2.4 Networking Services</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.5-databases.html" class="unit-link " data-unit-id="2.5">
+        <span class="unit-status"></span>
+        <span>2.5 Database and Data Services</span>
+        <span class="unit-time">~20 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.6-security-ai-containers.html" class="unit-link " data-unit-id="2.6">
+        <span class="unit-status"></span>
+        <span>2.6 Security, AI, and Container Services</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-2/unit-2.7-knowledge-check.html" class="quiz-link " data-unit-id="2.7" data-quiz-id="2.7">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Architecture and Services</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 3: Management and Governance</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.1-dcd-account-management.html" class="unit-link " data-unit-id="3.1">
+        <span class="unit-status"></span>
+        <span>3.1 Data Center Designer and Account Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.2-iam.html" class="unit-link " data-unit-id="3.2">
+        <span class="unit-status"></span>
+        <span>3.2 Identity and Access Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.3-cost-billing.html" class="unit-link " data-unit-id="3.3">
+        <span class="unit-status"></span>
+        <span>3.3 Cost Management and Billing</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.4-logs-monitoring.html" class="unit-link " data-unit-id="3.4">
+        <span class="unit-status"></span>
+        <span>3.4 Activity Logs and Monitoring</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.5-security-compliance.html" class="unit-link " data-unit-id="3.5">
+        <span class="unit-status"></span>
+        <span>3.5 Security and Compliance</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-3/unit-3.6-knowledge-check.html" class="quiz-link " data-unit-id="3.6" data-quiz-id="3.6">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Management and Governance</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-special-item">
+  <a href="../../courses/completion.html" class="special-link " data-page-id="completion">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+    </svg>
+    <span>Course Completion</span>
+  </a>
+</div>
+        </nav>
+
+        <div class="sidebar-divider"></div>
+
+        <a href="../../../products/index.html" class="products-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+          <span>Product Reference</span>
+        </a>
+      </aside>
+
+      <!-- Sidebar Overlay (Mobile) -->
+      <div class="sidebar-overlay" aria-hidden="true"></div>
+
+      <!-- Main Content -->
+      <main id="main-content" class="content" role="main">
+        <div class="content-inner">
+          <!-- Unit Header Meta -->
+<div class="unit-meta">
+  <span class="reading-time">
+    <svg viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+      <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+    </svg>
+    18 min read
+  </span>
+</div>
+
+<!-- Learning Objectives -->
+<section class="learning-objectives" aria-labelledby="objectives-heading">
+  <h2 id="objectives-heading">Learning Objectives</h2>
+  <p>By the end of this module, you will be able to:</p>
+  <ul>
+    <li>Explain the different IONOS compute options (Compute Engine, Cubes, Cloud GPU VMs) and their core characteristics</li>
+<li>Compare Dedicated Core servers and vCPU servers to determine when to use each</li>
+<li>Describe how VM Auto Scaling works and identify use cases where it provides value</li>
+<li>Differentiate between Images and Snapshots and explain their roles in compute resource management</li>
+  </ul>
+</section>
+
+<!-- Main Unit Content -->
+<article class="unit-content">
+  <h1 id="unit-22-compute-services">Unit 2.2: Compute Services</h1><h2 id="introduction">Introduction</h2><p>Think about ordering a meal at a restaurant. You might choose from a pre-set menu with fixed portions and prices (quick, simple, economical), or you might order à la carte, customizing every detail to your exact preferences (flexible, precise, but potentially more expensive). IONOS Cloud compute services work the same way, offering both pre-configured options for simplicity and fully customizable virtual machines for precision.</p>
+<p>In this unit, you will explore the compute services that power applications on IONOS Cloud. Whether you need guaranteed performance for mission-critical databases, cost-effective resources for development environments, or automatic scaling for unpredictable traffic patterns, understanding these compute options helps you match the right service to your workload requirements.</p>
+<h2 id="1-ionos-compute-portfolio-overview">1. IONOS Compute Portfolio Overview</h2><p>IONOS Cloud offers a complete range of compute services designed to meet diverse workload requirements, from simple development environments to performance-intensive production systems. The compute portfolio consists of two primary offerings, each optimized for different use cases and budget constraints.</p>
+<h3 id="11-compute-engine-flexible-virtual-servers">1.1 Compute Engine (Flexible Virtual Servers)</h3><p><a href="../../../products/Compute_Services/compute-engine.html" class="product-ref">Compute Engine</a> is IONOS&#x27;s high-performance, flexible virtual server platform. It provides virtual machines (VMs) running on IONOS cloud infrastructure with full control over CPU, memory, storage, and networking configurations. <a href="../../../products/Compute_Services/compute-engine.html" class="product-ref">Compute Engine</a> is the foundation for most production workloads on IONOS Cloud.</p>
+<p>The Compute Engine family splits into two product types:</p>
+<p><strong>Dedicated Core Servers</strong> provide each VM with a dedicated physical CPU core (delivering 2 hyper-threads). No other customer can use that core, ensuring stable, predictable performance. This makes Dedicated Core servers ideal for performance-intensive tasks such as real-time analytics, data processing pipelines, enterprise-grade applications, and high-throughput databases where CPU performance cannot be compromised. Dedicated servers support up to 62 Dedicated Cores and 230 GB RAM, with the flexibility to scale resources vertically without rebooting (Depending on operative system)</p>
+<p><strong>vCPU Servers</strong> use virtual CPUs that share underlying physical resources across multiple customers. This shared model delivers cost-effective, scalable compute capacity suitable for databases, development and test environments, microservices, and general-purpose workloads. vCPU servers support up to 60 vCPUs and 230 GB RAM, with the flexibility to scale resources vertically without rebooting (Depending on operative system).</p>
+<p>Both Dedicated Core and vCPU servers support Live Vertical Scaling (LVS), which allows you to increase CPU cores, RAM, and add network interfaces while the server continues running depending of operative system. This capability eliminates downtime during capacity expansions, enabling you to respond instantly to load spikes or growth.</p>
+<h3 id="12-cubes-pre-configured-virtual-private-servers">1.2 Cubes (Pre-Configured Virtual Private Servers)</h3><p><a href="../../../products/Compute_Services/cubes.html" class="product-ref">Cubes</a> are IONOS Cloud&#x27;s pre-configured virtual private server instances with fixed amounts of vCPU, RAM, and direct-attached NVMe storage. Think of <a href="../../../products/Compute_Services/cubes.html" class="product-ref">Cubes</a> as ready-to-use server templates, similar to ordering a pre-configured laptop instead of building a custom PC from individual components.</p>
+<p>Each Cube combines a VM with an attached NVMe Direct-Attached Storage (DAS) volume in a single package. Resource configurations are fixed at provisioning time and cannot be changed, they do not support Live Vertical Scaling or automatic migration to other sizes. later but you can add new NICs or disks. Cubes are available in two template families:</p>
+<p><strong>Basic Cubes</strong> follow a balanced ratio of 1 vCPU : 2 GB RAM : 60 GB storage. Sizes range from Basic Cube XS (1 vCPU, 2 GB RAM, 60 GB storage) to Basic Cube XL (16 vCPUs, 32 GB RAM, 960 GB storage).</p>
+<p><strong>Memory Cubes</strong> provide more RAM per vCPU, maintaining the same storage ratio. Memory Cube XL delivers 16 vCPUs with 64 GB RAM and 960 GB storage, ideal for memory-intensive applications that don&#x27;t require dedicated CPU performance.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Cube Type</th>
+<th>vCPUs</th>
+<th>RAM</th>
+<th>NVMe Storage</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basic Cube XS</td>
+<td>1</td>
+<td>2 GB</td>
+<td>60 GB</td>
+<td>Simple websites, development</td>
+</tr>
+<tr>
+<td>Basic Cube S</td>
+<td>2</td>
+<td>4 GB</td>
+<td>120 GB</td>
+<td>Small web applications</td>
+</tr>
+<tr>
+<td>Basic Cube M</td>
+<td>4</td>
+<td>8 GB</td>
+<td>240 GB</td>
+<td>Testing environments</td>
+</tr>
+<tr>
+<td>Basic Cube L</td>
+<td>8</td>
+<td>16 GB</td>
+<td>480 GB</td>
+<td>Batch processing</td>
+</tr>
+<tr>
+<td>Basic Cube XL</td>
+<td>16</td>
+<td>32 GB</td>
+<td>960 GB</td>
+<td>Medium workloads</td>
+</tr>
+<tr>
+<td>Memory Cube S</td>
+<td>2</td>
+<td>8 GB</td>
+<td>120 GB</td>
+<td>Memory-intensive dev/test</td>
+</tr>
+<tr>
+<td>Memory Cube M</td>
+<td>4</td>
+<td>16 GB</td>
+<td>240 GB</td>
+<td>Caching layers</td>
+</tr>
+<tr>
+<td>Memory Cube L</td>
+<td>8</td>
+<td>32 GB</td>
+<td>480 GB</td>
+<td>In-memory processing</td>
+</tr>
+<tr>
+<td>Memory Cube XL</td>
+<td>16</td>
+<td>64 GB</td>
+<td>960 GB</td>
+<td>Large memory workloads</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Cubes run on shared infrastructure and use resource over-provisioning (typically a 1-to-10 factor), meaning the platform may distribute performance among instances during peak periods. This makes Cubes most suitable for development, testing, website hosting, and low-criticality workloads where occasional performance variation is acceptable. For consistent, guaranteed performance, <a href="../../../products/Compute_Services/compute-engine.html" class="product-ref">Compute Engine</a> is the better choice.</p>
+<h3 id="13-cloud-gpu-vms">1.3 Cloud GPU VMs</h3><p>Cloud GPU VMs are GPU-accelerated virtual machines within the <a href="../../../products/Compute_Services/compute-engine.html" class="product-ref">Compute Engine</a> family, designed for workloads that require massive parallel processing power. Each Cloud GPU VM is equipped with NVIDIA H200 GPUs featuring high-bandwidth GPU memory, delivering the compute performance needed for artificial intelligence, machine learning, and high-performance computing tasks.</p>
+<p><strong>Key characteristics of Cloud GPU VMs:</strong></p>
+<ul>
+<li>Dedicated NVIDIA H200 GPU resources attached to Compute Engine virtual machines</li>
+<li>High-bandwidth GPU memory optimized for large AI/ML model training and inference</li>
+<li>Suitable for AI/ML training, model inference, 3D rendering, scientific simulations, and video processing</li>
+<li>Available within IONOS Cloud data centers, keeping GPU workloads under European data sovereignty</li>
+</ul>
+<p><strong>When to use Cloud GPU VMs:</strong></p>
+<p>Choose Cloud GPU VMs when your workload involves training or fine-tuning machine learning models, running AI inference at scale, performing 3D rendering or visualization, or executing scientific computing tasks that benefit from GPU parallelism. For general-purpose compute workloads that do not require GPU acceleration, Dedicated Core or vCPU servers are more cost-effective choices.</p>
+<h2 id="2-choosing-the-right-compute-service">2. Choosing the Right Compute Service</h2><p>Understanding when to use each compute service depends on your workload characteristics, performance requirements, and budget constraints.</p>
+<h3 id="21-compute-engine-vs-cubes-decision-criteria">2.1 Compute Engine vs Cubes: Decision Criteria</h3><p>The fundamental difference between <a href="../../../products/Compute_Services/compute-engine.html" class="product-ref">Compute Engine</a> and <a href="../../../products/Compute_Services/cubes.html" class="product-ref">Cubes</a> lies in resource flexibility, performance guarantees, and cost structure.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Compute Engine</th>
+<th>Cubes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Resource Model</td>
+<td>Flexible - customize vCPUs, cores, RAM independently</td>
+<td>Fixed pre-configured sizes (templates)</td>
+</tr>
+<tr>
+<td>Performance Guarantee</td>
+<td>No over-provisioning; resources are reserved</td>
+<td>Over-provisioned (1-to-10 factor); performance may vary</td>
+</tr>
+<tr>
+<td>Maximum Capacity</td>
+<td>Up to 62 vCPUs, 230 GB RAM (more on-demand)</td>
+<td>Up to 16 vCPUs, 64 GB RAM (Memory Cube XL)</td>
+</tr>
+<tr>
+<td>SLA</td>
+<td>Highest SLA in IONOS Cloud</td>
+<td>Lower SLA - suitable for non-critical workloads</td>
+</tr>
+<tr>
+<td>Pricing</td>
+<td>Higher per-hour rates; pay for exact resources configured</td>
+<td>Much lower rates (e.g., Basic Cube XS from €0.007/h)</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>Separate block storage (HDD/SSD) attached as needed</td>
+<td>Includes direct-attached NVMe storage in package</td>
+</tr>
+<tr>
+<td>Scalability</td>
+<td>Adjust CPU, RAM, storage independently after provisioning</td>
+<td>Fixed resources; cannot change after creation</td>
+</tr>
+<tr>
+<td>Best For</td>
+<td>Production, databases, high-traffic applications</td>
+<td>Development, testing, simple websites, low-criticality workloads</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Choose Compute Engine when</strong> you need guaranteed performance for production workloads, require more than 16 vCPUs or 64 GB RAM, want flexibility to adjust resources independently, need GPU acceleration for AI/ML or rendering workloads (Cloud GPU VMs), or when SLA and uptime are primary concerns.</p>
+<p><strong>Choose Cubes when</strong> your workload is development, testing, or low-criticality, you prefer a quick and low-cost entry point with ready-made VM and storage, resource needs fit a pre-defined template size, or you want to minimize operational complexity.</p>
+<h3 id="22-dedicated-core-vs-vcpu-servers-performance-vs-cost">2.2 Dedicated Core vs vCPU Servers: Performance vs Cost</h3><p>Within <a href="../../../products/Compute_Services/compute-engine.html" class="product-ref">Compute Engine</a>, choosing between Dedicated Core and vCPU servers requires balancing performance requirements against budget.</p>
+<p><strong>Dedicated Core servers</strong> allocate one physical CPU core (2 hyper-threads) exclusively to your VM. No other customer can use that core, eliminating &quot;noisy neighbor&quot; effects and providing the most stable, predictable performance in the IONOS portfolio. This makes Dedicated Core ideal for real-time analytics, data processing pipelines, enterprise applications with strict SLA requirements, and high-throughput databases where consistent CPU performance is critical.</p>
+<p><strong>vCPU servers</strong> share physical resources across multiple customers, delivering good performance for most workloads while remaining cost-effective. Virtual CPUs provide approximately 80% of physical core performance under typical conditions, but performance may vary based on shared host utilization. This makes vCPU servers ideal for development and test environments, general-purpose databases, web services, microservices, and scalable workloads where some performance variability is acceptable.</p>
+<p>The cost difference is significant. Dedicated Core servers command premium pricing (starting around €0.034/hour with a 1-year Savings Plan) because you pay for an entire physical core. vCPU servers cost substantially less, making them the most cost-effective option for workloads that don&#x27;t require guaranteed CPU isolation.</p>
+<p>Performance-critical or mission-critical workloads justify Dedicated Core pricing. Development, testing, and general-purpose applications benefit from vCPU cost efficiency.</p>
+<h2 id="3-scaling-and-flexibility-features">3. Scaling and Flexibility Features</h2><p>IONOS Cloud compute services provide multiple mechanisms to adapt resources to changing demands, both vertically (adding resources to existing VMs) and horizontally (adding more VMs).</p>
+<h3 id="31-live-vertical-scaling">3.1 Live Vertical Scaling</h3><p>Live Vertical Scaling (LVS) is a technology built into <a href="../../../products/Compute_Services/compute-engine.html" class="product-ref">Compute Engine</a> that allows you to increase CPU cores, RAM, and network interfaces while the server continues running. No reboot is required for Linux systems (Windows has some limitations), enabling zero-downtime capacity expansions.</p>
+<p>This capability delivers several important benefits. You can respond instantly to load spikes without service interruption, right-size servers on-the-fly instead of over-provisioning from the start, and eliminate the operational overhead of manual shutdown and restart procedures. Applications remain available to users while you add capacity.</p>
+<p>On Linux systems with modern kernels, you can hot-add CPU cores, RAM, NICs and disks without downtime. On Windows systems, you can hot-add CPU cores, NICs or disks, but RAM scaling or scaling beyond eight cores requires a reboot. Live Vertical Scaling works for both Dedicated Core and vCPU servers. If you want to reduce resources such as CPU or RAM, a reboot is required on any operating system. However, network interfaces (NICs) and disks can still be disconnected without requiring a reboot.</p>
+<p>Disk capacity can be increased while the server is running, but the operating system must manually resize the partition and filesystem to make use of the newly allocated space. Disk capacity reduction (shrinking) is not allowed or supported under any circumstances.</p>
+<p>It is important to note that hot downscaling is not supported for CPU or RAM on either Linux or Windows systems. Only NIC removal and disk detachment are supported without downtime. These limitations should be considered when designing capacity management and scaling strategies.
+You can hot increase disk size, but you will need to resize the inner partitions on the operative system. Its not allowed or supported shrink any disk.</p>
+<p>The ability to scale vertically without downtime is particularly valuable for databases that experience gradual growth, web applications facing unexpected traffic increases, or any workload where service interruptions impact user experience or revenue.</p>
+<h3 id="32-vm-auto-scaling-horizontal-scaling">3.2 VM Auto Scaling (Horizontal Scaling)</h3><p><a href="../../../products/Network_Services/vm-auto-scaling.html" class="product-ref">VM Auto Scaling</a> is a managed IONOS Cloud service that automatically launches or terminates VM instances based on real-time workload metrics such as CPU utilization or network traffic. Instead of manually monitoring load and adding servers, <a href="../../../products/Network_Services/vm-auto-scaling.html" class="product-ref">VM Auto Scaling</a> continuously monitors defined metrics and adjusts the number of running VMs automatically.</p>
+<p>When a scaling threshold is met, VM Auto Scaling adds or removes VMs in a VM Auto Scaling Group, where all VMs are created from the same image template. This ensures consistency across instances. The service integrates with other IONOS services like Application Load Balancer (ALB) to distribute traffic evenly across the variable VM pool.</p>
+<p><strong>Key benefits of VM Auto Scaling include:</strong></p>
+<ul>
+<li><strong>Improved resource utilization and cost efficiency</strong> - VMs are added only when needed and removed when demand drops, avoiding over-provisioning charges</li>
+<li><strong>Better application performance</strong> - The service scales out before applications become sluggish, maintaining low response times</li>
+<li><strong>Rapid, automated scalability</strong> - Horizontal scaling can trigger in seconds without manual intervention, supporting traffic spikes from marketing campaigns, product launches, or seasonal events</li>
+<li><strong>Reduced operational overhead</strong> - Scaling logic is handled by the service; you no longer need to manually monitor metrics and provision VMs</li>
+</ul>
+<p><strong>Common use cases for VM Auto Scaling:</strong></p>
+<p><strong>Web application front-ends:</strong> Combine VM Auto Scaling with an Application Load Balancer to automatically distribute incoming HTTP(S) traffic across a variable number of identical web server VMs, ensuring consistent latency during traffic peaks.</p>
+<p><strong>API services and microservices:</strong> Scale the number of API-handling VMs based on CPU or network packet thresholds, keeping API response times within SLA limits.</p>
+<p><strong>Batch processing or data ingestion pipelines:</strong> When ingest rates rise, the service adds more VMs to handle extra load. Once the queue empties, it scales back down, saving costs.</p>
+<p><strong>Seasonal or event-driven workloads:</strong> E-commerce sites during holiday sales, streaming platforms during live events, or any workload with predictable spikes can pre-define minimum and maximum replica counts and let the service handle the rest.</p>
+<p>To get the most value from VM Auto Scaling, pair it with an Application Load Balancer for even traffic distribution and health checking, use Cloud-Init or custom images so new replicas are ready to serve immediately, and define sensible scale-in and scale-out thresholds with appropriate cool-down periods to avoid rapid oscillations.</p>
+<h2 id="4-images-and-snapshots">4. Images and Snapshots</h2><p>Images and Snapshots are fundamental tools for managing compute resources, enabling you to create templates, backup VM states, and clone workloads across your infrastructure.</p>
+<h3 id="41-images-templates-for-vm-deployment">4.1 Images: Templates for VM Deployment</h3><p>An Image is a template containing an operating system and optionally pre-installed software that serves as the root disk when creating a new virtual server or an ISO file containing applications to be installed on your machines. Images enable you to deploy many VMs with identical configurations quickly and consistently.</p>
+<p>IONOS Cloud provides three types of images:</p>
+<p><strong>Public Images</strong> are offered by IONOS and include common operating systems like Ubuntu, CentOS, Windows Server, and others. These images are available in all supported regions and are ready to use immediately.</p>
+<p><strong>BYOS Images (Bring Your Own Subscription)</strong> allow you to use operating systems with your existing licenses, such as SUSE Linux Enterprise Server (SLES) or Red Hat Enterprise Linux (RHEL). You provide the subscription, and IONOS provides the infrastructure.</p>
+<p><strong>Private Images</strong> are custom images you create or upload via FTP. These can contain pre-installed applications, security configurations, or customized operating systems. Private images are only visible in the region where they were uploaded.</p>
+<p>Images are managed as separate objects and do not consume your HDD quota in the same way snapshots do. You can share private images with specific users or groups using access controls, and you can protect them with 2-factor authentication for additional security.</p>
+<h3 id="42-snapshots-point-in-time-backups">4.2 Snapshots: Point-in-Time Backups</h3><p>A Snapshot is a point-in-time copy of an already-provisioned <a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a> volume. It captures the entire volume, including empty space, creating a full backup of the disk state at the moment the snapshot is taken.</p>
+<p>Snapshots serve several purposes. They provide quick recovery points for specific VM disks, enable you to clone volumes to roll out multiple VMs with identical data, and offer temporary backups before upgrades or patches. If an upgrade fails, you can restore the volume from the snapshot. There are not recommended as substitute to a traditional backup tool like IONOS <a href="../../../products/Storage_&_Backup/backup-service.html" class="product-ref">Backup Service</a> because they can not be scheduled and their persistence can not be automatically controlled.</p>
+<p><strong>Key differences between Images and Snapshots:</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Image</th>
+<th>Snapshot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What it is</td>
+<td>OS template for deploying new VMs</td>
+<td>Point-in-time copy of existing Block Storage volume</td>
+</tr>
+<tr>
+<td>How created</td>
+<td>Selected from catalog, uploaded via FTP, or created from snapshot</td>
+<td>Right-click provisioned storage volume and choose &quot;Create Snapshot&quot;</td>
+</tr>
+<tr>
+<td>Storage quota</td>
+<td>Stored as image object; minimal quota impact</td>
+<td>Consumes full HDD quota equal to entire volume size (including empty space)</td>
+</tr>
+<tr>
+<td>Incremental</td>
+<td>Not incremental; each image is separate object</td>
+<td>Not incremental; each snapshot is full copy of source volume</td>
+</tr>
+<tr>
+<td>Location constraints</td>
+<td>Private images visible only in upload region; public images available everywhere</td>
+<td>Snapshots usable only in same data center location where created</td>
+</tr>
+<tr>
+<td>Bootability</td>
+<td>Directly selectable as boot disk for new VM</td>
+<td>Must be attached to new block storage volume before use as boot disk</td>
+</tr>
+<tr>
+<td>Typical use</td>
+<td>Deploy multiple VMs with same OS/configuration</td>
+<td>Quick backup/recovery for specific VM disk</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Both Images and Snapshots can be shared with groups using access controls and can be protected with 2-factor authentication. Neither has automatic retention; they persist until you delete them.</p>
+<p>Understanding when to use each tool is straightforward. Use Images when deploying new VMs with standard or custom operating systems. Use Snapshots when backing up existing VM disks or cloning workload data to new instances.</p>
+<h2 id="5-pricing-models-for-compute-resources">5. Pricing Models for Compute Resources</h2><p>IONOS Cloud offers two pricing models for compute resources, each designed for different usage patterns and commitment levels.</p>
+<h3 id="51-pay-as-you-go-payg">5.1 Pay-As-You-Go (PAYG)</h3><p>Pay-As-You-Go billing charges hourly usage at listed prices for every hour resources run. There is no commitment and no upfront cost. You pay only for what you use, and you can start or stop resources at any time.</p>
+<p>PAYG pricing provides maximum flexibility, making it ideal for spiky workloads, short-term projects, development and testing environments, or experimental workloads where usage is unpredictable. You have full freedom to provision and deprovision resources as needed.</p>
+<p>Typical PAYG rates include vCPU servers at approximately 0.012€ per hour per vCPU, RAM at 0.0020€ per hour per GB, and Dedicated Core CPUs ranging from 0.036€ to 0.040€ per hour depending on CPU family.</p>
+<h3 id="52-cloud-savings-plans-reserved-instance-like">5.2 Cloud Savings Plans (Reserved-Instance-Like)</h3><p><a href="../../../products/Management/cloud-savings-plans.html" class="product-ref">Cloud Savings Plans</a> allow you to commit to a fixed quantity of Dedicated Core resources (CPU cores and RAM) for 1 year or 3 years in exchange for significantly lower hourly rates. Unlike traditional reserved instances, <a href="../../../products/Management/cloud-savings-plans.html" class="product-ref">Cloud Savings Plans</a> are resource-based and not tied to a specific VM type, region, or operating system, providing flexibility to move workloads freely.</p>
+<p>Savings Plan rates are substantially lower than PAYG. For example, 1 Dedicated Core costs approximately 0.034€ per hour with a 1-year plan (vs. 0.036€ PAYG), and 0.024€ per hour with a 3-year plan. RAM costs approximately 0.0038€ per hour per GB with a 1-year plan (vs. 0.0045€ PAYG), and 0.0027€ per hour per GB with a 3-year plan.</p>
+<p>The cost savings are significant. For a workload running 10 Dedicated Cores and 40 GB RAM continuously for a month (approximately 720 hours):</p>
+<ul>
+<li><strong>PAYG:</strong> (10 × 0.036€ + 40 × 0.0045€) × 720 ≈ 388.8€ per month</li>
+<li><strong>1-year Savings Plan:</strong> (10 × 0.034€ + 40 × 0.0038€) × 720 ≈ 354.24€ per month (9% savings)</li>
+<li><strong>3-year Savings Plan:</strong> (10 × 0.024€ + 40 × 0.0027€) × 720 ≈ 250.56€ per month (35% savings)</li>
+</ul>
+<p>Cloud Savings Plans bill the entire committed amount every month, even if you don&#x27;t use the full capacity. Any usage beyond the committed amount is billed at PAYG rates. Multiple plans can coexist, with the oldest plan applied first and excess usage falling through to newer plans or PAYG.</p>
+<p><strong>Choose PAYG when</strong> workloads are variable, short-lived, experimental, or unpredictable. <strong>Choose Cloud Savings Plans when</strong> you have stable, always-on workloads with predictable core and RAM usage, need price certainty for budgeting, or want to optimize costs for long-term production systems.</p>
+<h2 id="common-use-cases">Common Use Cases</h2><p>Real-world scenarios where IONOS compute services provide value:</p>
+<ol>
+<li><strong>E-Commerce Platform with Seasonal Traffic:</strong> An online retailer uses <a href="../../../products/Compute_Services/compute-engine.html" class="product-ref">Compute Engine</a> vCPU servers for their web application, paired with <a href="../../../products/Network_Services/vm-auto-scaling.html" class="product-ref">VM Auto Scaling</a> (Section 3.2) and an Application Load Balancer. During Black Friday and holiday sales, traffic increases 10x. <a href="../../../products/Network_Services/vm-auto-scaling.html" class="product-ref">VM Auto Scaling</a> automatically provisions additional vCPU servers when CPU utilization exceeds the defined threshold, distributes traffic evenly via the load balancer, and removes extra servers when traffic returns to normal. The retailer pays only for the extra capacity during peak periods, avoiding year-round costs for servers that sit idle most of the year.</li>
+<li><strong>Development and Test Environments with <a href="../../../products/Compute_Services/cubes.html" class="product-ref">Cubes</a>:</strong> A software development team uses Basic Cube M instances (Section 1.2) for their CI/CD pipeline and test environments. The fixed resources (4 vCPUs, 8 GB RAM, 240 GB storage) match their typical test workload requirements, the low hourly cost fits their budget constraints, and the included NVMe storage provides fast build and test performance. When tests complete, they can suspend or delete Cubes to save costs, then provision new ones quickly when the next development sprint begins.</li>
+<li><strong>Mission-Critical Database with Dedicated Core Servers:</strong> A financial services company runs a <a href="../../../products/Database_as_a_Service/postgresql.html" class="product-ref">PostgreSQL</a> database on Dedicated Core servers (Section 2.2) with 8 dedicated cores and 64 GB RAM. The dedicated physical cores eliminate noisy neighbor effects, ensuring consistent query performance for real-time transaction processing. They use a 3-year Cloud Savings Plan (Section 5.2) to lock in pricing at approximately 45% less than PAYG, providing both predictable performance and predictable costs. Live Vertical Scaling (Section 3.1) allows them to add cores without downtime when transaction volumes grow during quarter-end processing.</li>
+</ol>
+<h2 id="summary">Summary</h2><p>IONOS Cloud compute services provide flexible options for running virtual machines, from cost-effective pre-configured <a href="../../../products/Compute_Services/cubes.html" class="product-ref">Cubes</a> to high-performance <a href="../../../products/Compute_Services/compute-engine.html" class="product-ref">Compute Engine</a> servers with dedicated CPU cores and GPU-accelerated Cloud GPU VMs for AI/ML workloads. Understanding the characteristics, use cases, and pricing models of each service enables you to match compute resources to workload requirements effectively.</p>
+<p>Compute Engine delivers flexible, high-performance virtual servers with full control over CPU, memory, storage, and networking. Within Compute Engine, Dedicated Core servers provide guaranteed performance with dedicated physical cores for mission-critical workloads, while vCPU servers offer cost-effective, scalable compute for general-purpose applications. Live Vertical Scaling allows you to expand capacity without downtime.</p>
+<p>Cubes provide pre-configured VPS instances with fixed vCPU, RAM, and NVMe storage at the lowest prices in the IONOS portfolio, ideal for development, testing, website hosting, and low-criticality workloads where performance guarantees are less important than cost efficiency.</p>
+<p><a href="../../../products/Network_Services/vm-auto-scaling.html" class="product-ref">VM Auto Scaling</a> automates horizontal scaling by adding or removing VMs based on real-time metrics, improving resource utilization, application performance, and operational efficiency. Images and Snapshots enable you to create templates for consistent VM deployment and point-in-time backups for recovery and cloning.</p>
+<p>Pricing models include flexible Pay-As-You-Go for variable workloads and <a href="../../../products/Management/cloud-savings-plans.html" class="product-ref">Cloud Savings Plans</a> for long-term commitments, delivering up to 35% savings for stable, predictable compute usage.</p>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li>Compute Engine provides flexible virtual servers with Dedicated Core (guaranteed performance) and vCPU (cost-effective scalability) options</li>
+<li>Cubes offer pre-configured VPS instances with fixed resources at the lowest pricing, suitable for dev/test and low-criticality workloads</li>
+<li>Cloud GPU VMs provide NVIDIA H200 GPU-accelerated compute for AI/ML training, inference, rendering, and HPC workloads</li>
+<li>Live Vertical Scaling enables zero-downtime capacity expansion for Compute Engine servers</li>
+<li>VM Auto Scaling automates horizontal scaling based on real-time metrics, ideal for variable traffic patterns</li>
+<li>Images serve as templates for deploying VMs; Snapshots capture point-in-time backups of existing volumes</li>
+<li>Cloud Savings Plans reduce costs by up to 35% for committed Dedicated Core usage vs. Pay-As-You-Go pricing</li>
+</ul>
+<p><strong>Important Terminology:</strong></p>
+<ul>
+<li><strong>Compute Engine:</strong> IONOS&#x27;s flexible virtual server platform offering Dedicated Core and vCPU servers with customizable resources</li>
+<li><strong>Dedicated Core Server:</strong> Virtual machine with an exclusively allocated physical CPU core, providing guaranteed performance</li>
+<li><strong>vCPU Server:</strong> Virtual machine using virtual CPUs that share physical resources, offering cost-effective scalability</li>
+<li><strong>Cubes:</strong> Pre-configured virtual private server instances with fixed vCPU, RAM, and NVMe storage resources</li>
+<li><strong>Cloud GPU VMs:</strong> GPU-accelerated virtual machines equipped with NVIDIA H200 GPUs for AI/ML, rendering, and high-performance computing workloads</li>
+<li><strong>Live Vertical Scaling (LVS):</strong> Technology enabling CPU, RAM, and NIC expansion while the server continues running without downtime</li>
+<li><strong>VM Auto Scaling:</strong> Managed service that automatically launches or terminates VM instances based on real-time workload metrics</li>
+<li><strong>Image:</strong> Operating system template or application installation disk used when creating new virtual servers</li>
+<li><strong>Snapshot:</strong> Point-in-time copy of an existing <a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a> volume used for backup and cloning</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2><p><strong>Continue Learning:</strong> <a href="unit-2.3-storage-services.html">Unit 2.3: Storage Services</a></p>
+<p><strong>Related Topics:</strong></p>
+<ul>
+<li><a href="unit-2.1-core-components.html">Unit 2.1: Core Architectural Components</a></li>
+<li><a href="unit-2.4-networking-services.html">Unit 2.4: Networking Services</a></li>
+<li><a href="../module-3/unit-3.3-cost-billing.html">Unit 3.3: Cost Management and Billing</a></li>
+</ul>
+
+</article>
+
+<!-- Mark Complete Button -->
+<div class="mark-complete">
+  <button class="btn-complete" data-unit-id="2.2"
+          data-label-complete="Completed"
+          data-label-incomplete="Mark as Complete"
+          aria-pressed="false">
+    <span class="btn-icon">
+      <svg viewBox="0 0 16 16" fill="currentColor">
+        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      </svg>
+    </span>
+    <span class="btn-text">Mark as Complete</span>
+  </button>
+</div>
+
+<!-- Unit Navigation -->
+<nav class="unit-navigation" aria-label="Unit navigation">
+  <div class="nav-prev">
+    <a href="../module-2/unit-2.1-core-components.html">
+      <span class="nav-label">
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+        </svg>
+        Previous
+      </span>
+      <span class="nav-title">2.1 Core Architectural Components</span>
+    </a>
+  </div>
+  <div class="nav-next">
+    <a href="../module-2/unit-2.3-storage-services.html">
+      <span class="nav-label">
+        Next
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+      </span>
+      <span class="nav-title">2.3 Storage Services</span>
+    </a>
+  </div>
+</nav>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <p>&copy; 2026 . All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script>window.CW_I18N = {"keep_learning": "Keep Learning!", "completed_of_total": "You've completed <strong>{completed} of {total} units</strong> ({percentage}%).", "finish_all_units": "Finish all units to unlock your completion certificate.", "continue_learning": "Continue Learning", "back_to_overview": "Back to Overview", "skip_to_completion": "Skip to completion page", "quiz_submit": "Submit Answers", "quiz_score": "Your Score", "quiz_correct": "Correct", "quiz_incorrect": "Incorrect", "quiz_explanation": "Explanation", "quiz_show_explanation": "Show Explanation", "quiz_hide_explanation": "Hide Explanation", "quiz_passed": "Passed", "quiz_not_passed": "Not Passed", "quiz_retry": "Try Again", "quiz_of": "of", "quiz_pass_required": "You need at least {threshold}% to pass.", "finish_all_units_and_quizzes": "Finish all units and pass all quizzes to unlock your completion certificate.", "knowledge_check": "Knowledge Check"};</script>
+  <script src="../../../js/navigation.js"></script>
+  <script src="../../../js/progress.js"></script>
+  <script src="../../../js/quiz.js"></script>
+  <script src="../../../js/language-switcher.js"></script>
+</body>
+</html>

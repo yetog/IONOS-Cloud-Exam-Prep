@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IONOS Cloud Foundational - Unit 3.5: Security and Compliance">
+  <meta name="author" content="">
+  <title>3.5 Security and Compliance | Cloud Training</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#003d8f">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Overpass:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../../css/ionos-learn.css">
+  <link rel="stylesheet" href="../../../css/print.css" media="print">
+</head>
+<body>
+
+  <div class="page-wrapper">
+    <!-- Header -->
+    <header class="site-header" role="banner">
+      <div class="header-left">
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+
+        <!-- Logo -->
+        <a href="../../../index.html" class="logo" aria-label="IONOS Cloud Training Home">
+          <img src="../../../assets/ionos-logo.svg" alt="IONOS" width="100" height="32">
+        </a>
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../../index.html">Course</a>
+<span class="breadcrumb-separator">/</span>
+<span>Module 3</span>
+<span class="breadcrumb-separator">/</span>
+<span>Unit 3.5</span>
+        </nav>
+      </div>
+
+      <div class="header-right">
+        <a href="../../../products/index.html" class="header-link">Product Reference</a>
+        <div class="language-switcher">
+  <button class="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Change language">
+    <span class="lang-code">EN</span>
+  </button>
+  <div class="lang-dropdown" role="menu">
+    <a href="../../../en/courses/module-3/unit-3.5-security-compliance.html" class="lang-option current" role="menuitem">
+      <span class="lang-code">EN</span>
+      <span>English</span>
+    </a><a href="../../../de/courses/module-3/unit-3.5-security-compliance.html" class="lang-option" role="menuitem">
+      <span class="lang-code">DE</span>
+      <span>Deutsch</span>
+    </a><a href="../../../es/courses/module-3/unit-3.5-security-compliance.html" class="lang-option" role="menuitem">
+      <span class="lang-code">ES</span>
+      <span>Español</span>
+    </a><a href="../../../fr/courses/module-3/unit-3.5-security-compliance.html" class="lang-option" role="menuitem">
+      <span class="lang-code">FR</span>
+      <span>Français</span>
+    </a>
+  </div>
+</div>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" role="navigation" aria-label="Course navigation">
+        <div class="sidebar-header">
+          <div class="course-title">Cloud Training</div>
+          <div class="progress-container">
+            <div class="progress-label">
+              <span>Progress</span>
+              <span class="progress-percent">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="nav-modules">
+          <div class="nav-special-item">
+  <a href="../../index.html" class="special-link " data-page-id="overview">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6a.5.5 0 0 0 .708.708L8 2.207l5.646 5.647a.5.5 0 0 0 .708-.708l-6-6z"/>
+      <path d="M2.5 8.5v5.5h11v-5.5l-5.5-5.5-5.5 5.5z"/>
+    </svg>
+    <span>Course Overview</span>
+  </a>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 1: Cloud Concepts</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.1-cloud-computing-fundamentals.html" class="unit-link " data-unit-id="1.1">
+        <span class="unit-status"></span>
+        <span>1.1 Cloud Computing Fundamentals</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.2-cloud-service-benefits.html" class="unit-link " data-unit-id="1.2">
+        <span class="unit-status"></span>
+        <span>1.2 Cloud Service Benefits</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-1/unit-1.3-cloud-deployment-models.html" class="unit-link " data-unit-id="1.3">
+        <span class="unit-status"></span>
+        <span>1.3 Cloud Service Type Categories</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-1/unit-1.4-knowledge-check.html" class="quiz-link " data-unit-id="1.4" data-quiz-id="1.4">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Cloud Concepts</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header ">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 2: IONOS Architecture and Services</span>
+  </div>
+  <ul class="unit-list ">
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.1-core-components.html" class="unit-link " data-unit-id="2.1">
+        <span class="unit-status"></span>
+        <span>2.1 Core Architectural Components</span>
+        <span class="unit-time">~15 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.2-compute.html" class="unit-link " data-unit-id="2.2">
+        <span class="unit-status"></span>
+        <span>2.2 Compute Services</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.3-storage-services.html" class="unit-link " data-unit-id="2.3">
+        <span class="unit-status"></span>
+        <span>2.3 Storage Services</span>
+        <span class="unit-time">~21 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.4-networking-services.html" class="unit-link " data-unit-id="2.4">
+        <span class="unit-status"></span>
+        <span>2.4 Networking Services</span>
+        <span class="unit-time">~16 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.5-databases.html" class="unit-link " data-unit-id="2.5">
+        <span class="unit-status"></span>
+        <span>2.5 Database and Data Services</span>
+        <span class="unit-time">~20 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-2/unit-2.6-security-ai-containers.html" class="unit-link " data-unit-id="2.6">
+        <span class="unit-status"></span>
+        <span>2.6 Security, AI, and Container Services</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-2/unit-2.7-knowledge-check.html" class="quiz-link " data-unit-id="2.7" data-quiz-id="2.7">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Architecture and Services</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="nav-module">
+  <div class="module-header expanded">
+    <svg class="module-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <span class="module-title">Module 3: Management and Governance</span>
+  </div>
+  <ul class="unit-list expanded">
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.1-dcd-account-management.html" class="unit-link " data-unit-id="3.1">
+        <span class="unit-status"></span>
+        <span>3.1 Data Center Designer and Account Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.2-iam.html" class="unit-link " data-unit-id="3.2">
+        <span class="unit-status"></span>
+        <span>3.2 Identity and Access Management</span>
+        <span class="unit-time">~18 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.3-cost-billing.html" class="unit-link " data-unit-id="3.3">
+        <span class="unit-status"></span>
+        <span>3.3 Cost Management and Billing</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.4-logs-monitoring.html" class="unit-link " data-unit-id="3.4">
+        <span class="unit-status"></span>
+        <span>3.4 Activity Logs and Monitoring</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item">
+      <a href="../../courses/module-3/unit-3.5-security-compliance.html" class="unit-link active" data-unit-id="3.5">
+        <span class="unit-status"></span>
+        <span>3.5 Security and Compliance</span>
+        <span class="unit-time">~17 min</span>
+      </a>
+    </li>
+    <li class="unit-item quiz-item">
+      <a href="../../courses/module-3/unit-3.6-knowledge-check.html" class="quiz-link " data-unit-id="3.6" data-quiz-id="3.6">
+        <span class="unit-status"><svg class="quiz-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M4.5 7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></svg></span>
+        <span>Knowledge Check - Management and Governance</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="sidebar-divider"></div>
+<div class="nav-special-item">
+  <a href="../../courses/completion.html" class="special-link " data-page-id="completion">
+    <svg class="special-icon" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+    </svg>
+    <span>Course Completion</span>
+  </a>
+</div>
+        </nav>
+
+        <div class="sidebar-divider"></div>
+
+        <a href="../../../products/index.html" class="products-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+          <span>Product Reference</span>
+        </a>
+      </aside>
+
+      <!-- Sidebar Overlay (Mobile) -->
+      <div class="sidebar-overlay" aria-hidden="true"></div>
+
+      <!-- Main Content -->
+      <main id="main-content" class="content" role="main">
+        <div class="content-inner">
+          <!-- Unit Header Meta -->
+<div class="unit-meta">
+  <span class="reading-time">
+    <svg viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+      <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+    </svg>
+    17 min read
+  </span>
+</div>
+
+<!-- Learning Objectives -->
+<section class="learning-objectives" aria-labelledby="objectives-heading">
+  <h2 id="objectives-heading">Learning Objectives</h2>
+  <p>By the end of this module, you will be able to:</p>
+  <ul>
+    <li>Explain the shared responsibility model and distinguish between IONOS security responsibilities and customer security responsibilities</li>
+<li>Identify IONOS Cloud&#x27;s security certifications and compliance standards (ISO 27001, SOC 2, BSI C5, GDPR, PCI DSS)</li>
+<li>Describe how IONOS protects data using encryption at rest and in transit</li>
+<li>Explain how audit trails support compliance requirements and security investigations</li>
+  </ul>
+</section>
+
+<!-- Main Unit Content -->
+<article class="unit-content">
+  <h1 id="unit-35-security-and-compliance">Unit 3.5: Security and Compliance</h1><h2 id="introduction">Introduction</h2><p>Imagine running a secure bank vault. The bank provides the building, the vault door, security guards, and alarm systems. But you are responsible for what you store inside, who gets the key, and how you organize your valuables. Cloud security works the same way: the provider secures the infrastructure, while you secure your workloads and data.</p>
+<p>In this unit, you will learn how IONOS Cloud shares security responsibilities with you, what certifications and compliance standards IONOS maintains, and how the platform protects your data through encryption and audit trails. Understanding these security fundamentals helps you build compliant, secure applications while meeting regulatory requirements like GDPR, ISO 27001, and industry-specific standards.</p>
+<h2 id="1-shared-responsibility-model">1. Shared Responsibility Model</h2><p>Cloud security operates on a shared responsibility model where both the cloud provider and the customer have distinct security duties. Understanding where IONOS&#x27;s responsibilities end and yours begin is critical for maintaining a secure environment.</p>
+<h3 id="11-ionos-responsibilities-security-of-the-cloud">1.1 IONOS Responsibilities (Security OF the Cloud)</h3><p>IONOS is responsible for maintaining the underlying cloud infrastructure, which includes:</p>
+<ul>
+<li><strong>Physical Infrastructure and Data Centers</strong></li>
+<li><strong>Compute and Storage Infrastructure</strong></li>
+<li><strong>Platform Services</strong></li>
+</ul>
+<p>IONOS maintains these layers continuously, ensuring the foundation of your cloud environment remains secure without requiring customer intervention.</p>
+<h3 id="12-customer-responsibilities-security-in-the-cloud">1.2 Customer Responsibilities (Security IN the Cloud)</h3><p>As an IONOS Cloud customer, you are responsible for securing everything you deploy and configure within the cloud environment:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Responsibility Area</th>
+<th>IONOS (Provider)</th>
+<th>Customer (You)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Physical data centers and infrastructure</td>
+<td>Full responsibility</td>
+<td>No responsibility</td>
+</tr>
+<tr>
+<td>Network backbone and hardware</td>
+<td>Full responsibility</td>
+<td>No responsibility</td>
+</tr>
+<tr>
+<td>Hypervisor and virtualization layer</td>
+<td>Full responsibility</td>
+<td>No responsibility</td>
+</tr>
+<tr>
+<td>Managed service infrastructure</td>
+<td>Full responsibility</td>
+<td>Configuration and usage</td>
+</tr>
+<tr>
+<td>Operating systems on VMs</td>
+<td>Not responsible</td>
+<td>Full responsibility</td>
+</tr>
+<tr>
+<td>Applications and containers</td>
+<td>Not responsible</td>
+<td>Full responsibility</td>
+</tr>
+<tr>
+<td>Data encryption and backups</td>
+<td>Provides tools</td>
+<td>Implements and manages</td>
+</tr>
+<tr>
+<td>Identity and access management</td>
+<td>Provides platform</td>
+<td>Configures users and roles</td>
+</tr>
+<tr>
+<td>Network security rules</td>
+<td>Provides NSGs</td>
+<td>Configures rules</td>
+</tr>
+<tr>
+<td>Monitoring and logging</td>
+<td>Provides services</td>
+<td>Configures and analyzes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="13-shared-controls">1.3 Shared Controls</h3><p>Some security controls involve both IONOS and the customer:</p>
+<p><strong>Network Firewalls</strong></p>
+<ul>
+<li>IONOS provides <a href="../../../products/Security/network-security-groups.html" class="product-ref">Network Security Groups</a> (NSGs) as a platform capability</li>
+<li>You configure the specific firewall rules that apply to your resources</li>
+</ul>
+<p><strong>Encryption</strong></p>
+<ul>
+<li>IONOS provides encryption capabilities and infrastructure</li>
+<li>You decide what data to encrypt and manage application-level encryption keys where applicable</li>
+</ul>
+<p><strong>Monitoring and Logging</strong></p>
+<ul>
+<li>IONOS provides <a href="../../../products/Observability/activity-logs.html" class="product-ref">Activity Logs</a>, <a href="../../../products/Network_Services/flow-logs.html" class="product-ref">Flow Logs</a>, and Monitoring Services</li>
+<li>You configure what to monitor, set up alerts, and respond to findings</li>
+</ul>
+<p>Understanding this division of responsibility helps you identify security gaps and ensure complete coverage across all layers of your cloud environment.</p>
+<h2 id="2-ionos-security-certifications-and-compliance">2. IONOS Security Certifications and Compliance</h2><p>IONOS Cloud maintains multiple internationally recognized security certifications and adheres to major compliance frameworks, providing assurance that the platform meets rigorous security and privacy standards.</p>
+<h3 id="21-iso-27001-certification">2.1 ISO 27001 Certification</h3><p><strong>What It Is</strong>
+ISO 27001 is the international standard for Information Security Management Systems (ISMS). It establishes a systematic approach to managing sensitive data through risk assessment, security controls, and continuous improvement processes.</p>
+<p><strong>IONOS Compliance</strong>
+IONOS Cloud data centers and services are ISO 27001-certified, demonstrating that IONOS follows internationally recognized best practices for information security management. The certification covers data centers in Germany (Berlin and Frankfurt) where IONOS Cloud services are hosted.</p>
+<p><strong>What This Means for You</strong>
+When you run workloads on IONOS Cloud, you benefit from a platform built on ISO 27001 principles, providing a secure foundation for your own compliance efforts. Many organizations require cloud providers to hold ISO 27001 certification before they can host sensitive workloads.</p>
+<h3 id="22-soc-2-type-ii-certification">2.2 SOC 2 Type II Certification</h3><p><strong>What It Is</strong>
+SOC 2 (Service Organization Control 2) Type II is a compliance framework that evaluates controls related to security, availability, processing integrity, confidentiality, and privacy. Type II certification specifically demonstrates that these controls are operating effectively over time, not just designed properly.</p>
+<p><strong>IONOS Compliance</strong>
+IONOS Cloud holds SOC 2 Type II certification, which requires independent auditors to verify that IONOS&#x27;s security processes and controls meet strict operational criteria consistently. The certification is renewed regularly through ongoing audits.</p>
+<p><strong>What This Means for You</strong>
+SOC 2 Type II certification provides assurance that IONOS Cloud operations are monitored, controlled, and audited against industry-standard criteria. This is particularly important for organizations in regulated industries (healthcare, finance, government) that must verify their vendors meet specific security requirements.</p>
+<h3 id="23-gdpr-compliance">2.3 GDPR Compliance</h3><p><strong>What It Is</strong>
+The General Data Protection Regulation (GDPR) is the European Union&#x27;s comprehensive data protection law that governs the processing of EU citizens personal data by organizations.</p>
+<p><strong>IONOS Compliance</strong>
+IONOS Cloud is fully GDPR-compliant, with data centers located in the European Union (Germany and Spain). All data handling, encryption at rest and in transit, and data residency controls are designed to meet GDPR requirements. IONOS provides tools and features that enable customers to build GDPR-compliant applications.</p>
+<p><strong>What This Means for You</strong>
+If you process personal data of EU citizens, you can leverage IONOS&#x27;s GDPR-compliant infrastructure and EU-based data centers to meet data residency and sovereignty requirements. IONOS&#x27;s compliance framework helps you fulfill your own GDPR obligations.</p>
+<h3 id="24-pci-dss-compliance">2.4 PCI DSS Compliance</h3><p><strong>What It Is</strong>
+The Payment Card Industry Data Security Standard (PCI DSS) is a set of security requirements designed to protect payment card data during processing, storage, and transmission. Organizations that handle credit card information must comply with PCI DSS.</p>
+<p><strong>IONOS Compliance</strong>
+IONOS Cloud offers PCI DSS compliance as an optional certification for customers who need to process payment card data. This provides a compliant infrastructure foundation for e-commerce, payment processing, and other applications that handle credit card information.</p>
+<p><strong>What This Means for You</strong>
+If you run applications that process credit card payments, you can leverage IONOS&#x27;s PCI DSS-compliant infrastructure to simplify your own compliance efforts. However, PCI DSS is a shared responsibility: IONOS secures the infrastructure, while you must ensure your applications and data handling practices also meet PCI DSS requirements.</p>
+<h3 id="25-bsi-c5-cloud-computing-compliance-criteria-catalogue">2.5 BSI C5 (Cloud Computing Compliance Criteria Catalogue)</h3><p><strong>What It Is</strong>:</p>
+<p>The C5 standard was developed by the German Federal Office for Information Security (BSI). It defines a catalog of requirements for information security in cloud computing and is considered one of the world&#x27;s strictest and most transparent standards for cloud providers. It covers 17 areas – from physical security to identity verification and dealing with law enforcement agencies.</p>
+<p><strong>IONOS Compliance</strong>:</p>
+<p>IONOS Cloud regularly undergoes the corresponding audits to demonstrate compliance with the BSI C5 criteria. As IONOS is a German provider, adherence to BSI standards is a core component of the company&#x27;s strategy to offer a level of protection that exceeds international standards such as ISO 27001.</p>
+<p><strong>What This Means for You:</strong></p>
+<p>Public Sector &amp; Critical Infrastructure: If you work for the public sector or in the area of ​​critical infrastructure (KRITIS), C5 certification is often a prerequisite for using cloud services. Maximum transparency: The C5 certification provides you with detailed insight into IONOS&#x27;s operational processes, significantly simplifying internal risk analysis and compliance audits. Audit verification: You can be confident that the IONOS infrastructure has been audited according to German government security standards, minimizing your own liability risk.</p>
+<h3 id="26-compliance-summary-table">2.6 Compliance Summary Table</h3><p>The following table summarizes IONOS Cloud&#x27;s key certifications and compliance standards:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Certification / Standard</th>
+<th>What It Covers</th>
+<th>IONOS Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ISO 27001</td>
+<td>Information Security Management System (ISMS) with systematic data security controls</td>
+<td>Certified (ISO 27001-compliant data centers)</td>
+</tr>
+<tr>
+<td>SOC 2 Type II</td>
+<td>Security, availability, processing integrity, confidentiality, and privacy controls verified over time</td>
+<td>Certified (SOC 2 Type II compliance)</td>
+</tr>
+<tr>
+<td>GDPR</td>
+<td>EU data protection regulation for personal data of EU citizens</td>
+<td>Fully compliant (EU-based data centers, encryption, data residency)</td>
+</tr>
+<tr>
+<td>PCI DSS</td>
+<td>Payment card industry security standard for handling credit card data</td>
+<td>Available as optional compliance offering</td>
+</tr>
+<tr>
+<td>BSI C5</td>
+<td>Cloud security criteria defined by the Federal Office for Information Security (BSI)</td>
+<td>Conformity confirmed by independent auditors</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="27-digital-sovereignty-gdpr-vs-us-cloud-act">2.7 Digital Sovereignty: GDPR vs. US CLOUD Act</h3><p>While IONOS Cloud meets all technical security requirements, the European legal framework offers a decisive advantage over non-European providers:</p>
+<ul>
+<li><strong>Immunity to the US CLOUD Act</strong>: As a German company without a US parent entity, IONOS is not subject to the Clarifying Lawful Overseas Use of Data (CLOUD) Act. Unlike US providers, who may be legally compelled to grant authorities access to data regardless of its physical storage location, IONOS operates exclusively under European jurisdiction.</li>
+<li><strong>Digital Sovereignty:</strong> Customers retain exclusive legal control over their workloads and data. Access by government agencies is only possible through European legal processes and judicial orders, effectively eliminating the risk of foreign legal interference or secret data disclosure mandates.</li>
+</ul>
+<h2 id="3-data-protection-and-encryption">3. Data Protection and Encryption</h2><p>IONOS Cloud protects your data through comprehensive encryption strategies covering both data at rest (stored data) and data in transit (data moving across networks).</p>
+<h3 id="31-encryption-at-rest">3.1 Encryption at Rest</h3><p>Encryption at rest protects stored data from unauthorized access, ensuring that even if physical storage devices are compromised, the data remains unreadable without the proper encryption keys.</p>
+<p><strong><a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a> Encryption</strong></p>
+<ul>
+<li>All Block Storage logical volumes created on IONOS Cloud are automatically encrypted using AES-XTS 256-bit encryption</li>
+<li>Each volume receives a unique encryption key that is invisible to the storage server</li>
+<li>Even root users cannot access the raw encryption keys</li>
+<li>Optional drive-level encryption on SSD Premium and Standard volumes adds a second layer of AES-XTS 256-bit encryption using self-encrypting drives (SEDs)</li>
+<li>Physically removing a drive from the data center renders the data unreadable</li>
+</ul>
+<p><strong><a href="../../../products/Storage_&_Backup/backup-service.html" class="product-ref">Backup Service</a> Encryption</strong></p>
+<ul>
+<li>Server-side encryption uses AES-256 to protect backup data on storage devices</li>
+<li>Optional customer-side encryption allows you to encrypt backups using a password-derived key (AES-256)</li>
+<li>When using customer-side encryption, IONOS and the backup provider (Acronis) never store your encryption key</li>
+<li>This ensures only you can decrypt and restore your backup data</li>
+</ul>
+<p><strong><a href="../../../products/Storage_&_Backup/ionos-object-storage.html" class="product-ref">IONOS Cloud Object Storage</a> Encryption</strong></p>
+<ul>
+<li>Server-Side Encryption with IONOS-managed keys (SSE-S3) using AES-256</li>
+<li>Customer-Managed Keys (SSE-C) option also uses AES-256 encryption</li>
+<li>All data stored in Object Storage buckets is encrypted automatically</li>
+</ul>
+<p><strong>Private Container Registry Encryption</strong></p>
+<ul>
+<li>Container images stored in the Private Container Registry are encrypted at rest using AES-256</li>
+<li>Encryption keys are managed by the IONOS platform</li>
+<li>Customers cannot supply their own encryption keys for container registry storage</li>
+</ul>
+<h3 id="32-encryption-in-transit">3.2 Encryption in Transit</h3><p>Encryption in transit protects data as it moves between your applications, IONOS services, and external systems, preventing eavesdropping and man-in-the-middle attacks.</p>
+<p><strong>TLS/HTTPS Encryption</strong></p>
+<ul>
+<li>All IONOS Cloud API endpoints use TLS 1.2 or TLS 1.3 encryption</li>
+<li><a href="../../../products/Storage_&_Backup/ionos-object-storage.html" class="product-ref">IONOS Cloud Object Storage</a> supports TLS 1.2/1.3 for all data transfers to and from S3-compatible endpoints</li>
+<li><a href="../../../products/Storage_&_Backup/backup-service.html" class="product-ref">Backup Service</a> encrypts all backup traffic in real time using HTTPS/TLS with strong cipher suites (Diffie-Hellman and RSA key exchange)</li>
+<li>Management interfaces (Data Center Designer, API access) are protected by HTTPS/TLS</li>
+</ul>
+<p><strong>Network Service Encryption</strong></p>
+<ul>
+<li><a href="../../../products/Network_Services/vpn-gateway.html" class="product-ref">VPN Gateway</a> connections encrypt traffic between your on-premises networks and IONOS Cloud</li>
+<li><a href="../../../products/Security/certificate-manager.html" class="product-ref">Certificate Manager</a> provisions and manages SSL/TLS certificates for Application Load Balancers, ensuring encrypted client connections</li>
+</ul>
+<h3 id="33-key-management">3.3 Key Management</h3><p><strong>Platform-Managed Keys</strong>
+For most IONOS services, encryption keys are managed automatically by the IONOS platform:</p>
+<ul>
+<li>Keys are stored securely within IONOS infrastructure and are never exposed to customers or administrators</li>
+<li>Access to encryption keys requires authenticated, authorized, and encrypted requests</li>
+<li>Keys are bound to the infrastructure, meaning physical drives removed from data centers remain encrypted and unreadable</li>
+</ul>
+<p><strong>Customer-Managed Keys (Limited Availability)</strong>
+Some services offer customer-managed encryption options:</p>
+<ul>
+<li><a href="../../../products/Storage_&_Backup/backup-service.html" class="product-ref">Backup Service</a> supports password-derived encryption keys that IONOS never stores</li>
+<li>Object Storage supports Customer-Managed Keys (SSE-C) for bucket encryption</li>
+<li>Most other services use platform-managed keys exclusively</li>
+</ul>
+<h3 id="34-secure-data-deletion">3.4 Secure Data Deletion</h3><p>When you delete data from IONOS Cloud, secure deletion processes ensure the data cannot be recovered:</p>
+<p><strong>Volume and Backup Deletion</strong></p>
+<ul>
+<li>Deleting a <a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a> volume or backup zeroes out metadata, destroying the encryption key</li>
+<li>Without the encryption key, the encrypted data becomes permanently unreadable</li>
+<li>Physical drives are wiped according to NIST SP 800-88 Rev 1 guidelines</li>
+<li>When wiping is not possible, drives are physically destroyed</li>
+</ul>
+<p><strong>Object Storage Deletion</strong></p>
+<ul>
+<li>Deleting objects from <a href="../../../products/Storage_&_Backup/ionos-object-storage.html" class="product-ref">IONOS Cloud Object Storage</a> removes metadata and makes data unrecoverable</li>
+<li>Secure deletion follows the same NIST SP 800-88 guidelines as Block Storage</li>
+</ul>
+<p>This comprehensive encryption approach (AES-256 for data at rest, TLS 1.2/1.3 for data in transit, secure key management, and NIST-compliant deletion) ensures your data remains confidential throughout its lifecycle on IONOS Cloud.</p>
+<h2 id="4-audit-trails-for-compliance">4. Audit Trails for Compliance</h2><p>Audit trails provide a chronological, tamper-proof record of all actions performed within your IONOS Cloud environment. These records are essential for security investigations, operational troubleshooting, and meeting regulatory compliance requirements.</p>
+<h3 id="41-what-are-audit-trails">4.1 What Are Audit Trails?</h3><p>An audit trail is a read-only, time-ordered log of significant events that captures:</p>
+<ul>
+<li><strong>Who</strong> performed the action (user identity and contract number)</li>
+<li><strong>When</strong> the action occurred (exact timestamp)</li>
+<li><strong>Where</strong> the action originated (source IP address and service)</li>
+<li><strong>What</strong> was affected (resource type, resource ID, and specific action taken)</li>
+</ul>
+<p>IONOS Cloud provides audit trails through the Activity Log service, which records every API request, configuration change, user login, resource creation, modification, and deletion across your cloud environment.</p>
+<h3 id="42-activity-log-for-audit-trails">4.2 Activity Log for Audit Trails</h3><p><strong>What <a href="../../../products/Observability/activity-logs.html" class="product-ref">Activity Logs</a> Capture</strong>
+Activity Logs record all user activities and resource modifications, including:</p>
+<ul>
+<li>User authentication events (logins, logouts, failed login attempts)</li>
+<li>Resource provisioning and de-provisioning (creating VMs, storage volumes, networks)</li>
+<li>Configuration changes (modifying firewall rules, updating load balancer settings)</li>
+<li>Data access events (accessing Object Storage, database connections)</li>
+<li>Identity and access management changes (creating users, modifying roles, changing permissions)</li>
+<li>Security events (Network Security Group rule changes, certificate deployments)</li>
+</ul>
+<p><strong>Activity Log Data Structure</strong>
+Each Activity Log entry includes:</p>
+<ul>
+<li>Principal identity (user email, contract number, source IP, source service)</li>
+<li>Event type (e.g., RequestAccepted, ResourceCreated, ConfigurationChanged)</li>
+<li>Event resources (resource type, resource ID, action performed)</li>
+<li>Metadata (timestamp, audit log version)</li>
+</ul>
+<p><strong>Immutability and Retention</strong>
+Activity Logs are read-only and cannot be modified or deleted by users, ensuring tamper-proof audit trails. Logs are retained according to IONOS policies and compliance requirements, providing a historical record for investigations and audits.</p>
+<h3 id="43-using-audit-trails-for-compliance">4.3 Using Audit Trails for Compliance</h3><p>Audit trails support multiple compliance and security objectives:</p>
+<p><strong>Regulatory Compliance</strong>
+Many regulations require audit trails of who accessed or modified data:</p>
+<ul>
+<li><strong>GDPR</strong> requires logging of personal data access and processing activities</li>
+<li><strong>HIPAA</strong> requires audit trails for healthcare data access</li>
+<li><strong>SOX</strong> (Sarbanes-Oxley) requires audit trails for financial data</li>
+<li><strong>PCI DSS</strong> requires logging of access to cardholder data</li>
+</ul>
+<p><a href="../../../products/Observability/activity-logs.html" class="product-ref">Activity Logs</a> provide the necessary evidence to demonstrate compliance with these requirements during audits.</p>
+<p><strong>Security Investigations</strong>
+When security incidents occur, audit trails help you:</p>
+<ul>
+<li>Identify the source of suspicious activity (which user, from what IP address)</li>
+<li>Trace the sequence of events leading to a security breach</li>
+<li>Determine the scope of unauthorized access or data exposure</li>
+<li>Provide evidence for incident response and forensic analysis</li>
+</ul>
+<p><strong>Access Reviews</strong>
+Regular audit trail reviews enable you to:</p>
+<ul>
+<li>Identify excessive privileges granted to users or service accounts</li>
+<li>Detect orphaned accounts that should have been deactivated</li>
+<li>Monitor role and permission changes over time</li>
+<li>Revoke access promptly when users change roles or leave the organization</li>
+</ul>
+<p><strong>Operational Troubleshooting</strong>
+Beyond compliance, audit trails help with:</p>
+<ul>
+<li>Diagnosing configuration issues (what changed before the problem occurred?)</li>
+<li>Understanding resource usage patterns and trends</li>
+<li>Verifying that automation scripts and Infrastructure as Code deployments executed correctly</li>
+</ul>
+<h3 id="44-accessing-activity-logs">4.4 Accessing Activity Logs</h3><p><a href="../../../products/Observability/activity-logs.html" class="product-ref">Activity Logs</a> can be accessed through:</p>
+<p><strong>IONOS Cloud API</strong> using GET requests to retrieve log entries programmatically
+<strong>Data Center Designer</strong> (DCD) interface for viewing recent activity through the UI
+<strong>Automation and integration</strong> with external SIEM (Security Information and Event Management) systems for centralized log analysis</p>
+<p>By regularly reviewing Activity Logs and integrating them into your security monitoring processes,
+you can maintain compliance, detect security threats early, and respond quickly to incidents.</p>
+<h2 id="common-use-cases">Common Use Cases</h2><p>Real-world scenarios where IONOS Cloud security and compliance features are used:</p>
+<ol>
+<li><strong>Healthcare Application with GDPR and HIPAA Requirements:</strong> A healthcare provider builds a patient management system on IONOS Cloud. They leverage IONOS&#x27;s GDPR-compliant infrastructure and EU-based data centers (Section 2.3) to meet data residency requirements. <a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a> encryption at rest (Section 3.1) protects patient records, while TLS encryption in transit (Section 3.2) secures data transfers. <a href="../../../products/Observability/activity-logs.html" class="product-ref">Activity Logs</a> (Section 4.2) provide the audit trails required by HIPAA regulations, recording all access to patient data for compliance reporting.</li>
+<li><strong>E-commerce Platform with PCI DSS Compliance:</strong> An online retailer processes credit card payments and must comply with PCI DSS. They deploy their payment processing application on IONOS Cloud&#x27;s PCI DSS-compliant infrastructure (Section 2.4). <a href="../../../products/Security/network-security-groups.html" class="product-ref">Network Security Groups</a> (referenced in Section 1.2) segment payment processing systems from other workloads. <a href="../../../products/Security/certificate-manager.html" class="product-ref">Certificate Manager</a> (covered in Unit 2.6, referenced here for TLS termination) provides SSL/TLS certificates for secure payment transactions. Activity Logs track all configuration changes to payment systems, supporting PCI DSS audit requirements (Section 4.3).</li>
+<li><strong>Financial Services Application with SOC 2 Requirements:</strong> A fintech company needs to demonstrate robust security controls to enterprise customers who require SOC 2 compliance. They build their application on IONOS Cloud&#x27;s SOC 2 Type II-certified infrastructure (Section 2.2). The shared responsibility model (Section 1) clarifies which security controls IONOS manages versus which the company must implement. They implement customer-managed encryption for sensitive financial data using <a href="../../../products/Storage_&_Backup/backup-service.html" class="product-ref">Backup Service</a>&#x27;s password-derived keys (Section 3.1), and they conduct monthly Activity Log reviews (Section 4.3) to identify any unauthorized access or privilege escalation attempts.</li>
+</ol>
+<h2 id="summary">Summary</h2><p>Security and compliance on IONOS Cloud operate through a shared responsibility model where IONOS secures the cloud infrastructure (physical data centers, network, hypervisor) while customers secure their workloads, data, and configurations. IONOS Cloud maintains multiple internationally recognized certifications including ISO 27001, SOC 2 Type II, and GDPR compliance, with optional PCI DSS compliance for payment processing workloads.</p>
+<p>Data protection is achieved through comprehensive encryption strategies: AES-256 encryption at rest for <a href="../../../products/Storage_&_Backup/block-storage.html" class="product-ref">Block Storage</a>, <a href="../../../products/Storage_&_Backup/backup-service.html" class="product-ref">Backup Service</a>, Object Storage, and Container Registry, combined with TLS 1.2/1.3 encryption in transit for all data transfers. Encryption keys are managed by the IONOS platform for most services, with optional customer-managed keys for <a href="../../../products/Storage_&_Backup/backup-service.html" class="product-ref">Backup Service</a> and Object Storage.</p>
+<p>Audit trails provided by <a href="../../../products/Observability/activity-logs.html" class="product-ref">Activity Logs</a> create tamper-proof records of all user activities and resource changes, supporting compliance requirements for GDPR, HIPAA, SOX, and PCI DSS. These logs capture who performed actions, when they occurred, where they originated, and what resources were affected, providing critical evidence for security investigations, access reviews, and regulatory audits.</p>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li>The shared responsibility model divides security duties: IONOS secures the infrastructure, customers secure their workloads, data, and configurations</li>
+<li>IONOS Cloud holds ISO 27001, SOC 2 Type II, and GDPR certifications, with optional PCI DSS compliance</li>
+<li>Data is encrypted at rest using AES-256 and in transit using TLS 1.2/1.3 across all IONOS Cloud services</li>
+<li>Activity Logs provide immutable audit trails required for compliance with GDPR, HIPAA, SOX, and PCI DSS regulations</li>
+<li>EU-based data centers in Germany (Berlin, Frankfurt) and Spain (Logroño) support data residency and sovereignty requirements</li>
+<li>Audit trails enable security investigations, access reviews, and operational troubleshooting beyond compliance requirements</li>
+</ul>
+<p><strong>Important Terminology:</strong></p>
+<ul>
+<li><strong>Shared Responsibility Model:</strong> A cloud security framework dividing responsibilities between the cloud provider (infrastructure security) and customer (workload and data security)</li>
+<li><strong>ISO 27001:</strong> International standard for Information Security Management Systems (ISMS) demonstrating systematic security controls</li>
+<li><strong>SOC 2 Type II:</strong> Compliance framework verifying that security controls operate effectively over time, not just by design</li>
+<li><strong>GDPR (General Data Protection Regulation):</strong> EU law governing personal data protection, requiring data subject rights, consent, and residency controls</li>
+<li><strong>Encryption at Rest:</strong> Protecting stored data using encryption (AES-256) so it remains unreadable without decryption keys</li>
+<li><strong>Encryption in Transit:</strong> Protecting data moving across networks using TLS/HTTPS to prevent eavesdropping and man-in-the-middle attacks</li>
+<li><strong>Audit Trail:</strong> Chronological, read-only log of all actions in the cloud environment, capturing who, when, where, and what for compliance and security investigations</li>
+<li><strong>Activity Log:</strong> IONOS Cloud&#x27;s audit trail service recording all API requests, configuration changes, and user activities</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2><p><strong>Continue Learning:</strong> <a href="../completion.html">Course Completion</a></p>
+<p><strong>Related Topics:</strong></p>
+<ul>
+<li><a href="unit-3.2-iam.html">Unit 3.2: Identity and Access Management</a> - Understanding user roles, permissions, and access controls</li>
+<li><a href="unit-3.4-logs-monitoring.html">Unit 3.4: Activity Logs and Monitoring</a> - Deep dive into logging, monitoring, and observability services</li>
+<li><a href="../module-2/unit-2.6-security-ai-containers.html">Unit 2.6: Security, AI, and Container Services</a> - <a href="../../../products/Security/network-security-groups.html" class="product-ref">Network Security Groups</a>, <a href="../../../products/Network_Services/ddos-protect.html" class="product-ref">DDoS Protect</a>, and <a href="../../../products/Security/certificate-manager.html" class="product-ref">Certificate Manager</a></li>
+</ul>
+
+</article>
+
+<!-- Mark Complete Button -->
+<div class="mark-complete">
+  <button class="btn-complete" data-unit-id="3.5"
+          data-label-complete="Completed"
+          data-label-incomplete="Mark as Complete"
+          aria-pressed="false">
+    <span class="btn-icon">
+      <svg viewBox="0 0 16 16" fill="currentColor">
+        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      </svg>
+    </span>
+    <span class="btn-text">Mark as Complete</span>
+  </button>
+</div>
+
+<!-- Unit Navigation -->
+<nav class="unit-navigation" aria-label="Unit navigation">
+  <div class="nav-prev">
+    <a href="../module-3/unit-3.4-logs-monitoring.html">
+      <span class="nav-label">
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+        </svg>
+        Previous
+      </span>
+      <span class="nav-title">3.4 Activity Logs and Monitoring</span>
+    </a>
+  </div>
+  <div class="nav-next">
+    <a href="../module-3/unit-3.6-knowledge-check.html">
+      <span class="nav-label">
+        Next
+        <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
+          <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+      </span>
+      <span class="nav-title">3.6 Knowledge Check - Management and Governance</span>
+    </a>
+  </div>
+</nav>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <p>&copy; 2026 . All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script>window.CW_I18N = {"keep_learning": "Keep Learning!", "completed_of_total": "You've completed <strong>{completed} of {total} units</strong> ({percentage}%).", "finish_all_units": "Finish all units to unlock your completion certificate.", "continue_learning": "Continue Learning", "back_to_overview": "Back to Overview", "skip_to_completion": "Skip to completion page", "quiz_submit": "Submit Answers", "quiz_score": "Your Score", "quiz_correct": "Correct", "quiz_incorrect": "Incorrect", "quiz_explanation": "Explanation", "quiz_show_explanation": "Show Explanation", "quiz_hide_explanation": "Hide Explanation", "quiz_passed": "Passed", "quiz_not_passed": "Not Passed", "quiz_retry": "Try Again", "quiz_of": "of", "quiz_pass_required": "You need at least {threshold}% to pass.", "finish_all_units_and_quizzes": "Finish all units and pass all quizzes to unlock your completion certificate.", "knowledge_check": "Knowledge Check"};</script>
+  <script src="../../../js/navigation.js"></script>
+  <script src="../../../js/progress.js"></script>
+  <script src="../../../js/quiz.js"></script>
+  <script src="../../../js/language-switcher.js"></script>
+</body>
+</html>
