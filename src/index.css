@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* GMAT Mastery - Matrix-inspired Dark Theme
-   Green/Black/White sporty aesthetic with gaming vibes
-*/
+/* IONOS Cloud Exam Prep - Dark Theme */
 
 @layer base {
   :root {

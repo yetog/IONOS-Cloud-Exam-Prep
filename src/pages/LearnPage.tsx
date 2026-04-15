@@ -100,19 +100,7 @@ export default function LearnPage() {
               </div>
               <Card className="glass">
                 <CardContent className="p-6 md:p-10">
-                  <div className="prose prose-invert prose-sm md:prose-base max-w-none
-                    prose-headings:text-foreground prose-headings:font-bold
-                    prose-h1:text-2xl prose-h2:text-xl prose-h2:border-b prose-h2:border-border/50 prose-h2:pb-2
-                    prose-p:text-muted-foreground prose-p:leading-relaxed
-                    prose-strong:text-foreground
-                    prose-li:text-muted-foreground
-                    prose-table:text-sm prose-thead:bg-primary/10
-                    prose-th:text-foreground prose-th:font-semibold prose-th:p-3
-                    prose-td:p-3 prose-td:text-muted-foreground
-                    prose-tr:border-border/30
-                    prose-code:text-primary prose-code:bg-primary/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
-                    prose-blockquote:border-primary/50 prose-blockquote:text-muted-foreground
-                    prose-hr:border-border/30">
+                  <div className="prose prose-invert prose-sm md:prose-base max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-strong:text-foreground prose-li:text-muted-foreground prose-th:text-foreground prose-td:text-muted-foreground prose-code:text-primary prose-a:text-primary prose-hr:border-border prose-blockquote:border-primary/50">
                     <ReactMarkdown remarkPlugins={[remarkGfm]}>
                       {activeGuideContent}
                     </ReactMarkdown>
@@ -138,19 +126,7 @@ export default function LearnPage() {
               </div>
               <Card className="glass">
                 <CardContent className="p-6 md:p-10">
-                  <div className="prose prose-invert prose-sm md:prose-base max-w-none
-                    prose-headings:text-foreground prose-headings:font-bold
-                    prose-h1:text-2xl prose-h2:text-xl prose-h2:border-b prose-h2:border-border/50 prose-h2:pb-2
-                    prose-p:text-muted-foreground prose-p:leading-relaxed
-                    prose-strong:text-foreground
-                    prose-li:text-muted-foreground
-                    prose-table:text-sm prose-thead:bg-primary/10
-                    prose-th:text-foreground prose-th:font-semibold prose-th:p-3
-                    prose-td:p-3 prose-td:text-muted-foreground
-                    prose-tr:border-border/30
-                    prose-code:text-primary prose-code:bg-primary/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
-                    prose-blockquote:border-primary/50 prose-blockquote:text-muted-foreground
-                    prose-hr:border-border/30">
+                  <div className="prose prose-invert prose-sm md:prose-base max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-strong:text-foreground prose-li:text-muted-foreground prose-th:text-foreground prose-td:text-muted-foreground prose-code:text-primary prose-a:text-primary prose-hr:border-border prose-blockquote:border-primary/50">
                     <ReactMarkdown remarkPlugins={[remarkGfm]}>
                       {activeSheetContent}
                     </ReactMarkdown>
