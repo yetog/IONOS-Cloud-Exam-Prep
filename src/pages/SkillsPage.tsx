@@ -40,7 +40,7 @@ export default function SkillsPage() {
             <h1 className="text-3xl font-bold text-foreground">Skill Mastery</h1>
           </div>
           <p className="text-muted-foreground">
-            Master these {allSkills.length} skills to dominate the GMAT. Level up by practicing questions and achieving accuracy targets.
+            Master these {allSkills.length} skills to master IONOS Cloud. Level up by practicing questions and achieving accuracy targets.
           </p>
         </motion.div>
 

@@ -16,7 +16,7 @@ const DEFAULT_SKILLS_STATE: SkillsState = {
 
 export function useSkills() {
   const [skillsState, setSkillsState] = useLocalStorage<SkillsState>(
-    'gmat-skills',
+    'ionos-skills',
     DEFAULT_SKILLS_STATE
   );
 

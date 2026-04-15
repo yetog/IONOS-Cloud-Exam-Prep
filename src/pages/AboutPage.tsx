@@ -38,7 +38,7 @@ export default function AboutPage() {
           </Link>
           
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
-            About <span className="text-primary text-glow">GMAT Mastery</span>
+            About <span className="text-primary text-glow">IONOS Cloud</span>
           </h1>
           <p className="text-lg text-muted-foreground">
             Train like a champion. Think like a strategist.
@@ -63,13 +63,13 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-foreground leading-relaxed">
-                  This application was born from a simple realization: <span className="text-primary font-semibold">preparing for the GMAT is like training for a timed chess match</span>.
+                  This application was born from a simple realization: <span className="text-primary font-semibold">preparing for the IONOS Cloud exam is like training for a timed chess match</span>.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   Both require precision, focus, and high-quality decision-making under pressure. Both reward pattern recognition and punish careless mistakes. And both can be mastered through deliberate practice.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  As I studied for the GMAT, I realized it's all about using <span className="text-foreground font-medium">inductive and deductive reasoning</span>—understanding how to nail these questions down, figuring out the right tactics, and training yourself to answer in a timely manner without wasting precious seconds.
+                  As I studied for the IONOS Cloud exam, I realized it's all about using <span className="text-foreground font-medium">inductive and deductive reasoning</span>—understanding how to nail these questions down, figuring out the right tactics, and training yourself to answer in a timely manner without wasting precious seconds.
                 </p>
                 <div className="flex items-center gap-2 mt-4">
                   <Badge variant="secondary" className="bg-primary/10 text-primary">
@@ -140,7 +140,7 @@ export default function AboutPage() {
                       <div>
                         <h4 className="font-semibold text-foreground">Know the Traps</h4>
                         <p className="text-sm text-muted-foreground">
-                          The GMAT uses predictable trap answers. Learn to spot them and you'll eliminate wrong choices before they tempt you.
+                          The IONOS Cloud exam uses predictable trap answers. Learn to spot them and you'll eliminate wrong choices before they tempt you.
                         </p>
                       </div>
                     </div>

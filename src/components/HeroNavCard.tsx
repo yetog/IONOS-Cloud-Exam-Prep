@@ -208,7 +208,7 @@ function OnboardingContent() {
       <div className="flex items-center gap-2 mb-3">
         <Sparkles className="h-5 w-5 text-primary" />
         <h3 className="font-bold text-lg uppercase tracking-wide text-primary">
-          Welcome to GMAT Mastery
+          Welcome to IONOS Cloud
         </h3>
       </div>
       <p className="text-muted-foreground text-sm mb-4">

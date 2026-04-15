@@ -1,21 +1,16 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useLocalStorage } from './useLocalStorage';
 import { Question, IONOSSection, QuestionType } from '@/types/gmat';
 import { SAMPLE_QUESTIONS } from '@/data/sampleQuestions';
+import { QUESTION_BANK } from '@/data/questionBank';
 
 export function useQuestions() {
-  const [customQuestions, setCustomQuestions] = useLocalStorage<Question[]>('gmat-custom-questions', []);
-  const [bankQuestions, setBankQuestions] = useState<Question[]>([]);
+  const [customQuestions, setCustomQuestions] = useLocalStorage<Question[]>('ionos-custom-questions', []);
 
-  // Lazy-load the full question bank so it doesn't block the initial render
-  useEffect(() => {
-    import('@/data/questionBank').then((m) => setBankQuestions(m.QUESTION_BANK));
-  }, []);
-
-  // Combine sample, bank, and custom questions
+  // Combine sample, bank, and custom questions — bank is statically imported so always available
   const allQuestions = useMemo(() => {
-    return [...SAMPLE_QUESTIONS, ...bankQuestions, ...customQuestions];
-  }, [bankQuestions, customQuestions]);
+    return [...SAMPLE_QUESTIONS, ...QUESTION_BANK, ...customQuestions];
+  }, [customQuestions]);
 
   // Get questions by section
   const getQuestionsBySection = useCallback((section: IONOSSection): Question[] => {

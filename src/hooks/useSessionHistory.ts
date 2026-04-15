@@ -6,7 +6,7 @@ import { formatDistanceToNow } from 'date-fns';
 
 export function useSessionHistory() {
   const [sessionHistory, setSessionHistory] = useLocalStorage<SessionHistory>(
-    'gmat-session-history',
+    'ionos-session-history',
     DEFAULT_SESSION_HISTORY
   );
 

@@ -13,7 +13,7 @@ const DEFAULT_SETTINGS: SoundSettings = {
 
 export function useGameSounds() {
   const [settings, setSettings] = useLocalStorage<SoundSettings>(
-    'gmat-sound-settings',
+    'ionos-sound-settings',
     DEFAULT_SETTINGS
   );
 

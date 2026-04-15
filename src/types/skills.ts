@@ -1,5 +1,5 @@
 // Skill Mastery System Types
-// Based on Princeton Review GMAT structure
+// Based on IONOS Cloud exam structure
 
 export type SkillLevel = 'novice' | 'apprentice' | 'journeyman' | 'expert' | 'master';
 
@@ -150,7 +150,7 @@ export const SKILLS: Skill[] = [
     id: 'data-sufficiency-logic',
     name: 'Data Sufficiency Logic',
     category: 'Unit 1: Cloud Basics-combat',
-    description: 'The unique GMAT question format',
+    description: 'The unique IONOS Cloud question format',
     icon: 'GitBranch',
     linkedQuestionTypes: ['data-sufficiency'],
     linkedSubTypes: ['ds-value', 'ds-yes-no'],

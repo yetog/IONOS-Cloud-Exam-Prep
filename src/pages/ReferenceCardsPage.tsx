@@ -104,7 +104,7 @@ export default function ReferenceCardsPage() {
                 Math Quick Reference
               </h1>
               <p className="text-muted-foreground">
-                Essential formulas and rules for GMAT Unit 1: Cloud Basics
+                Essential formulas and rules for IONOS Cloud Unit 1: Cloud Basics
               </p>
             </div>
           </div>

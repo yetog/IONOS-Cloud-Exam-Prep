@@ -32,7 +32,7 @@ const FOCUS_AREAS = [
 
 export function DailyMission() {
   const [isOpen, setIsOpen] = useState(true);
-  const [dailyNotes, setDailyNotes] = useLocalStorage<Record<string, DailyNote>>('gmat-daily-notes', {});
+  const [dailyNotes, setDailyNotes] = useLocalStorage<Record<string, DailyNote>>('ionos-daily-notes', {});
   const [isSaving, setIsSaving] = useState(false);
 
   const today = new Date().toISOString().split('T')[0];

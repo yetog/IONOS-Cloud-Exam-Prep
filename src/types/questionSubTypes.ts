@@ -369,7 +369,7 @@ export const SC_SUB_TYPES: QuestionSubType[] = [
     ],
     solutionFramework: [
       'Find the TRUE subject (ignore prepositional phrases)',
-      'Collective nouns are usually SINGULAR in GMAT',
+      'Collective nouns are usually SINGULAR in IONOS Cloud',
       'Neither...nor / Either...or: Verb agrees with CLOSER subject',
       '"Number of" = plural, "A number of" = singular',
     ],
@@ -547,7 +547,7 @@ export const RC_SUB_TYPES: QuestionSubType[] = [
     solutionFramework: [
       'Look at word choices throughout—positive, negative, neutral?',
       'Common tones: objective, critical, enthusiastic, skeptical, cautious',
-      'Avoid EXTREME answers—GMAT authors are usually balanced',
+      'Avoid EXTREME answers—exam authors are usually balanced',
       'Note qualifiers: "somewhat", "arguably", "perhaps"',
     ],
     exampleStem: 'The author\'s attitude toward the theory can best be described as...',

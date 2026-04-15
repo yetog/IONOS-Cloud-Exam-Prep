@@ -50,9 +50,9 @@ const DEFAULT_ACHIEVEMENTS: UserAchievements = {
 };
 
 export function useProgress() {
-  const [progress, setProgress] = useLocalStorage<UserProgress>('gmat-progress', DEFAULT_PROGRESS);
-  const [achievements, setAchievements] = useLocalStorage<UserAchievements>('gmat-achievements', DEFAULT_ACHIEVEMENTS);
-  const [attempts, setAttempts] = useLocalStorage<QuestionAttempt[]>('gmat-attempts', []);
+  const [progress, setProgress] = useLocalStorage<UserProgress>('ionos-progress', DEFAULT_PROGRESS);
+  const [achievements, setAchievements] = useLocalStorage<UserAchievements>('ionos-achievements', DEFAULT_ACHIEVEMENTS);
+  const [attempts, setAttempts] = useLocalStorage<QuestionAttempt[]>('ionos-attempts', []);
 
   // Calculate level from XP
   const calculateLevel = useCallback((xp: number): number => {

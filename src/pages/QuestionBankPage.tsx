@@ -107,7 +107,7 @@ export default function QuestionBankPage() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `gmat-questions-${new Date().toISOString().split('T')[0]}.md`;
+    a.download = `ionos-questions-${new Date().toISOString().split('T')[0]}.md`;
     a.click();
     URL.revokeObjectURL(url);
 
@@ -140,7 +140,7 @@ export default function QuestionBankPage() {
                 Question Bank
               </h1>
               <p className="text-muted-foreground">
-                Manage, add, and import your GMAT questions
+                Manage, add, and import your IONOS Cloud questions
               </p>
             </div>
           </div>

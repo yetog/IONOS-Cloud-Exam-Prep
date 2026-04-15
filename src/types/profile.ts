@@ -38,7 +38,7 @@ export interface EquippedFocus {
 }
 
 export const DEFAULT_PROFILE: UserProfile = {
-  displayName: 'GMAT Student',
+  displayName: 'IONOS Cloud Student',
   avatarUrl: null,
   createdAt: new Date().toISOString(),
   goals: {

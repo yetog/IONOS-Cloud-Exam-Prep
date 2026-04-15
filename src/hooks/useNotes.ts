@@ -6,7 +6,7 @@ import { IONOSSection, QuestionType } from '@/types/gmat';
 const DEFAULT_NOTES: UserNote[] = [];
 
 export function useNotes() {
-  const [notes, setNotes] = useLocalStorage<UserNote[]>('gmat-notes', DEFAULT_NOTES);
+  const [notes, setNotes] = useLocalStorage<UserNote[]>('ionos-notes', DEFAULT_NOTES);
 
   const addNote = useCallback((
     note: Omit<UserNote, 'id' | 'createdAt' | 'updatedAt'>

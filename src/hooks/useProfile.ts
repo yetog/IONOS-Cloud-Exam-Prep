@@ -5,7 +5,7 @@ import { UserProfile, UserGoals, TestInsights, DEFAULT_PROFILE } from '@/types/p
 import { IONOSSection, SECTION_INFO } from '@/types/gmat';
 
 export function useProfile() {
-  const [profile, setProfile] = useLocalStorage<UserProfile>('gmat-profile', DEFAULT_PROFILE);
+  const [profile, setProfile] = useLocalStorage<UserProfile>('ionos-profile', DEFAULT_PROFILE);
   const { progress, attempts, getSectionAccuracy } = useProgress();
 
   // Update display name

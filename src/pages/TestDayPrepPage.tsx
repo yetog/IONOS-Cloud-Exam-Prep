@@ -105,7 +105,7 @@ export default function TestDayPrepPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Clock className="w-5 h-5 text-primary" />
-                  GMAT Focus Edition Structure
+                  IONOS Cloud Exam Structure
                 </CardTitle>
                 <CardDescription>
                   Total test time: 2 hours 15 minutes (plus breaks)
@@ -315,7 +315,7 @@ export default function TestDayPrepPage() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="text-muted-foreground">
-                  If you're not satisfied with your score, you can retake the GMAT:
+                  If you're not satisfied with your score, you can retake the IONOS Cloud exam:
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start gap-2">

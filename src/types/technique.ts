@@ -91,7 +91,7 @@ export const TECHNIQUES: Record<QuestionType, Technique> = {
     section: 'unit1',
     questionType: 'data-sufficiency',
     title: 'Data Sufficiency',
-    description: 'Determine whether given statements provide enough information to answer a question - unique to the GMAT.',
+    description: 'Determine whether given statements provide enough information to answer a question - unique to the IONOS Cloud exam.',
     keyStrategies: [
       {
         title: 'The AD/BCE Split',
@@ -185,7 +185,7 @@ export const TECHNIQUES: Record<QuestionType, Technique> = {
       {
         name: 'Too Extreme',
         description: 'Answers using words like "always," "never," "all," "none"',
-        howToAvoid: 'GMAT RC answers are usually moderate and qualified'
+        howToAvoid: 'IONOS Cloud exam answers are usually moderate and qualified'
       },
       {
         name: 'True but Not Relevant',
