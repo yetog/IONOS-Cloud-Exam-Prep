@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useEffect } from 'react';
 import { useLocalStorage } from './useLocalStorage';
 import {
   UserProgress,
@@ -12,6 +12,12 @@ import {
   SectionStats,
   TypeStats,
 } from '@/types/gmat';
+import { useAuth } from '@/contexts/AuthContext';
+import {
+  loadProgress, saveProgress,
+  loadAchievements, saveAchievements,
+  loadAttempts, addAttempt as firestoreAddAttempt,
+} from '@/services/firestore';
 
 const DEFAULT_SECTION_STATS: SectionStats = {
   questionsAnswered: 0,
@@ -50,9 +56,48 @@ const DEFAULT_ACHIEVEMENTS: UserAchievements = {
 };
 
 export function useProgress() {
+  const { user } = useAuth();
+  const uid = user?.uid ?? null;
+
   const [progress, setProgress] = useLocalStorage<UserProgress>('ionos-progress', DEFAULT_PROGRESS);
   const [achievements, setAchievements] = useLocalStorage<UserAchievements>('ionos-achievements', DEFAULT_ACHIEVEMENTS);
   const [attempts, setAttempts] = useLocalStorage<QuestionAttempt[]>('ionos-attempts', []);
+
+  // ── Firestore sync ────────────────────────────────────────────────────────
+
+  // Load from Firestore once on sign-in
+  useEffect(() => {
+    if (!uid) return;
+    (async () => {
+      try {
+        const [p, a, at] = await Promise.all([
+          loadProgress(uid),
+          loadAchievements(uid),
+          loadAttempts(uid),
+        ]);
+        if (p) setProgress(p);
+        if (a) setAchievements(a);
+        if (at?.length) setAttempts(at);
+      } catch (e) {
+        console.warn('[Firestore] Failed to load progress:', e);
+      }
+    })();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [uid]);
+
+  // Save progress whenever it changes
+  useEffect(() => {
+    if (!uid) return;
+    saveProgress(uid, progress).catch(() => {});
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [uid, progress]);
+
+  // Save achievements whenever they change
+  useEffect(() => {
+    if (!uid) return;
+    saveAchievements(uid, achievements).catch(() => {});
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [uid, achievements]);
 
   // Calculate level from XP
   const calculateLevel = useCallback((xp: number): number => {
@@ -144,8 +189,9 @@ export function useProgress() {
     const xpEarned = calculateXP(attempt, targetTime);
     const fullAttempt: QuestionAttempt = { ...attempt, xpEarned };
 
-    // Update attempts list
+    // Update attempts list (local + Firestore)
     setAttempts(prev => [...prev, fullAttempt]);
+    if (uid) firestoreAddAttempt(uid, fullAttempt).catch(() => {});
 
     // Update progress
     setProgress(prev => {
@@ -194,7 +240,8 @@ export function useProgress() {
     checkAchievements(fullAttempt, section);
 
     return xpEarned;
-  }, [calculateXP, updateStreak, calculateLevel, setAttempts, setProgress]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [calculateXP, updateStreak, calculateLevel, setAttempts, setProgress, uid]);
 
   // Check and unlock achievements
   const checkAchievements = useCallback((attempt: QuestionAttempt, section: IONOSSection) => {

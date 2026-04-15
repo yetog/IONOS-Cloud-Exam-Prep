@@ -1,11 +1,34 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useEffect } from 'react';
 import { useLocalStorage } from './useLocalStorage';
 import { useProgress } from './useProgress';
 import { UserProfile, UserGoals, TestInsights, DEFAULT_PROFILE } from '@/types/profile';
 import { IONOSSection, SECTION_INFO } from '@/types/gmat';
+import { useAuth } from '@/contexts/AuthContext';
+import { loadUserProfile, saveUserProfile } from '@/services/firestore';
 
 export function useProfile() {
+  const { user } = useAuth();
+  const uid = user?.uid ?? null;
+
   const [profile, setProfile] = useLocalStorage<UserProfile>('ionos-profile', DEFAULT_PROFILE);
+
+  // ── Firestore sync ────────────────────────────────────────────────────────
+
+  // Load from Firestore once on sign-in
+  useEffect(() => {
+    if (!uid) return;
+    loadUserProfile(uid).then(p => {
+      if (p) setProfile(p as unknown as UserProfile);
+    }).catch(() => {});
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [uid]);
+
+  // Save profile whenever it changes
+  useEffect(() => {
+    if (!uid) return;
+    saveUserProfile(uid, profile as unknown as Record<string, unknown>).catch(() => {});
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [uid, profile]);
   const { progress, attempts, getSectionAccuracy } = useProgress();
 
   // Update display name

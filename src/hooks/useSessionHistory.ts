@@ -1,14 +1,37 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useEffect } from 'react';
 import { useLocalStorage } from './useLocalStorage';
 import { SessionHistory, DEFAULT_SESSION_HISTORY } from '@/types/profile';
 import { IONOSSection, QuestionType, SECTION_INFO } from '@/types/gmat';
 import { formatDistanceToNow } from 'date-fns';
+import { useAuth } from '@/contexts/AuthContext';
+import { loadSessionHistory, saveSessionHistory } from '@/services/firestore';
 
 export function useSessionHistory() {
+  const { user } = useAuth();
+  const uid = user?.uid ?? null;
+
   const [sessionHistory, setSessionHistory] = useLocalStorage<SessionHistory>(
     'ionos-session-history',
     DEFAULT_SESSION_HISTORY
   );
+
+  // ── Firestore sync ────────────────────────────────────────────────────────
+
+  // Load from Firestore once on sign-in
+  useEffect(() => {
+    if (!uid) return;
+    loadSessionHistory(uid).then(h => {
+      if (h) setSessionHistory(h as unknown as SessionHistory);
+    }).catch(() => {});
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [uid]);
+
+  // Save session history whenever it changes
+  useEffect(() => {
+    if (!uid) return;
+    saveSessionHistory(uid, sessionHistory as unknown as Record<string, unknown>).catch(() => {});
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [uid, sessionHistory]);
 
   // Update session after answering a question
   const recordSessionActivity = useCallback(

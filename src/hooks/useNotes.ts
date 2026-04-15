@@ -1,12 +1,35 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useEffect } from 'react';
 import { useLocalStorage } from './useLocalStorage';
 import { UserNote, NoteFilters } from '@/types/notes';
 import { IONOSSection, QuestionType } from '@/types/gmat';
+import { useAuth } from '@/contexts/AuthContext';
+import { loadNotesList, saveNotesList } from '@/services/firestore';
 
 const DEFAULT_NOTES: UserNote[] = [];
 
 export function useNotes() {
+  const { user } = useAuth();
+  const uid = user?.uid ?? null;
+
   const [notes, setNotes] = useLocalStorage<UserNote[]>('ionos-notes', DEFAULT_NOTES);
+
+  // ── Firestore sync ────────────────────────────────────────────────────────
+
+  // Load from Firestore once on sign-in
+  useEffect(() => {
+    if (!uid) return;
+    loadNotesList(uid).then(fsNotes => {
+      if (fsNotes?.length) setNotes(fsNotes as unknown as UserNote[]);
+    }).catch(() => {});
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [uid]);
+
+  // Save notes whenever they change
+  useEffect(() => {
+    if (!uid) return;
+    saveNotesList(uid, notes as unknown as Record<string, unknown>[]).catch(() => {});
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [uid, notes]);
 
   const addNote = useCallback((
     note: Omit<UserNote, 'id' | 'createdAt' | 'updatedAt'>
