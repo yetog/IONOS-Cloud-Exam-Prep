@@ -35,7 +35,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/ionos-exam">
         <Layout>
           <Suspense fallback={fallback}>
             <Routes>
