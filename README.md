@@ -1,73 +1,40 @@
-# Welcome to your Lovable project
+# IONOS Cloud Exam Prep
 
-## Project info
+Master the IONOS Cloud Foundational Certification with this interactive study app.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Features
 
-## How can I edit this code?
+- **420+ Practice Questions** - Comprehensive question bank covering all exam topics
+- **Mock Exams** - Timed full-length practice tests simulating the real exam
+- **Study Hub** - Organized study guides for Units 1, 2, and 3
+- **Cheat Sheets** - Quick reference cards for exam day preparation
+- **Progress Tracking** - Track your performance and identify weak areas
+- **Skills Dashboard** - Visual breakdown of your mastery by topic
+- **Notes** - Personal note-taking for key concepts
+- **Achievements** - Gamified learning with unlockable badges
 
-There are several ways of editing your application.
+## Exam Topics Covered
 
-**Use Lovable**
+- Cloud Computing Fundamentals
+- IONOS Cloud Infrastructure
+- Compute (Virtual Machines, Kubernetes)
+- Storage (Block, Object, Backup)
+- Networking (VLANs, Load Balancers, Firewalls)
+- Security & Compliance
+- Managed Services & Databases
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## How to Use
 
-Changes made via Lovable will be committed automatically to this repo.
+1. **Dashboard** - Start here to see your progress and daily missions
+2. **Practice** - Work through questions by topic or take a full mock exam
+3. **Learn** - Study guides and reference materials organized by unit
+4. **Skills** - Review your performance breakdown by topic
+5. **Profile** - Track achievements and study streaks
 
-**Use your preferred IDE**
+## Tech Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
+- React 18 + TypeScript
 - Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- Tailwind CSS + shadcn/ui
+- Framer Motion animations
+- Howler.js for sound effects
