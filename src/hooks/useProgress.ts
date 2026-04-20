@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useEffect } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useLocalStorage } from './useLocalStorage';
 import {
   UserProgress,
@@ -12,12 +12,6 @@ import {
   SectionStats,
   TypeStats,
 } from '@/types/gmat';
-import { useAuth } from '@/contexts/AuthContext';
-import {
-  loadProgress, saveProgress,
-  loadAchievements, saveAchievements,
-  loadAttempts, addAttempt as firestoreAddAttempt,
-} from '@/services/firestore';
 
 const DEFAULT_SECTION_STATS: SectionStats = {
   questionsAnswered: 0,
@@ -56,50 +50,10 @@ const DEFAULT_ACHIEVEMENTS: UserAchievements = {
 };
 
 export function useProgress() {
-  const { user } = useAuth();
-  const uid = user?.uid ?? null;
-
   const [progress, setProgress] = useLocalStorage<UserProgress>('ionos-progress', DEFAULT_PROGRESS);
   const [achievements, setAchievements] = useLocalStorage<UserAchievements>('ionos-achievements', DEFAULT_ACHIEVEMENTS);
   const [attempts, setAttempts] = useLocalStorage<QuestionAttempt[]>('ionos-attempts', []);
 
-  // ── Firestore sync ────────────────────────────────────────────────────────
-
-  // Load from Firestore once on sign-in
-  useEffect(() => {
-    if (!uid) return;
-    (async () => {
-      try {
-        const [p, a, at] = await Promise.all([
-          loadProgress(uid),
-          loadAchievements(uid),
-          loadAttempts(uid),
-        ]);
-        if (p) setProgress(p);
-        if (a) setAchievements(a);
-        if (at?.length) setAttempts(at);
-      } catch (e) {
-        console.warn('[Firestore] Failed to load progress:', e);
-      }
-    })();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [uid]);
-
-  // Save progress whenever it changes
-  useEffect(() => {
-    if (!uid) return;
-    saveProgress(uid, progress).catch(() => {});
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [uid, progress]);
-
-  // Save achievements whenever they change
-  useEffect(() => {
-    if (!uid) return;
-    saveAchievements(uid, achievements).catch(() => {});
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [uid, achievements]);
-
-  // Calculate level from XP
   const calculateLevel = useCallback((xp: number): number => {
     for (let i = LEVEL_THRESHOLDS.length - 1; i >= 0; i--) {
       if (xp >= LEVEL_THRESHOLDS[i]) {
@@ -109,11 +63,10 @@ export function useProgress() {
     return 1;
   }, []);
 
-  // Get XP needed for next level
   const xpForNextLevel = useMemo(() => {
     const nextLevelIndex = progress.level;
     if (nextLevelIndex >= LEVEL_THRESHOLDS.length) {
-      return null; // Max level
+      return null;
     }
     return LEVEL_THRESHOLDS[nextLevelIndex];
   }, [progress.level]);
@@ -130,7 +83,6 @@ export function useProgress() {
     };
   }, [progress.totalXP, progress.level, xpForNextLevel]);
 
-  // Update streak
   const updateStreak = useCallback(() => {
     const today = new Date().toISOString().split('T')[0];
     const lastDate = progress.lastPracticeDate;
@@ -144,34 +96,28 @@ export function useProgress() {
     const yesterdayStr = yesterday.toISOString().split('T')[0];
 
     if (lastDate === today) {
-      // Same day, no change
       return { currentStreak: progress.currentStreak, longestStreak: progress.longestStreak };
     } else if (lastDate === yesterdayStr) {
-      // Consecutive day
       const newStreak = progress.currentStreak + 1;
       return { currentStreak: newStreak, longestStreak: Math.max(newStreak, progress.longestStreak) };
     } else {
-      // Streak broken
       return { currentStreak: 1, longestStreak: progress.longestStreak };
     }
   }, [progress]);
 
-  // Calculate XP for an attempt
   const calculateXP = useCallback((attempt: Omit<QuestionAttempt, 'xpEarned'>, targetTime: number): number => {
-    if (!attempt.isCorrect) return 5; // Consolation XP
+    if (!attempt.isCorrect) return 5;
 
-    let xp = 20; // Base XP for correct answer
+    let xp = 20;
 
-    // Speed bonus
     if (attempt.timeSpent <= targetTime * 0.5) {
-      xp += 15; // Super fast
+      xp += 15;
     } else if (attempt.timeSpent <= targetTime * 0.75) {
-      xp += 10; // Fast
+      xp += 10;
     } else if (attempt.timeSpent <= targetTime) {
-      xp += 5; // On time
+      xp += 5;
     }
 
-    // No hint bonus
     if (!attempt.usedHint) {
       xp += 10;
     }
@@ -179,7 +125,6 @@ export function useProgress() {
     return xp;
   }, []);
 
-  // Record an attempt
   const recordAttempt = useCallback((
     attempt: Omit<QuestionAttempt, 'xpEarned'>,
     section: IONOSSection,
@@ -189,16 +134,12 @@ export function useProgress() {
     const xpEarned = calculateXP(attempt, targetTime);
     const fullAttempt: QuestionAttempt = { ...attempt, xpEarned };
 
-    // Update attempts list (local + Firestore)
     setAttempts(prev => [...prev, fullAttempt]);
-    if (uid) firestoreAddAttempt(uid, fullAttempt).catch(() => {});
 
-    // Update progress
     setProgress(prev => {
       const streakUpdate = updateStreak();
       const today = new Date().toISOString().split('T')[0];
 
-      // Update section stats
       const sectionStats = { ...prev.sectionStats };
       const currentSectionStats = sectionStats[section] || { ...DEFAULT_SECTION_STATS };
       sectionStats[section] = {
@@ -208,7 +149,6 @@ export function useProgress() {
         averageTime: (currentSectionStats.totalTime + attempt.timeSpent) / (currentSectionStats.questionsAnswered + 1),
       };
 
-      // Update type stats
       const typeStats = { ...prev.typeStats };
       const currentTypeStats = typeStats[type] || { ...DEFAULT_TYPE_STATS };
       typeStats[type] = {
@@ -236,21 +176,18 @@ export function useProgress() {
       };
     });
 
-    // Check achievements
     checkAchievements(fullAttempt, section);
 
     return xpEarned;
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [calculateXP, updateStreak, calculateLevel, setAttempts, setProgress, uid]);
+  }, [calculateXP, updateStreak, calculateLevel, setAttempts, setProgress]);
 
-  // Check and unlock achievements
   const checkAchievements = useCallback((attempt: QuestionAttempt, section: IONOSSection) => {
     setAchievements(prev => {
       const newProgress = { ...prev.progress };
       const newUnlocked = [...prev.unlocked];
       let xpFromAchievements = 0;
 
-      // First Blood
       if (attempt.isCorrect && !prev.unlocked.includes('first-blood')) {
         newProgress['first-blood'] = 1;
         if (newProgress['first-blood'] >= 1) {
@@ -259,8 +196,7 @@ export function useProgress() {
         }
       }
 
-      // Speed Demon - track in progress
-      if (attempt.isCorrect && attempt.timeSpent < 90) { // Under 90 seconds
+      if (attempt.isCorrect && attempt.timeSpent < 90) {
         newProgress['speed-demon'] = (prev.progress['speed-demon'] || 0) + 1;
         if (newProgress['speed-demon'] >= 10 && !prev.unlocked.includes('speed-demon')) {
           newUnlocked.push('speed-demon');
@@ -268,7 +204,6 @@ export function useProgress() {
         }
       }
 
-      // No hints achievements
       if (attempt.isCorrect && !attempt.usedHint) {
         newProgress['no-hints-10'] = (prev.progress['no-hints-10'] || 0) + 1;
         newProgress['no-hints-50'] = (prev.progress['no-hints-50'] || 0) + 1;
@@ -283,7 +218,6 @@ export function useProgress() {
         }
       }
 
-      // Add XP from achievements
       if (xpFromAchievements > 0) {
         setProgress(p => ({
           ...p,
@@ -296,7 +230,6 @@ export function useProgress() {
     });
   }, [setAchievements, setProgress, calculateLevel]);
 
-  // Check streak achievements
   const checkStreakAchievements = useCallback(() => {
     setAchievements(prev => {
       const newUnlocked = [...prev.unlocked];
@@ -327,14 +260,12 @@ export function useProgress() {
     });
   }, [progress.currentStreak, setAchievements, setProgress, calculateLevel]);
 
-  // Get accuracy for a section
   const getSectionAccuracy = useCallback((section: IONOSSection): number => {
     const stats = progress.sectionStats[section];
     if (!stats || stats.questionsAnswered === 0) return 0;
     return Math.round((stats.correct / stats.questionsAnswered) * 100);
   }, [progress.sectionStats]);
 
-  // Reset all progress
   const resetProgress = useCallback(() => {
     setProgress(DEFAULT_PROGRESS);
     setAchievements(DEFAULT_ACHIEVEMENTS);
@@ -352,4 +283,3 @@ export function useProgress() {
     resetProgress,
   };
 }
-
